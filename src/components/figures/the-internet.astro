@@ -1,0 +1,106 @@
+---
+/**
+ * A circuit reserves a path and holds it whether or not anything is being sent.
+ * Packets reserve nothing: each carries its own destination, so many bursty
+ * senders share one link because their silences interleave, and a failed link
+ * just means the next packet goes another way with nobody being told. The band
+ * below is the decision that gave it its longevity — a deliberately stupid
+ * middle, with the correcting done at the two ends.
+ */
+---
+
+<svg viewBox="0 0 960 560" role="img" aria-label="A reserved circuit with idle capacity against packets interleaving from several senders and rerouting around a failed link, and the end-to-end principle">
+  <defs>
+    <marker id="in-ar" viewBox="0 0 8 8" refX="7" refY="4" markerWidth="6" markerHeight="6" orient="auto">
+      <path d="M0 0 L8 4 L0 8 z" class="dg-ink" />
+    </marker>
+    <marker id="in-ar-a" viewBox="0 0 8 8" refX="7" refY="4" markerWidth="6" markerHeight="6" orient="auto">
+      <path d="M0 0 L8 4 L0 8 z" class="dg-accent" />
+    </marker>
+  </defs>
+
+  <!-- ══ the circuit ════════════════════════════════════════════════════ -->
+  <text class="dg-lbl dg-num" x="30" y="24">A CIRCUIT · THE PATH IS RESERVED, USED OR NOT</text>
+
+  <path class="dg-s" d="M60 76 H820" />
+  <path class="dg-s" d="M60 132 H820" />
+  <g class="dg-ink">
+    <path d="M78 90 h34 v28 h-34 Z M124 90 h34 v28 h-34 Z" />
+  </g>
+  <text class="dg-lbl dg-key" x="180" y="110">…AND THEN NOTHING, FOR THE WHOLE CALL</text>
+  <text class="dg-lbl dg-soft" x="838" y="98">ONE SENDER,</text>
+  <text class="dg-lbl dg-soft" x="838" y="112">ONE LINK</text>
+
+  <text class="dg-lbl dg-soft" x="30" y="164">THE LINK IS HELD OPEN AND THE IDLE CAPACITY IS WASTED.</text>
+  <text class="dg-lbl dg-soft" x="30" y="178">IF THE PATH BREAKS, THE CALL DROPS.</text>
+
+  <!-- ══ packets ════════════════════════════════════════════════════════ -->
+  <path class="dg-m" d="M30 206 H930" />
+  <text class="dg-lbl dg-num" x="30" y="228">PACKETS · NOTHING RESERVED, SO THE SILENCES INTERLEAVE</text>
+
+  <path class="dg-s" d="M60 250 H820" />
+  <path class="dg-s" d="M60 306 H820" />
+  <g>
+    <path class="dg-ink" d="M72 264 h30 v28 h-30 Z" />
+    <path class="dg-accent" d="M108 264 h30 v28 h-30 Z" />
+    <path class="dg-ink" d="M144 264 h30 v28 h-30 Z" />
+    <path class="dg-panel" d="M180 264 h30 v28 h-30 Z" /><path class="dg-m" d="M180 264 h30 v28 h-30 Z" />
+    <path class="dg-accent" d="M216 264 h30 v28 h-30 Z" />
+    <path class="dg-panel" d="M252 264 h30 v28 h-30 Z" /><path class="dg-m" d="M252 264 h30 v28 h-30 Z" />
+    <path class="dg-ink" d="M288 264 h30 v28 h-30 Z" />
+    <path class="dg-accent" d="M324 264 h30 v28 h-30 Z" />
+    <path class="dg-panel" d="M360 264 h30 v28 h-30 Z" /><path class="dg-m" d="M360 264 h30 v28 h-30 Z" />
+    <path class="dg-ink" d="M396 264 h30 v28 h-30 Z" />
+    <path class="dg-accent" d="M432 264 h30 v28 h-30 Z" />
+    <path class="dg-panel" d="M468 264 h30 v28 h-30 Z" /><path class="dg-m" d="M468 264 h30 v28 h-30 Z" />
+    <path class="dg-ink" d="M504 264 h30 v28 h-30 Z" />
+    <path class="dg-accent" d="M540 264 h30 v28 h-30 Z" />
+    <path class="dg-ink" d="M576 264 h30 v28 h-30 Z" />
+    <path class="dg-panel" d="M612 264 h30 v28 h-30 Z" /><path class="dg-m" d="M612 264 h30 v28 h-30 Z" />
+    <path class="dg-accent" d="M648 264 h30 v28 h-30 Z" />
+    <path class="dg-ink" d="M684 264 h30 v28 h-30 Z" />
+    <path class="dg-panel" d="M720 264 h30 v28 h-30 Z" /><path class="dg-m" d="M720 264 h30 v28 h-30 Z" />
+    <path class="dg-accent" d="M756 264 h30 v28 h-30 Z" />
+  </g>
+  <text class="dg-lbl dg-soft" x="838" y="284">THREE SENDERS,</text>
+  <text class="dg-lbl dg-soft" x="838" y="298">ONE LINK</text>
+  <text class="dg-lbl dg-key" x="30" y="336">EACH PACKET CARRIES ITS OWN DESTINATION, SO A ROUTER ONLY HAS TO KNOW</text>
+  <text class="dg-lbl dg-key" x="30" y="350">WHICH NEIGHBOUR IS GENERALLY TOWARDS WHERE IT IS GOING.</text>
+
+  <!-- ══ rerouting ══════════════════════════════════════════════════════ -->
+  <path class="dg-m" d="M30 374 H930" />
+  <text class="dg-lbl" x="30" y="396">AND IF A LINK FAILS, THE NEXT PACKET SIMPLY GOES ANOTHER WAY</text>
+
+  <g>
+    <circle cx="90" cy="470" r="12" class="dg-ink" />
+    <circle cx="240" cy="436" r="10" class="dg-page" /><circle cx="240" cy="436" r="10" class="dg-s" />
+    <circle cx="240" cy="504" r="10" class="dg-page" /><circle cx="240" cy="504" r="10" class="dg-s" />
+    <circle cx="390" cy="470" r="10" class="dg-page" /><circle cx="390" cy="470" r="10" class="dg-s" />
+    <circle cx="520" cy="470" r="12" class="dg-page" /><circle cx="520" cy="470" r="12" class="dg-s" />
+  </g>
+  <path class="dg-m" d="M102 466 L230 438" />
+  <path class="dg-m" d="M250 436 L380 466" />
+  <path class="dg-m" d="M102 476 L230 502" />
+  <path class="dg-m" d="M250 504 L380 476" />
+  <path class="dg-m" d="M402 470 H508" />
+
+  <path class="dg-s" d="M156 442 L176 462 M176 442 L156 462" />
+  <text class="dg-lbl dg-num" x="150" y="430">FAILED</text>
+
+  <path class="dg-a" d="M104 480 L228 504" />
+  <path class="dg-a" d="M252 506 L378 478" />
+  <path class="dg-a" d="M402 474 H506" marker-end="url(#in-ar-a)" />
+  <text class="dg-lbl dg-key" x="30" y="546">THE NEXT PACKET TAKES THE OTHER ROUTE, AND NOBODY IS TOLD</text>
+
+  <!-- ══ end to end ═════════════════════════════════════════════════════ -->
+  <path class="dg-m" d="M572 382 V552" />
+  <text class="dg-lbl" x="600" y="396">THE END-TO-END PRINCIPLE</text>
+  <text class="dg-lbl dg-num" x="600" y="422">THE NETWORK IS DELIBERATELY UNRELIABLE AND</text>
+  <text class="dg-lbl dg-num" x="600" y="436">STUPID. IT MAY DROP PACKETS, DUPLICATE THEM,</text>
+  <text class="dg-lbl dg-num" x="600" y="450">OR DELIVER THEM OUT OF ORDER.</text>
+  <text class="dg-lbl dg-soft" x="600" y="474">THE NOTICING AND CORRECTING IS PUT IN THE</text>
+  <text class="dg-lbl dg-soft" x="600" y="488">MACHINES AT THE TWO ENDS, IN TCP.</text>
+  <text class="dg-lbl dg-key" x="600" y="514">SO A NEW APPLICATION NEEDS NO PERMISSION</text>
+  <text class="dg-lbl dg-key" x="600" y="528">FROM ANYONE WHO OWNS A WIRE.</text>
+  <text class="dg-lbl dg-num" x="600" y="550">29 OCTOBER 1969 · TCP/IP ON 1 JANUARY 1983</text>
+</svg>
