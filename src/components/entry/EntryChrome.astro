@@ -1,0 +1,108 @@
+---
+import type { Entry } from '../../data/entries';
+import { roadNeighbours } from '../../data/entries';
+import { periodById, periodSlug } from '../../data/periods';
+
+/**
+ * Both motions, always visible: up to the period landing, and along the road.
+ * If a reader is ever more than one tap from both, the design has failed.
+ */
+interface Props {
+  entry: Entry;
+}
+const { entry } = Astro.props;
+const period = periodById(entry.periodId);
+const { prev, next } = roadNeighbours(entry);
+---
+
+<div class="chrome">
+  <a class="chrome__up" href={`/periods/${periodSlug(period.id)}`}>
+    <span aria-hidden="true">↑</span>
+    <span class="chrome__up-text">Period {period.id} landing · {period.name.toLowerCase()}</span>
+  </a>
+
+  <nav class="chrome__road" aria-label="Along the road">
+    {
+      prev ? (
+        <a class="chrome__step" href={prev.href}>
+          ← Stop {prev.stop} · {prev.title}, P.{prev.periodId}
+        </a>
+      ) : (
+        <span class="chrome__step is-empty">← the road begins</span>
+      )
+    }
+    <span class="chrome__here">{entry.address}</span>
+    {
+      next ? (
+        <a class="chrome__step" href={next.href}>
+          Stop {next.stop} · {next.title}, P.{next.periodId} →
+        </a>
+      ) : (
+        <span class="chrome__step is-empty">the road ends →</span>
+      )
+    }
+  </nav>
+</div>
+
+<style>
+  .chrome {
+    border-bottom: 1px solid var(--rule);
+    padding: 14px var(--gutter);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+    font-family: var(--sans);
+    font-size: 12.5px;
+  }
+
+  .chrome__up {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: var(--muted);
+  }
+
+  .chrome__up-text {
+    border-bottom: 1px solid #c8c4bb;
+  }
+
+  .chrome__road {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    font-family: var(--mono);
+    font-size: 10.5px;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: var(--faint);
+  }
+
+  .chrome__step.is-empty {
+    color: var(--ahead);
+  }
+
+  .chrome__here {
+    color: var(--thread);
+    font-weight: 600;
+    white-space: nowrap;
+  }
+
+  @media (max-width: 900px) {
+    .chrome {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 10px;
+    }
+
+    .chrome__road {
+      flex-wrap: wrap;
+      gap: 6px 14px;
+    }
+
+    .chrome__here {
+      order: -1;
+      width: 100%;
+    }
+  }
+</style>

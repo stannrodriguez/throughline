@@ -1,0 +1,82 @@
+---
+/**
+ * The science section runs full width under a 2px ink rule, two columns of
+ * prose, then the figure. Plain modern voice — period voice never appears here.
+ */
+interface Props {
+  /** Mono key numbers sitting opposite the label, e.g. "1,600 : 1 · 22 kN · <1%". */
+  numbers?: string;
+}
+const { numbers } = Astro.props;
+---
+
+<section class="science">
+  <div class="science__head">
+    <h2 class="science__label">The science</h2>
+    {numbers && <p class="science__numbers">{numbers}</p>}
+  </div>
+  <div class="science__body"><slot /></div>
+</section>
+
+<style>
+  .science {
+    margin-top: 40px;
+    border-top: 2px solid var(--ink);
+    padding-top: 22px;
+  }
+
+  .science__head {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 20px;
+  }
+
+  .science__label {
+    font-family: var(--sans);
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+  }
+
+  .science__numbers {
+    font-family: var(--mono);
+    font-size: 11px;
+    color: var(--faint);
+    white-space: nowrap;
+  }
+
+  /* two columns of prose; the figure below breaks out to full width */
+  .science__body {
+    margin-top: 18px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0 52px;
+  }
+
+  .science__body :global(p) {
+    font-size: 19.5px;
+    line-height: 1.7;
+  }
+
+  .science__body :global(figure) {
+    grid-column: 1 / -1;
+    margin-top: 24px;
+  }
+
+  @media (max-width: 900px) {
+    .science__body {
+      grid-template-columns: 1fr;
+      gap: 16px;
+    }
+
+    .science__body :global(p) {
+      font-size: 18px;
+    }
+
+    .science__numbers {
+      white-space: normal;
+    }
+  }
+</style>

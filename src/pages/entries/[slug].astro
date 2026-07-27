@@ -1,0 +1,258 @@
+---
+import { getCollection, render } from 'astro:content';
+import Base from '../../layouts/Base.astro';
+import EntryChrome from '../../components/entry/EntryChrome.astro';
+import TagRow from '../../components/entry/TagRow.astro';
+import CrossRefCard from '../../components/entry/CrossRefCard.astro';
+import Before from '../../components/entry/Before.astro';
+import Breakthrough from '../../components/entry/Breakthrough.astro';
+import Science from '../../components/entry/Science.astro';
+import Forward from '../../components/entry/Forward.astro';
+import Modern from '../../components/entry/Modern.astro';
+import Ref from '../../components/entry/Ref.astro';
+import FigurePlaceholder from '../../components/FigurePlaceholder.astro';
+import { ALL_ENTRIES, entryBySlug } from '../../data/entries';
+import { periodById, periodSlug } from '../../data/periods';
+
+export async function getStaticPaths() {
+  const prose = await getCollection('entries');
+  const byId = new Map(prose.map((p) => [p.id, p]));
+  return ALL_ENTRIES.map((entry) => ({
+    params: { slug: entry.slug },
+    props: { entry, prose: byId.get(entry.slug) ?? null },
+  }));
+}
+
+const { entry, prose } = Astro.props;
+const period = periodById(entry.periodId);
+
+/** Components MDX bodies may use. Structure is fixed by the house arc. */
+const mdxComponents = {
+  Before,
+  Breakthrough,
+  Science,
+  Forward,
+  Modern,
+  Ref,
+  Figure: FigurePlaceholder,
+};
+
+const rendered = prose ? await render(prose) : null;
+const Content = rendered?.Content;
+const crossRefs = prose?.data.crossRefs ?? [];
+const headline = prose?.data.headline ?? entry.title;
+---
+
+<Base title={entry.title} description={entry.dek} thread={entry.primary}>
+  <EntryChrome entry={entry} />
+
+  <article class="entry">
+    <div class="entry__canvas">
+      <TagRow entry={entry} dateline={prose?.data.dateline ?? `${entry.year} · period ${entry.periodId}`} />
+
+      <h1 class="entry__headline">{headline}</h1>
+
+      {
+        Content ? (
+          <div class:list={['entry__grid', { 'has-side': crossRefs.length > 0 }]}>
+            {crossRefs.length > 0 && (
+              <aside class="entry__side">
+                {crossRefs.map((ref) => (
+                  <CrossRefCard
+                    label={ref.label}
+                    thread={ref.thread}
+                    to={ref.to}
+                    addressNote={ref.addressNote}
+                    body={ref.body}
+                    tinted={ref.tinted}
+                  />
+                ))}
+              </aside>
+            )}
+            <div class="entry__prose">
+              <Content components={mdxComponents} />
+            </div>
+          </div>
+        ) : (
+          <div class="entry__stub">
+            <p class="entry__dek">{entry.dek}</p>
+            <div class="figure-ph entry__stub-frame">
+              <p class="figure-ph__caption">
+                ENTRY NOT YET WRITTEN
+                <br />
+                <span class="figure-ph__spec">
+                  the world before · the breakthrough · the science · what this makes possible,
+                  written from {entry.year}
+                </span>
+              </p>
+            </div>
+            <p class="entry__stub-note">
+              Its address is already fixed: {entry.address}. Period {period.id} is the only era with
+              finished entries.
+            </p>
+          </div>
+        )
+      }
+
+      <footer class="entry__foot">
+        <a href={`/roads/${entry.primary}`} class="entry__foot-link">
+          The whole {entry.primary} road, all periods
+        </a>
+        <a href={`/periods/${periodSlug(period.id)}`} class="entry__foot-link">
+          ↑ Period {period.id} landing · {period.name.toLowerCase()}
+        </a>
+      </footer>
+    </div>
+  </article>
+</Base>
+
+<style>
+  .entry {
+    padding: 44px var(--gutter) 0;
+    display: flex;
+    justify-content: center;
+  }
+
+  .entry__canvas {
+    width: 100%;
+    max-width: 920px;
+  }
+
+  .entry__headline {
+    margin: 22px 0 0;
+    font-size: 46px;
+    line-height: 1.06;
+    letter-spacing: -0.025em;
+    max-width: 860px;
+  }
+
+  /*
+    The arc is a contract — world before, breakthrough, science, forward
+    reference — so the grid places it explicitly: prose in the 560px column,
+    cross-references beside the first two sections, science and the forward
+    block full width beneath.
+  */
+  .entry__grid {
+    margin-top: 30px;
+    display: grid;
+    grid-template-columns: 560px 1fr;
+    column-gap: 52px;
+  }
+
+  .entry__grid:not(.has-side) {
+    grid-template-columns: minmax(0, 720px);
+  }
+
+  .entry__prose {
+    display: contents;
+  }
+
+  .entry__side {
+    grid-column: 2;
+    grid-row: 1 / span 2;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+  }
+
+  .entry__prose :global(.s-before) {
+    grid-column: 1;
+    grid-row: 1;
+  }
+
+  .entry__prose :global(.s-breakthrough) {
+    grid-column: 1;
+    grid-row: 2;
+  }
+
+  .entry__prose :global(.science),
+  .entry__prose :global(.forward) {
+    grid-column: 1 / -1;
+  }
+
+  .entry__stub {
+    margin-top: 30px;
+    max-width: var(--measure);
+  }
+
+  .entry__dek {
+    font-size: 20px;
+    line-height: 1.7;
+    color: var(--text-2);
+  }
+
+  .entry__stub-frame {
+    margin-top: 22px;
+    min-height: 170px;
+  }
+
+  .entry__stub-note {
+    margin-top: 16px;
+    font-family: var(--mono);
+    font-size: 10.5px;
+    line-height: 1.7;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--ahead);
+  }
+
+  .entry__foot {
+    margin-top: 8px;
+    border-top: 1px solid var(--rule);
+    padding: 18px 0 56px;
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    font-family: var(--sans);
+    font-size: 13.5px;
+    color: var(--muted);
+  }
+
+  .entry__foot-link:first-child {
+    color: var(--thread);
+    font-weight: 600;
+  }
+
+  @media (max-width: 900px) {
+    .entry {
+      padding-top: 26px;
+    }
+
+    .entry__headline {
+      font-size: 30px;
+    }
+
+    .entry__grid,
+    .entry__grid:not(.has-side) {
+      grid-template-columns: 1fr;
+    }
+
+    /* the cross-references drop below the breakthrough, before the science */
+    .entry__side {
+      grid-column: 1;
+      grid-row: 3;
+      margin-top: 26px;
+    }
+
+    .entry__prose :global(.s-before) {
+      grid-row: 1;
+    }
+
+    .entry__prose :global(.s-breakthrough) {
+      grid-row: 2;
+    }
+
+    .entry__prose :global(.science) {
+      grid-row: 4;
+    }
+
+    .entry__prose :global(.forward) {
+      grid-row: 5;
+    }
+
+    .entry__foot {
+      flex-direction: column;
+      gap: 10px;
+    }
+  }
+</style>

@@ -1,0 +1,34 @@
+---
+/**
+ * The consistent arc every entry follows: the world before, the breakthrough,
+ * the science. Used from MDX as <Before>, <Breakthrough> and <Science>.
+ */
+interface Props {
+  label: string;
+  variant: 'before' | 'breakthrough';
+}
+const { label, variant } = Astro.props;
+---
+
+<section class:list={['sec', `s-${variant}`]}>
+  <h2 class="label sec__label">{label}</h2>
+  <div class="sec__prose"><slot /></div>
+</section>
+
+<style>
+  .sec__prose :global(p) {
+    margin-top: 12px;
+    font-size: 19.5px;
+    line-height: 1.7;
+  }
+
+  .s-breakthrough {
+    margin-top: 28px;
+  }
+
+  @media (max-width: 900px) {
+    .sec__prose :global(p) {
+      font-size: 18px;
+    }
+  }
+</style>
