@@ -11,7 +11,8 @@ import Forward from '../../components/entry/Forward.astro';
 import Modern from '../../components/entry/Modern.astro';
 import Ref from '../../components/entry/Ref.astro';
 import FigurePlaceholder from '../../components/FigurePlaceholder.astro';
-import { ALL_ENTRIES, entryBySlug } from '../../data/entries';
+import MarkRead from '../../components/MarkRead.astro';
+import { ALL_ENTRIES } from '../../data/entries';
 import { periodById, periodSlug } from '../../data/periods';
 
 export async function getStaticPaths() {
@@ -104,6 +105,8 @@ const headline = prose?.data.headline ?? entry.title;
       </footer>
     </div>
   </article>
+
+  <MarkRead road={entry.primary} slug={entry.slug} />
 </Base>
 
 <style>

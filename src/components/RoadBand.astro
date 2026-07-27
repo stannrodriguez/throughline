@@ -1,6 +1,5 @@
 ---
 import type { RoadBand } from '../data/roads';
-import type { ThreadId } from '../data/threads';
 import type { Entry } from '../data/entries';
 import { periodById, periodSlug } from '../data/periods';
 import MetricCell from './MetricCell.astro';
@@ -8,7 +7,6 @@ import SecondaryChip from './SecondaryChip.astro';
 
 interface Props {
   band: RoadBand;
-  thread: ThreadId;
   stops: Entry[];
   state: 'read' | 'reading' | 'ahead';
   metricLabel: string;
@@ -23,7 +21,6 @@ interface Props {
 
 const {
   band,
-  thread,
   stops,
   state,
   metricLabel,
@@ -38,6 +35,7 @@ const last = periodById(band.periods[band.periods.length - 1]);
 const label = band.periods.length > 1 ? `${first.id}–${last.id}` : first.id;
 const years = band.years ?? first.yearRange;
 const compact = band.display === 'condensed' || Boolean(band.passThrough);
+const indices = band.periods.map((id) => periodById(id).index);
 ---
 
 <div
@@ -46,6 +44,8 @@ const compact = band.display === 'condensed' || Boolean(band.passThrough);
     `is-${state}`,
     { 'is-compact': compact, 'is-pass': Boolean(band.passThrough) },
   ]}
+  data-band-min={Math.min(...indices)}
+  data-band-max={Math.max(...indices)}
 >
   <div class="band__era">
     <span class="band__roman">{label}</span>
@@ -104,7 +104,8 @@ const compact = band.display === 'condensed' || Boolean(band.passThrough);
                   class:list={['stop', { 'is-current': isCurrent }]}
                   href={written.has(stop.slug) ? stop.href : undefined}
                   data-stop={stop.slug}
-                  data-road={thread}
+                  data-stop-order={stop.stop}
+                  data-stop-period={stop.periodIndex}
                 >
                   <span class="stop__dot" />
                   <span class="stop__title">{stop.title}</span>
@@ -291,9 +292,25 @@ const compact = band.display === 'condensed' || Boolean(band.passThrough);
   }
 
   /* ahead of the reader: outlined, not solid */
-  .band.is-ahead .stop__dot {
+  .band.is-ahead .stop__dot,
+  .stop.is-ahead .stop__dot {
     background: var(--page);
     border: 2px solid var(--ahead);
+  }
+
+  /* stop-level state, set by the progress script, wins over the band default */
+  .stop.is-read .stop__dot {
+    background: var(--thread);
+    border: 0;
+  }
+
+  .stop.is-ahead .stop__title {
+    color: var(--muted);
+  }
+
+  .stop.is-ahead .stop__year,
+  .stop.is-ahead .stop__dek {
+    color: var(--ahead);
   }
 
   .stop.is-current .stop__dot {

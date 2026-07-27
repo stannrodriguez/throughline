@@ -15,7 +15,7 @@ const { metric, label, compact = false, state } = Astro.props;
 const tone = metric.hold ? 'hold' : state;
 ---
 
-<div class:list={['metric', `is-${state}`, { 'is-compact': compact }]}>
+<div class:list={['metric', `is-${state}`, { 'is-compact': compact }]} data-metric data-tone={tone}>
   {label && !compact && <p class="metric__label">{label}</p>}
   <div class="metric__row">
     <span class="metric__value">
@@ -23,7 +23,10 @@ const tone = metric.hold ? 'hold' : state;
       {metric.valueUnit && <span class="metric__unit">{metric.valueUnit}</span>}
     </span>
     <span class="metric__track">
-      <span class:list={['metric__bar', `tone-${tone}`]} style={`width:${metric.barPct}%`}></span>
+      <span
+        class:list={['metric__bar', { 'tone-hold': metric.hold }]}
+        style={`width:${metric.barPct}%`}
+      ></span>
     </span>
   </div>
   {metric.caption && !compact && <p class="metric__caption">{metric.caption}</p>}
@@ -106,22 +109,24 @@ const tone = metric.hold ? 'hold' : state;
     background: var(--energy-track);
   }
 
+  /* Tone follows the cell's state class, so the progress script only has to
+     move .is-read / .is-reading / .is-ahead and the bar follows. */
   .metric__bar {
     display: block;
     height: 8px;
     background: var(--thread);
   }
 
-  .metric__bar.tone-ahead {
+  .is-ahead .metric__bar {
     background: var(--thread-muted);
+  }
+
+  .is-reading .metric__bar {
+    background: var(--energy);
   }
 
   .metric__bar.tone-hold {
     background: var(--materials-hold);
-  }
-
-  .metric__bar.tone-reading {
-    background: var(--energy);
   }
 
   .metric__caption {

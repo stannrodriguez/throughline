@@ -1,0 +1,27 @@
+---
+import type { ThreadId } from '../data/threads';
+
+/**
+ * Records that this entry has been read. The only client state on the site.
+ * If storage is unavailable the site simply forgets — every stop renders solid,
+ * which is the design's graceful default.
+ */
+interface Props {
+  road: ThreadId;
+  slug: string;
+}
+const { road, slug } = Astro.props;
+---
+
+<script is:inline define:vars={{ road, slug }}>
+  try {
+    const KEY = 'throughline:progress:v1';
+    const state = JSON.parse(localStorage.getItem(KEY) || '{}');
+    const visited = new Set(state[road] || []);
+    visited.add(slug);
+    state[road] = [...visited];
+    localStorage.setItem(KEY, JSON.stringify(state));
+  } catch {
+    /* private mode, storage disabled — reading still works, it just isn't remembered */
+  }
+</script>

@@ -6,7 +6,7 @@ import RosterGroup from '../../components/RosterGroup.astro';
 import ExitCards from '../../components/ExitCards.astro';
 import { PERIODS, periodSlug, periodNeighbours } from '../../data/periods';
 import { THREADS, THREAD_ORDER } from '../../data/threads';
-import { rosterFor, stopsIn, nextStopFrom } from '../../data/entries';
+import { rosterFor, nextStopFrom } from '../../data/entries';
 import { writtenSlugs, durationFor } from '../../lib/reading';
 
 export function getStaticPaths() {
