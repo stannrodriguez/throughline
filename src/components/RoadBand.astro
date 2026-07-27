@@ -1,0 +1,478 @@
+---
+import type { RoadBand } from '../data/roads';
+import type { ThreadId } from '../data/threads';
+import type { Entry } from '../data/entries';
+import { periodById, periodSlug } from '../data/periods';
+import MetricCell from './MetricCell.astro';
+import SecondaryChip from './SecondaryChip.astro';
+
+interface Props {
+  band: RoadBand;
+  thread: ThreadId;
+  stops: Entry[];
+  state: 'read' | 'reading' | 'ahead';
+  metricLabel: string;
+  /** The energy road carries the constraint in its left column; the others don't. */
+  showConstraint?: boolean;
+  written: Set<string>;
+  /** Rendered under the current-position stop, e.g. "CROSS-THREAD: …". */
+  crossThread?: string;
+  /** Slug of the stop the reader is on, if this band holds it. */
+  currentSlug?: string;
+}
+
+const {
+  band,
+  thread,
+  stops,
+  state,
+  metricLabel,
+  showConstraint = false,
+  written,
+  crossThread,
+  currentSlug,
+} = Astro.props;
+
+const first = periodById(band.periods[0]);
+const last = periodById(band.periods[band.periods.length - 1]);
+const label = band.periods.length > 1 ? `${first.id}–${last.id}` : first.id;
+const years = band.years ?? first.yearRange;
+const compact = band.display === 'condensed' || Boolean(band.passThrough);
+---
+
+<div
+  class:list={[
+    'band',
+    `is-${state}`,
+    { 'is-compact': compact, 'is-pass': Boolean(band.passThrough) },
+  ]}
+>
+  <div class="band__era">
+    <span class="band__roman">{label}</span>
+    {state === 'reading' && !band.passThrough && <span class="band__chip">Reading</span>}
+    <span class="band__years">
+      {years}{showConstraint && compact ? ` · ${first.constraintShort.toLowerCase()}` : ''}
+    </span>
+    {
+      showConstraint && !compact && (
+        <span class="band__constraint">{first.constraintShort}</span>
+      )
+    }
+  </div>
+
+  <div class="band__road">
+    <span class="band__line"></span>
+
+    {
+      band.passThrough ? (
+        <p class="band__pass">
+          {band.passThrough}{' '}
+          <a href={`/periods/${periodSlug(first.id)}`} class="band__pass-link">
+            See the Period {first.id} landing for what this era was instead.
+          </a>
+        </p>
+      ) : band.display === 'condensed' ? (
+        <p class="band__names">
+          {stops.map((stop, i) => (
+            <>
+              {i > 0 && <span class="band__sep"> · </span>}
+              {written.has(stop.slug) ? (
+                <a href={stop.href} class="band__name">
+                  {stop.title}
+                </a>
+              ) : (
+                <span class="band__name">{stop.title}</span>
+              )}
+              {stop.secondary?.map((s) => (
+                <>
+                  {' '}
+                  <SecondaryChip thread={s.thread} bare />
+                </>
+              ))}
+            </>
+          ))}
+          {band.note && <span class="band__note"> — {band.note}</span>}
+        </p>
+      ) : (
+        <ol class="band__stops">
+          {stops.map((stop) => {
+            const isCurrent = state === 'reading' && stop.slug === currentSlug;
+            const Tag = written.has(stop.slug) ? 'a' : 'div';
+            return (
+              <li>
+                <Tag
+                  class:list={['stop', { 'is-current': isCurrent }]}
+                  href={written.has(stop.slug) ? stop.href : undefined}
+                  data-stop={stop.slug}
+                  data-road={thread}
+                >
+                  <span class="stop__dot" />
+                  <span class="stop__title">{stop.title}</span>
+                  <span class="stop__year">{stop.year}</span>
+                  <span class="stop__dek">{stop.dek}</span>
+                </Tag>
+              </li>
+            );
+          })}
+          {crossThread && <li class="band__cross">{crossThread}</li>}
+        </ol>
+      )
+    }
+  </div>
+
+  <MetricCell metric={band.metric} label={metricLabel} compact={compact} state={state} />
+</div>
+
+<style>
+  .band {
+    display: grid;
+    grid-template-columns: 170px 1fr 250px;
+    border-bottom: 1px solid var(--rule);
+  }
+
+  .band.is-reading {
+    background: var(--energy-tint);
+  }
+
+  .band.is-pass {
+    background: var(--passthrough);
+  }
+
+  /* ---------------------------------------------------------------- era */
+
+  .band__era {
+    padding: 22px 0;
+    border-right: 1px solid var(--rule);
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 4px;
+    padding-right: 20px;
+  }
+
+  .band.is-compact .band__era {
+    flex-direction: row;
+    align-items: center;
+    gap: 12px;
+    padding-top: 14px;
+    padding-bottom: 14px;
+  }
+
+  .band.is-reading .band__era {
+    border-right-color: var(--energy-border);
+  }
+
+  .band__roman {
+    font-family: var(--sans);
+    font-size: 22px;
+    font-weight: 700;
+  }
+
+  .band.is-compact .band__roman {
+    font-size: 17px;
+    color: var(--muted);
+  }
+
+  .band.is-ahead .band__roman {
+    color: var(--muted);
+  }
+
+  .band.is-reading .band__roman {
+    color: var(--energy);
+  }
+
+  .band.is-pass .band__roman {
+    color: var(--faint);
+  }
+
+  .band__chip {
+    font-family: var(--mono);
+    font-size: 9.5px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--energy);
+    border: 1px solid var(--energy-muted);
+    padding: 3px 7px;
+  }
+
+  .band.is-compact .band__chip {
+    font-size: 8px;
+    padding: 2px 5px;
+  }
+
+  .band__years {
+    font-family: var(--mono);
+    font-size: 10.5px;
+    text-transform: uppercase;
+    color: var(--faint);
+  }
+
+  .band.is-compact .band__years,
+  .band.is-pass .band__years {
+    color: var(--ahead);
+  }
+
+  .band.is-reading .band__years {
+    color: var(--energy-mid);
+  }
+
+  .band__constraint {
+    font-family: var(--sans);
+    font-size: 13px;
+    color: var(--text-2);
+    margin-top: 4px;
+    line-height: 1.45;
+  }
+
+  .band.is-reading .band__constraint {
+    color: var(--energy-deep);
+  }
+
+  /* --------------------------------------------------------------- road */
+
+  .band__road {
+    position: relative;
+    padding: 22px 0 22px 44px;
+  }
+
+  .band.is-compact .band__road {
+    padding-top: 14px;
+    padding-bottom: 14px;
+    display: flex;
+    align-items: center;
+  }
+
+  /* the road itself: coloured where it has been read, grey ahead */
+  .band__line {
+    position: absolute;
+    left: 20px;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background: var(--thread);
+  }
+
+  .band.is-ahead .band__line {
+    background: var(--rule);
+  }
+
+  .band__stops {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  .stop {
+    position: relative;
+    display: flex;
+    align-items: baseline;
+    gap: 14px;
+  }
+
+  a.stop:hover {
+    color: inherit;
+  }
+
+  a.stop:hover .stop__title {
+    color: var(--thread);
+  }
+
+  .stop__dot {
+    position: absolute;
+    left: -30px;
+    top: 4px;
+    width: 13px;
+    height: 13px;
+    border-radius: 50%;
+    background: var(--thread);
+  }
+
+  /* ahead of the reader: outlined, not solid */
+  .band.is-ahead .stop__dot {
+    background: var(--page);
+    border: 2px solid var(--ahead);
+  }
+
+  .stop.is-current .stop__dot {
+    left: -32px;
+    top: 2px;
+    width: 17px;
+    height: 17px;
+    background: var(--page);
+    border: 3px solid var(--thread);
+  }
+
+  .stop__title {
+    font-family: var(--sans);
+    font-size: 17.5px;
+    font-weight: 600;
+  }
+
+  .stop.is-current .stop__title {
+    font-size: 19px;
+    font-weight: 700;
+    color: var(--thread);
+  }
+
+  .band.is-ahead .stop__title {
+    color: var(--muted);
+  }
+
+  .stop__year {
+    font-family: var(--mono);
+    font-size: 10.5px;
+    color: var(--faint);
+    white-space: nowrap;
+  }
+
+  .stop__dek {
+    font-size: 14px;
+    color: var(--text-2);
+  }
+
+  .band.is-ahead .stop__year,
+  .band.is-ahead .stop__dek {
+    color: var(--ahead);
+  }
+
+  .band.is-reading .stop__year {
+    color: var(--energy-mid);
+  }
+
+  .band.is-reading .stop__dek {
+    color: var(--energy-deep);
+  }
+
+  .band__cross {
+    margin-top: 2px;
+    font-family: var(--mono);
+    font-size: 10.5px;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--energy-faint);
+  }
+
+  .band__names {
+    font-family: var(--sans);
+    font-size: 14.5px;
+    color: var(--muted);
+    line-height: 1.5;
+  }
+
+  .band.is-read .band__names {
+    color: var(--ink-soft);
+  }
+
+  .band.is-reading .band__names {
+    color: var(--ink-soft);
+  }
+
+  .band__name {
+    font-weight: 600;
+  }
+
+  .band.is-reading .band__name {
+    color: var(--thread);
+    font-weight: 700;
+  }
+
+  a.band__name:hover {
+    color: var(--thread);
+  }
+
+  .band__note {
+    font-weight: 400;
+  }
+
+  .band__pass {
+    font-family: var(--sans);
+    font-size: 13.5px;
+    color: var(--faint);
+    font-style: italic;
+  }
+
+  .band__pass-link {
+    color: #7a8f7c;
+  }
+
+  .band__pass-link:hover {
+    color: var(--thread);
+  }
+
+  /* -------------------------------------------------------------- mobile */
+
+  @media (max-width: 900px) {
+    .band {
+      grid-template-columns: 1fr;
+      padding: 0 0 16px;
+    }
+
+    /* roman + years + metric collapse into one sticky band header */
+    .band__era {
+      position: sticky;
+      top: 0;
+      z-index: 2;
+      flex-direction: row;
+      align-items: center;
+      gap: 10px;
+      padding: 10px 0;
+      border-right: 0;
+      border-bottom: 1px solid var(--rule);
+      background: var(--page);
+    }
+
+    .band.is-reading .band__era {
+      background: var(--energy-tint);
+    }
+
+    .band.is-pass .band__era {
+      background: var(--passthrough);
+    }
+
+    .band__roman {
+      font-size: 17px;
+    }
+
+    .band__constraint {
+      margin-top: 0;
+      font-size: 12px;
+    }
+
+    .band__road {
+      padding: 14px 0 0 34px;
+      order: 3;
+    }
+
+    .band__line {
+      left: 12px;
+    }
+
+    .stop__dot {
+      left: -28px;
+    }
+
+    .stop.is-current .stop__dot {
+      left: -30px;
+    }
+
+    .stop {
+      flex-wrap: wrap;
+      gap: 4px 10px;
+      min-height: 44px;
+      align-content: center;
+    }
+
+    .stop__dek {
+      width: 100%;
+    }
+
+    /* the metric rides in the band header */
+    .band :global(.metric) {
+      order: 2;
+      padding: 8px 0 0;
+    }
+  }
+</style>

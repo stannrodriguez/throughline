@@ -1,0 +1,239 @@
+---
+import { getCollection } from 'astro:content';
+import Base from '../../layouts/Base.astro';
+import RoadHeader from '../../components/RoadHeader.astro';
+import RoadBand from '../../components/RoadBand.astro';
+import SeamRow from '../../components/SeamRow.astro';
+import MetricTrial from '../../components/MetricTrial.astro';
+import { ROAD_VIEWS } from '../../data/roads';
+import { THREADS, THREAD_ORDER } from '../../data/threads';
+import { ROAD_ENTRIES, stopsIn, tryEntry } from '../../data/entries';
+import { periodById } from '../../data/periods';
+import { DEFAULT_READING_PERIOD } from '../../lib/site';
+import { writtenSlugs, durationFor } from '../../lib/reading';
+
+export function getStaticPaths() {
+  return THREAD_ORDER.map((thread) => ({ params: { thread }, props: { thread } }));
+}
+
+const { thread } = Astro.props;
+const view = ROAD_VIEWS[thread];
+const t = THREADS[thread];
+const written = await writtenSlugs();
+const duration = await durationFor(ROAD_ENTRIES[thread]);
+
+const readingIndex = periodById(DEFAULT_READING_PERIOD).index;
+
+/** The stop the reader is on: the first stop of the reading period, if any. */
+const currentStop = stopsIn(thread, DEFAULT_READING_PERIOD)[0] ?? null;
+
+/**
+ * The cross-thread line under the current stop is derived from that entry's
+ * authored cross-references, so it can never name a link that doesn't exist.
+ */
+const prose = await getCollection('entries');
+const currentProse = currentStop ? prose.find((p) => p.id === currentStop.slug) : undefined;
+const crossThread = currentProse?.data.crossRefs.length
+  ? 'Cross-thread: ' +
+    currentProse.data.crossRefs
+      .map((ref) => {
+        const target = tryEntry(ref.to);
+        const short = ref.thread === 'information' ? 'info' : ref.thread;
+        return target ? `${target.title} (${short})` : null;
+      })
+      .filter(Boolean)
+      .join(' · ')
+  : undefined;
+
+const rows = view.rows.map((row) => {
+  if (row.kind === 'seam') return { row } as const;
+  const indices = row.periods.map((id) => periodById(id).index);
+  const holdsReader = indices.includes(readingIndex);
+  const state: 'read' | 'reading' | 'ahead' = holdsReader
+    ? 'reading'
+    : Math.max(...indices) < readingIndex
+      ? 'read'
+      : 'ahead';
+  const stops = row.periods.flatMap((id) => stopsIn(thread, id));
+  return { row, state, stops } as const;
+});
+
+const continueStop = currentStop ?? ROAD_ENTRIES[thread][0];
+---
+
+<Base title={t.roadName} description={view.headline} thread={thread}>
+  <RoadHeader active={thread} />
+
+  <main class="road">
+    {thread === 'materials' && <div class="road__trial"><MetricTrial /></div>}
+
+    <section class="intro">
+      <div class="intro__main">
+        <p class="intro__kicker">{view.kicker}</p>
+        <h1 class="intro__title">{view.headline}</h1>
+        {view.lede && <p class="intro__lede">{view.lede}</p>}
+      </div>
+      {
+        view.aside && (
+          <p class="intro__aside">
+            {view.aside.map((line, i) => (
+              <>
+                {i > 0 && <br />}
+                {line}
+              </>
+            ))}
+          </p>
+        )
+      }
+    </section>
+
+    <div class="bands">
+      {
+        rows.map((r) =>
+          r.row.kind === 'seam' ? (
+            <SeamRow seam={r.row} />
+          ) : (
+            <RoadBand
+              band={r.row}
+              thread={thread}
+              stops={r.stops}
+              state={r.state}
+              metricLabel={view.metricLabel}
+              showConstraint={thread === 'energy'}
+              written={written}
+              currentSlug={currentStop?.slug}
+              crossThread={r.state === 'reading' ? crossThread : undefined}
+            />
+          )
+        )
+      }
+    </div>
+
+    <p class="road__column-note">{view.columnNote}</p>
+
+    <div class="road__foot">
+      <p class="road__legend">
+        Solid stops = read · outlined = ahead · thin bands = the road passes through without
+        stopping · whole road, in order: {duration}
+      </p>
+      <a class="road__continue" href={continueStop.href}>
+        Continue reading — {continueStop.title} <span aria-hidden="true">→</span>
+      </a>
+    </div>
+  </main>
+</Base>
+
+<style>
+  .road {
+    padding-bottom: 60px;
+  }
+
+  .road__trial {
+    padding: 24px var(--gutter) 0;
+  }
+
+  .intro {
+    padding: 36px var(--gutter) 28px;
+    border-bottom: 1px solid var(--rule);
+    display: grid;
+    grid-template-columns: 1fr 300px;
+    gap: 48px;
+    align-items: end;
+  }
+
+  .intro__kicker {
+    font-family: var(--sans);
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--thread);
+  }
+
+  .intro__title {
+    margin-top: 12px;
+    font-size: 40px;
+    line-height: 1.08;
+    max-width: 820px;
+  }
+
+  .intro__lede {
+    margin-top: 14px;
+    font-size: 18px;
+    line-height: 1.6;
+    color: var(--text-2);
+    max-width: 600px;
+  }
+
+  .intro__aside {
+    font-family: var(--mono);
+    font-size: 11px;
+    line-height: 1.8;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--faint);
+    text-align: right;
+    padding-bottom: 6px;
+  }
+
+  .bands {
+    padding: 0 var(--gutter);
+  }
+
+  .bands > :global(.band:last-child) {
+    border-bottom: 0;
+  }
+
+  .road__column-note {
+    border-top: 1px solid var(--rule);
+    padding: 14px var(--gutter) 16px;
+    font-family: var(--sans);
+    font-size: 13px;
+    color: #8a857a;
+  }
+
+  .road__foot {
+    border-top: 1px solid var(--rule);
+    padding: 16px var(--gutter) 18px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 24px;
+  }
+
+  .road__legend {
+    font-family: var(--sans);
+    font-size: 13px;
+    color: #8a857a;
+  }
+
+  .road__continue {
+    font-family: var(--sans);
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--thread);
+    white-space: nowrap;
+  }
+
+  @media (max-width: 900px) {
+    .intro {
+      grid-template-columns: 1fr;
+      gap: 16px;
+      padding-top: 24px;
+    }
+
+    .intro__title {
+      font-size: 28px;
+    }
+
+    .intro__aside {
+      text-align: left;
+    }
+
+    .road__foot {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 12px;
+    }
+  }
+</style>
