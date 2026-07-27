@@ -203,14 +203,16 @@ export const PERIODS: Period[] = [
     constraint: 'muscle, again',
     constraintShort: 'Muscle, again',
     title: 'Coal burned under a boiler becomes rotary motion, and a mill no longer has to stand on a river.',
-    essay: [],
+    essay: [
+      'Energy per person rises from seventeen gigajoules a year to twenty-six, the largest single jump in the record to this point, and effectively all of it is coal. Two entries account for it. James Watt patents the separate condenser in 1769: by condensing the steam in a second vessel he keeps the working cylinder hot instead of chilling and reheating it every stroke, which cuts the coal burned for a given amount of work by about three-quarters. Richard Trevithick then does the thing Watt spent thirty years insisting was too dangerous, and runs steam at fifty pounds to the square inch rather than five. High-pressure steam does the same work in a far smaller cylinder and needs no condenser at all, which is what makes an engine light enough to carry its own weight along a rail.',
+      'Three more entries are about metal, and they belong together. Coke-smelted iron takes the furnace off the forest and puts it on the coalfield. Crucible steel, melted in a sealed clay pot at 1,600°, comes out with the same carbon content throughout the ingot instead of the graded skin the old cementation process gave. And John Wilkinson’s boring machine cuts a cylinder fifty inches across round to within the thickness of an old shilling — the tolerance without which Watt’s engine leaks past its piston and does not work. The information entry stands apart from all of it. Claude Chappe’s semaphore, a chain of towers with pivoted arms read through a telescope, carries a signal the 230 kilometres from Paris to Lille in minutes, and stops working in fog.',
+    ],
     capabilityStrip: strip(
       ['15 km/h', '— unchanged since II'],
       ['200 km', '— relay, as in Rome'],
       ['Argand lamp', '— ten candles', true],
       ['26 GJ/yr', '— coal, at last', true]
     ),
-    placeholder: true,
   },
   {
     id: 'VIII',
