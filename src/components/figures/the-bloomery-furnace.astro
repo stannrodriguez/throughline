@@ -1,0 +1,93 @@
+---
+/**
+ * The two zones. At the tuyère the blast burns carbon to CO₂ and the atmosphere
+ * is oxidising; a little above, the excess carbon reduces that back to CO and
+ * the atmosphere strips oxygen from the ore. The separation of iron from rock is
+ * then done by a gap between two melting points — fayalite slag runs at about
+ * 1,150° while iron, needing 1,538°, never melts at all.
+ */
+---
+
+<svg viewBox="0 0 960 400" role="img" aria-label="A bloomery furnace in section showing the oxidising zone at the tuyere and the reducing zone above it, with the reduction chemistry and the melting points that separate iron from slag">
+  <defs>
+    <marker id="bf-ar" viewBox="0 0 8 8" refX="7" refY="4" markerWidth="6" markerHeight="6" orient="auto">
+      <path d="M0 0 L8 4 L0 8 z" class="dg-ink" />
+    </marker>
+    <marker id="bf-ar-a" viewBox="0 0 8 8" refX="7" refY="4" markerWidth="6" markerHeight="6" orient="auto">
+      <path d="M0 0 L8 4 L0 8 z" class="dg-accent" />
+    </marker>
+  </defs>
+
+  <text class="dg-lbl" x="30" y="24">BLOOMERY IN SECTION · THE TWO ZONES</text>
+
+  <!-- ── shaft walls ──────────────────────────────────────────────────── -->
+  <path class="dg-panel" d="M150 336 V96 C150 76, 166 62, 188 58 H196 V336 Z" />
+  <path class="dg-panel" d="M356 336 V96 C356 76, 340 62, 318 58 H310 V336 Z" />
+  <path class="dg-s" d="M150 336 V96 C150 76, 166 62, 188 58 H318 C340 62, 356 76, 356 96 V336" />
+  <path class="dg-s" d="M196 336 V58 M310 336 V58" />
+  <path class="dg-s" d="M150 336 H356" />
+
+  <!-- charge, alternating ore and charcoal -->
+  <g class="dg-h">
+    <path d="M196 86 H310 M196 108 H310 M196 130 H310 M196 152 H310 M196 174 H310 M196 196 H310" />
+  </g>
+  <text class="dg-lbl dg-soft" x="366" y="76">CHARGE — CHARCOAL</text>
+  <text class="dg-lbl dg-soft" x="366" y="90">AND ORE IN LAYERS</text>
+
+  <!-- ── the reducing zone ────────────────────────────────────────────── -->
+  <path class="dg-d" d="M196 214 H310" />
+  <text class="dg-lbl dg-num" x="366" y="150">REDUCING ZONE</text>
+  <text class="dg-lbl dg-soft" x="366" y="164">CO STRIPS OXYGEN FROM THE ORE</text>
+  <text class="dg-lbl dg-soft" x="366" y="178">WELL UNDER 1,000°</text>
+  <path class="dg-m" d="M362 158 L314 158" />
+
+  <!-- ── the oxidising zone, at the tuyère ────────────────────────────── -->
+  <path class="dg-tint" d="M196 214 H310 V282 H196 Z" />
+  <path class="dg-d" d="M196 282 H310" />
+  <text class="dg-lbl dg-key" x="366" y="242">OXIDISING ZONE</text>
+  <text class="dg-lbl dg-soft" x="366" y="256">THE BLAST BURNS CARBON TO CO₂</text>
+  <text class="dg-lbl dg-soft" x="366" y="270">1,250° AT THE TUYÈRE</text>
+  <path class="dg-m" d="M362 250 L314 250" />
+
+  <!-- tuyère and bellows -->
+  <path class="dg-s" d="M92 240 H196 M92 262 H196" />
+  <path class="dg-a" d="M104 251 H186" marker-end="url(#bf-ar-a)" />
+  <path class="dg-s" d="M40 226 L92 240 V262 L40 276 Z" />
+  <text class="dg-lbl dg-num" x="40" y="216">BELLOWS</text>
+  <text class="dg-lbl dg-soft" x="40" y="296">TUYÈRE · ONLY AIR IN</text>
+
+  <!-- the bloom, solid, gathering at the base -->
+  <path class="dg-ink" d="M212 316 C220 296, 240 290, 254 292 C272 294, 288 302, 294 316 Z" />
+  <text class="dg-lbl dg-num" x="253" y="356" text-anchor="middle">BLOOM · SOLID, SPONGY, NEVER MOLTEN</text>
+
+  <!-- slag, liquid, draining -->
+  <path class="dg-a" d="M196 322 H356" />
+  <path class="dg-a" d="M356 322 L392 338" marker-end="url(#bf-ar-a)" />
+  <text class="dg-lbl dg-key" x="398" y="342">SLAG, TAPPED OFF LIQUID</text>
+
+  <!-- ══ the reduction, and the two melting points ══════════════════════ -->
+  <path class="dg-m" d="M596 14 V386" />
+  <text class="dg-lbl" x="626" y="24">WHAT THE CARBON DOES</text>
+
+  <text class="dg-lbl dg-num" x="626" y="60">AT THE TUYÈRE</text>
+  <text class="dg-eq dg-num" x="626" y="86">C + O₂ → CO₂</text>
+  <path class="dg-m" d="M626 100 H900" />
+
+  <text class="dg-lbl dg-num" x="626" y="128">JUST ABOVE IT</text>
+  <text class="dg-eq dg-num" x="626" y="154">CO₂ + C → 2 CO</text>
+  <path class="dg-m" d="M626 168 H900" />
+
+  <text class="dg-lbl dg-key" x="626" y="196">AND IN THE CHARGE</text>
+  <text class="dg-eq dg-key" x="626" y="222">Fe₂O₃ + 3 CO → 2 Fe + 3 CO₂</text>
+  <text class="dg-lbl dg-soft" x="626" y="244">CHARCOAL IS BOTH THE FUEL AND THE REAGENT.</text>
+  <text class="dg-lbl dg-soft" x="626" y="258">COAL CANNOT SUBSTITUTE — ITS SULPHUR RUINS IRON.</text>
+
+  <!-- the gap between two melting points -->
+  <text class="dg-lbl" x="626" y="298">SEPARATION IS A GAP BETWEEN TWO MELTING POINTS</text>
+
+  <path class="dg-s" d="M626 316 V376" />
+  <path class="dg-m" d="M626 320 H900 M626 344 H900 M626 372 H900" />
+  <text class="dg-lbl dg-num" x="634" y="334">1,150°  FAYALITE SLAG MELTS, AND RUNS OUT</text>
+  <text class="dg-lbl dg-key" x="634" y="358">1,250°  THE FURNACE SITS HERE</text>
+  <text class="dg-lbl dg-soft" x="634" y="386">1,538°  IRON WOULD MELT — NEVER REACHED</text>
+</svg>
