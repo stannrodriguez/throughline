@@ -1,0 +1,115 @@
+---
+/**
+ * Two ways of taking energy out of a stream. The undershot wheel sits in the
+ * current and is pushed by its momentum — cheap to install, about a fifth of the
+ * available energy. The overshot wheel is filled at the top and turned by the
+ * weight of water falling through the head, which needs a leat and a fall but
+ * recovers more than half.
+ */
+---
+
+<svg viewBox="0 0 960 400" role="img" aria-label="Undershot and overshot waterwheels in section with their water paths and force vectors, and their efficiencies compared">
+  <defs>
+    <marker id="ww-ar" viewBox="0 0 8 8" refX="7" refY="4" markerWidth="6" markerHeight="6" orient="auto">
+      <path d="M0 0 L8 4 L0 8 z" class="dg-ink" />
+    </marker>
+    <marker id="ww-ar-a" viewBox="0 0 8 8" refX="7" refY="4" markerWidth="6" markerHeight="6" orient="auto">
+      <path d="M0 0 L8 4 L0 8 z" class="dg-accent" />
+    </marker>
+  </defs>
+
+  <!-- ══ undershot ══════════════════════════════════════════════════════ -->
+  <text class="dg-lbl dg-num" x="30" y="24">UNDERSHOT · PUSHED BY MOMENTUM</text>
+
+  <!-- the stream -->
+  <path class="dg-panel" d="M30 244 H420 V290 H30 Z" />
+  <path class="dg-h" d="M30 244 H420" />
+  <g class="dg-m">
+    <path d="M40 266 H92" marker-end="url(#ww-ar)" />
+    <path d="M40 282 H92" marker-end="url(#ww-ar)" />
+  </g>
+  <text class="dg-lbl dg-soft" x="30" y="308">THE STREAM AS IT LIES · NO WORKS NEEDED</text>
+
+  <!-- wheel -->
+  <circle cx="222" cy="180" r="94" class="dg-s" />
+  <circle cx="222" cy="180" r="72" class="dg-h" />
+  <circle cx="222" cy="180" r="7" class="dg-ink" />
+  <g class="dg-m">
+    <path d="M222 108 V252 M150 180 H294 M171 129 L273 231 M273 129 L171 231" />
+  </g>
+  <!-- paddles, flat boards -->
+  <g class="dg-s">
+    <path d="M212 90 h20 v18 h-20 Z M286 110 l14 14 l-13 13 l-14 -14 Z
+             M296 170 h20 v18 h-20 Z M280 230 l14 -14 l13 13 l-14 14 Z
+             M212 252 h20 v18 h-20 Z M144 230 l14 14 l-13 13 l-14 -14 Z
+             M128 170 h20 v18 h-20 Z M158 110 l14 -14 l13 13 l-14 14 Z" />
+  </g>
+  <!-- the working paddle in the current -->
+  <path class="dg-accent" d="M212 252 h20 v22 h-20 Z" />
+  <path class="dg-a" d="M170 266 H206" marker-end="url(#ww-ar-a)" />
+  <text class="dg-lbl dg-key" x="252" y="284">PUSH ON ONE PADDLE</text>
+
+  <text class="dg-lbl dg-soft" x="330" y="176">ONLY THE PADDLE IN</text>
+  <text class="dg-lbl dg-soft" x="330" y="190">THE FLOW IS WORKING</text>
+
+  <!-- ══ overshot ═══════════════════════════════════════════════════════ -->
+  <path class="dg-m" d="M448 14 V386" />
+  <text class="dg-lbl dg-num" x="478" y="24">OVERSHOT · TURNED BY WEIGHT</text>
+
+  <!-- leat delivering water over the top -->
+  <path class="dg-s" d="M478 78 H640 L640 96 H478" />
+  <path class="dg-panel" d="M478 80 H638 V94 H478 Z" />
+  <path class="dg-a" d="M498 88 H600" marker-end="url(#ww-ar-a)" />
+  <text class="dg-lbl dg-key" x="478" y="68">LEAT, FROM A DAM UPSTREAM</text>
+
+  <!-- wheel -->
+  <circle cx="700" cy="188" r="94" class="dg-s" />
+  <circle cx="700" cy="188" r="72" class="dg-h" />
+  <circle cx="700" cy="188" r="7" class="dg-ink" />
+  <g class="dg-m">
+    <path d="M700 116 V260 M628 188 H772 M649 137 L751 239 M751 137 L649 239" />
+  </g>
+  <!-- buckets round the rim -->
+  <g class="dg-s">
+    <path d="M700 94 V116 M776 126 L759 143 M794 188 H772 M776 250 L759 233
+             M700 282 V260 M624 250 L641 233 M606 188 H628 M624 126 L641 143" />
+  </g>
+  <!-- buckets carrying water down the descending side -->
+  <g class="dg-accent">
+    <path d="M690 96 h20 v20 h-20 Z" />
+    <path d="M760 128 h20 v20 h-20 Z" />
+    <path d="M774 178 h20 v20 h-20 Z" />
+    <path d="M758 234 h20 v20 h-20 Z" />
+  </g>
+  <path class="dg-a" d="M640 88 C664 88, 684 90, 696 94" marker-end="url(#ww-ar-a)" />
+
+  <!-- weight vectors -->
+  <g class="dg-s">
+    <path d="M800 128 V166" marker-end="url(#ww-ar)" />
+    <path d="M812 178 V216" marker-end="url(#ww-ar)" />
+    <path d="M800 234 V272" marker-end="url(#ww-ar)" />
+  </g>
+  <text class="dg-lbl dg-num" x="824" y="196">WEIGHT, ALL THE WAY DOWN</text>
+
+  <!-- the head -->
+  <path class="dg-m" d="M552 88 H584 M552 296 H584" />
+  <path class="dg-m" d="M568 96 V288" marker-end="url(#ww-ar)" />
+  <text class="dg-lbl dg-soft" x="478" y="250">HEAD OF WATER —</text>
+  <text class="dg-lbl dg-soft" x="478" y="264">THE FALL IS THE FUEL</text>
+
+  <path class="dg-panel" d="M606 296 H800 V318 H606 Z" />
+  <path class="dg-h" d="M606 296 H800" />
+  <text class="dg-lbl dg-soft" x="606" y="336">TAILRACE</text>
+
+  <!-- ══ efficiency ═════════════════════════════════════════════════════ -->
+  <path class="dg-m" d="M30 336 H420" />
+  <text class="dg-lbl" x="30" y="354">ENERGY RECOVERED FROM THE SAME WATER</text>
+  <rect x="30" y="362" width="76" height="13" class="dg-ink" />
+  <text class="dg-lbl dg-num" x="116" y="372">~20%  UNDERSHOT</text>
+  <rect x="30" y="381" width="228" height="13" class="dg-accent" />
+  <text class="dg-lbl dg-key" x="268" y="391">~60%  OVERSHOT</text>
+
+  <text class="dg-lbl dg-soft" x="478" y="360">2 TO 3 HORSEPOWER FROM A WORKING MILL, EVERY HOUR</text>
+  <text class="dg-lbl dg-soft" x="478" y="374">THE WATER RUNS. THE COST IS THE DAM, THE LEAT AND</text>
+  <text class="dg-lbl dg-soft" x="478" y="388">A SITE WITH USABLE FALL — WHICH FIXES INDUSTRY TO PLACE.</text>
+</svg>
