@@ -243,14 +243,16 @@ export const PERIODS: Period[] = [
     constraint: 'darkness',
     constraintShort: 'Darkness',
     title: 'From 1882 a central station sells electricity by the meter, and electric light spreads from the street into the house.',
-    essay: [],
+    essay: [
+      'Four of the seven entries below are electrical, and together they change what the current is for. Edison’s lamp of 1879 works because the filament has high resistance, which sounds like a detail and is the whole system: high-resistance lamps can be wired in parallel on thin copper, and thin copper is what makes distribution affordable. Pearl Street station opens in Manhattan on 4 September 1882 and sells direct current to about four hundred lamps within a square mile, metered. Once current is available by the meter it turns out to be an industrial reagent as well as a light: Hall and Héroult, working independently and both twenty-two years old, pass a current through alumina dissolved in molten cryolite in 1886 and drop the price of aluminum by a factor of two hundred, and Héroult’s arc furnace of 1900 reaches 3,500° — two thousand degrees above what any flame delivers, with none of the combustion products a flame brings with it.',
+      'The other three entries look past this period. Karl Benz patents a vehicle in January 1886 whose engine burns its fuel inside the cylinder, which removes the boiler, the firebox and the condenser and leaves three-quarters of a horsepower in something one person can lift; that ratio is what takes engines off rails and eventually into the air. Tungsten carbide, cemented in cobalt at Krupp in 1927, is harder than the hardened steel every cutting tool had been made of, and cuts it several times faster. And on 12 December 1901 Marconi receives three dots at Signal Hill in Newfoundland, sent 3,500 kilometres from Cornwall — the first message to cross an ocean with nothing physical between the ends.',
+    ],
     capabilityStrip: strip(
       ['160 km/h', '— express rail', true],
       ['Instant', '— telegraph, then radio'],
       ['Filament lamp', '— on a grid', true],
       ['54 GJ/yr', '— the grid', true]
     ),
-    placeholder: true,
   },
   {
     id: 'X',
