@@ -1,0 +1,111 @@
+---
+/**
+ * The furnace and the curve that explains it. Water-driven bellows lift the
+ * hearth to about 1,500°, which is still below iron's 1,538° — so temperature
+ * is only half the answer. The other half is on the right: carbon dissolved
+ * into the iron drops its melting point to about 1,150° by 4%, and the curve
+ * crosses the blast before 1%. The furnace does not melt iron so much as make
+ * an iron that is easier to melt.
+ */
+---
+
+<svg viewBox="0 0 960 400" role="img" aria-label="A blast furnace in section, and the curve of iron's melting point falling as dissolved carbon rises">
+  <defs>
+    <marker id="bx-ar" viewBox="0 0 8 8" refX="7" refY="4" markerWidth="6" markerHeight="6" orient="auto">
+      <path d="M0 0 L8 4 L0 8 z" class="dg-ink" />
+    </marker>
+    <marker id="bx-ar-a" viewBox="0 0 8 8" refX="7" refY="4" markerWidth="6" markerHeight="6" orient="auto">
+      <path d="M0 0 L8 4 L0 8 z" class="dg-accent" />
+    </marker>
+  </defs>
+
+  <text class="dg-lbl" x="30" y="24">BLAST FURNACE · SECTION</text>
+
+  <!-- ── the stack: throat, belly, bosh, hearth ───────────────────────── -->
+  <path class="dg-panel" d="M156 96 H182 L146 200 L170 286 V336 H144 V286 L120 200 Z" />
+  <path class="dg-panel" d="M300 96 H274 L310 200 L286 286 V336 H312 V286 L336 200 Z" />
+  <path class="dg-s" d="M156 96 H182 L146 200 L170 286 V336 H144 V286 L120 200 Z" />
+  <path class="dg-s" d="M300 96 H274 L310 200 L286 286 V336 H312 V286 L336 200 Z" />
+  <path class="dg-s" d="M144 336 H312" />
+
+  <!-- the descending column -->
+  <g class="dg-h">
+    <path d="M178 118 H278 M172 146 H284 M166 174 H290 M152 202 H304 M158 230 H298 M164 258 H292" />
+  </g>
+
+  <!-- charge in at the throat -->
+  <g class="dg-a">
+    <path d="M182 60 V90" marker-end="url(#bx-ar-a)" />
+    <path d="M228 60 V90" marker-end="url(#bx-ar-a)" />
+    <path d="M274 60 V90" marker-end="url(#bx-ar-a)" />
+  </g>
+  <text class="dg-lbl dg-key" x="228" y="48" text-anchor="middle">ORE · CHARCOAL · LIMESTONE</text>
+
+  <!-- the hearth -->
+  <path class="dg-tint" d="M170 286 H286 V336 H170 Z" />
+  <path class="dg-d" d="M170 286 H286" />
+  <path class="dg-panel" d="M172 296 H284 V308 H172 Z" />
+  <path class="dg-m" d="M172 296 H284" />
+  <path class="dg-ink" d="M172 310 H284 V332 H172 Z" />
+  <path class="dg-m" d="M290 302 H340" />
+  <path class="dg-m" d="M290 321 H340" />
+  <text class="dg-lbl dg-soft" x="346" y="306">SLAG, FLOATING</text>
+  <text class="dg-lbl dg-num" x="346" y="325">IRON, BENEATH IT</text>
+
+  <!-- tuyères both sides -->
+  <path class="dg-s" d="M52 268 H144 M52 286 H144" />
+  <path class="dg-a" d="M64 277 H136" marker-end="url(#bx-ar-a)" />
+  <path class="dg-s" d="M404 268 H312 M404 286 H312" />
+  <path class="dg-a" d="M392 277 H320" marker-end="url(#bx-ar-a)" />
+
+  <!-- tap hole -->
+  <path class="dg-a" d="M286 326 L338 352" marker-end="url(#bx-ar-a)" />
+  <text class="dg-lbl dg-key" x="346" y="332">CAST IRON OUT</text>
+
+  <text class="dg-lbl dg-soft" x="30" y="360">TUYÈRES · WATER-DRIVEN BELLOWS, BLOWING WITHOUT STOPPING</text>
+  <text class="dg-lbl dg-num" x="30" y="378">1,500° AT THE HEARTH — AND STILL BELOW IRON'S 1,538°</text>
+  <text class="dg-lbl dg-soft" x="30" y="392">LIMESTONE TAKES UP THE SILICA AND MAKES THE SLAG FLUID</text>
+
+  <!-- ══ the iron-carbon curve ══════════════════════════════════════════ -->
+  <path class="dg-m" d="M470 14 V386" />
+
+  <path class="dg-h" d="M560 92 H930 M560 160 H930 M560 228 H930" />
+  <path class="dg-h" d="M652 46 V296 M745 46 V296 M837 46 V296" />
+  <path class="dg-s" d="M560 46 V296 H930" />
+
+  <text class="dg-lbl" x="560" y="32">MELTING POINT</text>
+  <g class="dg-num">
+    <text x="552" y="50" text-anchor="end">1,600°</text>
+    <text x="552" y="96" text-anchor="end">1,500°</text>
+    <text x="552" y="164" text-anchor="end">1,350°</text>
+    <text x="552" y="232" text-anchor="end">1,200°</text>
+    <text x="552" y="300" text-anchor="end">1,100°</text>
+  </g>
+
+  <path class="dg-m" d="M560 296 v5 M652 296 v5 M745 296 v5 M837 296 v5 M930 296 v5" />
+  <g class="dg-num">
+    <text x="560" y="316" text-anchor="middle">0</text>
+    <text x="652" y="316" text-anchor="middle">1</text>
+    <text x="745" y="316" text-anchor="middle">2</text>
+    <text x="837" y="316" text-anchor="middle">3</text>
+    <text x="930" y="316" text-anchor="middle">4</text>
+  </g>
+  <text class="dg-lbl" x="745" y="336" text-anchor="middle">CARBON DISSOLVED, PER CENT</text>
+
+  <path class="dg-d" d="M560 92 H930" />
+  <text class="dg-lbl dg-soft" x="926" y="86" text-anchor="end">1,500° — WHAT THE BLAST REACHES</text>
+
+  <path class="dg-a" d="M560 74 C600 96, 626 112, 652 130 C690 156, 716 182, 745 206 C784 238, 812 258, 837 268 C868 278, 902 274, 930 274" />
+  <circle cx="560" cy="74" r="3.6" class="dg-accent" />
+  <circle cx="930" cy="274" r="3.6" class="dg-accent" />
+  <text class="dg-lbl dg-num" x="570" y="66">1,538° · PURE IRON</text>
+  <text class="dg-lbl dg-key" x="926" y="262" text-anchor="end">~1,150° AT 4% CARBON</text>
+
+  <text class="dg-lbl dg-soft" x="570" y="256">THE CURVE CROSSES 1,500°</text>
+  <text class="dg-lbl dg-soft" x="570" y="270">BEFORE 1% CARBON —</text>
+  <text class="dg-lbl dg-soft" x="570" y="284">AFTER THAT THE CHARGE RUNS</text>
+
+  <text class="dg-lbl dg-num" x="490" y="360">CAST IRON POURS INTO FINE DETAIL, IS HARD AND CHEAP,</text>
+  <text class="dg-lbl dg-soft" x="490" y="378">AND IS BRITTLE — GRAPHITE FLAKES CRACK UNDER BENDING.</text>
+  <text class="dg-lbl dg-soft" x="490" y="392">GETTING BACK TO WROUGHT IRON NEEDS A SECOND HEARTH.</text>
+</svg>
