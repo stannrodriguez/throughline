@@ -1,0 +1,77 @@
+---
+headline: AlexNet cuts the ImageNet error rate from 26 to 15 percent by learning the features instead of being given them.
+dateline: TORONTO · 2012 · A. KRIZHEVSKY, I. SUTSKEVER AND G. HINTON
+keyNumbers: '26.2% → 15.3% · 60 million parameters · 1.2 million images'
+crossRefs:
+  - label: Where the examples came from
+    thread: information
+    to: the-internet
+    addressNote: P.XI
+    tinted: true
+    body: >-
+      A million labelled photographs did not exist before a network that collects them incidentally.
+      <strong>The internet</strong> is the corpus.
+  - label: What runs the arithmetic
+    thread: information
+    to: the-transistor
+    addressNote: P.X
+    body: >-
+      Training is multiplication, repeated beyond counting. It is affordable only because
+      <strong>the transistor</strong> made switching almost free.
+---
+
+<Before>
+There is a class of task people perform reliably and cannot describe. Recognising a friend's face
+in a crowd, telling a cat from a dog, reading handwriting, hearing a sentence through an unfamiliar
+accent — everyone does these, nobody can state the rule they are following, and the reason is that
+there is no compact rule to state. Fifty years of artificial intelligence tried to write them down
+anyway, in expert systems and hand-crafted feature detectors, and the results were brittle: a
+program that works on the examples its authors considered and fails on the next one.
+
+Neural networks trained on examples were not a new idea either. Backpropagation was published in
+1986, and Yann LeCun had convolutional networks reading handwritten digits for the postal service
+by the late 1980s. They did not scale, and by the 1990s the field had largely moved on.
+</Before>
+
+<Breakthrough>
+In 2012 Alex Krizhevsky, Ilya Sutskever and Geoffrey Hinton enter the ImageNet Large Scale Visual
+Recognition Challenge with an eight-layer convolutional network of sixty million parameters,
+trained on 1.2 million photographs across a thousand categories, on two consumer graphics cards.
+It finishes with a top-five error rate of 15.3 percent against 26.2 for the next best entry — a
+margin far outside anything the competition had seen. The following year essentially every entrant
+uses the same approach.
+</Breakthrough>
+
+<Science numbers="26.2% → 15.3% · 60 million parameters · 1.2 million images">
+The network is a stack of layers, each applying a large number of adjustable weights to its input
+and passing the result through a simple non-linear function. Training compares the output to the
+right answer and pushes every weight a small distance in whichever direction reduces the error,
+which is calculated efficiently by the chain rule running backwards through the layers. Repeat
+across millions of examples and the weights settle into something that generalises.
+
+What the layers end up representing is the part that matters. Nobody specifies edges, textures,
+shapes or ears; early layers converge on edge detectors, later ones on parts, later ones still on
+objects, because those are what happen to reduce the error. The features are learned rather than
+designed, which is precisely the step that hand-written systems could not take.
+
+Nothing in this was new in 2012 except its feasibility. Three things had changed since 1986: labelled
+data existed in quantities nobody had previously had, graphics processors turned out to be almost
+perfectly suited to the dense matrix arithmetic involved, and a few practical adjustments —
+rectified linear units, dropout — made deep stacks trainable. It is a rare case on this road of a
+theory waiting decades for its inputs rather than the other way round.
+
+<Figure
+  caption="LEARNED FEATURES BY LAYER"
+  spec="first-layer edge and colour filters, mid-layer textures and parts, late-layer objects; ImageNet error by year with the 2012 step"
+/>
+</Science>
+
+<Forward year={2012}>
+The methods generalise faster than anyone expects: the same architecture, scaled up and pointed at
+text, audio, protein structures and game play, produces results in each. That is the claim this
+entry can defend and the limit of it. A system trained on examples inherits whatever is in the
+examples, cannot explain its own output any better than the person whose judgement it replaced,
+and fails in ways that are hard to anticipate because nobody wrote the rules it is following.
+Judgement is being automated before it is understood, and this record ends on a constraint that has
+been removed without anyone being able to say exactly how.
+</Forward>

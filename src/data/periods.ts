@@ -303,14 +303,16 @@ export const PERIODS: Period[] = [
     constraint: 'judgement',
     constraintShort: 'Judgement',
     title: 'Systems trained on examples take over tasks nobody could reduce to written rules.',
-    essay: [],
+    essay: [
+      'The constraint named here is judgement, meaning the class of tasks a person performs competently and cannot explain: recognising a face, telling a cat from a dog, hearing a sentence in an accent, reading a doctor’s handwriting. Fifty years of attempts to write those rules down produced systems that failed on anything their authors had not anticipated. What changed was not the theory. Backpropagation was published in 1986 and convolutional networks were working on handwritten digits by 1989; what arrived between then and 2012 was a hundred million labelled examples and graphics processors that could run the arithmetic cheaply. AlexNet won the ImageNet competition in 2012 with a top-five error rate of 15.3 percent against the runner-up’s 26.2, using sixty million parameters trained on 1.2 million photographs, and every entrant the following year used the same approach.',
+      'On the other two roads the era is about storage and placement. Lithium-ion chemistry works because nothing dissolves: the ions slot in between the layers of a host crystal and come back out again, so an electrode survives hundreds of cycles instead of eroding. Batteries built on it at grid scale — Hornsdale in South Australia is 100 megawatts and 129 megawatt-hours — let a network store energy at noon and deliver it at dusk, which is the first relief since 1882 from having to generate exactly what is being consumed at that instant. Atomic-layer deposition grows films a tenth of a nanometre at a time by using reactions that stop when the surface is full. And on 5 December 2022 the National Ignition Facility put 2.05 megajoules of laser light into a target and got 3.15 megajoules out of it, for a few nanoseconds — the first time a fusion reaction has returned more than was delivered to it, with about 300 megajoules drawn from the grid to do it. Energy per person reaches 120 gigajoules a year and is levelling off.',
+    ],
     capabilityStrip: strip(
       ['900 km/h', '— unchanged since X'],
       ['Instant', '— everyone, at once'],
-      ['LED', '— light stops costing', true],
+      ['LED', '— the cheapest yet', true],
       ['120 GJ/yr', '— plateauing', true]
     ),
-    placeholder: true,
   },
 ];
 

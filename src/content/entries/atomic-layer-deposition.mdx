@@ -1,0 +1,78 @@
+---
+headline: Each pulse of gas reacts with the surface until the surface is full and then stops, so a film grows one atomic layer per cycle.
+dateline: ESPOO, FINLAND, THEN THE FABS · 1995 · T. SUNTOLA AND SUCCESSORS
+keyNumbers: '~0.1 nm per cycle · self-limiting · high-k gates from 2007'
+crossRefs:
+  - label: Where the tolerance came from
+    thread: materials
+    to: wilkinsons-boring-machine
+    addressNote: P.VII
+    tinted: true
+    body: >-
+      <strong>Wilkinson's boring machine</strong> held a cylinder to a millimetre and a half in
+      1774. This is the same pursuit, seven million times finer.
+  - label: The crystal it is grown on
+    thread: materials
+    to: zone-refined-silicon
+    addressNote: P.XI
+    body: >-
+      A film this thin is meaningless on a substrate that is not perfect.
+      <strong>Zone-refined silicon</strong> is the surface it needs.
+---
+
+<Before>
+Every method of laying down a thin film sprays or grows material continuously, and its thickness is
+therefore a function of time, rate and geometry. Evaporation and sputtering deposit along a line of
+sight, so a surface facing away from the source receives less; chemical vapour deposition is better
+but still depends on how much gas reaches each point. At a hundred nanometres these variations are
+tolerable. Below about five nanometres they are not, because a film three atoms thick in one place
+and eight in another is not a film with a thickness at all.
+
+The problem becomes urgent in semiconductor manufacture around 2000. The insulating layer under a
+transistor's gate has been shrinking with everything else, and silicon dioxide reaches about 1.2
+nanometres — five atoms — at which point electrons tunnel straight through it and the transistor
+leaks current whether it is switched on or not.
+</Before>
+
+<Breakthrough>
+Atomic-layer deposition replaces the continuous process with a sequence of self-terminating ones.
+Pulse in a precursor gas that reacts with the surface and not with itself: it covers the surface,
+finds nothing left to react with, and stops. Purge the chamber. Pulse in a second precursor that
+reacts with the first: it converts the layer and stops. Purge again. One cycle, one atomic layer,
+roughly a tenth of a nanometre, wherever the gas can reach. Tuomo Suntola developed the method in
+Finland in the 1970s for electroluminescent displays; it becomes central to chip manufacture from
+the late 1990s, and Intel's 45-nanometre process of 2007 uses it to lay down hafnium oxide gate
+insulators.
+</Breakthrough>
+
+<Science numbers="~0.1 nm per cycle · self-limiting · high-k gates from 2007">
+The self-limiting reaction is the entire idea, and it changes what determines the result. In every
+other deposition method thickness depends on how long the process ran and how much material
+arrived; here it depends on how many cycles were performed. Running a pulse twice as long deposits
+nothing extra, because the surface is already saturated. Thickness becomes a count rather than a
+measurement, and a count is exact.
+
+The second consequence is conformality. Because the reaction proceeds wherever the gas reaches and
+stops when the surface is covered, the film is the same thickness at the bottom of a hole a hundred
+times deeper than it is wide as it is on the flat. That is what makes the three-dimensional
+structures in modern chips — deep trenches, fins, stacked gates — manufacturable at all.
+
+Hafnium oxide matters because it has a higher dielectric constant than silicon dioxide, so a
+physically thicker layer produces the same electrical effect. The tunnelling that killed the thin
+oxide depends on physical thickness, and the gate's function depends on the electrical equivalent,
+so a high-k material buys back both.
+
+<Figure
+  caption="ONE CYCLE"
+  spec="precursor A saturating the surface, purge, precursor B converting it, purge; thickness against cycles as a staircase; conformal coverage in a deep trench"
+/>
+</Science>
+
+<Forward year={1995}>
+This entry closes the argument the materials road has been making since Period VII. Wilkinson bored
+a cylinder true to a millimetre and a half in 1774 and that was the finest tolerance in the world;
+this places matter to a tenth of a nanometre, about seven million times finer, and does it over a
+whole wafer at once. The road's three units in order are temperature, then purity, then placement —
+how hot, then what is in it, then exactly where each layer sits — and each replaced the one before
+it when it stopped separating one period from the next.
+</Forward>
