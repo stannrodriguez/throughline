@@ -1,0 +1,92 @@
+---
+/**
+ * Four strokes, left to right, with cylinder pressure beneath them. Steam does
+ * no pushing here: it fills the cylinder at atmospheric pressure, the cold spray
+ * condenses it to about 1/1,600 of its volume, and the ordinary atmosphere
+ * presses the piston down into the void that leaves. The same spray chills the
+ * walls, which the next charge has to reheat — which is where the efficiency
+ * goes.
+ */
+---
+
+<svg viewBox="0 0 960 440" role="img" aria-label="The four strokes of a Newcomen engine with the cylinder pressure curve beneath them">
+  <defs>
+    <marker id="ne-ar" viewBox="0 0 8 8" refX="7" refY="4" markerWidth="6" markerHeight="6" orient="auto">
+      <path d="M0 0 L8 4 L0 8 z" class="dg-ink" />
+    </marker>
+    <marker id="ne-ar-a" viewBox="0 0 8 8" refX="7" refY="4" markerWidth="6" markerHeight="6" orient="auto">
+      <path d="M0 0 L8 4 L0 8 z" class="dg-accent" />
+    </marker>
+  </defs>
+
+  <text class="dg-lbl" x="30" y="24">THE FOUR STROKES, LEFT TO RIGHT</text>
+
+  <!-- ── 1 · admission ────────────────────────────────────────────────── -->
+  <text class="dg-lbl dg-num" x="30" y="52">1 · ADMISSION</text>
+  <path class="dg-s" d="M62 66 V210 H150 V66" />
+  <path class="dg-tint" d="M64 92 H148 V208 H64 Z" />
+  <path class="dg-s" d="M64 88 H148 V102 H64 Z" />
+  <path class="dg-s" d="M106 88 V60" />
+  <path class="dg-a" d="M40 150 H62" marker-end="url(#ne-ar-a)" />
+  <text class="dg-lbl dg-key" x="30" y="234">STEAM IN, AT ATMOSPHERIC</text>
+  <text class="dg-lbl dg-soft" x="30" y="248">PRESSURE. THE PISTON RISES</text>
+  <text class="dg-lbl dg-soft" x="30" y="262">ON THE BEAM'S COUNTERWEIGHT.</text>
+
+  <!-- ── 2 · condensation ─────────────────────────────────────────────── -->
+  <text class="dg-lbl dg-num" x="260" y="52">2 · CONDENSATION</text>
+  <path class="dg-s" d="M292 66 V210 H380 V66" />
+  <path class="dg-page" d="M294 92 H378 V208 H294 Z" />
+  <path class="dg-s" d="M294 88 H378 V102 H294 Z" />
+  <path class="dg-s" d="M336 88 V60" />
+  <path class="dg-a" d="M270 178 H292" marker-end="url(#ne-ar-a)" />
+  <g class="dg-a">
+    <path d="M300 176 l6 8 M316 172 l6 8 M332 178 l6 8 M348 174 l6 8 M364 180 l6 8" />
+  </g>
+  <text class="dg-lbl dg-key" x="260" y="234">COLD SPRAY. THE STEAM DROPS</text>
+  <text class="dg-lbl dg-num" x="260" y="248">TO 1/1,600 OF ITS VOLUME,</text>
+  <text class="dg-lbl dg-soft" x="260" y="262">AND THE CYLINDER GOES TO VACUUM.</text>
+
+  <!-- ── 3 · power stroke ─────────────────────────────────────────────── -->
+  <text class="dg-lbl dg-num" x="500" y="52">3 · POWER STROKE</text>
+  <path class="dg-s" d="M532 66 V210 H620 V66" />
+  <path class="dg-page" d="M534 176 H618 V208 H534 Z" />
+  <path class="dg-s" d="M534 172 H618 V186 H534 Z" />
+  <path class="dg-s" d="M576 172 V60" />
+  <g class="dg-a">
+    <path d="M548 76 V160" marker-end="url(#ne-ar-a)" />
+    <path d="M604 76 V160" marker-end="url(#ne-ar-a)" />
+  </g>
+  <text class="dg-lbl dg-key" x="500" y="234">THE ATMOSPHERE PRESSES THE</text>
+  <text class="dg-lbl dg-num" x="500" y="248">PISTON INTO THE VOID — 22 kN</text>
+  <text class="dg-lbl dg-soft" x="500" y="262">ACROSS A HALF-METRE PISTON.</text>
+
+  <!-- ── 4 · return ───────────────────────────────────────────────────── -->
+  <text class="dg-lbl dg-num" x="740" y="52">4 · RETURN</text>
+  <path class="dg-s" d="M772 66 V210 H860 V66" />
+  <path class="dg-panel" d="M774 150 H858 V208 H774 Z" />
+  <path class="dg-s" d="M774 146 H858 V160 H774 Z" />
+  <path class="dg-s" d="M816 146 V60" />
+  <path class="dg-m" d="M816 100 V70" marker-end="url(#ne-ar)" />
+  <text class="dg-lbl dg-soft" x="740" y="234">CONDENSATE DRAINS, THE BEAM</text>
+  <text class="dg-lbl dg-soft" x="740" y="248">PULLS THE PISTON BACK UP,</text>
+  <text class="dg-lbl dg-soft" x="740" y="262">AND THE COLD WALLS MUST REHEAT.</text>
+
+  <!-- ══ cylinder pressure ══════════════════════════════════════════════ -->
+  <path class="dg-m" d="M30 288 H930" />
+
+  <path class="dg-h" d="M100 328 H900 M100 392 H900" />
+  <path class="dg-h" d="M300 316 V400 M500 316 V400 M700 316 V400" />
+  <path class="dg-s" d="M100 316 V400 H900" />
+  <text class="dg-lbl" x="100" y="308">CYLINDER PRESSURE</text>
+  <text class="dg-lbl dg-num" x="92" y="332" text-anchor="end">1 ATM</text>
+  <text class="dg-lbl dg-num" x="92" y="396" text-anchor="end">VACUUM</text>
+
+  <path class="dg-a" d="M100 328 H290 C300 330, 306 360, 318 386 C326 392, 340 392, 360 392 H500 V392 H660 C680 392, 692 372, 700 350 C706 336, 712 330, 720 328 H900" />
+  <g class="dg-lbl dg-soft">
+    <text x="200" y="418" text-anchor="middle">1 · ADMISSION</text>
+    <text x="400" y="418" text-anchor="middle">2 · CONDENSATION</text>
+    <text x="600" y="418" text-anchor="middle">3 · POWER STROKE</text>
+    <text x="800" y="418" text-anchor="middle">4 · RETURN</text>
+  </g>
+  <text class="dg-lbl dg-num" x="100" y="438">THE WORK IS DONE BY THE PRESSURE THAT IS NOT THERE · UNDER 1% OF THE COAL'S ENERGY REACHES THE BEAM</text>
+</svg>
