@@ -1,0 +1,114 @@
+---
+/**
+ * The rotary kiln takes limestone and clay through 1,450°, where the lime,
+ * silica and alumina stop sitting together and react into calcium silicates that
+ * partly melt and fuse into clinker. Ground fine and wetted, those silicates
+ * take water into their crystal structure and grow interlocking needles. It is a
+ * reaction with water, not a drying — which is why concrete cures sealed, cures
+ * under the sea, and gets hot doing it.
+ */
+---
+
+<svg viewBox="0 0 960 440" role="img" aria-label="A rotary kiln taking the charge to clinker at 1,450 degrees, and calcium silicate needles interlocking as they hydrate">
+  <defs>
+    <marker id="pc-ar" viewBox="0 0 8 8" refX="7" refY="4" markerWidth="6" markerHeight="6" orient="auto">
+      <path d="M0 0 L8 4 L0 8 z" class="dg-ink" />
+    </marker>
+    <marker id="pc-ar-a" viewBox="0 0 8 8" refX="7" refY="4" markerWidth="6" markerHeight="6" orient="auto">
+      <path d="M0 0 L8 4 L0 8 z" class="dg-accent" />
+    </marker>
+  </defs>
+
+  <text class="dg-lbl" x="30" y="24">ROTARY KILN · THE CHARGE RUNS DOWNHILL AS IT HEATS</text>
+
+  <!-- the kiln, sloping -->
+  <path class="dg-panel" d="M70 92 L470 168 V218 L70 142 Z" />
+  <path class="dg-s" d="M70 92 L470 168 V218 L70 142 Z" />
+  <path class="dg-m" d="M70 106 L470 182" />
+
+  <!-- charge tumbling down the barrel -->
+  <g class="dg-m">
+    <path d="M108 128 h18 v8 h-18 Z M158 138 h18 v8 h-18 Z M208 147 h18 v8 h-18 Z" />
+  </g>
+  <g class="dg-ink">
+    <path d="M290 165 h16 v9 h-16 Z M340 175 h16 v9 h-16 Z M392 184 h16 v9 h-16 Z" />
+  </g>
+
+  <!-- feed in at the high end -->
+  <path class="dg-a" d="M50 66 L66 100" marker-end="url(#pc-ar-a)" />
+  <text class="dg-lbl dg-key" x="30" y="58">LIMESTONE AND CLAY IN</text>
+
+  <!-- burner at the low end -->
+  <path class="dg-accent" d="M470 178 C500 178, 520 186, 534 196 C520 206, 500 214, 470 214 Z" />
+  <path class="dg-s" d="M534 190 H580" />
+  <text class="dg-lbl dg-num" x="588" y="196">BURNER</text>
+
+  <!-- rollers -->
+  <circle cx="176" cy="158" r="12" class="dg-m" />
+  <circle cx="360" cy="197" r="12" class="dg-m" />
+  <path class="dg-s" d="M156 176 H196 M340 215 H380" />
+
+  <!-- the temperature gradient along the barrel -->
+  <path class="dg-m" d="M70 250 H470" />
+  <path class="dg-m" d="M70 244 V256 M470 244 V256" />
+  <text class="dg-lbl dg-soft" x="70" y="272">DRYING, ~100°</text>
+  <text class="dg-lbl dg-soft" x="250" y="272" text-anchor="middle">CALCINING, ~900°</text>
+  <text class="dg-lbl dg-key" x="470" y="272" text-anchor="end">CLINKERING, 1,450°</text>
+
+  <text class="dg-lbl dg-num" x="30" y="308">ABOVE 1,450° THE LIME, SILICA AND ALUMINA STOP MERELY SITTING</text>
+  <text class="dg-lbl dg-num" x="30" y="322">TOGETHER AND REACT INTO CALCIUM SILICATES, WHICH PARTLY MELT</text>
+  <text class="dg-lbl dg-num" x="30" y="336">AND FUSE INTO CLINKER.</text>
+
+  <!-- clinker out, ground -->
+  <path class="dg-a" d="M508 220 L520 252" marker-end="url(#pc-ar-a)" />
+  <g class="dg-ink">
+    <path d="M496 262 h14 v9 h-14 Z M516 268 h12 v8 h-12 Z M534 260 h13 v9 h-13 Z" />
+  </g>
+  <text class="dg-lbl dg-key" x="496" y="292">CLINKER, GROUND</text>
+
+  <text class="dg-lbl dg-soft" x="30" y="368">SHAPE BECOMES CHEAP: A STONE STRUCTURE IS LIMITED TO WHAT A MASON</text>
+  <text class="dg-lbl dg-soft" x="30" y="382">CAN CUT AND LIFT, WHILE CONCRETE TAKES THE SHAPE OF WHATEVER MOULD</text>
+  <text class="dg-lbl dg-soft" x="30" y="396">CAN BE BUILT FROM TIMBER, AT THE SCALE OF A DAM.</text>
+  <text class="dg-lbl dg-num" x="30" y="418">WHAT IT CANNOT DO IS STRETCH — ABOUT A TENTH AS MUCH TENSION AS</text>
+  <text class="dg-lbl dg-num" x="30" y="432">COMPRESSION — SO IT NEEDS STEEL BARS INSIDE IT TO BECOME A SYSTEM.</text>
+
+  <!-- ══ hydration ══════════════════════════════════════════════════════ -->
+  <path class="dg-m" d="M620 14 V430" />
+  <text class="dg-lbl" x="648" y="24">HYDRATION · A REACTION, NOT A DRYING</text>
+
+  <!-- before: ground grains in water -->
+  <text class="dg-lbl dg-num" x="648" y="56">MIXED</text>
+  <rect x="648" y="66" width="128" height="110" class="dg-tint" />
+  <rect x="648" y="66" width="128" height="110" class="dg-h" />
+  <g class="dg-m">
+    <path d="M668 92 h16 v12 h-16 Z M706 84 h14 v12 h-14 Z M740 100 h15 v11 h-15 Z
+             M662 132 h15 v11 h-15 Z M700 140 h16 v12 h-16 Z M736 128 h14 v12 h-14 Z" />
+  </g>
+  <text class="dg-lbl dg-soft" x="648" y="194">GRAINS IN WATER</text>
+
+  <path class="dg-m" d="M790 120 H812" marker-end="url(#pc-ar)" />
+
+  <!-- after: needles interlocking -->
+  <text class="dg-lbl dg-num" x="826" y="56">SET</text>
+  <rect x="826" y="66" width="104" height="110" class="dg-page" />
+  <rect x="826" y="66" width="104" height="110" class="dg-h" />
+  <g class="dg-a">
+    <path d="M844 88 L878 108 M878 76 L850 116 M896 82 L866 122 M842 130 L884 142
+             M900 118 L864 150 M912 92 L880 130 M836 106 L872 96 M888 152 L916 128
+             M852 156 L896 138 M838 148 L866 166" />
+  </g>
+  <text class="dg-lbl dg-key" x="826" y="194">NEEDLES INTERLOCK</text>
+
+  <path class="dg-m" d="M648 216 H930" />
+  <text class="dg-lbl dg-num" x="648" y="240">THE SILICATES TAKE WATER INTO THEIR CRYSTAL</text>
+  <text class="dg-lbl dg-num" x="648" y="254">STRUCTURE. THAT IS WHY CONCRETE:</text>
+
+  <text class="dg-lbl dg-soft" x="668" y="286">CURES IN A SEALED FORM,</text>
+  <text class="dg-lbl dg-soft" x="668" y="306">CURES UNDER THE SEA,</text>
+  <text class="dg-lbl dg-soft" x="668" y="326">AND GETS HOTTER WHILE IT DOES IT.</text>
+  <path class="dg-m" d="M652 282 H660 M652 302 H660 M652 322 H660" />
+
+  <text class="dg-lbl dg-key" x="648" y="360">A LARGE POUR HAS TO BE COOLED.</text>
+  <text class="dg-lbl dg-soft" x="648" y="392">PATENT 1824 · THE NAME COMES FROM THE STONE</text>
+  <text class="dg-lbl dg-soft" x="648" y="406">OF PORTLAND, WHICH THE SET CEMENT RESEMBLES.</text>
+</svg>
