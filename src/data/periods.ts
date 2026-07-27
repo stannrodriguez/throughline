@@ -283,14 +283,16 @@ export const PERIODS: Period[] = [
     constraint: 'computation',
     constraintShort: 'Computation',
     title: 'Silicon purified to one foreign atom in a billion carries switches by the million on a single chip.',
-    essay: [],
+    essay: [
+      'The constraint named at the top of this page is computation, and the entry that removes it is not a computer. A transistor is a deliberate impurity in a crystal, which only works if the crystal is otherwise clean — a stray iron atom is indistinguishable from an intended dopant, and a wafer with a few parts per million of anything unplanned in it produces devices that do not match each other. William Pfann’s zone refining, published in 1952, sweeps a narrow molten band along an ingot and lets the impurities ride along in the liquid, because most of them dissolve more readily in molten silicon than in solid. Repeat the pass and they collect at one end, which is cut off. What is left runs to nine nines of purity: one foreign atom in a billion. Integrated circuits follow, and the count of transistors on a chip then doubles roughly every two years for the rest of the century.',
+      'The same demand produces the era’s other material. Glass carries light badly not because of the glass but because of the iron and copper in it, and Charles Kao argued in 1966 that removing them would leave a fibre good enough to signal through; Corning reached seventeen decibels a kilometre in 1970, and the best fibre today loses less than a fifth of a decibel over the same distance. The network built on top of it works on a principle the telephone system never used. ARPANET’s first message, on 29 October 1969, was meant to be LOGIN and got two letters out before the far end crashed; what was new was not the link but the packet — a message cut into addressed fragments that each find their own route. The two energy entries look minor at the time and are not. A silicon photovoltaic cell converts six percent of the sunlight falling on it with no moving part, and the lithium cell prototyped in 1985 holds several times the energy per kilogram of anything rechargeable before it.',
+    ],
     capabilityStrip: strip(
       ['900 km/h', '— unchanged since X'],
       ['Instant', '— packet-switched'],
       ['Halogen', '— incremental', true],
       ['104 GJ/yr', '— nuclear added', true]
     ),
-    placeholder: true,
   },
   {
     id: 'XII',

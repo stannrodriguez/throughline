@@ -1,0 +1,72 @@
+---
+headline: Packet switching cuts a message into addressed fragments that each find their own route, so the network has no centre to cut.
+dateline: UCLA TO STANFORD RESEARCH INSTITUTE · 1969 · L. KLEINROCK, C. KLINE AND OTHERS
+keyNumbers: '29 October 1969 · two letters, then a crash · TCP/IP on 1 January 1983'
+crossRefs:
+  - label: The network it is not
+    thread: information
+    to: telephone
+    addressNote: P.VIII
+    tinted: true
+    body: >-
+      <strong>The telephone</strong> reserves a circuit for the duration of a call. Packets reserve
+      nothing, which is why the same wire can carry everyone at once.
+  - label: What it delivers the data to
+    thread: information
+    to: deep-learning
+    addressNote: P.XII
+    body: >-
+      Learning from examples needs examples in quantity. <strong>Deep learning</strong> is
+      unthinkable without a network that made corpora of that size collectable.
+---
+
+<Before>
+Every communication network to this point works by circuit switching. Making a telephone call means
+building a physical path from one handset to the other and reserving it for the duration, whether or
+not anyone is speaking; a call that uses a tenth of the capacity ties up all of it. That is an
+efficient design for continuous speech and a terrible one for computers, which send data in short
+bursts separated by long silences. It is also fragile in a way that matters to the people funding
+this work in the 1960s: switching centres are single points of failure, and a network built around
+a hierarchy of them can be disconnected by destroying a few.
+</Before>
+
+<Breakthrough>
+Paul Baran at RAND, working on survivable communications, and Donald Davies at the National
+Physical Laboratory, working on computer response times, independently arrive at the same idea in
+the mid-1960s: chop each message into small blocks, address each one, and let them travel
+separately through a mesh in which every node forwards towards the destination. Davies calls them
+packets. ARPANET is built on the principle and its first message is sent on 29 October 1969 from
+UCLA to Stanford Research Institute. The intended word was LOGIN; the receiving machine crashed
+after the O. On 1 January 1983 the network switches to TCP/IP, which is the protocol still in use.
+</Breakthrough>
+
+<Science numbers="29 October 1969 · two letters, then a crash · TCP/IP on 1 January 1983">
+Packets change what a network guarantees. Nothing is reserved and no path is fixed, so capacity is
+shared statistically: many bursty senders fit down one link because their silences interleave. Each
+packet carries its own destination, so a router only needs to know which neighbour is generally
+towards where it is going, and if a link fails the next packet takes a different route with nobody
+being told.
+
+The design decision that gave the system its longevity is the end-to-end principle. The network is
+deliberately made unreliable and stupid — it may drop packets, duplicate them or deliver them out
+of order — and the work of noticing and correcting all of that is put in the machines at the two
+ends, in TCP. The consequence is that the middle of the network needs to know nothing about what is
+being carried, so a new application requires no permission from anyone who owns a wire. The web,
+video, telephony and everything since ran over an unchanged network because of it.
+
+<Figure
+  caption="CIRCUIT AGAINST PACKET"
+  spec="reserved end-to-end path with idle capacity; packets interleaving from several senders, rerouting around a failed link"
+/>
+</Science>
+
+<Forward year={1969}>
+For twenty years this is infrastructure for research institutions and nothing else, and the thing
+that turns it into a public medium is a document format layered on top in 1989. The deeper
+consequence is the one the design was not aiming at: because the network is indifferent to content,
+anything that can be represented as data ends up travelling on it, and industries built on
+controlling distribution — post, music, television, newspapers, telephony — find their distribution
+is now free for anyone. It also collects, incidentally, the largest body of recorded human output
+ever assembled, which turns out to be the raw material for the next entry on this road
+<Modern>(<Ref to="deep-learning">deep learning</Ref>, P.XII)</Modern>.
+</Forward>

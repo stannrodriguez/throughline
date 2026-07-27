@@ -1,0 +1,70 @@
+---
+headline: A lithium cell holds several times the energy per kilogram of lead-acid, at 3.6 volts from a package that fits a pocket.
+dateline: KANAGAWA · 1985 · A. YOSHINO
+keyNumbers: '~150 Wh/kg against 35 · 3.6 V a cell · prototype 1985'
+crossRefs:
+  - label: Why it survives being recharged
+    thread: materials
+    to: lithium-ion-chemistry
+    addressNote: P.XII
+    tinted: true
+    body: >-
+      The cell works because nothing dissolves.
+      <strong>Lithium-ion chemistry</strong> is the materials-road entry for what the electrodes
+      are actually doing.
+  - label: The same cell, made enormous
+    thread: energy
+    to: grid-scale-storage
+    addressNote: P.XII
+    body: >-
+      Thirty years of making these for phones is what makes
+      <strong>grid-scale storage</strong> affordable by the megawatt-hour.
+---
+
+<Before>
+Portable electronics in the early 1980s are limited by what they are carrying. Lead-acid holds
+about 35 watt-hours per kilogram, which is why a car battery weighs what it does. Nickel-cadmium
+manages perhaps 50, at 1.2 volts a cell, so several are needed in series to run anything, and the
+chemistry suffers from a memory effect that punishes partial recharging. Anything genuinely
+portable therefore runs on disposable cells or on a cord. Attempts to build a rechargeable cell
+around lithium metal itself — which is the lightest metal and the most electropositive, and would
+be ideal — keep failing in the same way: on recharging, lithium plates back onto the electrode as
+needles that grow across the cell, short it out and set it on fire.
+</Before>
+
+<Breakthrough>
+The answer is not to plate metallic lithium anywhere. John Goodenough's group showed in 1980 that
+lithium cobalt oxide will give up lithium ions reversibly and serve as a cathode. In 1985 Akira
+Yoshino at Asahi Kasei pairs it with an anode of carbonaceous material that will take those ions in
+between its layers, so lithium is never present as a metal at either end — only as ions moving
+between two hosts. Sony commercialises the design in 1991, and the cell arrives just as devices are
+being designed that assume it.
+</Breakthrough>
+
+<Science numbers="~150 Wh/kg against 35 · 3.6 V a cell · prototype 1985">
+Two properties of lithium do the work. It is the lightest metal, so a given number of charge
+carriers weighs very little; and it sits at the far end of the electrochemical series, so the
+voltage available from a lithium reaction is high. A cell gives about 3.6 volts against 1.2 for
+nickel-cadmium, and energy is voltage times charge, so the gain compounds. Practical cells reach
+150 watt-hours per kilogram and better, four or more times lead-acid.
+
+The engineering cost is that the chemistry is energetic in both directions. A cell that stores that
+much in that little volume also releases it quickly if the separator fails, and the electrolyte is
+flammable, so every pack carries protection circuitry that limits charge voltage, current and
+temperature. The failures that make the news are almost always mechanical or manufacturing faults
+that let the two electrodes meet.
+
+<Figure
+  caption="ENERGY DENSITY, BY CHEMISTRY"
+  spec="lead-acid, NiCd, NiMH and lithium-ion on Wh/kg and Wh/L axes; cell voltage comparison; dendrite failure mode of lithium metal"
+/>
+</Science>
+
+<Forward year={1985}>
+The cell is what makes a device untethered, and the list of things that follow from that is longer
+than it looks: the laptop, the mobile phone, the cordless tool, the hearing aid, the implanted
+defibrillator, the drone, and eventually the car. Its second act is larger still. Three decades of
+manufacturing for consumer electronics drove the price down by roughly ninety percent, which is
+what made it plausible to build the same chemistry at the scale of a power station <Modern>(<Ref
+to="grid-scale-storage">grid-scale storage</Ref>, P.XII)</Modern>.
+</Forward>
