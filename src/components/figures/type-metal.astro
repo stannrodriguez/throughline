@@ -1,0 +1,101 @@
+---
+/**
+ * Volume against temperature through the freeze. Lead contracts as it
+ * solidifies, like almost every metal, and pulls away from the mould exactly
+ * where the detail is finest. Antimony's crystal is more open than its liquid,
+ * so it expands on freezing. Mixed at 83 lead / 9 tin / 6 antimony the two
+ * effects very nearly cancel, and the serif comes out of the mould sharp.
+ */
+---
+
+<svg viewBox="0 0 960 410" role="img" aria-label="Volume against temperature through solidification for lead, antimony and the combined type alloy, with the effect on a cast serif">
+  <defs>
+    <marker id="tm-ar" viewBox="0 0 8 8" refX="7" refY="4" markerWidth="6" markerHeight="6" orient="auto">
+      <path d="M0 0 L8 4 L0 8 z" class="dg-ink" />
+    </marker>
+  </defs>
+
+  <text class="dg-lbl" x="30" y="24">VOLUME THROUGH THE FREEZE</text>
+
+  <path class="dg-h" d="M100 96 H540 M100 232 H540" />
+  <path class="dg-s" d="M100 56 V300 H540" />
+  <path class="dg-d" d="M100 164 H540" />
+  <text class="dg-lbl dg-soft" x="92" y="168" text-anchor="end">AS CAST</text>
+  <text class="dg-lbl dg-soft" x="92" y="100" text-anchor="end">LARGER</text>
+  <text class="dg-lbl dg-soft" x="92" y="236" text-anchor="end">SMALLER</text>
+
+  <!-- the freezing point -->
+  <path class="dg-d" d="M300 56 V300" />
+  <text class="dg-lbl dg-num" x="300" y="320" text-anchor="middle">FREEZING</text>
+  <text class="dg-lbl dg-soft" x="150" y="320" text-anchor="middle">LIQUID</text>
+  <text class="dg-lbl dg-soft" x="430" y="320" text-anchor="middle">SOLID</text>
+  <path class="dg-m" d="M540 300 H100" marker-end="url(#tm-ar)" />
+  <text class="dg-lbl" x="320" y="340" text-anchor="middle">COOLING →</text>
+
+  <!-- lead: contracts -->
+  <path class="dg-m" d="M100 150 C160 154, 240 158, 300 162 L300 222 C360 224, 460 226, 540 228" />
+  <circle cx="540" cy="228" r="3.4" class="dg-ink" />
+  <text class="dg-lbl dg-num" x="532" y="250" text-anchor="end">LEAD — PULLS AWAY</text>
+  <text class="dg-lbl dg-soft" x="532" y="264" text-anchor="end">FROM THE MOULD</text>
+
+  <!-- antimony: expands -->
+  <path class="dg-m" d="M100 176 C160 172, 240 168, 300 166 L300 106 C360 104, 460 102, 540 100" />
+  <circle cx="540" cy="100" r="3.4" class="dg-ink" />
+  <text class="dg-lbl dg-num" x="532" y="66" text-anchor="end">ANTIMONY — PUSHES</text>
+  <text class="dg-lbl dg-soft" x="532" y="80" text-anchor="end">OUTWARD AS IT SETS</text>
+
+  <!-- the alloy: near neutral -->
+  <path class="dg-a" d="M100 162 C160 163, 240 164, 300 164 L300 170 C360 169, 460 168, 540 167" />
+  <circle cx="540" cy="167" r="3.6" class="dg-accent" />
+  <text class="dg-lbl dg-key" x="532" y="192" text-anchor="end">THE ALLOY — NEARLY NEUTRAL</text>
+  <text class="dg-lbl dg-soft" x="532" y="206" text-anchor="end">83% LEAD · 9% TIN · 6% ANTIMONY</text>
+
+  <text class="dg-lbl dg-soft" x="30" y="372">ALMOST EVERY METAL CONTRACTS ON FREEZING, BECAUSE THE ATOMS PACK MORE TIGHTLY</text>
+  <text class="dg-lbl dg-soft" x="30" y="386">IN A CRYSTAL THAN IN A LIQUID. ANTIMONY'S CRYSTAL IS MORE OPEN THAN ITS LIQUID.</text>
+
+  <!-- ══ the serif ══════════════════════════════════════════════════════ -->
+  <path class="dg-m" d="M600 14 V386" />
+  <text class="dg-lbl" x="628" y="24">THE SAME LETTER, TWO ALLOYS · 2 MM ACROSS</text>
+
+  <!-- pure lead: soft, missing serifs -->
+  <text class="dg-lbl dg-num" x="628" y="56">CAST IN LEAD ALONE</text>
+  <rect x="628" y="66" width="140" height="130" class="dg-h" />
+  <path class="dg-m" d="M672 176 L698 96 L708 96 L734 176" />
+  <path class="dg-m" d="M684 148 H722" />
+  <path class="dg-d" d="M660 176 C666 172, 678 172, 684 176" />
+  <path class="dg-d" d="M722 176 C728 172, 740 172, 746 176" />
+  <path class="dg-d" d="M694 96 C698 92, 708 92, 712 96" />
+  <text class="dg-lbl dg-soft" x="628" y="216">METAL PULLS BACK</text>
+  <text class="dg-lbl dg-soft" x="628" y="230">WHERE DETAIL IS FINEST</text>
+
+  <!-- type metal: crisp -->
+  <text class="dg-lbl dg-num" x="792" y="56">CAST IN TYPE METAL</text>
+  <rect x="792" y="66" width="140" height="130" class="dg-h" />
+  <path class="dg-s" d="M836 176 L862 96 L872 96 L898 176" />
+  <path class="dg-s" d="M848 148 H886" />
+  <path class="dg-s" d="M822 176 C830 168, 844 168, 852 176 Z" />
+  <path class="dg-s" d="M886 176 C894 168, 908 168, 916 176 Z" />
+  <path class="dg-s" d="M856 96 C860 90, 872 90, 876 96 Z" />
+  <text class="dg-lbl dg-key" x="792" y="216">SERIFS COME OUT SHARP</text>
+
+  <!-- hardness -->
+  <path class="dg-m" d="M628 254 H930" />
+  <text class="dg-lbl" x="628" y="274">AND THE FACE HAS TO SURVIVE THE PRESS</text>
+  <rect x="628" y="288" width="140" height="76" class="dg-panel" />
+  <rect x="628" y="288" width="140" height="76" class="dg-h" />
+  <g class="dg-accent">
+    <path d="M646 306 l10 -6 l9 7 l-9 6 Z" />
+    <path d="M684 322 l11 -7 l10 8 l-10 7 Z" />
+    <path d="M722 300 l10 -6 l9 7 l-9 6 Z" />
+    <path d="M654 344 l10 -6 l9 7 l-9 6 Z" />
+    <path d="M712 346 l11 -7 l10 8 l-10 7 Z" />
+    <path d="M744 330 l9 -6 l9 7 l-9 6 Z" />
+  </g>
+  <text class="dg-lbl dg-key" x="782" y="308">HARD ANTIMONY CRYSTALS</text>
+  <text class="dg-lbl dg-soft" x="782" y="322">THROUGH A SOFT LEAD MATRIX —</text>
+  <text class="dg-lbl dg-soft" x="782" y="336">THOUSANDS OF IMPRESSIONS</text>
+  <text class="dg-lbl dg-soft" x="782" y="356">TIN IS THERE FOR FLOW:</text>
+  <text class="dg-lbl dg-soft" x="782" y="370">IT FILLS THE MOULD CLEANLY</text>
+  <text class="dg-lbl dg-soft" x="782" y="384">BEFORE IT SETS.</text>
+  <text class="dg-lbl dg-soft" x="782" y="398">MELTS AT ABOUT 300°.</text>
+</svg>
