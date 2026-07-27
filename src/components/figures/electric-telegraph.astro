@@ -1,0 +1,101 @@
+---
+/**
+ * Nothing physical makes the journey, so transit time over any terrestrial
+ * distance is negligible and the delay is entirely the operators. The line's own
+ * problem is attenuation, and the relay is the answer: a signal too weak to work
+ * a sounder is used instead to close a local circuit with its own battery, which
+ * restores it to full strength. That repeats indefinitely — so distance becomes
+ * a question of how many repeaters rather than how strong a signal.
+ */
+---
+
+<svg viewBox="0 0 960 440" role="img" aria-label="A telegraph signal attenuating along a line, a relay closing a fresh local circuit to restore it, and the sender-limited throughput">
+  <defs>
+    <marker id="et-ar" viewBox="0 0 8 8" refX="7" refY="4" markerWidth="6" markerHeight="6" orient="auto">
+      <path d="M0 0 L8 4 L0 8 z" class="dg-ink" />
+    </marker>
+    <marker id="et-ar-a" viewBox="0 0 8 8" refX="7" refY="4" markerWidth="6" markerHeight="6" orient="auto">
+      <path d="M0 0 L8 4 L0 8 z" class="dg-accent" />
+    </marker>
+  </defs>
+
+  <text class="dg-lbl" x="30" y="24">RELAY REGENERATION · THE SIGNAL IS REMADE, NOT AMPLIFIED</text>
+
+  <!-- the line -->
+  <path class="dg-s" d="M60 118 H340" />
+  <g class="dg-m">
+    <path d="M120 118 V152 M200 118 V152 M280 118 V152" />
+    <path d="M110 152 h20 M190 152 h20 M270 152 h20" />
+  </g>
+
+  <!-- sender -->
+  <path class="dg-s" d="M40 96 H60 V140 H40 Z" />
+  <text class="dg-lbl dg-num" x="30" y="88">KEY</text>
+
+  <!-- the pulse train, decaying along the line -->
+  <path class="dg-a" d="M64 76 v-24 h20 v24 h20 v-24 h14 v24 h26 v-24 h20 v24" />
+  <path class="dg-a" d="M180 76 v-14 h20 v14 h20 v-14 h14 v14 h26 v-14 h20 v14" />
+  <path class="dg-a" d="M300 76 v-6 h20 v6 h14 v-6 h6 v6" />
+  <text class="dg-lbl dg-key" x="60" y="42">FULL</text>
+  <text class="dg-lbl dg-soft" x="180" y="42">WEAKER</text>
+  <text class="dg-lbl dg-soft" x="300" y="42">NEARLY GONE</text>
+
+  <!-- the relay -->
+  <path class="dg-s" d="M340 96 H400 V152 H340 Z" />
+  <path class="dg-panel" d="M342 98 H398 V150 H342 Z" />
+  <g class="dg-m">
+    <path d="M354 108 a6 8 0 1 0 0 16 a6 8 0 1 0 0 16" />
+  </g>
+  <path class="dg-s" d="M372 112 H392" />
+  <circle cx="392" cy="112" r="3" class="dg-ink" />
+  <path class="dg-s" d="M372 112 L376 136" />
+  <text class="dg-lbl dg-num" x="370" y="172" text-anchor="middle">RELAY</text>
+  <text class="dg-lbl dg-soft" x="370" y="186" text-anchor="middle">A WEAK SIGNAL WORKS</text>
+  <text class="dg-lbl dg-soft" x="370" y="200" text-anchor="middle">A SWITCH, NOT A SOUNDER</text>
+
+  <!-- fresh local battery and the restored line -->
+  <path class="dg-s" d="M400 118 H480" />
+  <path class="dg-s" d="M430 118 V78 M424 78 H436" />
+  <path class="dg-s" d="M424 70 H436 M427 62 H433" />
+  <text class="dg-lbl dg-key" x="444" y="102">FRESH BATTERY</text>
+
+  <path class="dg-s" d="M480 118 H760" />
+  <g class="dg-m">
+    <path d="M540 118 V152 M620 118 V152 M700 118 V152" />
+    <path d="M530 152 h20 M610 152 h20 M690 152 h20" />
+  </g>
+  <path class="dg-a" d="M488 76 v-24 h20 v24 h20 v-24 h14 v24 h26 v-24 h20 v24" />
+  <text class="dg-lbl dg-key" x="488" y="42">FULL AGAIN</text>
+
+  <path class="dg-s" d="M760 96 H800 V140 H760 Z" />
+  <text class="dg-lbl dg-num" x="808" y="122">SOUNDER</text>
+
+  <path class="dg-a" d="M810 172 H890" marker-end="url(#et-ar-a)" />
+  <text class="dg-lbl dg-soft" x="810" y="192">AND AGAIN, AND AGAIN</text>
+
+  <text class="dg-lbl dg-num" x="30" y="238">DISTANCE BECOMES A QUESTION OF HOW MANY REPEATERS,</text>
+  <text class="dg-lbl dg-num" x="30" y="252">NOT OF HOW STRONG A SIGNAL.</text>
+
+  <!-- ══ what actually limits it ════════════════════════════════════════ -->
+  <path class="dg-m" d="M30 280 H930" />
+  <text class="dg-lbl" x="30" y="302">WHERE THE TIME ACTUALLY GOES</text>
+
+  <path class="dg-s" d="M60 340 H460" />
+  <path class="dg-m" d="M60 334 V346 M460 334 V346" />
+  <text class="dg-lbl dg-num" x="60" y="326">SENDER</text>
+  <text class="dg-lbl dg-num" x="460" y="326" text-anchor="end">RECEIVER</text>
+  <rect x="60" y="356" width="6" height="14" class="dg-ink" />
+  <text class="dg-lbl dg-soft" x="76" y="367">TRANSIT · NEAR THE SPEED OF LIGHT, SO EFFECTIVELY NOTHING</text>
+  <rect x="60" y="382" width="400" height="14" class="dg-accent" />
+  <text class="dg-lbl dg-key" x="60" y="416">THE OPERATORS AT BOTH ENDS · ABOUT 30 WORDS A MINUTE</text>
+
+  <!-- the cables -->
+  <path class="dg-m" d="M500 296 V430" />
+  <text class="dg-lbl" x="530" y="302">THE OTHER PROBLEM · A SUBMARINE CABLE</text>
+  <text class="dg-lbl dg-num" x="530" y="330">CAPACITANCE SMEARS EACH PULSE INTO THE NEXT.</text>
+  <text class="dg-lbl dg-soft" x="530" y="352">1858 · THE OPERATORS APPLIED HIGH VOLTAGE TO FORCE</text>
+  <text class="dg-lbl dg-soft" x="530" y="366">SIGNALS THROUGH, AND DESTROYED THE CABLE.</text>
+  <text class="dg-lbl dg-key" x="530" y="392">1866 · SEND GENTLY, DETECT SENSITIVELY. THOMSON'S MIRROR</text>
+  <text class="dg-lbl dg-key" x="530" y="406">GALVANOMETER READS A FRACTION OF THE EARLIER CURRENT.</text>
+  <text class="dg-lbl dg-soft" x="530" y="428">24 MAY 1844, WASHINGTON TO BALTIMORE.</text>
+</svg>
