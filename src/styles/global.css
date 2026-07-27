@@ -317,6 +317,19 @@ svg {
   letter-spacing: 0.12em;
 }
 
+/* drawn letterforms and reaction equations sit in the serif, at their own size */
+.figure__plate text.dg-glyph {
+  font-family: var(--serif);
+  font-size: 34px;
+  letter-spacing: 0;
+}
+
+.figure__plate text.dg-eq {
+  font-family: var(--serif);
+  font-size: 17px;
+  letter-spacing: 0;
+}
+
 .figure__plate text.dg-num {
   fill: var(--ink);
 }
