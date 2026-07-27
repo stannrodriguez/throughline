@@ -1,0 +1,121 @@
+---
+/**
+ * Charge to bloom. Charcoal and ore go in alternating layers, the bellows drive
+ * the only air in, slag is tapped liquid and the iron is raked out solid. The
+ * bloom is nearly pure and therefore soft; the second panel is what the smith
+ * does about that — carbon diffused in from charcoal, then quenched.
+ */
+---
+
+<svg viewBox="0 0 960 400" role="img" aria-label="A bloomery furnace in section from charge to bloom, and the carburising and quenching that turns soft wrought iron into steel">
+  <defs>
+    <marker id="bi-ar" viewBox="0 0 8 8" refX="7" refY="4" markerWidth="6" markerHeight="6" orient="auto">
+      <path d="M0 0 L8 4 L0 8 z" class="dg-ink" />
+    </marker>
+    <marker id="bi-ar-a" viewBox="0 0 8 8" refX="7" refY="4" markerWidth="6" markerHeight="6" orient="auto">
+      <path d="M0 0 L8 4 L0 8 z" class="dg-accent" />
+    </marker>
+  </defs>
+
+  <text class="dg-lbl" x="30" y="24">BLOOMERY SECTION · CHARGE TO BLOOM</text>
+
+  <!-- ── the shaft ────────────────────────────────────────────────────── -->
+  <path class="dg-panel" d="M186 340 V88 C186 68, 200 56, 220 52 H232 V340 Z" />
+  <path class="dg-panel" d="M356 340 V88 C356 68, 342 56, 322 52 H310 V340 Z" />
+  <path class="dg-s" d="M186 340 V88 C186 68, 200 56, 220 52 H322 C342 56, 356 68, 356 88 V340" />
+  <path class="dg-s" d="M232 340 V52 M310 340 V52" />
+  <path class="dg-s" d="M186 340 H356" />
+
+  <!-- the charge, alternating -->
+  <g>
+    <rect x="232" y="60" width="78" height="14" class="dg-panel" />
+    <rect x="232" y="88" width="78" height="14" class="dg-panel" />
+    <rect x="232" y="116" width="78" height="14" class="dg-panel" />
+    <rect x="232" y="144" width="78" height="14" class="dg-panel" />
+    <rect x="232" y="172" width="78" height="14" class="dg-panel" />
+  </g>
+  <g class="dg-h">
+    <path d="M232 60 H310 M232 74 H310 M232 88 H310 M232 102 H310 M232 116 H310 M232 130 H310
+             M232 144 H310 M232 158 H310 M232 172 H310 M232 186 H310 M232 200 H310" />
+  </g>
+  <g class="dg-ink">
+    <circle cx="244" cy="81" r="2.4" /><circle cx="262" cy="81" r="2.4" /><circle cx="280" cy="81" r="2.4" /><circle cx="298" cy="81" r="2.4" />
+    <circle cx="244" cy="109" r="2.4" /><circle cx="262" cy="109" r="2.4" /><circle cx="280" cy="109" r="2.4" /><circle cx="298" cy="109" r="2.4" />
+    <circle cx="244" cy="137" r="2.4" /><circle cx="262" cy="137" r="2.4" /><circle cx="280" cy="137" r="2.4" /><circle cx="298" cy="137" r="2.4" />
+    <circle cx="244" cy="165" r="2.4" /><circle cx="262" cy="165" r="2.4" /><circle cx="280" cy="165" r="2.4" /><circle cx="298" cy="165" r="2.4" />
+  </g>
+  <text class="dg-lbl dg-soft" x="368" y="70">CHARCOAL — THE PALE BANDS</text>
+  <text class="dg-lbl dg-num" x="368" y="90">ORE — THE STIPPLED BANDS</text>
+  <text class="dg-lbl dg-soft" x="368" y="104">CHARGED IN ALTERNATE LAYERS,</text>
+  <text class="dg-lbl dg-soft" x="368" y="118">TOPPED UP AS THE COLUMN SINKS</text>
+
+  <!-- bellows and tuyère -->
+  <path class="dg-s" d="M96 232 H186 M96 254 H186" />
+  <path class="dg-a" d="M108 243 H176" marker-end="url(#bi-ar-a)" />
+  <path class="dg-s" d="M40 216 L96 232 V254 L40 270 Z" />
+  <path class="dg-m" d="M52 212 L52 194 M84 216 L84 198" />
+  <text class="dg-lbl dg-num" x="30" y="188">BELLOWS, BY HAND</text>
+  <text class="dg-lbl dg-soft" x="40" y="288">TUYÈRE · THE ONLY AIR IN</text>
+
+  <!-- the working zone -->
+  <path class="dg-tint" d="M232 214 H310 V300 H232 Z" />
+  <path class="dg-d" d="M232 214 H310" />
+  <text class="dg-lbl dg-key" x="368" y="228">1,250° AT THE TUYÈRE</text>
+  <text class="dg-lbl dg-soft" x="368" y="242">IRON'S MELTING POINT IS 1,538°,</text>
+  <text class="dg-lbl dg-soft" x="368" y="256">AND IS NEVER APPROACHED</text>
+
+  <!-- slag tapping -->
+  <path class="dg-a" d="M232 306 H356" />
+  <path class="dg-s" d="M356 306 L404 328" marker-end="url(#bi-ar)" />
+  <text class="dg-lbl dg-key" x="368" y="288">SLAG MELTS AT 1,150°</text>
+  <text class="dg-lbl dg-soft" x="410" y="342">TAPPED OFF LIQUID</text>
+
+  <!-- the bloom -->
+  <path class="dg-ink" d="M240 336 C246 314, 262 306, 276 308 C292 310, 304 322, 306 336 Z" />
+  <g class="dg-page">
+    <circle cx="258" cy="326" r="2.6" /><circle cx="272" cy="318" r="2.6" /><circle cx="286" cy="326" r="2.6" />
+    <circle cx="266" cy="332" r="2.2" /><circle cx="292" cy="332" r="2.2" />
+  </g>
+  <text class="dg-lbl dg-num" x="130" y="362">BLOOM · SPONGY, SOLID, FULL OF TRAPPED SLAG</text>
+  <text class="dg-lbl dg-soft" x="130" y="376">RAKED OUT HOT AND HAMMERED TO SQUEEZE THE SLAG OUT</text>
+
+  <!-- ══ soft iron into steel ═══════════════════════════════════════════ -->
+  <path class="dg-m" d="M600 14 V386" />
+  <text class="dg-lbl" x="630" y="24">WHY THE BLOOM IS NOT YET USEFUL</text>
+
+  <text class="dg-lbl dg-soft" x="630" y="52">WROUGHT IRON FROM A BLOOM IS NEARLY PURE,</text>
+  <text class="dg-lbl dg-soft" x="630" y="66">AND NEARLY PURE IRON IS SOFT.</text>
+
+  <!-- bar in section, carbon diffusing in -->
+  <text class="dg-lbl dg-num" x="630" y="100">1 · FORGED IN CONTACT WITH CHARCOAL</text>
+  <rect x="630" y="112" width="280" height="52" class="dg-panel" />
+  <rect x="630" y="112" width="280" height="52" class="dg-m" />
+  <rect x="630" y="112" width="280" height="12" class="dg-tint" />
+  <rect x="630" y="152" width="280" height="12" class="dg-tint" />
+  <g class="dg-a">
+    <path d="M660 100 V112" marker-end="url(#bi-ar-a)" />
+    <path d="M730 100 V112" marker-end="url(#bi-ar-a)" />
+    <path d="M800 100 V112" marker-end="url(#bi-ar-a)" />
+    <path d="M870 100 V112" marker-end="url(#bi-ar-a)" />
+  </g>
+  <text class="dg-lbl dg-key" x="900" y="122" text-anchor="end">CARBURISED SKIN</text>
+  <text class="dg-lbl dg-soft" x="900" y="144" text-anchor="end">SOFT IRON CORE</text>
+
+  <!-- quench -->
+  <text class="dg-lbl dg-num" x="630" y="200">2 · QUENCHED FROM RED HEAT</text>
+  <path class="dg-s" d="M630 216 H910" />
+  <g class="dg-a">
+    <path d="M660 220 V250" marker-end="url(#bi-ar-a)" />
+    <path d="M730 220 V250" marker-end="url(#bi-ar-a)" />
+    <path d="M800 220 V250" marker-end="url(#bi-ar-a)" />
+    <path d="M870 220 V250" marker-end="url(#bi-ar-a)" />
+  </g>
+  <path class="dg-panel" d="M630 254 H910 V296 H630 Z" />
+  <path class="dg-m" d="M630 254 H910 V296 H630 Z" />
+  <text class="dg-lbl" x="770" y="278" text-anchor="middle">WATER</text>
+  <text class="dg-lbl dg-key" x="630" y="318">THE CARBURISED LAYER BECOMES STEEL —</text>
+  <text class="dg-lbl dg-soft" x="630" y="332">HARDER THAN ANY BRONZE</text>
+
+  <text class="dg-lbl dg-soft" x="630" y="364">JUDGED BY THE COLOUR OF HOT METAL, AND SO</text>
+  <text class="dg-lbl dg-soft" x="630" y="378">A MATTER OF JUDGEMENT FOR THREE THOUSAND YEARS</text>
+</svg>
