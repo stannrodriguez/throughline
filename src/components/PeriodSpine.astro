@@ -1,5 +1,6 @@
 ---
 import { PERIODS, periodSlug } from '../data/periods';
+import { path } from '../lib/site';
 
 interface Props {
   current?: string;
@@ -11,7 +12,7 @@ const { current } = Astro.props;
   {
     PERIODS.map((p) => (
       <a
-        href={`/periods/${periodSlug(p.id)}`}
+        href={path(`/periods/${periodSlug(p.id)}`)}
         class:list={['spine__tick', { 'is-current': p.id === current }]}
         aria-current={p.id === current ? 'page' : undefined}
         title={`Period ${p.id} · ${p.name}`}

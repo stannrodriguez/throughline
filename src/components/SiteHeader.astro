@@ -1,5 +1,5 @@
 ---
-import { SITE } from '../lib/site';
+import { SITE, path } from '../lib/site';
 import { threadList } from '../data/threads';
 import PeriodSpine from './PeriodSpine.astro';
 
@@ -11,13 +11,13 @@ const { currentPeriod } = Astro.props;
 ---
 
 <header class="bar">
-  <a class="bar__mark" href="/">{SITE.name}</a>
+  <a class="bar__mark" href={path('/')}>{SITE.name}</a>
   <PeriodSpine current={currentPeriod} />
   <ul class="legend">
     {
       threadList.map((t) => (
         <li class="legend__item">
-          <a href={`/roads/${t.id}`} class={`legend__link t-${t.id}`}>
+          <a href={path(`/roads/${t.id}`)} class={`legend__link t-${t.id}`}>
             <span class="legend__dot" />
             {t.name}
           </a>

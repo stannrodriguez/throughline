@@ -14,6 +14,7 @@ import FigurePlaceholder from '../../components/FigurePlaceholder.astro';
 import MarkRead from '../../components/MarkRead.astro';
 import { ALL_ENTRIES } from '../../data/entries';
 import { periodById, periodSlug } from '../../data/periods';
+import { path } from '../../lib/site';
 
 export async function getStaticPaths() {
   const prose = await getCollection('entries');
@@ -96,10 +97,10 @@ const headline = prose?.data.headline ?? entry.title;
       }
 
       <footer class="entry__foot">
-        <a href={`/roads/${entry.primary}`} class="entry__foot-link">
+        <a href={path(`/roads/${entry.primary}`)} class="entry__foot-link">
           The whole {entry.primary} road, all periods
         </a>
-        <a href={`/periods/${periodSlug(period.id)}`} class="entry__foot-link">
+        <a href={path(`/periods/${periodSlug(period.id)}`)} class="entry__foot-link">
           ↑ Period {period.id} landing · {period.name.toLowerCase()}
         </a>
       </footer>

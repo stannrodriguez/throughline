@@ -1,5 +1,5 @@
 ---
-import { SITE } from '../lib/site';
+import { SITE, path } from '../lib/site';
 import { threadList, type ThreadId } from '../data/threads';
 
 interface Props {
@@ -14,12 +14,12 @@ const RightTag = rightHref ? 'a' : 'div';
 ---
 
 <header class="bar">
-  <a class="bar__mark" href="/">{SITE.name}</a>
+  <a class="bar__mark" href={path('/')}>{SITE.name}</a>
   <nav class="tabs" aria-label="Roads">
     {
       threadList.map((t) => (
         <a
-          href={`/roads/${t.id}`}
+          href={path(`/roads/${t.id}`)}
           class:list={['tab', `t-${t.id}`, { 'is-active': t.id === active }]}
           aria-current={t.id === active ? 'page' : undefined}
         >

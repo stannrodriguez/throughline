@@ -5,6 +5,15 @@ export const SITE = {
 };
 
 /**
+ * Every internal link goes through this. The site is served from a subpath on
+ * GitHub Pages (/throughline/), and Astro does not rewrite hrefs written in
+ * markup — so the base has to be applied where the link is built. With
+ * `base: '/'` (custom domain, local dev) it is a no-op.
+ */
+const BASE = import.meta.env.BASE_URL.replace(/\/$/, '');
+export const path = (p: string) => `${BASE}${p}`;
+
+/**
  * Where the reader is, before any client-side progress is known. The design
  * ships Period VI as the reading position; the progress script moves it once
  * localStorage says otherwise.
