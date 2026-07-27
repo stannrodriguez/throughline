@@ -1,0 +1,71 @@
+---
+headline: Pearl Street station lights four hundred lamps from six blocks away, and electricity becomes something sold by the meter.
+dateline: PEARL STREET, MANHATTAN · 1882 · T. EDISON
+keyNumbers: '4 September 1882 · ~400 lamps · 110 V DC, one square mile'
+crossRefs:
+  - label: What generates it
+    thread: energy
+    to: the-dynamo
+    addressNote: P.VIII
+    tinted: true
+    body: >-
+      <strong>The dynamo</strong> makes current at industrial scale. This entry is the part that
+      makes the current worth making: somewhere for it to go, and a meter on it.
+  - label: The problem it cannot solve
+    thread: energy
+    to: grid-scale-storage
+    addressNote: P.XII
+    body: >-
+      A grid must generate exactly what is being used, instant by instant, for the next 130 years.
+      <strong>Grid-scale storage</strong> is where that stops being true.
+---
+
+<Before>
+Electricity before 1882 is generated where it is used. A factory with an arc-lighting system owns
+its dynamo, runs it off its own steam engine, and maintains it. A hotel wanting electric light buys
+a plant and hires someone to look after it. Each installation carries the full capital cost of
+generation, runs at whatever load it happens to have, and shuts down when the building does. The
+model is the same one water power imposed in Period III: the power source is part of the premises.
+</Before>
+
+<Breakthrough>
+Edison's Pearl Street station opens on 4 September 1882 with six large dynamos in a building on a
+downtown block, feeding direct current at 110 volts through underground mains to customers within
+about a square mile of it. It begins with roughly four hundred lamps across eighty-odd customers
+and grows tenfold in two years. Every element is designed as part of one system — the lamp, the
+mains, the fuses, the junction boxes, and the meter, without which none of it is a business.
+</Breakthrough>
+
+<Science numbers="4 September 1882 · ~400 lamps · 110 V DC, one square mile">
+The economics come from diversity of demand. No customer uses power continuously, and different
+customers peak at different times, so the plant needed to supply a thousand subscribers is far
+smaller than a thousand private plants. A central station also runs larger, more efficient
+machines, and can bring units on and off as load changes.
+
+The limit is the square mile, and it is a physics problem. Power lost in a conductor rises with the
+square of the current, so pushing more power down a wire at low voltage wastes it as heat; Edison's
+110-volt DC system cannot economically reach beyond about a kilometre. The alternative is to
+transmit at high voltage and low current and step down near the customer, which requires
+transformers, and transformers only work on alternating current. The resulting commercial fight —
+Edison's DC against Westinghouse and Tesla's AC — is settled by the Niagara Falls installation of
+1895, which sends power twenty miles to Buffalo. Every grid since is AC.
+
+The unforgiving property of the whole arrangement is that electricity is generated and consumed in
+the same instant. Supply must be matched to demand continuously, second by second, or the frequency
+drifts and equipment fails.
+
+<Figure
+  caption="THE SQUARE MILE"
+  spec="Pearl Street feeder network; I²R loss against distance at 110 V; AC transmission with step-up and step-down"
+/>
+</Science>
+
+<Forward year={1882}>
+The grid becomes the largest machine ever built and the one people notice least, and it makes
+electricity a commodity rather than an installation — anyone can buy any amount without owning a
+generator. What it never solves is the instantaneous balance. For 130 years the system has to
+follow demand exactly, which means keeping expensive plant spinning in reserve and building
+generation for the worst hour of the worst day. That constraint is what makes intermittent
+generation awkward, and it is the one the road's last entries take on <Modern>(<Ref
+to="grid-scale-storage">grid-scale storage</Ref>, P.XII)</Modern>.
+</Forward>
