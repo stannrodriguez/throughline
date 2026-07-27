@@ -1,0 +1,85 @@
+---
+import type { Entry } from '../../data/entries';
+import { THREADS } from '../../data/threads';
+
+/**
+ * Primary = placement, and placement is singular: one road, one stop number,
+ * one canonical home. Secondary tags carry their justification inline.
+ */
+interface Props {
+  entry: Entry;
+  dateline: string;
+}
+const { entry, dateline } = Astro.props;
+---
+
+<div class="tags">
+  <span class="tag tag--primary">
+    <span class="tag__dot"></span>
+    {THREADS[entry.primary].name} · primary
+  </span>
+
+  {
+    entry.secondary?.map((s) => (
+      <span class:list={['tag', 'tag--secondary', `t-${s.thread}`]}>
+        2° {THREADS[s.thread].name} — {s.justification}
+      </span>
+    ))
+  }
+
+  <span class="tags__dateline">{dateline}</span>
+</div>
+
+<style>
+  .tags {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 12px;
+    font-family: var(--sans);
+  }
+
+  .tag {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 11.5px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    padding: 6px 12px;
+  }
+
+  .tag--primary {
+    background: var(--thread);
+    color: var(--thread-tint);
+    font-weight: 700;
+  }
+
+  .tag__dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: currentColor;
+  }
+
+  .tag--secondary {
+    border: 1px solid var(--thread-border);
+    color: var(--thread);
+    font-weight: 600;
+  }
+
+  .tags__dateline {
+    margin-left: auto;
+    font-family: var(--mono);
+    font-size: 10.5px;
+    letter-spacing: 0.04em;
+    color: var(--faint);
+  }
+
+  @media (max-width: 900px) {
+    .tags__dateline {
+      margin-left: 0;
+      width: 100%;
+    }
+  }
+</style>

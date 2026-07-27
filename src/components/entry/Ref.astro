@@ -1,0 +1,29 @@
+---
+import { tryEntry } from '../../data/entries';
+
+/**
+ * A link to another entry. Resolving through the registry means a forward
+ * reference to a stop that doesn't exist fails the build rather than shipping.
+ */
+interface Props {
+  to: string;
+}
+const { to } = Astro.props;
+const target = tryEntry(to);
+if (!target) {
+  throw new Error(`<Ref to="${to}"> — no such entry in the registry.`);
+}
+---
+
+<a class="ref" href={target.href} title={target.address}><slot /></a>
+
+<style>
+  .ref {
+    border-bottom: 1.5px solid var(--thread);
+    font-weight: 600;
+  }
+
+  .ref:hover {
+    color: var(--thread);
+  }
+</style>

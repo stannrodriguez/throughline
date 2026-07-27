@@ -1,0 +1,77 @@
+---
+import type { ThreadId } from '../../data/threads';
+import { THREADS } from '../../data/threads';
+import { tryEntry } from '../../data/entries';
+
+/**
+ * A deliberate cross-reference, not a link farm. Each card names one entry and
+ * says in a sentence why the reader should care.
+ */
+interface Props {
+  label: string;
+  thread: ThreadId;
+  to: string;
+  addressNote?: string;
+  body: string;
+  tinted?: boolean;
+}
+const { label, thread, to, addressNote, body, tinted = false } = Astro.props;
+const target = tryEntry(to);
+if (!target) {
+  throw new Error(`Cross-reference to "${to}" — no such entry in the registry.`);
+}
+const address = `${THREADS[thread].addressName} · stop ${target.stop}${
+  addressNote ? ` · ${addressNote}` : ''
+}`;
+---
+
+<a class:list={['card', `t-${thread}`, { 'is-tinted': tinted }]} href={target.href}>
+  <span class="card__label">{label}</span>
+  <span class="card__body" set:html={body}></span>
+  <span class="card__address">{address} →</span>
+</a>
+
+<style>
+  .card {
+    display: block;
+    border: 1px solid var(--rule);
+    padding: 18px 20px;
+    font-family: var(--sans);
+  }
+
+  .card.is-tinted {
+    background: var(--panel);
+  }
+
+  .card:hover {
+    color: inherit;
+    border-color: var(--thread-border);
+  }
+
+  .card__label {
+    display: block;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.13em;
+    text-transform: uppercase;
+    color: var(--thread);
+  }
+
+  .card__body {
+    display: block;
+    margin-top: 8px;
+    font-size: 14px;
+    line-height: 1.55;
+    color: var(--ink-soft);
+  }
+
+  .card__address {
+    display: block;
+    margin-top: 8px;
+    font-family: var(--mono);
+    font-size: 10px;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--thread);
+  }
+</style>

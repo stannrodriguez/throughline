@@ -1,0 +1,76 @@
+---
+/**
+ * The house device, and the only place on the site that writes in period voice:
+ * a forward reference spoken from inside the era's own frame, with modern links
+ * breaking to roman inside parentheses.
+ */
+interface Props {
+  /** The year the block speaks from: "written from 1712". */
+  year: number | string;
+}
+const { year } = Astro.props;
+---
+
+<aside class="forward">
+  <div class="forward__head">
+    <p class="forward__label">What this makes possible — written from {year}</p>
+    <p class="forward__more">The road continues →</p>
+  </div>
+  <div class="forward__body"><slot /></div>
+</aside>
+
+<style>
+  .forward {
+    margin: 36px 0 48px;
+    border-left: 3px solid var(--thread);
+    background: var(--thread-tint);
+    padding: 22px 28px;
+  }
+
+  .forward__head {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 20px;
+  }
+
+  .forward__label {
+    font-family: var(--sans);
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--thread);
+  }
+
+  .forward__more {
+    font-family: var(--mono);
+    font-size: 10px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--energy-faint);
+    white-space: nowrap;
+  }
+
+  .forward__body :global(p) {
+    margin-top: 12px;
+    font-size: 19px;
+    line-height: 1.68;
+    font-style: italic;
+    color: var(--prose-soft);
+  }
+
+  @media (max-width: 900px) {
+    .forward {
+      padding: 18px 20px;
+    }
+
+    .forward__body :global(p) {
+      font-size: 18px;
+    }
+
+    .forward__more {
+      display: none;
+    }
+  }
+</style>
