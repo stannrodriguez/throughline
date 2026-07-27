@@ -89,14 +89,16 @@ export const PERIODS: Period[] = [
     constraint: 'metal scarcity',
     constraintShort: 'Metal scarcity',
     title: 'Iron ore outcrops in most regions; the tin that bronze needs comes from a handful of them.',
-    essay: [],
+    essay: [
+      'All four figures in the strip above move in this period, which happens only once more before the nineteenth century. The horse, ridden rather than driven, raises the fastest sustained travel from five kilometres an hour to fifteen. Posted in relays along a maintained road, the same horse carries a message two hundred kilometres in a day — a rate nothing improves on until 1840. The oil lamp gives a steadier light than an open fire. And animal muscle, harnessed to mills as well as ploughs, lifts energy per person from eight gigajoules a year to eleven.',
+      'The metal is the reason the period has its name. Bronze is the better material and always was: a tenth part of tin in copper roughly triples the hardness and drops the melting point below 1,000°, which a pottery kiln can already reach. What bronze does not have is supply. Tin occurs in commercial quantity in very few places — Cornwall, the Erzgebirge, Afghanistan — so every bronze sword in the eastern Mediterranean depends on a trade route running thousands of kilometres. When those routes break down around 1200 BCE, smiths turn to the ore under their own fields. Iron demands a furnace at 1,250° and a great deal more labour at the anvil, and early wrought iron is softer than good bronze. It wins on the only ground that matters here, which is that the ore is nearly everywhere.',
+    ],
     capabilityStrip: strip(
       ['15 km/h', '— the horse', true],
       ['200 km', '— relay, new', true],
       ['Oil lamp', '— steadier', true],
       ['11 GJ/yr', '— animal muscle', true]
     ),
-    placeholder: true,
   },
   {
     id: 'III',
