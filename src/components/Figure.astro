@@ -1,0 +1,57 @@
+---
+/**
+ * A figure is a real drawing. The plate lives in components/figures/<name>.astro
+ * and is resolved here, so an entry that names a diagram with no plate fails the
+ * build instead of shipping an empty frame — the same contract <Ref> has.
+ *
+ * An entry with no `name` still renders the commissioning placeholder, so a
+ * newly registered entry can carry its brief before the drawing is made.
+ */
+const plates = import.meta.glob<{ default: unknown }>('./figures/*.astro', { eager: true });
+const registry = new Map(
+  Object.entries(plates).map(([file, mod]) => [
+    file.slice(file.lastIndexOf('/') + 1, -'.astro'.length),
+    mod.default,
+  ]),
+);
+
+interface Props {
+  /** The caption line, mono and uppercase under the plate. */
+  caption: string;
+  /** Commissioning brief — kept for drawings not yet made. */
+  spec?: string;
+  /** Plate component name, matching a file in components/figures/. */
+  name?: string;
+}
+const { caption, spec, name } = Astro.props;
+
+if (name && !registry.has(name)) {
+  throw new Error(
+    `<Figure name="${name}"> has no plate at src/components/figures/${name}.astro`,
+  );
+}
+const Plate = name ? (registry.get(name) as any) : undefined;
+---
+
+{
+  Plate ? (
+    <figure class="figure">
+      <div class="figure__plate">
+        <Plate />
+      </div>
+      <figcaption class="figure__caption">{caption}</figcaption>
+    </figure>
+  ) : (
+    <figure class="figure-ph">
+      <figcaption class="figure-ph__caption">
+        {caption}
+        {spec && (
+          <>
+            <br />
+            <span class="figure-ph__spec">{spec}</span>
+          </>
+        )}
+      </figcaption>
+    </figure>
+  )
+}

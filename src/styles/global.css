@@ -209,7 +209,133 @@ svg {
   font-size: 9px;
 }
 
-/* figure placeholder — real technical illustration is commissioned later */
+/* ── technical plates ───────────────────────────────────────────────────────
+   The drawing carries the same hierarchy the page does: 1.4px ink is the thing
+   itself, 1px hairline is grid and construction, dashed is a datum, and the
+   thread colour marks the one quantity the figure is about. No radius, no fill
+   that isn't doing work. Plates under components/figures/ compose from these. */
+.figure {
+  margin: 0;
+}
+
+.figure__plate {
+  border: 1px solid var(--rule);
+  background: var(--page);
+  padding: 24px 26px 20px;
+}
+
+.figure__plate svg {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.figure__caption {
+  margin-top: 10px;
+  font-family: var(--mono);
+  font-size: 10.5px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+/* stroke vocabulary */
+.dg-s {
+  fill: none;
+  stroke: var(--ink);
+  stroke-width: 1.4;
+}
+
+.dg-m {
+  fill: none;
+  stroke: var(--ink-soft);
+  stroke-width: 1;
+}
+
+.dg-h {
+  fill: none;
+  stroke: var(--rule);
+  stroke-width: 1;
+}
+
+.dg-d {
+  fill: none;
+  stroke: var(--faint);
+  stroke-width: 1;
+  stroke-dasharray: 4 3;
+}
+
+.dg-a {
+  fill: none;
+  stroke: var(--thread);
+  stroke-width: 1.7;
+}
+
+.dg-a-d {
+  fill: none;
+  stroke: var(--thread);
+  stroke-width: 1.4;
+  stroke-dasharray: 4 3;
+}
+
+/* fill vocabulary */
+.dg-panel {
+  fill: var(--panel);
+  stroke: none;
+}
+
+.dg-tint {
+  fill: var(--thread-tint);
+  stroke: none;
+}
+
+.dg-page {
+  fill: var(--page);
+  stroke: none;
+}
+
+.dg-ink {
+  fill: var(--ink);
+  stroke: none;
+}
+
+.dg-accent {
+  fill: var(--thread);
+  stroke: none;
+}
+
+/* type inside a plate */
+.figure__plate text {
+  font-family: var(--mono);
+  font-size: 11px;
+  fill: var(--muted);
+  letter-spacing: 0.05em;
+}
+
+.figure__plate text.dg-lbl {
+  font-size: 9.5px;
+  letter-spacing: 0.12em;
+}
+
+.figure__plate text.dg-num {
+  fill: var(--ink);
+}
+
+.figure__plate text.dg-key {
+  fill: var(--thread);
+}
+
+.figure__plate text.dg-soft {
+  fill: var(--faint);
+}
+
+@media (max-width: 640px) {
+  .figure__plate {
+    padding: 14px 14px 12px;
+  }
+}
+
+/* figure placeholder — a drawing that has not been made yet */
 .figure-ph {
   background: var(--panel);
   border: 1px solid var(--rule);

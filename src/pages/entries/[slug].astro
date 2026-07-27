@@ -10,7 +10,7 @@ import Science from '../../components/entry/Science.astro';
 import Forward from '../../components/entry/Forward.astro';
 import Modern from '../../components/entry/Modern.astro';
 import Ref from '../../components/entry/Ref.astro';
-import FigurePlaceholder from '../../components/FigurePlaceholder.astro';
+import Figure from '../../components/Figure.astro';
 import MarkRead from '../../components/MarkRead.astro';
 import { ALL_ENTRIES } from '../../data/entries';
 import { periodById, periodSlug } from '../../data/periods';
@@ -36,7 +36,7 @@ const mdxComponents = {
   Forward,
   Modern,
   Ref,
-  Figure: FigurePlaceholder,
+  Figure,
 };
 
 const rendered = prose ? await render(prose) : null;
