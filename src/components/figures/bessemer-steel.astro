@@ -1,0 +1,121 @@
+---
+/**
+ * The impurity is the fuel. Pig iron carries 3–4% carbon, and burning it out
+ * releases enough heat to lift the whole charge above steel's melting point —
+ * which is higher than the pig iron's was — so the bath stays liquid while it is
+ * purified. The difficulty is stopping: Mushet's answer was to blow the carbon
+ * out completely and then weigh a fixed quantity back in.
+ */
+---
+
+<svg viewBox="0 0 960 440" role="img" aria-label="A Bessemer converter with bottom tuyeres, and the charge temperature rising as carbon falls through the blow, with the recarburising step at the end">
+  <defs>
+    <marker id="bs-ar" viewBox="0 0 8 8" refX="7" refY="4" markerWidth="6" markerHeight="6" orient="auto">
+      <path d="M0 0 L8 4 L0 8 z" class="dg-ink" />
+    </marker>
+    <marker id="bs-ar-a" viewBox="0 0 8 8" refX="7" refY="4" markerWidth="6" markerHeight="6" orient="auto">
+      <path d="M0 0 L8 4 L0 8 z" class="dg-accent" />
+    </marker>
+  </defs>
+
+  <text class="dg-lbl" x="30" y="24">THE CONVERTER · 20 TONNES IN 20 MINUTES</text>
+
+  <!-- the vessel -->
+  <path class="dg-panel" d="M120 320 C120 240, 132 170, 168 120 L168 74 H262 V120 C298 170, 310 240, 310 320 Z" />
+  <path class="dg-s" d="M120 320 C120 240, 132 170, 168 120 L168 74 H262 V120 C298 170, 310 240, 310 320 Z" />
+  <path class="dg-m" d="M146 320 C146 244, 158 182, 190 138 L190 74" />
+  <path class="dg-m" d="M284 320 C284 244, 272 182, 240 138 L240 74" />
+
+  <!-- the bath -->
+  <path class="dg-accent" d="M148 318 C148 268, 152 232, 160 210 H270 C278 232, 282 268, 282 318 Z" />
+
+  <!-- bottom tuyères -->
+  <path class="dg-s" d="M120 320 H310 V346 H120 Z" />
+  <g class="dg-m">
+    <path d="M150 320 V346 M172 320 V346 M194 320 V346 M216 320 V346 M238 320 V346 M260 320 V346 M282 320 V346" />
+  </g>
+  <path class="dg-a" d="M215 396 V352" marker-end="url(#bs-ar-a)" />
+  <text class="dg-lbl dg-key" x="215" y="412" text-anchor="middle">COLD AIR, BLOWN UP THROUGH THE BATH</text>
+  <text class="dg-lbl dg-soft" x="215" y="426" text-anchor="middle">NO EXTERNAL FUEL AT ANY POINT</text>
+
+  <!-- trunnion and tilt -->
+  <circle cx="120" cy="230" r="9" class="dg-page" />
+  <circle cx="120" cy="230" r="9" class="dg-s" />
+  <circle cx="310" cy="230" r="9" class="dg-page" />
+  <circle cx="310" cy="230" r="9" class="dg-s" />
+  <path class="dg-m" d="M336 200 A 60 60 0 0 1 352 250" marker-end="url(#bs-ar)" />
+  <text class="dg-lbl dg-soft" x="330" y="188">TILTS TO POUR</text>
+
+  <!-- the flame at the mouth -->
+  <g class="dg-a">
+    <path d="M198 68 C194 46, 204 34, 214 30 C224 34, 234 46, 230 68" />
+    <path d="M208 68 C206 54, 212 44, 216 40 C220 44, 224 54, 222 68" />
+  </g>
+  <text class="dg-lbl dg-num" x="248" y="46">BESSEMER GUESSED</text>
+  <text class="dg-lbl dg-soft" x="248" y="60">AT THIS FLAME</text>
+
+  <text class="dg-lbl dg-num" x="30" y="122">THE IMPURITY</text>
+  <text class="dg-lbl dg-num" x="30" y="136">IS THE FUEL</text>
+  <text class="dg-lbl dg-soft" x="30" y="158">BURNING 3–4%</text>
+  <text class="dg-lbl dg-soft" x="30" y="172">CARBON RELEASES</text>
+  <text class="dg-lbl dg-soft" x="30" y="186">MORE HEAT THAN</text>
+  <text class="dg-lbl dg-soft" x="30" y="200">THE CHARGE NEEDS</text>
+
+  <!-- ══ through the blow ═══════════════════════════════════════════════ -->
+  <path class="dg-m" d="M400 14 V430" />
+
+  <path class="dg-h" d="M490 108 H900 M490 176 H900 M490 244 H900" />
+  <path class="dg-h" d="M592 62 V312 M695 62 V312 M797 62 V312" />
+  <path class="dg-s" d="M490 62 V312 H900" />
+
+  <text class="dg-lbl" x="490" y="48">TEMPERATURE OF THE CHARGE</text>
+  <text class="dg-lbl dg-key" x="908" y="48">CARBON</text>
+  <g class="dg-key">
+    <text x="908" y="96">4%</text>
+    <text x="908" y="150">3%</text>
+    <text x="908" y="205">2%</text>
+    <text x="908" y="260">1%</text>
+    <text x="908" y="314">0</text>
+  </g>
+  <path class="dg-m" d="M900 62 V312" />
+  <g class="dg-num">
+    <text x="482" y="66" text-anchor="end">1,650°</text>
+    <text x="482" y="112" text-anchor="end">1,550°</text>
+    <text x="482" y="180" text-anchor="end">1,400°</text>
+    <text x="482" y="248" text-anchor="end">1,250°</text>
+    <text x="482" y="316" text-anchor="end">1,100°</text>
+  </g>
+  <path class="dg-m" d="M490 312 v5 M592 312 v5 M695 312 v5 M797 312 v5 M900 312 v5" />
+  <g class="dg-num">
+    <text x="490" y="332" text-anchor="middle">0</text>
+    <text x="592" y="332" text-anchor="middle">5</text>
+    <text x="695" y="332" text-anchor="middle">10</text>
+    <text x="797" y="332" text-anchor="middle">15</text>
+    <text x="900" y="332" text-anchor="middle">20</text>
+  </g>
+  <text class="dg-lbl" x="695" y="352" text-anchor="middle">MINUTES OF BLOW</text>
+
+  <!-- steel's melting point, crossed on the way up -->
+  <path class="dg-d" d="M490 176 H900" />
+  <text class="dg-lbl dg-soft" x="896" y="170" text-anchor="end">STEEL'S MELTING POINT — CROSSED WHILE PURIFYING</text>
+
+  <!-- temperature rises -->
+  <path class="dg-s" d="M490 262 C530 246, 560 220, 592 194 C630 164, 660 128, 695 106 C730 88, 764 78, 797 74 C830 72, 868 72, 900 74" />
+  <text class="dg-lbl dg-num" x="520" y="240">TEMPERATURE</text>
+
+  <!-- carbon falls to zero, then is put back -->
+  <path class="dg-a" d="M490 92 C520 108, 552 148, 592 190 C628 226, 662 262, 695 288 C726 306, 760 310, 790 310" />
+  <path class="dg-a" d="M790 310 L806 268" />
+  <path class="dg-a" d="M806 268 H900" />
+  <circle cx="790" cy="310" r="3.6" class="dg-accent" />
+  <circle cx="806" cy="268" r="3.6" class="dg-accent" />
+  <text class="dg-lbl dg-key" x="512" y="106">CARBON</text>
+  <text class="dg-lbl dg-soft" x="784" y="274" text-anchor="end">BLOWN TO ZERO —</text>
+  <text class="dg-lbl dg-soft" x="784" y="288" text-anchor="end">SOFT, BRITTLE, BURNT IRON</text>
+  <text class="dg-lbl dg-key" x="816" y="256">SPIEGELEISEN, WEIGHED IN</text>
+
+  <text class="dg-lbl dg-num" x="430" y="386">BESSEMER'S OWN ANSWER WAS TO GUESS AT THE FLAME. MUSHET'S — WHICH IS</text>
+  <text class="dg-lbl dg-num" x="430" y="400">WHAT MADE THE PROCESS USABLE — WAS TO BLOW THE CARBON OUT COMPLETELY</text>
+  <text class="dg-lbl dg-num" x="430" y="414">AND THEN ADD A WEIGHED QUANTITY BACK.</text>
+  <text class="dg-lbl dg-soft" x="430" y="434">COMPOSITION IS A RECIPE AGAIN, AS IN THE CRUCIBLE — AT FIFTY TIMES THE SCALE. £50 A TON TO £7.</text>
+</svg>
