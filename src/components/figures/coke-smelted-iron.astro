@@ -1,0 +1,106 @@
+---
+/**
+ * The constraint is mechanical, not chemical. A blast furnace is a column, and
+ * the fuel at the bottom carries the weight of everything above it. Charcoal
+ * crushes under its own charge, which caps the stack height; coke does not, so
+ * the stack goes taller, the charge goes larger, and the daily output follows.
+ * The coking oven at right is the same operation as charcoal-burning applied to
+ * coal — and it takes most of the sulphur off with the tars.
+ */
+---
+
+<svg viewBox="0 0 960 460" role="img" aria-label="A charcoal furnace stack limited by crush height beside a taller coke stack, and a coking oven driving off volatiles and sulphur">
+  <defs>
+    <marker id="ck-ar" viewBox="0 0 8 8" refX="7" refY="4" markerWidth="6" markerHeight="6" orient="auto">
+      <path d="M0 0 L8 4 L0 8 z" class="dg-ink" />
+    </marker>
+    <marker id="ck-ar-a" viewBox="0 0 8 8" refX="7" refY="4" markerWidth="6" markerHeight="6" orient="auto">
+      <path d="M0 0 L8 4 L0 8 z" class="dg-accent" />
+    </marker>
+  </defs>
+
+  <text class="dg-lbl" x="30" y="24">THE FUEL CARRIES THE COLUMN · SAME SCALE</text>
+
+  <!-- ── charcoal stack ───────────────────────────────────────────────── -->
+  <text class="dg-lbl dg-num" x="30" y="56">CHARCOAL</text>
+  <path class="dg-panel" d="M60 380 V226 H86 V380 Z" />
+  <path class="dg-panel" d="M180 380 V226 H154 V380 Z" />
+  <path class="dg-s" d="M60 380 V226 H180 V380" />
+  <path class="dg-s" d="M86 380 V226 M154 380 V226" />
+  <path class="dg-s" d="M60 380 H180" />
+  <g class="dg-h">
+    <path d="M86 250 H154 M86 274 H154 M86 298 H154 M86 322 H154 M86 346 H154" />
+  </g>
+  <!-- the fuel at the base, crushing -->
+  <path class="dg-tint" d="M86 350 H154 V378 H86 Z" />
+  <g class="dg-m">
+    <path d="M92 372 l10 -8 l9 8 M116 370 l10 -8 l9 8 M138 374 l8 -6 l6 6" />
+  </g>
+  <path class="dg-a" d="M120 214 V240" marker-end="url(#ck-ar-a)" />
+  <text class="dg-lbl dg-key" x="120" y="192" text-anchor="middle">THE CHARGE</text>
+  <text class="dg-lbl dg-key" x="120" y="206" text-anchor="middle">PRESSES DOWN</text>
+  <text class="dg-lbl dg-num" x="196" y="360">CHARCOAL CRUSHES</text>
+  <text class="dg-lbl dg-soft" x="196" y="374">UNDER ITS OWN CHARGE,</text>
+  <text class="dg-lbl dg-soft" x="196" y="388">SO THE STACK CANNOT</text>
+  <text class="dg-lbl dg-soft" x="196" y="402">GO ANY TALLER</text>
+
+  <!-- ── coke stack ───────────────────────────────────────────────────── -->
+  <text class="dg-lbl dg-num" x="390" y="56">COKE</text>
+  <path class="dg-panel" d="M400 380 V90 H430 V380 Z" />
+  <path class="dg-panel" d="M540 380 V90 H510 V380 Z" />
+  <path class="dg-s" d="M400 380 V90 H540 V380" />
+  <path class="dg-s" d="M430 380 V90 M510 380 V90" />
+  <path class="dg-s" d="M400 380 H540" />
+  <g class="dg-h">
+    <path d="M430 114 H510 M430 138 H510 M430 162 H510 M430 186 H510 M430 210 H510
+             M430 234 H510 M430 258 H510 M430 282 H510 M430 306 H510 M430 330 H510" />
+  </g>
+  <path class="dg-tint" d="M430 350 H510 V378 H430 Z" />
+  <g class="dg-m">
+    <path d="M438 366 h14 v10 h-14 Z M460 364 h14 v12 h-14 Z M482 368 h14 v8 h-14 Z" />
+  </g>
+  <path class="dg-a" d="M470 78 V104" marker-end="url(#ck-ar-a)" />
+  <text class="dg-lbl dg-key" x="470" y="70" text-anchor="middle">A MUCH BIGGER CHARGE</text>
+
+  <!-- the height difference, dimensioned -->
+  <path class="dg-d" d="M180 226 H400" />
+  <path class="dg-m" d="M370 226 V90 M364 226 H376 M364 90 H376" />
+  <text class="dg-lbl dg-soft" x="356" y="160" text-anchor="end">THE HEIGHT</text>
+  <text class="dg-lbl dg-soft" x="356" y="174" text-anchor="end">COKE ALLOWS</text>
+
+  <text class="dg-lbl dg-num" x="390" y="404">COKE HOLDS ITS SHAPE,</text>
+  <text class="dg-lbl dg-num" x="390" y="418">SO THE STACK GOES TALLER,</text>
+  <text class="dg-lbl dg-num" x="390" y="432">THE CHARGE LARGER, AND</text>
+  <text class="dg-lbl dg-num" x="390" y="446">MORE IRON COMES OUT PER DAY</text>
+
+  <!-- ══ the coking oven ════════════════════════════════════════════════ -->
+  <path class="dg-m" d="M600 14 V450" />
+  <text class="dg-lbl" x="628" y="24">THE COKING OVEN · THE SAME TRICK, ON COAL</text>
+
+  <path class="dg-s" d="M660 200 V120 C660 96, 690 80, 740 80 H840 C890 80, 920 96, 920 120 V200" />
+  <path class="dg-s" d="M660 200 H920" />
+  <path class="dg-m" d="M686 200 V126 C686 110, 706 100, 742 100 H838 C874 100, 894 110, 894 126 V200" />
+  <path class="dg-ink" d="M694 200 H886 V174 C846 166, 734 166, 694 174 Z" />
+
+  <!-- vent at the crown -->
+  <path class="dg-s" d="M778 80 V58 H802 V80" />
+  <g class="dg-a">
+    <path d="M790 58 V30" marker-end="url(#ck-ar-a)" />
+  </g>
+  <text class="dg-lbl dg-key" x="812" y="42">TARS, GASES AND</text>
+  <text class="dg-lbl dg-key" x="812" y="56">MUCH OF THE SULPHUR</text>
+
+  <text class="dg-lbl dg-soft" x="628" y="228">HEATED WITHOUT AIR — WHAT SURVIVES IS A CARBON</text>
+  <text class="dg-lbl dg-soft" x="628" y="242">SKELETON, AND IT IS STRONGER THAN CHARCOAL. THAT</text>
+  <text class="dg-lbl dg-soft" x="628" y="256">MECHANICAL DIFFERENCE MATTERS MOST.</text>
+
+  <path class="dg-m" d="M628 286 H930" />
+  <text class="dg-lbl" x="628" y="308">THE SULPHUR THAT STAYS</text>
+  <text class="dg-lbl dg-num" x="628" y="332">CHARGE MORE LIMESTONE — IT TAKES THE SULPHUR</text>
+  <text class="dg-lbl dg-num" x="628" y="346">INTO THE SLAG AND OUT OF THE IRON.</text>
+  <text class="dg-lbl dg-soft" x="628" y="372">THE TEST STAYS ENTIRELY EMPIRICAL FOR A CENTURY:</text>
+  <text class="dg-lbl dg-soft" x="628" y="386">COALS FROM SOME SEAMS MAKE GOOD IRON AND SOME</text>
+  <text class="dg-lbl dg-soft" x="628" y="400">DO NOT, AND NOBODY CAN SAY WHY UNTIL ANALYTICAL</text>
+  <text class="dg-lbl dg-soft" x="628" y="414">CHEMISTRY CATCHES UP.</text>
+  <text class="dg-lbl dg-soft" x="628" y="436">COALBROOKDALE 1709 · GENERAL BY THE 1760s</text>
+</svg>
