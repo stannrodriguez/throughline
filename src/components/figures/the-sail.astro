@@ -1,0 +1,118 @@
+---
+/**
+ * A square rig running before the wind: the sail is a drag device, so thrust
+ * points where the wind points and the hull can only go downwind or across it.
+ * About 20 m² in a 5 m/s breeze delivers on the order of a kilowatt at hull
+ * speed, against the 75 W a rower holds. The Nile inset is why one rig worked
+ * the river both ways — wind blowing south, current running north.
+ */
+---
+
+<svg viewBox="0 0 960 400" role="img" aria-label="Force diagram of a square rig running before the wind, with a Nile inset showing wind and current opposed">
+  <defs>
+    <marker id="sl-ar" viewBox="0 0 8 8" refX="7" refY="4" markerWidth="6" markerHeight="6" orient="auto">
+      <path d="M0 0 L8 4 L0 8 z" class="dg-ink" />
+    </marker>
+    <marker id="sl-ar-a" viewBox="0 0 8 8" refX="7" refY="4" markerWidth="6" markerHeight="6" orient="auto">
+      <path d="M0 0 L8 4 L0 8 z" class="dg-accent" />
+    </marker>
+  </defs>
+
+  <text class="dg-lbl" x="30" y="24">SQUARE RIG RUNNING · WIND ASTERN</text>
+
+  <!-- ── wind ─────────────────────────────────────────────────────────── -->
+  <text class="dg-lbl dg-key" x="30" y="56">WIND · 5 M/S</text>
+  <g class="dg-a">
+    <path d="M30 76 H150" marker-end="url(#sl-ar-a)" />
+    <path d="M30 104 H150" marker-end="url(#sl-ar-a)" />
+    <path d="M30 132 H150" marker-end="url(#sl-ar-a)" />
+  </g>
+
+  <!-- what a drag sail cannot do -->
+  <path class="dg-d" d="M150 186 H36" />
+  <path class="dg-m" d="M78 176 L96 196 M96 176 L78 196" />
+  <text class="dg-lbl dg-soft" x="30" y="216">NO PROGRESS UPWIND —</text>
+  <text class="dg-lbl dg-soft" x="30" y="230">A DRAG SAIL MAKES NO LIFT</text>
+
+  <!-- ── mast, yard, bellied sail ─────────────────────────────────────── -->
+  <path class="dg-s" d="M348 228 V60" />
+  <path class="dg-s" d="M268 80 H428" />
+  <path class="dg-panel" d="M272 80 C256 116, 256 160, 270 192 C312 202, 384 202, 426 192 C440 160, 440 116, 424 80 Z" />
+  <path class="dg-s" d="M272 80 C256 116, 256 160, 270 192 C312 202, 384 202, 426 192 C440 160, 440 116, 424 80 Z" />
+  <g class="dg-h">
+    <path d="M262 112 H434 M258 142 H438 M264 172 H434" />
+  </g>
+  <rect x="316" y="128" width="64" height="16" class="dg-page" />
+  <text class="dg-lbl dg-num" x="348" y="140" text-anchor="middle">≈ 20 M²</text>
+
+  <!-- braces -->
+  <path class="dg-m" d="M268 80 L232 60 M428 80 L464 60 M270 192 L246 220 M426 192 L450 220" />
+
+  <!-- ── hull ─────────────────────────────────────────────────────────── -->
+  <path class="dg-page" d="M226 230 C260 220, 300 216, 348 216 C396 216, 436 220, 470 230 C452 262, 410 276, 348 276 C286 276, 244 262, 226 230 Z" />
+  <path class="dg-s" d="M226 230 C260 220, 300 216, 348 216 C396 216, 436 220, 470 230 C452 262, 410 276, 348 276 C286 276, 244 262, 226 230 Z" />
+  <path class="dg-h" d="M240 240 C272 232, 308 229, 348 229 C388 229, 424 232, 456 240" />
+  <path class="dg-s" d="M226 230 C212 218, 206 206, 206 192" />
+  <path class="dg-s" d="M470 230 C484 218, 490 206, 490 192" />
+  <path class="dg-h" d="M186 262 H520" />
+  <text class="dg-lbl dg-soft" x="526" y="266">WATERLINE</text>
+
+  <!-- ── thrust ───────────────────────────────────────────────────────── -->
+  <path class="dg-s" d="M348 312 H510" marker-end="url(#sl-ar)" />
+  <circle cx="348" cy="312" r="3.2" class="dg-ink" />
+  <text class="dg-lbl dg-num" x="340" y="316" text-anchor="end">THRUST · A FEW HUNDRED NEWTONS</text>
+  <text class="dg-lbl dg-soft" x="348" y="332">ALWAYS THE WAY THE WIND IS GOING</text>
+
+  <!-- ── power delivered ──────────────────────────────────────────────── -->
+  <path class="dg-m" d="M30 340 H540" />
+  <text class="dg-lbl" x="30" y="358">DELIVERED CONTINUOUSLY, AT 2 M/S HULL SPEED</text>
+
+  <rect x="30" y="366" width="280" height="12" class="dg-accent" />
+  <text class="dg-lbl dg-key" x="318" y="376">≈ 1 KW · ONE SAIL</text>
+
+  <rect x="30" y="384" width="21" height="12" class="dg-ink" />
+  <text class="dg-lbl dg-num" x="60" y="394">75 W · ONE ROWER</text>
+  <text class="dg-lbl dg-soft" x="210" y="394">ROUGHLY TEN OF THEM, AND IT EATS NOTHING</text>
+
+  <!-- ══ the Nile ═══════════════════════════════════════════════════════ -->
+  <path class="dg-m" d="M578 14 V396" />
+  <text class="dg-lbl" x="600" y="24">THE NILE · ONE RIG WORKS BOTH WAYS</text>
+
+  <path class="dg-m" d="M920 70 V46" marker-end="url(#sl-ar)" />
+  <text class="dg-lbl dg-num" x="920" y="88" text-anchor="middle">N</text>
+
+  <!-- the river -->
+  <path class="dg-panel" d="M684 60 C700 130, 668 210, 690 290 C700 330, 696 362, 690 388 H796 C802 362, 806 330, 794 290 C772 210, 804 130, 788 60 Z" />
+  <path class="dg-m" d="M684 60 C700 130, 668 210, 690 290 C700 330, 696 362, 690 388" />
+  <path class="dg-m" d="M788 60 C804 130, 772 210, 794 290 C806 330, 802 362, 796 388" />
+
+  <!-- current, running north -->
+  <g class="dg-s">
+    <path d="M700 374 V340" marker-end="url(#sl-ar)" />
+    <path d="M690 258 V224" marker-end="url(#sl-ar)" />
+    <path d="M700 190 V156" marker-end="url(#sl-ar)" />
+  </g>
+  <text class="dg-lbl dg-num" x="600" y="236">CURRENT</text>
+  <text class="dg-lbl dg-soft" x="600" y="250">RUNS NORTH</text>
+
+  <!-- wind, blowing south -->
+  <path class="dg-a" d="M842 70 V340" marker-end="url(#sl-ar-a)" />
+  <text class="dg-lbl dg-key" x="856" y="180">PREVAILING</text>
+  <text class="dg-lbl dg-key" x="856" y="194">WIND BLOWS</text>
+  <text class="dg-lbl dg-key" x="856" y="208">SOUTH</text>
+
+  <!-- upstream: sail set -->
+  <path class="dg-s" d="M720 140 h40 l-6 12 h-28 Z" />
+  <path class="dg-s" d="M740 140 V104" />
+  <rect x="726" y="108" width="28" height="22" class="dg-accent" />
+  <text class="dg-lbl dg-key" x="600" y="120">SOUTH —</text>
+  <text class="dg-lbl dg-key" x="600" y="134">SAIL SET</text>
+
+  <!-- downstream: sail furled -->
+  <path class="dg-s" d="M720 322 h40 l-6 12 h-28 Z" />
+  <path class="dg-s" d="M740 322 V286" />
+  <rect x="730" y="290" width="20" height="5" class="dg-m" />
+  <text class="dg-lbl dg-num" x="600" y="306">NORTH —</text>
+  <text class="dg-lbl dg-soft" x="600" y="320">FURLED,</text>
+  <text class="dg-lbl dg-soft" x="600" y="334">DRIFTING</text>
+</svg>
