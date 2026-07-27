@@ -1,0 +1,115 @@
+---
+/**
+ * Pearl Street reaches about a square mile, and the boundary is physics rather
+ * than ambition. Loss in a conductor goes as the square of the current, so
+ * moving power at 110 volts means large currents and the useful radius runs out
+ * near a kilometre. Transmit at high voltage and low current instead and the
+ * loss collapses — but stepping voltage up and down needs transformers, and
+ * transformers only work on alternating current.
+ */
+---
+
+<svg viewBox="0 0 960 440" role="img" aria-label="The Pearl Street feeder network inside its one square mile, loss against distance at 110 volts, and AC transmission with step-up and step-down">
+  <defs>
+    <marker id="gr-ar" viewBox="0 0 8 8" refX="7" refY="4" markerWidth="6" markerHeight="6" orient="auto">
+      <path d="M0 0 L8 4 L0 8 z" class="dg-ink" />
+    </marker>
+    <marker id="gr-ar-a" viewBox="0 0 8 8" refX="7" refY="4" markerWidth="6" markerHeight="6" orient="auto">
+      <path d="M0 0 L8 4 L0 8 z" class="dg-accent" />
+    </marker>
+  </defs>
+
+  <text class="dg-lbl" x="30" y="24">PEARL STREET · 4 SEPTEMBER 1882 · 110 V DC</text>
+
+  <!-- the square mile -->
+  <rect x="70" y="46" width="300" height="300" class="dg-tint" />
+  <rect x="70" y="46" width="300" height="300" class="dg-h" />
+
+  <!-- street grid -->
+  <g class="dg-h">
+    <path d="M70 106 H370 M70 166 H370 M70 226 H370 M70 286 H370" />
+    <path d="M130 46 V346 M190 46 V346 M250 46 V346 M310 46 V346" />
+  </g>
+
+  <!-- the station -->
+  <rect x="206" y="182" width="28" height="28" class="dg-ink" />
+  <text class="dg-lbl dg-num" x="220" y="174" text-anchor="middle">STATION</text>
+
+  <!-- feeders radiating -->
+  <g class="dg-a">
+    <path d="M220 182 V106 H130" />
+    <path d="M220 182 V106 H310" />
+    <path d="M234 196 H310 V286" />
+    <path d="M206 196 H130 V286" />
+    <path d="M220 210 V286 H190" />
+    <path d="M220 210 V286 H250" />
+  </g>
+  <g class="dg-accent">
+    <circle cx="130" cy="106" r="3" /><circle cx="310" cy="106" r="3" />
+    <circle cx="310" cy="286" r="3" /><circle cx="130" cy="286" r="3" />
+    <circle cx="190" cy="286" r="3" /><circle cx="250" cy="286" r="3" />
+  </g>
+
+  <path class="dg-m" d="M70 366 H370 M70 360 V372 M370 360 V372" />
+  <text class="dg-lbl dg-num" x="220" y="388" text-anchor="middle">ONE SQUARE MILE · ABOUT 400 LAMPS</text>
+  <text class="dg-lbl dg-soft" x="30" y="410">NO CUSTOMER USES POWER CONTINUOUSLY, AND</text>
+  <text class="dg-lbl dg-soft" x="30" y="424">DIFFERENT ONES PEAK AT DIFFERENT TIMES — SO ONE</text>
+  <text class="dg-lbl dg-soft" x="30" y="438">CENTRAL PLANT BEATS A THOUSAND PRIVATE ONES.</text>
+
+  <!-- ══ why it stops there ═════════════════════════════════════════════ -->
+  <path class="dg-m" d="M420 14 V430" />
+
+  <path class="dg-h" d="M520 100 H900 M520 152 H900" />
+  <path class="dg-s" d="M520 60 V204 H900" />
+  <text class="dg-lbl" x="520" y="48">POWER LOST IN THE CONDUCTOR</text>
+  <text class="dg-lbl" x="710" y="228" text-anchor="middle">DISTANCE FROM THE STATION →</text>
+
+  <path class="dg-a" d="M520 202 C560 198, 596 186, 634 158 C670 130, 700 92, 726 68" />
+  <path class="dg-d" d="M660 60 V204" />
+  <text class="dg-lbl dg-key" x="530" y="86">AT 110 V, LOSS GOES AS</text>
+  <text class="dg-lbl dg-key" x="530" y="100">THE SQUARE OF THE CURRENT</text>
+  <text class="dg-lbl dg-num" x="670" y="188">ABOUT A KILOMETRE,</text>
+  <text class="dg-lbl dg-num" x="670" y="202">AND IT STOPS PAYING</text>
+
+  <!-- the AC answer -->
+  <path class="dg-m" d="M450 252 H920" />
+  <text class="dg-lbl" x="450" y="274">THE ANSWER · HIGH VOLTAGE, LOW CURRENT, THEN STEP DOWN</text>
+
+  <rect x="450" y="296" width="70" height="48" class="dg-panel" />
+  <rect x="450" y="296" width="70" height="48" class="dg-s" />
+  <text class="dg-lbl dg-soft" x="485" y="324" text-anchor="middle">PLANT</text>
+
+  <!-- step up -->
+  <path class="dg-s" d="M520 320 H556" />
+  <g class="dg-a">
+    <path d="M562 302 a8 9 0 1 0 0 18 a8 9 0 1 0 0 18" />
+    <path d="M578 302 a8 9 0 1 1 0 18 a8 9 0 1 1 0 18" />
+  </g>
+  <path class="dg-m" d="M570 296 V344" />
+  <text class="dg-lbl dg-key" x="570" y="288" text-anchor="middle">STEP UP</text>
+
+  <!-- the long line -->
+  <path class="dg-s" d="M586 320 H794" />
+  <g class="dg-m">
+    <path d="M640 320 V348 M700 320 V348 M760 320 V348" />
+    <path d="M630 348 h20 M690 348 h20 M750 348 h20" />
+  </g>
+  <text class="dg-lbl dg-num" x="690" y="312" text-anchor="middle">TWENTY MILES</text>
+
+  <!-- step down -->
+  <g class="dg-a">
+    <path d="M802 302 a8 9 0 1 0 0 18 a8 9 0 1 0 0 18" />
+    <path d="M818 302 a8 9 0 1 1 0 18 a8 9 0 1 1 0 18" />
+  </g>
+  <path class="dg-m" d="M810 296 V344" />
+  <text class="dg-lbl dg-key" x="810" y="288" text-anchor="middle">STEP DOWN</text>
+  <path class="dg-s" d="M826 320 H862" />
+  <rect x="862" y="296" width="58" height="48" class="dg-tint" />
+  <rect x="862" y="296" width="58" height="48" class="dg-s" />
+  <text class="dg-lbl dg-soft" x="891" y="324" text-anchor="middle">CITY</text>
+
+  <text class="dg-lbl dg-num" x="450" y="378">TRANSFORMERS ONLY WORK ON ALTERNATING CURRENT, WHICH IS WHY</text>
+  <text class="dg-lbl dg-num" x="450" y="392">NIAGARA IN 1895 SETTLES THE ARGUMENT. EVERY GRID SINCE IS AC.</text>
+  <text class="dg-lbl dg-soft" x="450" y="414">AND THE UNFORGIVING PROPERTY: ELECTRICITY IS GENERATED AND CONSUMED</text>
+  <text class="dg-lbl dg-soft" x="450" y="428">IN THE SAME INSTANT, SO SUPPLY MUST TRACK DEMAND SECOND BY SECOND.</text>
+</svg>
