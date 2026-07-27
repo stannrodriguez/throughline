@@ -1,0 +1,108 @@
+---
+/**
+ * The reduction cell. No chemical reducing agent will take oxygen off aluminium,
+ * so the electrons are put onto the metal ions directly: alumina dissolved in a
+ * cryolite bath at about 950°, carbon anodes dipped in, and the metal pooling on
+ * the carbon-lined floor that serves as cathode. The current is enormous and the
+ * voltage small, which is why a smelter is best read as a device for turning
+ * electricity into metal.
+ */
+---
+
+<svg viewBox="0 0 960 460" role="img" aria-label="A Hall-Heroult reduction cell in section, and the price of aluminium falling between 1850 and 1900">
+  <defs>
+    <marker id="al-ar" viewBox="0 0 8 8" refX="7" refY="4" markerWidth="6" markerHeight="6" orient="auto">
+      <path d="M0 0 L8 4 L0 8 z" class="dg-ink" />
+    </marker>
+    <marker id="al-ar-a" viewBox="0 0 8 8" refX="7" refY="4" markerWidth="6" markerHeight="6" orient="auto">
+      <path d="M0 0 L8 4 L0 8 z" class="dg-accent" />
+    </marker>
+  </defs>
+
+  <text class="dg-lbl" x="30" y="24">THE REDUCTION CELL · SECTION</text>
+
+  <!-- the pot shell -->
+  <path class="dg-panel" d="M70 150 H110 V330 H70 Z" />
+  <path class="dg-panel" d="M450 150 H410 V330 H450 Z" />
+  <path class="dg-s" d="M70 150 V330 H450 V150" />
+  <path class="dg-s" d="M110 150 V330 M410 150 V330" />
+
+  <!-- the carbon lining, which is the cathode -->
+  <path class="dg-ink" d="M110 300 H410 V330 H110 Z" />
+  <text class="dg-lbl dg-soft" x="460" y="322">CARBON LINING · CATHODE</text>
+
+  <!-- the molten aluminium, pooling on it -->
+  <path class="dg-accent" d="M110 276 H410 V300 H110 Z" />
+  <text class="dg-lbl dg-key" x="460" y="292">MOLTEN ALUMINIUM</text>
+
+  <!-- the cryolite bath -->
+  <path class="dg-tint" d="M110 186 H410 V276 H110 Z" />
+  <path class="dg-m" d="M110 186 H410" />
+  <text class="dg-lbl dg-num" x="460" y="230">CRYOLITE BATH AT 950°</text>
+  <text class="dg-lbl dg-soft" x="460" y="244">ALUMINA DISSOLVED IN IT</text>
+
+  <!-- carbon anodes -->
+  <g>
+    <rect x="146" y="130" width="52" height="110" class="dg-panel" />
+    <rect x="146" y="130" width="52" height="110" class="dg-s" />
+    <rect x="234" y="130" width="52" height="110" class="dg-panel" />
+    <rect x="234" y="130" width="52" height="110" class="dg-s" />
+    <rect x="322" y="130" width="52" height="110" class="dg-panel" />
+    <rect x="322" y="130" width="52" height="110" class="dg-s" />
+  </g>
+  <path class="dg-s" d="M120 120 H400" />
+  <path class="dg-m" d="M172 130 V120 M260 130 V120 M348 130 V120" />
+  <text class="dg-lbl dg-num" x="30" y="116">CARBON ANODES · CONSUMED AS THEY WORK</text>
+
+  <!-- the current -->
+  <path class="dg-a" d="M60 100 H120" marker-end="url(#al-ar-a)" />
+  <text class="dg-lbl dg-key" x="30" y="92">HUNDREDS OF THOUSANDS OF AMPERES, AT A FEW VOLTS</text>
+  <g class="dg-a">
+    <path d="M172 246 V270" marker-end="url(#al-ar-a)" />
+    <path d="M260 246 V270" marker-end="url(#al-ar-a)" />
+    <path d="M348 246 V270" marker-end="url(#al-ar-a)" />
+  </g>
+
+  <text class="dg-lbl dg-num" x="30" y="366">NO REDUCING AGENT WILL TAKE THE OXYGEN OFF ALUMINIUM, SO THE ELECTRONS</text>
+  <text class="dg-lbl dg-num" x="30" y="380">ARE FORCED ONTO THE METAL IONS DIRECTLY.</text>
+  <text class="dg-lbl dg-soft" x="30" y="402">A SMELTER IS BEST READ AS A DEVICE FOR TURNING ELECTRICITY INTO METAL —</text>
+  <text class="dg-lbl dg-soft" x="30" y="416">WHICH IS WHY SMELTERS SIT AT HYDROELECTRIC DAMS.</text>
+  <text class="dg-lbl dg-soft" x="30" y="436">HALL AND HÉROULT ARRIVE AT IT SEPARATELY IN 1886, BOTH AGED 22.</text>
+
+  <!-- ══ the price ══════════════════════════════════════════════════════ -->
+  <path class="dg-m" d="M620 14 V450" />
+
+  <path class="dg-h" d="M700 110 H930 M700 178 H930 M700 246 H930" />
+  <path class="dg-h" d="M760 60 V314 M820 60 V314 M880 60 V314" />
+  <path class="dg-s" d="M700 60 V314 H930" />
+
+  <text class="dg-lbl" x="700" y="46">DOLLARS A POUND</text>
+  <g class="dg-num">
+    <text x="692" y="64" text-anchor="end">$16</text>
+    <text x="692" y="114" text-anchor="end">$12</text>
+    <text x="692" y="182" text-anchor="end">$8</text>
+    <text x="692" y="250" text-anchor="end">$4</text>
+    <text x="692" y="318" text-anchor="end">$0</text>
+  </g>
+  <path class="dg-m" d="M700 314 v5 M760 314 v5 M820 314 v5 M880 314 v5 M930 314 v5" />
+  <g class="dg-num">
+    <text x="700" y="334" text-anchor="middle">1850</text>
+    <text x="790" y="334" text-anchor="middle">1875</text>
+    <text x="880" y="334" text-anchor="middle">1895</text>
+  </g>
+
+  <path class="dg-a" d="M700 110 C724 112, 744 116, 760 122 C790 132, 812 148, 830 178 C848 210, 858 268, 866 296 C876 308, 900 312, 930 313" />
+  <circle cx="700" cy="110" r="3.6" class="dg-accent" />
+  <circle cx="930" cy="313" r="3.6" class="dg-accent" />
+  <path class="dg-d" d="M830 60 V314" />
+  <text class="dg-lbl dg-key" x="710" y="100">$12 A POUND</text>
+  <text class="dg-lbl dg-num" x="836" y="80">1886 · THE CELL</text>
+  <text class="dg-lbl dg-key" x="926" y="304" text-anchor="end">$0.30 A POUND</text>
+
+  <path class="dg-m" d="M700 352 H930" />
+  <text class="dg-lbl" x="700" y="374">WHAT THE METAL GIVES BACK</text>
+  <text class="dg-lbl dg-num" x="700" y="396">A THIRD THE WEIGHT OF STEEL FOR A GIVEN</text>
+  <text class="dg-lbl dg-num" x="700" y="410">VOLUME, AND NEAR ITS STRENGTH PER UNIT WEIGHT.</text>
+  <text class="dg-lbl dg-soft" x="700" y="430">A THIN TENACIOUS OXIDE FILM PROTECTS THE METAL</text>
+  <text class="dg-lbl dg-soft" x="700" y="444">UNDER IT, SO IT DOES NOT RUST AWAY AS IRON DOES.</text>
+</svg>
