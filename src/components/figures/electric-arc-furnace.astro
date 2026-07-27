@@ -1,0 +1,100 @@
+---
+/**
+ * An arc is not a flame. A flame's temperature is capped by the energy released
+ * in a chemical reaction; an arc's is set by electrical power and geometry, so
+ * it sits near 3,500° — above the melting point of essentially everything a
+ * metallurgist wants. The consequence that matters more is the atmosphere: no
+ * combustion products means chromium and the rest survive to be part of the
+ * alloy instead of burning into the slag.
+ */
+---
+
+<svg viewBox="0 0 960 440" role="img" aria-label="A fuel flame's temperature ceiling against an electric arc column, and what each furnace atmosphere does to the alloying elements">
+  <defs>
+    <marker id="ea-ar" viewBox="0 0 8 8" refX="7" refY="4" markerWidth="6" markerHeight="6" orient="auto">
+      <path d="M0 0 L8 4 L0 8 z" class="dg-ink" />
+    </marker>
+  </defs>
+
+  <text class="dg-lbl" x="30" y="24">WHAT SETS THE CEILING</text>
+
+  <!-- the temperature scale, shared -->
+  <path class="dg-s" d="M110 60 V330" />
+  <path class="dg-h" d="M110 330 H420 M110 254 H420 M110 178 H420 M110 102 H420" />
+  <g class="dg-num">
+    <text x="102" y="334" text-anchor="end">1,000°</text>
+    <text x="102" y="258" text-anchor="end">2,000°</text>
+    <text x="102" y="182" text-anchor="end">3,000°</text>
+    <text x="102" y="106" text-anchor="end">4,000°</text>
+  </g>
+
+  <!-- the best fuel flame -->
+  <rect x="150" y="262" width="90" height="68" class="dg-panel" />
+  <rect x="150" y="262" width="90" height="68" class="dg-m" />
+  <path class="dg-d" d="M110 262 H420" />
+  <text class="dg-lbl dg-num" x="195" y="352" text-anchor="middle">FLAME</text>
+  <text class="dg-lbl dg-soft" x="195" y="366" text-anchor="middle">~1,900°</text>
+  <text class="dg-lbl dg-soft" x="195" y="386" text-anchor="middle">CAPPED BY THE ENERGY</text>
+  <text class="dg-lbl dg-soft" x="195" y="400" text-anchor="middle">A REACTION RELEASES</text>
+
+  <!-- the arc column -->
+  <rect x="290" y="140" width="90" height="190" class="dg-tint" />
+  <rect x="290" y="140" width="90" height="190" class="dg-a" />
+  <path class="dg-d" d="M110 140 H420" />
+  <text class="dg-lbl dg-key" x="335" y="352" text-anchor="middle">ARC</text>
+  <text class="dg-lbl dg-key" x="335" y="366" text-anchor="middle">3,500°</text>
+  <text class="dg-lbl dg-soft" x="335" y="386" text-anchor="middle">SET BY POWER</text>
+  <text class="dg-lbl dg-soft" x="335" y="400" text-anchor="middle">AND GEOMETRY</text>
+
+  <text class="dg-lbl dg-num" x="30" y="426">CURRENT THROUGH IONISED GAS DISSIPATES ENERGY</text>
+  <text class="dg-lbl dg-soft" x="30" y="440">IN A VERY SMALL VOLUME. NO CEILING TO REACH.</text>
+
+  <!-- ══ the two atmospheres ════════════════════════════════════════════ -->
+  <path class="dg-m" d="M470 14 V430" />
+  <text class="dg-lbl" x="500" y="24">AND WHAT EACH ATMOSPHERE DOES TO THE ALLOY</text>
+
+  <!-- fuel-fired -->
+  <text class="dg-lbl dg-num" x="500" y="56">FUEL-FIRED · THE PRODUCTS OF ITS OWN FLAME</text>
+  <rect x="500" y="70" width="420" height="86" class="dg-panel" />
+  <rect x="500" y="70" width="420" height="86" class="dg-h" />
+  <g class="dg-eq dg-soft">
+    <text x="524" y="102">CO₂</text>
+    <text x="600" y="120">H₂O</text>
+    <text x="676" y="98">O₂</text>
+    <text x="752" y="122">CO₂</text>
+    <text x="828" y="104">O₂</text>
+  </g>
+  <path class="dg-s" d="M520 138 H900" />
+  <text class="dg-lbl dg-soft" x="510" y="150">SLAG</text>
+  <g class="dg-m">
+    <path d="M560 126 V136 M620 126 V136 M680 126 V136 M740 126 V136 M800 126 V136" />
+  </g>
+  <text class="dg-lbl dg-num" x="500" y="176">CHROMIUM OXIDISES AND GOES INTO THE SLAG BEFORE IT CAN DO ITS JOB —</text>
+  <text class="dg-lbl dg-num" x="500" y="190">WHICH IS WHY STAINLESS STEEL IS NOT A NINETEENTH-CENTURY MATERIAL.</text>
+
+  <!-- arc -->
+  <text class="dg-lbl dg-num" x="500" y="232">ARC · NO COMBUSTION PRODUCTS AT ALL</text>
+  <rect x="500" y="246" width="420" height="86" class="dg-page" />
+  <rect x="500" y="246" width="420" height="86" class="dg-h" />
+
+  <!-- electrodes into the bath -->
+  <path class="dg-s" d="M600 246 V286 M660 246 V286 M720 246 V286" />
+  <g class="dg-a">
+    <path d="M600 286 L604 300 L598 306 M660 286 L656 300 L662 306 M720 286 L724 300 L718 306" />
+  </g>
+  <path class="dg-accent" d="M520 310 H900 V326 H520 Z" />
+  <text class="dg-lbl dg-soft" x="510" y="322">BATH</text>
+  <g class="dg-lbl dg-key">
+    <text x="782" y="270">Cr</text>
+    <text x="812" y="290">Ni</text>
+    <text x="844" y="268">W</text>
+    <text x="874" y="288">V</text>
+  </g>
+  <text class="dg-lbl dg-key" x="500" y="352">CHROMIUM, NICKEL, TUNGSTEN AND VANADIUM ALL SURVIVE THE MELT.</text>
+  <text class="dg-lbl dg-soft" x="500" y="366">THE TOOL STEELS AND STAINLESS STEELS OF THE TWENTIETH CENTURY</text>
+  <text class="dg-lbl dg-soft" x="500" y="380">ARE ALL PRODUCTS OF THIS FURNACE.</text>
+
+  <path class="dg-m" d="M500 396 H920" />
+  <text class="dg-lbl dg-num" x="500" y="418">AND IT RUNS ON SCRAP · A CHARGE OF USED STEEL AND A SUPPLY OF</text>
+  <text class="dg-lbl dg-num" x="500" y="432">ELECTRICITY IS ALL A MINI-MILL NEEDS — NO ORE FIELD REQUIRED.</text>
+</svg>
