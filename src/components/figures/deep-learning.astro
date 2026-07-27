@@ -1,0 +1,177 @@
+---
+/**
+ * Nobody specifies edges, textures, parts or objects. Each layer applies a large
+ * number of adjustable weights, the error is pushed back through all of them by
+ * the chain rule, and what the layers converge on is whatever happens to reduce
+ * that error — edges early, parts in the middle, objects late. The chart is the
+ * moment the learned features beat the designed ones.
+ */
+---
+
+<svg viewBox="0 0 960 480" role="img" aria-label="A photograph passing through layers whose filters go from edges to textures to objects, and ImageNet top-five error by year with the 2012 step">
+  <defs>
+    <marker id="dl-ar" viewBox="0 0 8 8" refX="7" refY="4" markerWidth="6" markerHeight="6" orient="auto">
+      <path d="M0 0 L8 4 L0 8 z" class="dg-ink" />
+    </marker>
+    <marker id="dl-ar-a" viewBox="0 0 8 8" refX="7" refY="4" markerWidth="6" markerHeight="6" orient="auto">
+      <path d="M0 0 L8 4 L0 8 z" class="dg-accent" />
+    </marker>
+  </defs>
+
+  <text class="dg-lbl" x="30" y="24">WHAT THE LAYERS END UP REPRESENTING</text>
+
+  <!-- ══ the photograph ═════════════════════════════════════════════════ -->
+  <path class="dg-panel" d="M40 60 H130 V150 H40 Z" />
+  <path class="dg-s" d="M40 60 H130 V150 H40 Z" />
+  <path class="dg-tint" d="M40 118 C64 96, 82 128, 104 108 C116 98, 124 106, 130 102 V150 H40 Z" />
+  <circle cx="106" cy="80" r="9" class="dg-accent" />
+  <text class="dg-lbl dg-soft" x="40" y="168">A PHOTOGRAPH</text>
+
+  <path class="dg-m" d="M138 105 H172" marker-end="url(#dl-ar)" />
+
+  <!-- ══ early layers · edges and colour ════════════════════════════════ -->
+  <path class="dg-tint" d="M180 60 h13 v26 h-13 Z" />
+  <path class="dg-tint" d="M212 60 h26 v13 h-26 Z" />
+  <path class="dg-tint" d="M244 60 L270 60 L244 86 Z" />
+  <path class="dg-tint" d="M206 92 L206 118 L180 118 Z" />
+  <path class="dg-ink" d="M223 92 h4 v26 h-4 Z" />
+  <path class="dg-ink" d="M244 103 h26 v4 h-26 Z" />
+  <circle cx="193" cy="137" r="8" class="dg-accent" />
+  <circle cx="225" cy="137" r="8" class="dg-tint" />
+  <path class="dg-ink" d="M244 146 L266 124 L270 128 L248 150 Z" />
+  <path class="dg-m" d="M180 60 h26 v26 h-26 Z M212 60 h26 v26 h-26 Z M244 60 h26 v26 h-26 Z
+                        M180 92 h26 v26 h-26 Z M212 92 h26 v26 h-26 Z M244 92 h26 v26 h-26 Z
+                        M180 124 h26 v26 h-26 Z M212 124 h26 v26 h-26 Z M244 124 h26 v26 h-26 Z" />
+  <text class="dg-lbl dg-num" x="180" y="168">EDGES AND COLOUR</text>
+
+  <path class="dg-m" d="M278 105 H312" marker-end="url(#dl-ar)" />
+
+  <!-- ══ middle layers · textures and parts ═════════════════════════════ -->
+  <g class="dg-m">
+    <path d="M324 62 v22 M332 62 v22 M340 62 v22" />
+    <path d="M384 82 C392 64, 402 64, 410 82" />
+    <path d="M384 76 C392 58, 402 58, 410 76" />
+    <path d="M326 116 V98 H346" />
+    <path d="M384 128 C390 138, 398 138, 404 128 M384 140 C390 150, 398 150, 404 140" />
+    <path d="M352 130 h26 M352 138 h26 M352 146 h26" />
+  </g>
+  <g class="dg-ink">
+    <circle cx="358" cy="68" r="3" /><circle cx="368" cy="76" r="3" /><circle cx="358" cy="80" r="3" />
+    <circle cx="392" cy="100" r="2.4" /><circle cx="402" cy="106" r="2.4" /><circle cx="394" cy="112" r="2.4" />
+    <circle cx="404" cy="98" r="2.4" /><circle cx="388" cy="108" r="2.4" />
+  </g>
+  <g class="dg-m">
+    <circle cx="365" cy="105" r="10" /><circle cx="365" cy="105" r="4" />
+    <ellipse cx="333" cy="137" rx="11" ry="6" />
+  </g>
+  <circle cx="333" cy="137" r="3" class="dg-ink" />
+  <path class="dg-m" d="M320 60 h26 v26 h-26 Z M352 60 h26 v26 h-26 Z M384 60 h26 v26 h-26 Z
+                        M320 92 h26 v26 h-26 Z M352 92 h26 v26 h-26 Z M384 92 h26 v26 h-26 Z
+                        M320 124 h26 v26 h-26 Z M352 124 h26 v26 h-26 Z M384 124 h26 v26 h-26 Z" />
+  <text class="dg-lbl dg-num" x="320" y="168">TEXTURES AND PARTS</text>
+
+  <path class="dg-m" d="M418 105 H452" marker-end="url(#dl-ar)" />
+
+  <!-- ══ late layers · objects ══════════════════════════════════════════ -->
+  <g class="dg-m">
+    <circle cx="473" cy="73" r="9" />
+    <path d="M497 78 a8 8 0 1 0 16 0 a8 8 0 1 0 -16 0" />
+    <path d="M497 76 L500 66 L505 71 M513 76 L510 66 L505 71" />
+    <path d="M536 78 h20 v-6 h-8 l-4 -5 h-8 Z" />
+    <circle cx="540" cy="80" r="3" /><circle cx="552" cy="80" r="3" />
+    <path d="M470 100 C476 96, 486 100, 492 110 L478 114 Z" />
+    <path d="M486 104 C492 108, 494 112, 492 116" />
+    <path d="M509 116 h10 v-14 h-4 v-6 h-2 v6 h-4 Z" />
+    <path d="M542 116 h6 v-10 h-6 Z" />
+    <circle cx="545" cy="100" r="7" />
+    <circle cx="470" cy="140" r="8" />
+    <path d="M462 136 C458 130, 460 128, 464 132 M478 136 C482 130, 480 128, 476 132" />
+    <circle cx="501" cy="137" r="4" />
+    <circle cx="501" cy="129" r="3.4" /><circle cx="501" cy="145" r="3.4" />
+    <circle cx="493" cy="137" r="3.4" /><circle cx="509" cy="137" r="3.4" />
+    <path d="M534 148 h20 v-12 h-20 Z M532 136 L544 127 L556 136" />
+  </g>
+  <path class="dg-m" d="M460 60 h26 v26 h-26 Z M492 60 h26 v26 h-26 Z M524 60 h26 v26 h-26 Z
+                        M460 92 h26 v26 h-26 Z M492 92 h26 v26 h-26 Z M524 92 h26 v26 h-26 Z
+                        M460 124 h26 v26 h-26 Z M492 124 h26 v26 h-26 Z M524 124 h26 v26 h-26 Z" />
+  <text class="dg-lbl dg-num" x="460" y="168">OBJECTS</text>
+
+  <path class="dg-m" d="M558 105 H592" marker-end="url(#dl-ar)" />
+
+  <!-- ══ the answer ═════════════════════════════════════════════════════ -->
+  <rect x="600" y="68" width="100" height="12" class="dg-accent" />
+  <rect x="600" y="90" width="27" height="12" class="dg-ink" />
+  <rect x="600" y="112" width="17" height="12" class="dg-ink" />
+  <rect x="600" y="134" width="11" height="12" class="dg-ink" />
+  <rect x="600" y="156" width="7" height="12" class="dg-ink" />
+  <path class="dg-m" d="M600 62 V172" />
+  <text class="dg-lbl dg-key" x="600" y="56">ONE OF A THOUSAND</text>
+
+  <path class="dg-m" d="M714 52 V176" />
+  <text class="dg-lbl dg-num" x="730" y="66">EACH LAYER APPLIES A LARGE</text>
+  <text class="dg-lbl dg-num" x="730" y="80">NUMBER OF ADJUSTABLE WEIGHTS</text>
+  <text class="dg-lbl dg-num" x="730" y="94">AND A SIMPLE NON-LINEAR</text>
+  <text class="dg-lbl dg-num" x="730" y="108">FUNCTION.</text>
+  <text class="dg-lbl dg-soft" x="730" y="134">TRAINING PUSHES EVERY WEIGHT</text>
+  <text class="dg-lbl dg-soft" x="730" y="148">IN WHICHEVER DIRECTION</text>
+  <text class="dg-lbl dg-soft" x="730" y="162">REDUCES THE ERROR.</text>
+
+  <path class="dg-a-d" d="M700 192 H66" marker-end="url(#dl-ar-a)" />
+  <text class="dg-lbl dg-key" x="380" y="212" text-anchor="middle">THE ERROR IS PUSHED BACK THROUGH EVERY LAYER BY THE CHAIN RULE</text>
+
+  <!-- ══ the chart ══════════════════════════════════════════════════════ -->
+  <path class="dg-m" d="M30 236 H930" />
+  <path class="dg-m" d="M496 258 V470" />
+
+  <text class="dg-lbl" x="30" y="272">ILSVRC TOP-FIVE ERROR, WINNING ENTRY</text>
+
+  <path class="dg-h" d="M80 290 H450 M80 337 H450 M80 383 H450" />
+  <path class="dg-s" d="M80 282 V430 H450" />
+  <g class="dg-num">
+    <text x="72" y="294" text-anchor="end">30%</text>
+    <text x="72" y="341" text-anchor="end">20%</text>
+    <text x="72" y="387" text-anchor="end">10%</text>
+    <text x="72" y="434" text-anchor="end">0</text>
+  </g>
+
+  <rect x="92" y="298" width="38" height="132" class="dg-ink" />
+  <rect x="152" y="310" width="38" height="120" class="dg-ink" />
+  <path class="dg-d" d="M212 308 H230 V430 H212 Z" />
+  <rect x="232" y="359" width="18" height="71" class="dg-accent" />
+  <rect x="272" y="375" width="38" height="55" class="dg-ink" />
+  <rect x="332" y="399" width="38" height="31" class="dg-ink" />
+  <rect x="392" y="413" width="38" height="17" class="dg-ink" />
+
+  <g class="dg-num">
+    <text x="111" y="292" text-anchor="middle">28.2</text>
+    <text x="171" y="304" text-anchor="middle">25.8</text>
+    <text x="221" y="302" text-anchor="middle">26.2</text>
+    <text x="291" y="369" text-anchor="middle">11.7</text>
+    <text x="351" y="393" text-anchor="middle">6.7</text>
+    <text x="411" y="407" text-anchor="middle">3.6</text>
+  </g>
+  <text class="dg-lbl dg-key" x="241" y="353" text-anchor="middle">15.3</text>
+
+  <g class="dg-soft">
+    <text x="111" y="448" text-anchor="middle">2010</text>
+    <text x="171" y="448" text-anchor="middle">2011</text>
+    <text x="231" y="448" text-anchor="middle">2012</text>
+    <text x="291" y="448" text-anchor="middle">2013</text>
+    <text x="351" y="448" text-anchor="middle">2014</text>
+    <text x="411" y="448" text-anchor="middle">2015</text>
+  </g>
+  <text class="dg-lbl dg-soft" x="30" y="468">THE NEXT YEAR ESSENTIALLY EVERY ENTRANT USED THE SAME APPROACH.</text>
+
+  <!-- ══ what had changed ═══════════════════════════════════════════════ -->
+  <text class="dg-lbl" x="520" y="272">WHAT HAD CHANGED SINCE 1986</text>
+  <text class="dg-lbl dg-num" x="520" y="298">BACKPROPAGATION WAS PUBLISHED IN 1986, AND CONVOLUTIONAL</text>
+  <text class="dg-lbl dg-num" x="520" y="312">NETWORKS READ POSTAL DIGITS BY THE LATE 1980s. NOTHING IN</text>
+  <text class="dg-lbl dg-num" x="520" y="326">THIS WAS NEW IN 2012 EXCEPT ITS FEASIBILITY.</text>
+  <text class="dg-lbl dg-key" x="520" y="354">— LABELLED DATA IN QUANTITIES NOBODY HAD PREVIOUSLY HAD</text>
+  <text class="dg-lbl dg-key" x="520" y="372">— GRAPHICS PROCESSORS SUITED TO DENSE MATRIX ARITHMETIC</text>
+  <text class="dg-lbl dg-key" x="520" y="390">— RECTIFIED LINEAR UNITS AND DROPOUT, WHICH MADE DEEP</text>
+  <text class="dg-lbl dg-key" x="536" y="404">STACKS TRAINABLE</text>
+  <text class="dg-lbl dg-soft" x="520" y="432">A RARE CASE OF A THEORY WAITING DECADES FOR ITS INPUTS</text>
+  <text class="dg-lbl dg-soft" x="520" y="446">RATHER THAN THE OTHER WAY ROUND.</text>
+  <text class="dg-lbl dg-num" x="520" y="468">60 MILLION PARAMETERS · 1.2 MILLION IMAGES</text>
+</svg>
