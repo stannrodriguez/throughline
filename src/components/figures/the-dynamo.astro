@@ -1,0 +1,92 @@
+---
+/**
+ * Self-excitation is positive feedback held in check by saturation. Residual
+ * magnetism in the iron makes a little current; the current runs through the
+ * field winding and makes more flux; more flux makes more current. That would
+ * run away, except that iron can only be magnetised so far — beyond the knee,
+ * extra current buys almost no extra field, and the machine settles.
+ */
+---
+
+<svg viewBox="0 0 960 440" role="img" aria-label="The self-excitation feedback loop of a dynamo, and the saturation curve that sets its stable operating point">
+  <defs>
+    <marker id="dy-ar" viewBox="0 0 8 8" refX="7" refY="4" markerWidth="6" markerHeight="6" orient="auto">
+      <path d="M0 0 L8 4 L0 8 z" class="dg-ink" />
+    </marker>
+    <marker id="dy-ar-a" viewBox="0 0 8 8" refX="7" refY="4" markerWidth="6" markerHeight="6" orient="auto">
+      <path d="M0 0 L8 4 L0 8 z" class="dg-accent" />
+    </marker>
+  </defs>
+
+  <text class="dg-lbl" x="30" y="24">THE LOOP · NO PERMANENT MAGNET ANYWHERE IN IT</text>
+
+  <!-- the four blocks of the loop -->
+  <rect x="60" y="56" width="150" height="52" class="dg-panel" />
+  <rect x="60" y="56" width="150" height="52" class="dg-s" />
+  <text class="dg-lbl dg-num" x="135" y="80" text-anchor="middle">RESIDUAL</text>
+  <text class="dg-lbl dg-num" x="135" y="94" text-anchor="middle">MAGNETISM</text>
+
+  <rect x="270" y="56" width="150" height="52" class="dg-panel" />
+  <rect x="270" y="56" width="150" height="52" class="dg-s" />
+  <text class="dg-lbl dg-num" x="345" y="80" text-anchor="middle">ARMATURE</text>
+  <text class="dg-lbl dg-num" x="345" y="94" text-anchor="middle">CURRENT</text>
+
+  <rect x="270" y="188" width="150" height="52" class="dg-panel" />
+  <rect x="270" y="188" width="150" height="52" class="dg-s" />
+  <text class="dg-lbl dg-num" x="345" y="212" text-anchor="middle">FIELD</text>
+  <text class="dg-lbl dg-num" x="345" y="226" text-anchor="middle">WINDING</text>
+
+  <rect x="60" y="188" width="150" height="52" class="dg-panel" />
+  <rect x="60" y="188" width="150" height="52" class="dg-s" />
+  <text class="dg-lbl dg-num" x="135" y="212" text-anchor="middle">GROWING</text>
+  <text class="dg-lbl dg-num" x="135" y="226" text-anchor="middle">FLUX</text>
+
+  <!-- the loop arrows -->
+  <path class="dg-a" d="M210 82 H262" marker-end="url(#dy-ar-a)" />
+  <path class="dg-a" d="M345 108 V180" marker-end="url(#dy-ar-a)" />
+  <path class="dg-a" d="M270 214 H218" marker-end="url(#dy-ar-a)" />
+  <path class="dg-a" d="M135 188 V116" marker-end="url(#dy-ar-a)" />
+
+  <text class="dg-lbl dg-key" x="235" y="152" text-anchor="middle">+</text>
+
+  <text class="dg-lbl dg-num" x="30" y="278">MORE CURRENT GIVES MORE FIELD GIVES MORE CURRENT.</text>
+  <text class="dg-lbl dg-soft" x="30" y="298">THAT WOULD RUN AWAY, EXCEPT THAT IRON CAN ONLY BE</text>
+  <text class="dg-lbl dg-soft" x="30" y="312">MAGNETISED SO FAR.</text>
+
+  <path class="dg-m" d="M30 336 H430" />
+  <text class="dg-lbl" x="30" y="358">AND IT RUNS BACKWARDS</text>
+  <text class="dg-lbl dg-num" x="30" y="380">FED WITH CURRENT, THE SAME MACHINE TURNS AND</text>
+  <text class="dg-lbl dg-num" x="30" y="394">BECOMES A MOTOR.</text>
+  <text class="dg-lbl dg-soft" x="30" y="416">EVERY EARLIER POWER SOURCE — WATER, WIND, MUSCLE,</text>
+  <text class="dg-lbl dg-soft" x="30" y="430">STEAM — HAD TO SIT WHERE THE WORK WAS DONE.</text>
+
+  <!-- ══ saturation ═════════════════════════════════════════════════════ -->
+  <path class="dg-m" d="M470 14 V430" />
+
+  <path class="dg-h" d="M560 108 H920 M560 176 H920 M560 244 H920" />
+  <path class="dg-h" d="M650 62 V312 M740 62 V312 M830 62 V312" />
+  <path class="dg-s" d="M560 62 V312 H920" />
+
+  <text class="dg-lbl" x="560" y="48">FLUX IN THE IRON</text>
+  <text class="dg-lbl" x="740" y="336" text-anchor="middle">FIELD CURRENT →</text>
+
+  <!-- the saturation curve: steep, then a knee, then flat -->
+  <path class="dg-a" d="M560 312 C588 300, 610 258, 636 196 C658 146, 682 112, 712 98 C750 82, 800 76, 840 74 C872 73, 900 73, 920 73" />
+  <text class="dg-lbl dg-key" x="916" y="60" text-anchor="end">SATURATION — EXTRA CURRENT</text>
+  <text class="dg-lbl dg-key" x="916" y="94" text-anchor="end">BUYS ALMOST NO EXTRA FIELD</text>
+
+  <!-- the field-circuit line -->
+  <path class="dg-s" d="M560 312 L900 84" />
+  <text class="dg-lbl dg-num" x="592" y="292">FIELD-CIRCUIT LINE</text>
+
+  <!-- the operating point -->
+  <circle cx="757" cy="180" r="5" class="dg-ink" />
+  <path class="dg-d" d="M757 180 V312 M757 180 H560" />
+  <text class="dg-lbl dg-num" x="766" y="176">THE MACHINE SETTLES HERE</text>
+  <text class="dg-lbl dg-soft" x="766" y="190">STABLE, AND SELF-FOUND</text>
+
+  <text class="dg-lbl dg-num" x="500" y="378">OUTPUT NOW SCALES WITH HOW MUCH COPPER AND IRON YOU ARE</text>
+  <text class="dg-lbl dg-num" x="500" y="392">PREPARED TO BUILD, AND HOW MUCH MECHANICAL POWER YOU FEED IN —</text>
+  <text class="dg-lbl dg-key" x="500" y="412">NOT WITH THE STRENGTH OF SOME AVAILABLE MAGNET.</text>
+  <text class="dg-lbl dg-soft" x="500" y="432">1831 INDUCTION · 1867 SELF-EXCITATION</text>
+</svg>
