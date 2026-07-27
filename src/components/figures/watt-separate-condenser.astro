@@ -1,0 +1,96 @@
+---
+/**
+ * The same cycle, and the wall temperature through it. A Newcomen cylinder is
+ * cooled to condense and reheated to admit, so most of the fuel goes into moving
+ * the walls up and down that range. Splitting the machine — cylinder always hot,
+ * condenser always cold — removes the swing, and with it about three-quarters of
+ * the coal for the same work.
+ */
+---
+
+<svg viewBox="0 0 960 470" role="img" aria-label="Newcomen against Watt: cylinder wall temperature swinging in one and flat in the other, with the separate condenser, steam jacket and air pump">
+  <defs>
+    <marker id="wt-ar" viewBox="0 0 8 8" refX="7" refY="4" markerWidth="6" markerHeight="6" orient="auto">
+      <path d="M0 0 L8 4 L0 8 z" class="dg-ink" />
+    </marker>
+    <marker id="wt-ar-a" viewBox="0 0 8 8" refX="7" refY="4" markerWidth="6" markerHeight="6" orient="auto">
+      <path d="M0 0 L8 4 L0 8 z" class="dg-accent" />
+    </marker>
+  </defs>
+
+  <!-- ══ Newcomen ═══════════════════════════════════════════════════════ -->
+  <text class="dg-lbl dg-num" x="30" y="24">NEWCOMEN · ONE VESSEL DOES BOTH JOBS</text>
+
+  <path class="dg-s" d="M120 56 V210 H208 V56" />
+  <path class="dg-tint" d="M122 96 H206 V208 H122 Z" />
+  <path class="dg-s" d="M122 92 H206 V106 H122 Z" />
+  <path class="dg-s" d="M164 92 V44" />
+  <path class="dg-a" d="M96 140 H120" marker-end="url(#wt-ar-a)" />
+  <text class="dg-lbl dg-key" x="30" y="136">STEAM</text>
+  <path class="dg-m" d="M232 176 H208" marker-end="url(#wt-ar)" />
+  <text class="dg-lbl dg-num" x="240" y="180">COLD SPRAY,</text>
+  <text class="dg-lbl dg-num" x="240" y="194">INTO THE SAME</text>
+  <text class="dg-lbl dg-num" x="240" y="208">CYLINDER</text>
+  <text class="dg-lbl dg-soft" x="30" y="240">THE WALLS ARE HEATED AND CHILLED EVERY STROKE</text>
+
+  <!-- ══ Watt ═══════════════════════════════════════════════════════════ -->
+  <path class="dg-m" d="M420 14 V254" />
+  <text class="dg-lbl dg-num" x="450" y="24">WATT · TWO VESSELS, EACH AT ONE TEMPERATURE</text>
+
+  <!-- the cylinder, jacketed and always hot -->
+  <path class="dg-s" d="M520 56 V210 H608 V56" />
+  <path class="dg-tint" d="M522 96 H606 V208 H522 Z" />
+  <path class="dg-s" d="M522 92 H606 V106 H522 Z" />
+  <path class="dg-s" d="M564 92 V44" />
+  <path class="dg-tint" d="M500 56 H520 V210 H500 Z" />
+  <path class="dg-tint" d="M608 56 H628 V210 H608 Z" />
+  <path class="dg-m" d="M500 56 V210 M628 56 V210" />
+  <text class="dg-lbl dg-key" x="450" y="70">STEAM</text>
+  <path class="dg-a" d="M496 84 H520" marker-end="url(#wt-ar-a)" />
+  <text class="dg-lbl dg-soft" x="450" y="240">STEAM JACKET — THE CYLINDER NEVER COOLS</text>
+
+  <!-- the condenser, always cold -->
+  <path class="dg-a" d="M628 150 H700" marker-end="url(#wt-ar-a)" />
+  <path class="dg-s" d="M712 110 H796 V206 H712 Z" />
+  <path class="dg-page" d="M714 112 H794 V204 H714 Z" />
+  <g class="dg-m">
+    <path d="M726 124 C740 138, 726 152, 740 166 C754 180, 740 192, 754 200" />
+    <path d="M760 124 C774 138, 760 152, 774 166 C788 180, 774 192, 786 200" />
+  </g>
+  <text class="dg-lbl dg-num" x="754" y="100" text-anchor="middle">CONDENSER</text>
+  <text class="dg-lbl dg-soft" x="754" y="222" text-anchor="middle">ALWAYS COLD</text>
+
+  <!-- air pump -->
+  <path class="dg-s" d="M840 130 H890 V206 H840 Z" />
+  <path class="dg-s" d="M865 130 V96" />
+  <path class="dg-m" d="M796 158 H840" />
+  <text class="dg-lbl dg-soft" x="865" y="86" text-anchor="middle">AIR PUMP</text>
+  <text class="dg-lbl dg-soft" x="865" y="222" text-anchor="middle">KEEPS THE VACUUM</text>
+
+  <!-- ══ wall temperature through the cycle ═════════════════════════════ -->
+  <path class="dg-m" d="M30 268 H930" />
+
+  <path class="dg-h" d="M120 316 H900 M120 356 H900" />
+  <path class="dg-h" d="M315 300 V396 M510 300 V396 M705 300 V396" />
+  <path class="dg-s" d="M120 300 V396 H900" />
+  <text class="dg-lbl" x="120" y="292">CYLINDER WALL TEMPERATURE</text>
+  <text class="dg-lbl dg-num" x="112" y="320" text-anchor="end">STEAM</text>
+  <text class="dg-lbl dg-num" x="112" y="360" text-anchor="end">COOLING</text>
+  <text class="dg-lbl dg-num" x="112" y="400" text-anchor="end">COLD</text>
+
+  <!-- Newcomen: the wall swings every stroke -->
+  <path class="dg-s" d="M120 316 H240 C270 320, 286 372, 315 390 H400 C430 386, 446 330, 480 318 H600 C630 322, 646 374, 675 390 H760 C790 386, 806 330, 840 318 H900" />
+
+  <!-- Watt: flat -->
+  <path class="dg-a" d="M120 310 H900" />
+
+  <text class="dg-lbl" x="120" y="418">ONE ENGINE CYCLE  →</text>
+
+  <rect x="120" y="438" width="26" height="3" class="dg-ink" />
+  <text class="dg-lbl dg-num" x="156" y="444">NEWCOMEN — THE WALL FOLLOWS THE CYCLE</text>
+  <rect x="470" y="438" width="26" height="3" class="dg-accent" />
+  <text class="dg-lbl dg-key" x="506" y="444">WATT — FLAT</text>
+  <text class="dg-lbl dg-num" x="640" y="444">75% LESS COAL · UNDER 1% BECOMES ABOUT 3%</text>
+
+  <text class="dg-lbl dg-soft" x="120" y="466">BOULTON AND WATT SOLD THE SAVING, NOT THE MACHINE — A THIRD OF THE COAL AVOIDED, PER YEAR, WHICH MEANT METERING IT</text>
+</svg>
