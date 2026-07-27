@@ -153,14 +153,20 @@ export const PERIODS: Period[] = [
     constraint: 'copying by hand',
     constraintShort: 'Copying by hand',
     title: 'One press with movable type prints more pages in a day than a copyist writes in a year.',
-    essay: [],
+    essay: [
+      'No figure in the strip above moves. A message still travels two hundred kilometres a day by relay, the fastest thing on a road is still a horse, and the best light in a room after dark is still a candle. What changes in this period is how many copies of a document exist. A scribe writing steadily produces two or three pages a day; a press worked by two men produces something like 250 sheets an hour. Gutenberg issued his 42-line Bible around 1455 in roughly 180 copies, more than a scriptorium would turn out in a working lifetime, and by 1500 — fifty years after the first printed sheet — perhaps twenty million books are in circulation in Europe.',
+      'The press itself is adapted from the screw press already used for wine and oil, and the ink is a lampblack-and-varnish mixture borrowed from painters. The hard part is the letters, which is why both entries below sit in the same year. Type has to be cast by the hundred thousand, identical enough that a page prints evenly, hard enough to survive thousands of impressions, and cheap enough to melt down and recast. That is a metallurgy problem, and the answer is an alloy of lead, tin and antimony: it melts low enough to cast in a hand mould in seconds, and antimony expands very slightly as it freezes, which cancels the shrinkage of the lead so the letter fills the corners of the mould. Nothing happens on the energy road this period. The press is worked by arms, on paper made by water mills that have been turning since Period III.',
+    ],
+    passThrough: {
+      energy:
+        'No energy stop falls in this period. The press is worked by hand and the paper mills run on water that has been driving wheels since Period III; nothing new is burned. The energy road passes through; its next stop is the Newcomen engine, in 1712.',
+    },
     capabilityStrip: strip(
       ['15 km/h', '— unchanged since II'],
       ['200 km', '— relay, as in Rome'],
       ['Candle', '— as ever'],
       ['17 GJ/yr', '— creeping']
     ),
-    placeholder: true,
   },
   {
     id: 'VI',
