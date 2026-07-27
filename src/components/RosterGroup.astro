@@ -1,0 +1,183 @@
+---
+import type { ThreadId } from '../data/threads';
+import { THREADS } from '../data/threads';
+import type { Entry } from '../data/entries';
+import SecondaryChip from './SecondaryChip.astro';
+
+/**
+ * One road's stops within a period. The roster is addresses, never summaries
+ * that grow into duplicated prose — the road owns every essay.
+ *
+ * A road with nothing to say this era says so explicitly. Honest absence, not
+ * an empty state.
+ */
+interface Props {
+  thread: ThreadId;
+  stops: Entry[];
+  /** Shown instead of rows when the road passes through this era. */
+  passThrough?: string;
+  /** Slugs that have prose. Stops without it are not links. */
+  written: Set<string>;
+}
+const { thread, stops, passThrough, written } = Astro.props;
+const t = THREADS[thread];
+const twoUp = stops.length >= 3;
+---
+
+<section class:list={['group', `t-${thread}`]}>
+  <h3 class="group__head">
+    <span class="group__dot"></span>
+    On the {t.name.toLowerCase()} road
+    <span class="group__extender"></span>
+  </h3>
+
+  {
+    passThrough ? (
+      <p class="group__pass">{passThrough}</p>
+    ) : (
+      <div class:list={['group__rows', { 'is-two-up': twoUp }]}>
+        {stops.map((stop) => {
+          const Row = written.has(stop.slug) ? 'a' : 'div';
+          return (
+            <Row
+              class:list={['row', { 'is-unwritten': !written.has(stop.slug) }]}
+              href={written.has(stop.slug) ? stop.href : undefined}
+            >
+              <span class="row__year">{stop.year}</span>
+              <span class="row__body">
+                <span class="row__title">
+                  {stop.title}
+                  {stop.secondary?.map((s) => <SecondaryChip thread={s.thread} />)}
+                </span>
+                <span class="row__dek">{stop.dek}</span>
+                <span class="row__address">
+                  {stop.address} {written.has(stop.slug) ? '→' : '· not yet written'}
+                </span>
+              </span>
+            </Row>
+          );
+        })}
+      </div>
+    )
+  }
+</section>
+
+<style>
+  .group__head {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 20px 0 4px;
+    font-family: var(--sans);
+    font-size: 12.5px;
+    font-weight: 700;
+    letter-spacing: 0;
+    text-transform: uppercase;
+    color: var(--thread);
+  }
+
+  .group:first-child .group__head {
+    padding-top: 10px;
+  }
+
+  .group__dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: var(--thread);
+    flex: none;
+  }
+
+  .group__extender {
+    flex: 1;
+    height: 1px;
+    background: var(--rule);
+  }
+
+  .group__pass {
+    padding: 12px 0;
+    font-size: 14.5px;
+    line-height: 1.6;
+    color: #8a9088;
+    font-style: italic;
+    max-width: 640px;
+  }
+
+  .group__rows {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+
+  .group__rows.is-two-up {
+    grid-template-columns: 1fr 1fr;
+    gap: 0 40px;
+  }
+
+  .row {
+    display: flex;
+    gap: 14px;
+    align-items: baseline;
+    padding: 12px 0;
+    border-bottom: 1px solid var(--rule-faint);
+  }
+
+  .group__rows:not(.is-two-up) .row {
+    max-width: 530px;
+  }
+
+  a.row:hover {
+    background: var(--panel);
+    color: inherit;
+  }
+
+  .row__year {
+    font-family: var(--mono);
+    font-size: 10px;
+    color: var(--faint);
+    min-width: 34px;
+    flex: none;
+  }
+
+  .row__title {
+    display: block;
+    font-family: var(--sans);
+    font-size: 17px;
+    font-weight: 600;
+  }
+
+  .row__dek {
+    display: block;
+    font-size: 14px;
+    color: var(--text-2);
+    margin-top: 2px;
+    line-height: 1.5;
+  }
+
+  .row__address {
+    display: block;
+    margin-top: 5px;
+    font-family: var(--mono);
+    font-size: 10px;
+    text-transform: uppercase;
+    color: var(--thread);
+  }
+
+  .row.is-unwritten .row__title,
+  .row.is-unwritten .row__dek {
+    color: var(--muted);
+  }
+
+  .row.is-unwritten .row__address {
+    color: var(--ahead);
+  }
+
+  @media (max-width: 900px) {
+    .group__rows.is-two-up {
+      grid-template-columns: 1fr;
+    }
+
+    .row {
+      min-height: 44px;
+    }
+  }
+</style>
