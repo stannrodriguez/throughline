@@ -1,0 +1,150 @@
+---
+/**
+ * Every other way of laying down a film has a rate, so its thickness is a
+ * function of time and geometry. Here each pulse reacts with the surface and not
+ * with itself, so it stops when the surface is full: thickness is set by how many
+ * cycles were run rather than by how long anything took, and it is the same at
+ * the bottom of a deep hole as it is on the flat.
+ */
+---
+
+<svg viewBox="0 0 960 510" role="img" aria-label="The four steps of one atomic-layer deposition cycle, thickness against cycles as a staircase, and line-of-sight against conformal coverage in a deep trench">
+  <defs>
+    <marker id="ald-ar" viewBox="0 0 8 8" refX="7" refY="4" markerWidth="6" markerHeight="6" orient="auto">
+      <path d="M0 0 L8 4 L0 8 z" class="dg-ink" />
+    </marker>
+    <marker id="ald-ar-a" viewBox="0 0 8 8" refX="7" refY="4" markerWidth="6" markerHeight="6" orient="auto">
+      <path d="M0 0 L8 4 L0 8 z" class="dg-accent" />
+    </marker>
+  </defs>
+
+  <text class="dg-lbl" x="30" y="24">ONE CYCLE · EACH STEP STOPS BY ITSELF</text>
+
+  <!-- ══ 1 · pulse A ════════════════════════════════════════════════════ -->
+  <text class="dg-lbl dg-num" x="40" y="44">1 · PULSE PRECURSOR A</text>
+  <path class="dg-panel" d="M40 168 H240 V200 H40 Z" />
+  <path class="dg-s" d="M40 168 H240 V200 H40 Z" />
+  <g class="dg-m">
+    <path d="M60 161 v7 M68 161 v7 M96 161 v7 M104 161 v7 M132 161 v7 M140 161 v7" />
+  </g>
+  <g>
+    <circle cx="64" cy="155" r="6" class="dg-ink" />
+    <circle cx="100" cy="155" r="6" class="dg-ink" />
+    <circle cx="136" cy="155" r="6" class="dg-ink" />
+  </g>
+  <circle cx="176" cy="104" r="6" class="dg-page" /><circle cx="176" cy="104" r="6" class="dg-m" />
+  <circle cx="212" cy="82" r="6" class="dg-page" /><circle cx="212" cy="82" r="6" class="dg-m" />
+  <path class="dg-d" d="M176 114 V146" marker-end="url(#ald-ar)" />
+  <path class="dg-d" d="M212 92 V146" marker-end="url(#ald-ar)" />
+  <text class="dg-lbl dg-soft" x="40" y="222">IT REACTS WITH THE SURFACE,</text>
+  <text class="dg-lbl dg-soft" x="40" y="236">NOT WITH ITSELF</text>
+
+  <path class="dg-m" d="M246 184 H260" marker-end="url(#ald-ar)" />
+
+  <!-- ══ 2 · purge ══════════════════════════════════════════════════════ -->
+  <text class="dg-lbl dg-num" x="266" y="44">2 · PURGE</text>
+  <path class="dg-panel" d="M266 168 H466 V200 H266 Z" />
+  <path class="dg-s" d="M266 168 H466 V200 H266 Z" />
+  <g class="dg-m">
+    <path d="M286 161 v7 M294 161 v7 M322 161 v7 M330 161 v7 M358 161 v7 M366 161 v7
+             M394 161 v7 M402 161 v7 M430 161 v7 M438 161 v7" />
+  </g>
+  <g class="dg-ink">
+    <circle cx="290" cy="155" r="6" /><circle cx="326" cy="155" r="6" /><circle cx="362" cy="155" r="6" />
+    <circle cx="398" cy="155" r="6" /><circle cx="434" cy="155" r="6" />
+  </g>
+  <path class="dg-m" d="M276 100 H404" marker-end="url(#ald-ar)" />
+  <circle cx="422" cy="100" r="6" class="dg-page" /><circle cx="422" cy="100" r="6" class="dg-m" />
+  <text class="dg-lbl dg-key" x="276" y="88">THE SURFACE IS FULL</text>
+  <text class="dg-lbl dg-soft" x="266" y="222">THE EXCESS IS SWEPT OUT</text>
+
+  <path class="dg-m" d="M472 184 H486" marker-end="url(#ald-ar)" />
+
+  <!-- ══ 3 · pulse B ════════════════════════════════════════════════════ -->
+  <text class="dg-lbl dg-num" x="492" y="44">3 · PULSE PRECURSOR B</text>
+  <path class="dg-panel" d="M492 168 H692 V200 H492 Z" />
+  <path class="dg-s" d="M492 168 H692 V200 H492 Z" />
+  <g class="dg-m">
+    <path d="M512 161 v7 M520 161 v7 M548 161 v7 M556 161 v7 M584 161 v7 M592 161 v7
+             M620 161 v7 M628 161 v7 M656 161 v7 M664 161 v7" />
+  </g>
+  <g class="dg-ink">
+    <circle cx="516" cy="155" r="6" /><circle cx="552" cy="155" r="6" /><circle cx="588" cy="155" r="6" />
+    <circle cx="624" cy="155" r="6" /><circle cx="660" cy="155" r="6" />
+  </g>
+  <g class="dg-accent">
+    <path d="M510 148 L516 137 L522 148 Z" />
+    <path d="M546 148 L552 137 L558 148 Z" />
+    <path d="M582 148 L588 137 L594 148 Z" />
+    <path d="M618 106 L624 95 L630 106 Z" />
+    <path d="M654 88 L660 77 L666 88 Z" />
+  </g>
+  <path class="dg-a-d" d="M624 112 V132" marker-end="url(#ald-ar-a)" />
+  <path class="dg-a-d" d="M660 94 V132" marker-end="url(#ald-ar-a)" />
+  <text class="dg-lbl dg-key" x="492" y="222">B REACTS WITH A, AND STOPS</text>
+
+  <path class="dg-m" d="M698 184 H712" marker-end="url(#ald-ar)" />
+
+  <!-- ══ 4 · purge ══════════════════════════════════════════════════════ -->
+  <text class="dg-lbl dg-num" x="718" y="44">4 · PURGE</text>
+  <path class="dg-panel" d="M718 168 H918 V200 H718 Z" />
+  <path class="dg-s" d="M718 168 H918 V200 H718 Z" />
+  <path class="dg-accent" d="M732 152 H904 V168 H732 Z" />
+  <circle cx="770" cy="100" r="5" class="dg-page" /><circle cx="770" cy="100" r="5" class="dg-m" />
+  <circle cx="846" cy="86" r="5" class="dg-page" /><circle cx="846" cy="86" r="5" class="dg-m" />
+  <path class="dg-d" d="M770 132 V110" marker-end="url(#ald-ar)" />
+  <path class="dg-d" d="M846 132 V96" marker-end="url(#ald-ar)" />
+  <text class="dg-lbl dg-key" x="718" y="222">ONE LAYER · ABOUT 0.1 nm</text>
+  <text class="dg-lbl dg-soft" x="718" y="236">AND THEN THE CYCLE REPEATS</text>
+
+  <!-- ══ thickness against cycles ═══════════════════════════════════════ -->
+  <path class="dg-m" d="M30 250 H930" />
+  <path class="dg-m" d="M486 258 V456" />
+
+  <text class="dg-lbl" x="30" y="272">THICKNESS AGAINST CYCLES</text>
+  <path class="dg-s" d="M80 290 V430 H440" />
+  <text class="dg-lbl dg-soft" x="440" y="450" text-anchor="end">CYCLES →</text>
+
+  <path class="dg-a" d="M80 430 h36 v-13 h36 v-13 h36 v-13 h36 v-13 h36 v-13
+                        h36 v-13 h36 v-13 h36 v-13 h36 v-13 h36 v-13" />
+
+  <path class="dg-m" d="M296 365 h10 M296 352 h10 M302 365 V352" />
+  <text class="dg-lbl dg-key" x="312" y="362">ABOUT 0.1 nm, ONE CYCLE</text>
+
+  <text class="dg-lbl dg-num" x="30" y="466">THICKNESS IS SET BY A COUNT, NOT BY A RATE AND A DURATION.</text>
+
+  <!-- ══ conformality ═══════════════════════════════════════════════════ -->
+  <text class="dg-lbl" x="520" y="272">DOWN A DEEP TRENCH</text>
+
+  <text class="dg-lbl dg-soft" x="520" y="298">LINE OF SIGHT</text>
+  <path class="dg-panel" d="M520 310 H575 V415 H605 V310 H660 V430 H520 Z" />
+  <path class="dg-s" d="M520 310 H575 V415 H605 V310 H660 V430 H520 Z" />
+  <g class="dg-ink">
+    <path d="M520 301 H575 V310 H520 Z" />
+    <path d="M605 301 H660 V310 H605 Z" />
+    <path d="M575 310 L583 310 L576.5 413 L575 413 Z" />
+    <path d="M605 310 L597 310 L603.5 413 L605 413 Z" />
+    <path d="M576 415 H604 V411 H576 Z" />
+  </g>
+  <text class="dg-lbl dg-soft" x="520" y="446">THICK AT THE MOUTH,</text>
+  <text class="dg-lbl dg-soft" x="520" y="460">ALMOST NOTHING BELOW</text>
+
+  <text class="dg-lbl dg-key" x="700" y="298">ATOMIC LAYER</text>
+  <path class="dg-panel" d="M700 310 H755 V415 H785 V310 H840 V430 H700 Z" />
+  <path class="dg-s" d="M700 310 H755 V415 H785 V310 H840 V430 H700 Z" />
+  <path class="dg-accent" d="M700 305 H755 V410 H780 V305 H840 V310 H785 V415 H755 V310 H700 Z" />
+  <text class="dg-lbl dg-key" x="700" y="446">THE SAME THICKNESS</text>
+  <text class="dg-lbl dg-key" x="700" y="460">ALL THE WAY DOWN</text>
+
+  <text class="dg-lbl dg-soft" x="860" y="330">NOT TO</text>
+  <text class="dg-lbl dg-soft" x="860" y="344">SCALE — A</text>
+  <text class="dg-lbl dg-soft" x="860" y="358">REAL TRENCH</text>
+  <text class="dg-lbl dg-soft" x="860" y="372">IS A HUNDRED</text>
+  <text class="dg-lbl dg-soft" x="860" y="386">TIMES DEEPER</text>
+  <text class="dg-lbl dg-soft" x="860" y="400">THAN IT IS</text>
+  <text class="dg-lbl dg-soft" x="860" y="414">WIDE</text>
+
+  <!-- ══ the two consequences ═══════════════════════════════════════════ -->
+  <path class="dg-m" d="M30 478 H930" />
+  <text class="dg-lbl dg-num" x="30" y="502">RUNNING A PULSE TWICE AS LONG DEPOSITS NOTHING EXTRA, BECAUSE THE SURFACE IS ALREADY SATURATED · HAFNIUM OXIDE GATES FROM 2007</text>
+</svg>
