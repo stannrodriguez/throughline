@@ -223,14 +223,16 @@ export const PERIODS: Period[] = [
     constraint: 'distance',
     constraintShort: 'Distance',
     title: 'The rail carries freight at 100 km/h and the telegraph carries a message in minutes.',
-    essay: [],
+    essay: [
+      'All four figures in the strip above move, which last happened in Period II. Top speed goes from fifteen kilometres an hour to a hundred, and it does so behind a locomotive hauling freight rather than in a sprint. Gas mains light streets that had been dark since streets existed. Energy per person rises from twenty-six gigajoules a year to thirty-eight. The message figure does not rise so much as cease to be a distance: Samuel Morse’s line between Washington and Baltimore opens on 24 May 1844, and from that day a message takes the same time to cross a continent as to cross a street. Two hundred kilometres a day had stood as the rate since the Persian royal road, through Rome, through printing, through the Napoleonic wars. It ends inside one working lifetime.',
+      'The materials entries are what the distance is built out of. Henry Bessemer’s converter blows cold air up through molten pig iron, and the carbon burning out of the metal supplies the heat, so twenty tonnes are refined in twenty minutes with no fuel under the vessel at all; the price of steel falls from roughly fifty pounds a ton to seven, and rails, bridges and ship plate become steel rather than iron. Portland cement, burned at 1,450° and ground to a powder, sets by reacting with water and will do it under water. Vulcanised rubber holds its elasticity across a hundred-degree range instead of melting in summer and cracking in winter. The two energy entries point past this period rather than defining it: the well Edwin Drake drills at Titusville in 1859 finds a fuel that can be pumped and piped, and the self-exciting dynamo of 1867 turns motion into current at a scale permanent magnets could never reach.',
+    ],
     capabilityStrip: strip(
       ['100 km/h', '— the rail', true],
       ['Instant', '— the telegraph', true],
       ['Gaslight', '— the lit street', true],
       ['38 GJ/yr', '— steam everywhere', true]
     ),
-    placeholder: true,
   },
   {
     id: 'IX',
