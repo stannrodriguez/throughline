@@ -109,14 +109,16 @@ export const PERIODS: Period[] = [
     constraint: 'perishability',
     constraintShort: 'Perishability',
     title: 'Rivers take over the grinding, and paper makes a written record cheap enough to spend on drafts.',
-    essay: [],
+    essay: [
+      'The one figure the strip marks as moving is energy per person, from eleven gigajoules a year to thirteen, and the reason is that rivers begin doing work that animals and people had been doing. A vertical waterwheel of the Roman pattern delivers two to three horsepower without pause, without fodder and without a driver, and by the time the Domesday commissioners count them in 1086 there are 5,624 mills in England alone. The other energy entry is a piece of harness. A strap across a horse’s windpipe chokes the animal under load, which is why the ancient world ploughed with oxen; a padded collar bearing on the shoulders raises what a horse can pull three- to fourfold, and a horse works faster and for longer hours than an ox does.',
+      'The constraint this era removes is perishability, and the other two entries are both about a record that lasts. Paper, made at the Han court by 105 CE and reaching Baghdad by the end of the eighth century, is pulped rag and bark drained on a screen and pressed flat. It is not better than parchment — it tears, and it rots in damp — but a parchment Bible costs the skins of a couple of hundred sheep, and paper costs rags. Arabic numerals arrive on the same trade routes. Al-Khwarizmi’s treatise of about 825 sets out the Indian decimal system with its zero, and its advantage over counters on a board is that the working survives: a calculation in positional notation leaves every step on the page, where somebody else can check it.',
+    ],
     capabilityStrip: strip(
       ['15 km/h', '— unchanged since II'],
       ['200 km', '— relay, as in Rome'],
       ['Candle', '— new'],
       ['13 GJ/yr', '— the waterwheel', true]
     ),
-    placeholder: true,
   },
   {
     id: 'IV',
