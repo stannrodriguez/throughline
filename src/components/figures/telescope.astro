@@ -1,0 +1,118 @@
+---
+/**
+ * The Galilean arrangement: a weak convex objective converging light toward a
+ * focus, and a strong concave eyepiece set short of that focus, throwing the
+ * rays parallel again. Magnification is the ratio of the two focal lengths. The
+ * objective's other job is aperture — much wider than a pupil, which is why
+ * faint objects appear at all. The sketch sequence is what the instrument
+ * actually settled.
+ */
+---
+
+<svg viewBox="0 0 960 410" role="img" aria-label="Ray path through a Galilean telescope, and Galileo's Jupiter sketches of 7 to 13 January 1610">
+  <defs>
+    <marker id="ts-ar" viewBox="0 0 8 8" refX="7" refY="4" markerWidth="6" markerHeight="6" orient="auto">
+      <path d="M0 0 L8 4 L0 8 z" class="dg-ink" />
+    </marker>
+  </defs>
+
+  <text class="dg-lbl" x="30" y="24">RAY PATH · GALILEAN ARRANGEMENT</text>
+
+  <!-- optical axis -->
+  <path class="dg-d" d="M30 140 H600" />
+
+  <!-- parallel light from a distant object -->
+  <g class="dg-m">
+    <path d="M30 92 H140 M30 112 H140 M30 140 H140 M30 168 H140 M30 188 H140" />
+  </g>
+  <text class="dg-lbl dg-soft" x="30" y="80">PARALLEL LIGHT FROM A DISTANT OBJECT</text>
+
+  <!-- convex objective -->
+  <path class="dg-a" d="M148 88 C162 108, 162 172, 148 192 C134 172, 134 108, 148 88 Z" />
+  <text class="dg-lbl dg-key" x="148" y="212" text-anchor="middle">OBJECTIVE</text>
+  <text class="dg-lbl dg-soft" x="148" y="226" text-anchor="middle">WEAK CONVEX</text>
+
+  <!-- converging toward the focus -->
+  <g class="dg-m">
+    <path d="M148 92 L382 131 M148 112 L382 136 M148 168 L382 144 M148 188 L382 149" />
+  </g>
+  <path class="dg-d" d="M382 131 L438 140 M382 136 L438 140 M382 144 L438 140 M382 149 L438 140" />
+  <circle cx="438" cy="140" r="3.4" class="dg-ink" />
+  <path class="dg-d" d="M438 60 V220" />
+  <text class="dg-lbl dg-num" x="446" y="72">FOCUS OF THE OBJECTIVE</text>
+
+  <!-- concave eyepiece, short of the focus -->
+  <path class="dg-a" d="M382 96 C372 116, 372 164, 382 184 L396 184 C386 164, 386 116, 396 96 Z" />
+  <text class="dg-lbl dg-key" x="389" y="212" text-anchor="middle">EYEPIECE</text>
+  <text class="dg-lbl dg-soft" x="389" y="226" text-anchor="middle">STRONG CONCAVE,</text>
+  <text class="dg-lbl dg-soft" x="389" y="240" text-anchor="middle">INSIDE THE FOCUS</text>
+
+  <!-- parallel again, into the eye -->
+  <g class="dg-m">
+    <path d="M396 116 H560 M396 128 H560 M396 152 H560 M396 164 H560" />
+  </g>
+  <path class="dg-s" d="M572 122 C588 130, 588 150, 572 158 C566 148, 566 132, 572 122 Z" />
+  <circle cx="578" cy="140" r="3" class="dg-ink" />
+  <text class="dg-lbl dg-num" x="568" y="176">THE EYE</text>
+
+  <!-- focal lengths, and the ratio -->
+  <path class="dg-m" d="M148 268 H438 M148 262 V274 M438 262 V274" />
+  <text class="dg-lbl dg-soft" x="380" y="288" text-anchor="middle">f OBJECTIVE</text>
+  <path class="dg-m" d="M389 306 H438 M389 300 V312 M438 300 V312" />
+  <text class="dg-lbl dg-soft" x="413" y="326" text-anchor="middle">f EYEPIECE</text>
+  <text class="dg-lbl dg-num" x="30" y="288">MAGNIFICATION IS THE RATIO OF THE TWO</text>
+  <text class="dg-lbl dg-key" x="30" y="308">3× DUTCH · 20× GALILEO</text>
+
+  <!-- aperture -->
+  <path class="dg-m" d="M124 88 V192 M118 88 H130 M118 192 H130" />
+  <text class="dg-lbl dg-soft" x="30" y="352">THE OBJECTIVE IS ALSO MUCH WIDER THAN A PUPIL,</text>
+  <text class="dg-lbl dg-soft" x="30" y="366">SO IT GATHERS FAR MORE LIGHT — WHICH IS WHY</text>
+  <text class="dg-lbl dg-soft" x="30" y="380">FAINT OBJECTS APPEAR AT ALL.</text>
+  <text class="dg-lbl dg-soft" x="30" y="398">THE GLASS IS THE LIMIT: BUBBLES, STRIATIONS, AND A COLOURED FRINGE ON EVERY EDGE.</text>
+
+  <!-- ══ Jupiter, 7 to 13 January 1610 ══════════════════════════════════ -->
+  <path class="dg-m" d="M628 14 V386" />
+  <text class="dg-lbl" x="656" y="24">JUPITER · 7 TO 13 JANUARY 1610</text>
+
+  <g class="dg-h">
+    <path d="M656 52 H930 M656 96 H930 M656 140 H930 M656 184 H930 M656 228 H930 M656 272 H930" />
+  </g>
+
+  <!-- each night: the planet, and the moons either side -->
+  <g>
+    <text class="dg-lbl dg-soft" x="656" y="48">7 JAN</text>
+    <circle cx="806" cy="66" r="9" class="dg-panel" /><circle cx="806" cy="66" r="9" class="dg-s" />
+    <circle cx="762" cy="66" r="3" class="dg-accent" /><circle cx="776" cy="66" r="3" class="dg-accent" />
+    <circle cx="844" cy="66" r="3" class="dg-accent" />
+
+    <text class="dg-lbl dg-soft" x="656" y="92">8 JAN</text>
+    <circle cx="806" cy="110" r="9" class="dg-panel" /><circle cx="806" cy="110" r="9" class="dg-s" />
+    <circle cx="838" cy="110" r="3" class="dg-accent" /><circle cx="854" cy="110" r="3" class="dg-accent" />
+    <circle cx="870" cy="110" r="3" class="dg-accent" />
+
+    <text class="dg-lbl dg-soft" x="656" y="136">10 JAN</text>
+    <circle cx="806" cy="154" r="9" class="dg-panel" /><circle cx="806" cy="154" r="9" class="dg-s" />
+    <circle cx="746" cy="154" r="3" class="dg-accent" /><circle cx="762" cy="154" r="3" class="dg-accent" />
+
+    <text class="dg-lbl dg-soft" x="656" y="180">11 JAN</text>
+    <circle cx="806" cy="198" r="9" class="dg-panel" /><circle cx="806" cy="198" r="9" class="dg-s" />
+    <circle cx="754" cy="198" r="3" class="dg-accent" /><circle cx="770" cy="198" r="3" class="dg-accent" />
+
+    <text class="dg-lbl dg-soft" x="656" y="224">12 JAN</text>
+    <circle cx="806" cy="242" r="9" class="dg-panel" /><circle cx="806" cy="242" r="9" class="dg-s" />
+    <circle cx="752" cy="242" r="3" class="dg-accent" /><circle cx="848" cy="242" r="3" class="dg-accent" />
+    <circle cx="866" cy="242" r="3" class="dg-accent" />
+
+    <text class="dg-lbl dg-soft" x="656" y="268">13 JAN</text>
+    <circle cx="806" cy="286" r="9" class="dg-panel" /><circle cx="806" cy="286" r="9" class="dg-s" />
+    <circle cx="738" cy="286" r="3" class="dg-accent" /><circle cx="756" cy="286" r="3" class="dg-accent" />
+    <circle cx="774" cy="286" r="3" class="dg-accent" /><circle cx="856" cy="286" r="3" class="dg-accent" />
+  </g>
+
+  <text class="dg-lbl dg-key" x="656" y="322">FOUR POINTS THAT MOVE WITH JUPITER,</text>
+  <text class="dg-lbl dg-key" x="656" y="336">AND SWAP SIDES FROM NIGHT TO NIGHT</text>
+  <text class="dg-lbl dg-soft" x="656" y="360">FOUR MOONS PROVE NOT EVERYTHING GOES</text>
+  <text class="dg-lbl dg-soft" x="656" y="374">ROUND THE EARTH. THEY DO NOT PROVE THE</text>
+  <text class="dg-lbl dg-soft" x="656" y="388">EARTH MOVES — THE PHASES OF VENUS, LATER</text>
+  <text class="dg-lbl dg-soft" x="656" y="402">IN 1610, RULE OUT PTOLEMY AS WELL.</text>
+</svg>
