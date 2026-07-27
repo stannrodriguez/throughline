@@ -1,0 +1,112 @@
+---
+/**
+ * Two steps, and the second matters as much as the first. Condensation links
+ * difunctional monomers end to end and eliminates a molecule of water at each
+ * join, giving long chains in a tangle — a tough plastic and a poor fibre.
+ * Drawing pulls those chains into alignment along the fibre axis, where hydrogen
+ * bonds between adjacent amide groups lock them to each other, so the load is
+ * carried along covalent backbones instead of across the gaps between tangles.
+ */
+---
+
+<svg viewBox="0 0 960 486" role="img" aria-label="Difunctional monomers condensing with water eliminated, tangled chains before drawing and aligned chains after, and the strength gained along the fibre axis">
+  <defs>
+    <marker id="ny-ar" viewBox="0 0 8 8" refX="7" refY="4" markerWidth="6" markerHeight="6" orient="auto">
+      <path d="M0 0 L8 4 L0 8 z" class="dg-ink" />
+    </marker>
+    <marker id="ny-ar-a" viewBox="0 0 8 8" refX="7" refY="4" markerWidth="6" markerHeight="6" orient="auto">
+      <path d="M0 0 L8 4 L0 8 z" class="dg-accent" />
+    </marker>
+  </defs>
+
+  <!-- ══ condensation ═══════════════════════════════════════════════════ -->
+  <text class="dg-lbl" x="30" y="24">CONDENSATION · EACH JOIN THROWS OFF A MOLECULE OF WATER</text>
+
+  <!-- two difunctional monomers -->
+  <g>
+    <rect x="60" y="66" width="120" height="36" class="dg-panel" />
+    <rect x="60" y="66" width="120" height="36" class="dg-s" />
+    <circle cx="60" cy="84" r="8" class="dg-accent" />
+    <circle cx="180" cy="84" r="8" class="dg-accent" />
+    <text class="dg-lbl dg-num" x="120" y="90" text-anchor="middle">MONOMER A</text>
+
+    <rect x="240" y="66" width="120" height="36" class="dg-panel" />
+    <rect x="240" y="66" width="120" height="36" class="dg-s" />
+    <circle cx="240" cy="84" r="8" class="dg-accent" />
+    <circle cx="360" cy="84" r="8" class="dg-accent" />
+    <text class="dg-lbl dg-num" x="300" y="90" text-anchor="middle">MONOMER B</text>
+  </g>
+  <text class="dg-lbl dg-key" x="60" y="52">A REACTIVE GROUP AT EACH END — WHICH IS WHAT "DIFUNCTIONAL" MEANS</text>
+
+  <path class="dg-m" d="M196 84 H226" marker-end="url(#ny-ar)" />
+
+  <!-- the chain, with water coming off -->
+  <g>
+    <rect x="60" y="150" width="96" height="32" class="dg-panel" />
+    <rect x="60" y="150" width="96" height="32" class="dg-s" />
+    <rect x="172" y="150" width="96" height="32" class="dg-panel" />
+    <rect x="172" y="150" width="96" height="32" class="dg-s" />
+    <rect x="284" y="150" width="96" height="32" class="dg-panel" />
+    <rect x="284" y="150" width="96" height="32" class="dg-s" />
+    <path class="dg-a" d="M156 166 H172 M268 166 H284 M380 166 H400" />
+    <path class="dg-a" d="M40 166 H60" />
+  </g>
+  <g class="dg-a">
+    <path d="M164 150 V126" marker-end="url(#ny-ar-a)" />
+    <path d="M276 150 V126" marker-end="url(#ny-ar-a)" />
+  </g>
+  <text class="dg-eq dg-key" x="164" y="120" text-anchor="middle">H₂O</text>
+  <text class="dg-eq dg-key" x="276" y="120" text-anchor="middle">H₂O</text>
+  <text class="dg-lbl dg-soft" x="30" y="204">THE CHAIN GROWS AS LONG AS THE ENDS KEEP FINDING EACH OTHER</text>
+
+  <!-- ══ the draw ═══════════════════════════════════════════════════════ -->
+  <path class="dg-m" d="M30 232 H930" />
+  <text class="dg-lbl" x="30" y="254">THE DRAW · WHICH IS WHERE THE FIBRE COMES FROM</text>
+
+  <!-- before -->
+  <text class="dg-lbl dg-num" x="30" y="284">AS SPUN · A TANGLE</text>
+  <rect x="30" y="296" width="260" height="120" class="dg-h" />
+  <g class="dg-m">
+    <path d="M46 322 C90 302, 120 348, 168 326 C210 306, 250 342, 282 320" />
+    <path d="M42 366 C86 348, 116 392, 164 370 C208 350, 250 384, 284 362" />
+    <path d="M56 400 C100 382, 140 408, 186 390 C226 374, 258 396, 282 388" />
+    <path d="M64 300 C82 332, 56 358, 76 410" />
+    <path d="M140 302 C120 334, 152 362, 130 412" />
+    <path d="M216 300 C238 330, 202 358, 226 410" />
+  </g>
+  <text class="dg-lbl dg-soft" x="30" y="436">A TOUGH PLASTIC, AND A POOR FIBRE</text>
+
+  <path class="dg-a" d="M306 356 H354" marker-end="url(#ny-ar-a)" />
+  <text class="dg-lbl dg-key" x="330" y="342" text-anchor="middle">DRAWN</text>
+
+  <!-- after -->
+  <text class="dg-lbl dg-num" x="374" y="284">DRAWN SEVERAL TIMES ITS LENGTH · ALIGNED</text>
+  <rect x="374" y="296" width="260" height="120" class="dg-h" />
+  <g class="dg-m">
+    <path d="M388 314 H626 M388 338 H626 M388 362 H626 M388 386 H626 M388 404 H626" />
+  </g>
+  <g class="dg-a">
+    <path d="M420 314 V338 M480 314 V338 M540 314 V338 M596 314 V338
+             M448 338 V362 M508 338 V362 M568 338 V362
+             M420 362 V386 M480 362 V386 M540 362 V386 M596 362 V386
+             M448 386 V404 M508 386 V404 M568 386 V404" />
+  </g>
+  <text class="dg-lbl dg-key" x="374" y="436">HYDROGEN BONDS BETWEEN ADJACENT AMIDE</text>
+  <text class="dg-lbl dg-key" x="374" y="450">GROUPS LOCK THEM TO EACH OTHER</text>
+
+  <!-- ══ strength along the axis ════════════════════════════════════════ -->
+  <path class="dg-m" d="M666 250 V456" />
+  <text class="dg-lbl" x="694" y="272">STRENGTH ALONG THE FIBRE AXIS</text>
+
+  <rect x="694" y="290" width="52" height="20" class="dg-ink" />
+  <text class="dg-lbl dg-num" x="756" y="305">AS SPUN</text>
+  <rect x="694" y="322" width="222" height="20" class="dg-accent" />
+  <text class="dg-lbl dg-key" x="694" y="360">AFTER DRAWING · SEVERALFOLD</text>
+
+  <text class="dg-lbl dg-soft" x="694" y="388">THE LOAD IS NOW CARRIED ALONG COVALENT</text>
+  <text class="dg-lbl dg-soft" x="694" y="402">BACKBONES RATHER THAN ACROSS THE WEAK</text>
+  <text class="dg-lbl dg-soft" x="694" y="416">POINTS BETWEEN TANGLED CHAINS.</text>
+  <text class="dg-lbl dg-num" x="694" y="444">28 FEBRUARY 1935 · NYLON 6-6</text>
+
+  <text class="dg-lbl dg-num" x="30" y="482">EVERY MATERIAL BEFORE THIS WAS FOUND, THEN REFINED. NYLON IS SPECIFIED FIRST — THESE UNITS, AT THIS LENGTH — THEN SYNTHESISED.</text>
+</svg>
