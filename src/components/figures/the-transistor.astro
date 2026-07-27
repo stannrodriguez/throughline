@@ -1,0 +1,94 @@
+---
+/**
+ * A tube needs a heated cathode, an evacuated envelope and a few watts just to
+ * sit there. A transistor is three doped regions in a crystal, where a small
+ * current at the base governs a large one through the whole — nothing hot,
+ * nothing evacuated, nothing moving. The consequence that matters is not the
+ * replacement but that a pattern of impurities can be printed, and printed
+ * things get cheaper as they get smaller.
+ */
+---
+
+<svg viewBox="0 0 960 514" role="img" aria-label="A triode valve against an n-p-n transistor at the same gain, with power and volume compared">
+  <defs>
+    <marker id="tr-ar" viewBox="0 0 8 8" refX="7" refY="4" markerWidth="6" markerHeight="6" orient="auto">
+      <path d="M0 0 L8 4 L0 8 z" class="dg-ink" />
+    </marker>
+    <marker id="tr-ar-a" viewBox="0 0 8 8" refX="7" refY="4" markerWidth="6" markerHeight="6" orient="auto">
+      <path d="M0 0 L8 4 L0 8 z" class="dg-accent" />
+    </marker>
+  </defs>
+
+  <!-- ══ the tube ═══════════════════════════════════════════════════════ -->
+  <text class="dg-lbl dg-num" x="30" y="24">THE TUBE · A VACUUM, AND SOMETHING HOT IN IT</text>
+
+  <path class="dg-s" d="M96 84 C96 66, 200 66, 200 84 V246 C200 268, 96 268, 96 246 Z" />
+  <path class="dg-page" d="M99 84 C99 70, 197 70, 197 84 V246 C197 264, 99 264, 99 246 Z" />
+
+  <path class="dg-accent" d="M132 210 H164 V222 H132 Z" />
+  <path class="dg-a" d="M138 222 v10 M148 222 v10 M158 222 v10" />
+  <text class="dg-lbl dg-key" x="216" y="222">CATHODE, HEATED</text>
+
+  <g class="dg-m">
+    <path d="M116 168 H180" />
+    <path d="M124 160 V176 M136 160 V176 M148 160 V176 M160 160 V176 M172 160 V176" />
+  </g>
+  <text class="dg-lbl dg-num" x="216" y="172">GRID</text>
+
+  <path class="dg-s" d="M116 106 H180 V116 H116 Z" />
+  <text class="dg-lbl dg-num" x="216" y="114">PLATE</text>
+
+  <g class="dg-m">
+    <path d="M140 204 V124" marker-end="url(#tr-ar)" />
+    <path d="M156 204 V124" marker-end="url(#tr-ar)" />
+  </g>
+
+  <path class="dg-s" d="M148 268 V292" />
+  <text class="dg-lbl dg-soft" x="30" y="312">AN EVACUATED ENVELOPE, A FILAMENT THAT MUST BE</text>
+  <text class="dg-lbl dg-soft" x="30" y="326">HEATED BEFORE ANYTHING WORKS, AND A LIFETIME</text>
+  <text class="dg-lbl dg-soft" x="30" y="340">SET BY WHEN THAT FILAMENT BURNS OUT.</text>
+
+  <!-- ══ the transistor ═════════════════════════════════════════════════ -->
+  <path class="dg-m" d="M400 14 V352" />
+  <text class="dg-lbl dg-num" x="430" y="24">THE TRANSISTOR · THREE REGIONS IN A CRYSTAL</text>
+
+  <path class="dg-panel" d="M600 96 H700 V246 H600 Z" />
+  <path class="dg-s" d="M600 96 H700 V246 H600 Z" />
+  <path class="dg-tint" d="M600 156 H700 V186 H600 Z" />
+  <path class="dg-m" d="M600 156 H700 M600 186 H700" />
+
+  <text class="dg-lbl dg-num" x="716" y="126">n · SPARE ELECTRONS</text>
+  <text class="dg-lbl dg-key" x="716" y="176">p · VACANCIES</text>
+  <text class="dg-lbl dg-num" x="716" y="222">n · SPARE ELECTRONS</text>
+
+  <path class="dg-s" d="M650 96 V70" />
+  <path class="dg-s" d="M650 246 V272" />
+  <path class="dg-s" d="M650 62 V40" marker-end="url(#tr-ar)" />
+  <text class="dg-lbl dg-num" x="664" y="52">GOVERNS A LARGE ONE HERE</text>
+
+  <path class="dg-s" d="M600 171 H560" />
+  <path class="dg-a" d="M440 171 H556" marker-end="url(#tr-ar-a)" />
+  <text class="dg-lbl dg-key" x="440" y="155">A SMALL CURRENT HERE</text>
+
+  <text class="dg-lbl dg-soft" x="430" y="312">NOTHING HOT, NOTHING EVACUATED, NOTHING MOVING —</text>
+  <text class="dg-lbl dg-soft" x="430" y="326">JUST A PATTERN OF IMPURITIES IN A CRYSTAL.</text>
+  <text class="dg-lbl dg-soft" x="430" y="340">THE PATTERN CAN BE PRINTED, AND PRINTING GETS CHEAPER AS IT GETS SMALLER.</text>
+
+  <!-- ══ compared ═══════════════════════════════════════════════════════ -->
+  <path class="dg-m" d="M30 372 H930" />
+  <text class="dg-lbl" x="30" y="394">AT THE SAME GAIN · BARS INDICATIVE</text>
+
+  <text class="dg-lbl dg-num" x="30" y="422">POWER</text>
+  <rect x="130" y="408" width="290" height="12" class="dg-ink" />
+  <text class="dg-lbl dg-soft" x="434" y="418">TUBE · WATTS EACH, MOSTLY SPENT KEEPING IT HOT</text>
+  <rect x="130" y="428" width="4" height="12" class="dg-accent" />
+  <text class="dg-lbl dg-key" x="434" y="438">TRANSISTOR · MILLIWATTS, AND NOTHING TO WARM UP</text>
+
+  <text class="dg-lbl dg-num" x="30" y="466">VOLUME</text>
+  <rect x="130" y="452" width="290" height="12" class="dg-ink" />
+  <text class="dg-lbl dg-soft" x="434" y="462">TUBE · A GLASS BULB THE SIZE OF A THUMB</text>
+  <rect x="130" y="472" width="3" height="12" class="dg-accent" />
+  <text class="dg-lbl dg-key" x="434" y="482">TRANSISTOR · A CHIP OF GERMANIUM AND TWO WHISKERS</text>
+
+  <text class="dg-lbl dg-num" x="30" y="504">ENIAC · 17,468 TUBES AND 150 kW · BY 1958 KILBY AND NOYCE PUT SEVERAL DEVICES AND THEIR CONNECTIONS ON ONE PIECE OF SEMICONDUCTOR</text>
+</svg>
