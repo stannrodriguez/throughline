@@ -1,0 +1,90 @@
+---
+/**
+ * The commercial insight is about copper, not light. Lamps have to be wired in
+ * parallel, because a series string goes out together and cannot be switched
+ * separately. Parallel wiring at low filament resistance means enormous mains
+ * current, and the cost of a distribution network is dominated by the weight of
+ * copper in it. A high-resistance lamp draws a small current, so the same wire
+ * feeds many more of them.
+ */
+---
+
+<svg viewBox="0 0 960 440" role="img" aria-label="Lamps in series against lamps in parallel, and the conductor cross-section each demands at low and high filament resistance">
+  <defs>
+    <marker id="fl-ar" viewBox="0 0 8 8" refX="7" refY="4" markerWidth="6" markerHeight="6" orient="auto">
+      <path d="M0 0 L8 4 L0 8 z" class="dg-ink" />
+    </marker>
+  </defs>
+
+  <!-- ══ series ═════════════════════════════════════════════════════════ -->
+  <text class="dg-lbl dg-num" x="30" y="24">IN SERIES · ONE FAILS AND THEY ALL GO OUT</text>
+
+  <path class="dg-s" d="M60 60 V128 H420 V60 Z" />
+  <g>
+    <circle cx="120" cy="60" r="15" class="dg-page" /><circle cx="120" cy="60" r="15" class="dg-m" />
+    <circle cx="200" cy="60" r="15" class="dg-page" /><circle cx="200" cy="60" r="15" class="dg-m" />
+    <circle cx="280" cy="60" r="15" class="dg-page" /><circle cx="280" cy="60" r="15" class="dg-m" />
+    <circle cx="360" cy="60" r="15" class="dg-page" /><circle cx="360" cy="60" r="15" class="dg-m" />
+  </g>
+  <path class="dg-s" d="M272 52 L288 68 M288 52 L272 68" />
+  <text class="dg-lbl dg-num" x="280" y="34" text-anchor="middle">BROKEN</text>
+  <path class="dg-s" d="M50 84 H70 M54 94 H66" />
+  <text class="dg-lbl dg-soft" x="30" y="150">NO SWITCHING ONE LAMP ON ITS OWN, EITHER</text>
+
+  <!-- ══ parallel ═══════════════════════════════════════════════════════ -->
+  <text class="dg-lbl dg-num" x="30" y="196">IN PARALLEL · THE OTHERS STAY LIT</text>
+
+  <path class="dg-s" d="M60 224 H420 M60 300 H420" />
+  <g class="dg-a">
+    <path d="M120 224 V300 M200 224 V300 M280 224 V300 M360 224 V300" />
+  </g>
+  <g>
+    <circle cx="120" cy="262" r="15" class="dg-tint" /><circle cx="120" cy="262" r="15" class="dg-a" />
+    <circle cx="200" cy="262" r="15" class="dg-tint" /><circle cx="200" cy="262" r="15" class="dg-a" />
+    <circle cx="280" cy="262" r="15" class="dg-page" /><circle cx="280" cy="262" r="15" class="dg-m" />
+    <circle cx="360" cy="262" r="15" class="dg-tint" /><circle cx="360" cy="262" r="15" class="dg-a" />
+  </g>
+  <path class="dg-s" d="M272 254 L288 270 M288 254 L272 270" />
+  <path class="dg-s" d="M50 250 H70 M54 260 H66" />
+  <text class="dg-lbl dg-key" x="30" y="326">EACH LAMP HAS ITS OWN PATH — AND ITS OWN SWITCH</text>
+
+  <text class="dg-lbl dg-num" x="30" y="368">BUT PARALLEL WIRING MEANS EVERY LAMP'S CURRENT ADDS UP</text>
+  <text class="dg-lbl dg-num" x="30" y="382">IN THE MAINS. THE COST OF A DISTRIBUTION NETWORK IS</text>
+  <text class="dg-lbl dg-num" x="30" y="396">DOMINATED BY THE WEIGHT OF COPPER IN IT.</text>
+  <text class="dg-lbl dg-soft" x="30" y="418">SO THE ECONOMICS OF THE WHOLE SYSTEM TURN ON ONE PROPERTY</text>
+  <text class="dg-lbl dg-soft" x="30" y="432">OF THE LAMP: HOW MUCH CURRENT IT DRAWS.</text>
+
+  <!-- ══ the copper bill ════════════════════════════════════════════════ -->
+  <path class="dg-m" d="M470 14 V430" />
+  <text class="dg-lbl" x="500" y="24">THE COPPER BILL · SAME LIGHT, SAME VOLTAGE</text>
+
+  <!-- current against filament resistance -->
+  <path class="dg-h" d="M580 110 H920 M580 168 H920" />
+  <path class="dg-s" d="M580 60 V226 H920" />
+  <text class="dg-lbl" x="580" y="48">CURRENT DRAWN PER LAMP</text>
+  <text class="dg-lbl" x="750" y="250" text-anchor="middle">FILAMENT RESISTANCE →</text>
+  <path class="dg-a" d="M600 72 C630 130, 660 176, 700 196 C750 214, 840 220, 920 222" />
+  <circle cx="612" cy="92" r="4" class="dg-ink" />
+  <circle cx="828" cy="220" r="4" class="dg-accent" />
+  <text class="dg-lbl dg-num" x="624" y="88">LOW-RESISTANCE LAMP</text>
+  <text class="dg-lbl dg-key" x="916" y="244" text-anchor="end">HIGH-RESISTANCE LAMP</text>
+
+  <!-- conductor cross-sections, to area -->
+  <path class="dg-m" d="M500 272 H920" />
+  <text class="dg-lbl" x="500" y="294">CONDUCTOR NEEDED FOR THE SAME NUMBER OF LAMPS</text>
+
+  <circle cx="580" cy="360" r="56" class="dg-panel" />
+  <circle cx="580" cy="360" r="56" class="dg-s" />
+  <text class="dg-lbl dg-num" x="580" y="432" text-anchor="middle">LOW RESISTANCE</text>
+  <circle cx="740" cy="360" r="18" class="dg-tint" />
+  <circle cx="740" cy="360" r="18" class="dg-a" />
+  <text class="dg-lbl dg-key" x="740" y="432" text-anchor="middle">HIGH RESISTANCE</text>
+
+  <text class="dg-lbl dg-soft" x="800" y="336">DRAWN TO AREA.</text>
+  <text class="dg-lbl dg-soft" x="800" y="350">THE SAME WIRE NOW</text>
+  <text class="dg-lbl dg-soft" x="800" y="364">FEEDS MANY MORE</text>
+  <text class="dg-lbl dg-soft" x="800" y="378">LAMPS.</text>
+  <text class="dg-lbl dg-soft" x="800" y="400">13.5 HOURS, THEN</text>
+  <text class="dg-lbl dg-soft" x="800" y="414">1,200 — AND A</text>
+  <text class="dg-lbl dg-soft" x="800" y="428">SPRENGEL PUMP.</text>
+</svg>
