@@ -1,0 +1,94 @@
+---
+/**
+ * Discrete against continuous. A telegraph key is a switch, so the wire is
+ * either carrying current or not and meaning lives in the pattern of states. A
+ * telephone transmitter makes the current an analogue of the sound pressure at
+ * the diaphragm. Nothing is encoded, so nothing has to be decoded — and nothing
+ * can be cleanly regenerated either, which is the price.
+ */
+---
+
+<svg viewBox="0 0 960 440" role="img" aria-label="A Morse key producing square states against a carbon transmitter producing a continuous analogue current, and what each does after a long line">
+  <defs>
+    <marker id="tp-ar" viewBox="0 0 8 8" refX="7" refY="4" markerWidth="6" markerHeight="6" orient="auto">
+      <path d="M0 0 L8 4 L0 8 z" class="dg-ink" />
+    </marker>
+    <marker id="tp-ar-a" viewBox="0 0 8 8" refX="7" refY="4" markerWidth="6" markerHeight="6" orient="auto">
+      <path d="M0 0 L8 4 L0 8 z" class="dg-accent" />
+    </marker>
+  </defs>
+
+  <!-- ══ the key ════════════════════════════════════════════════════════ -->
+  <text class="dg-lbl dg-num" x="30" y="24">THE KEY · A SWITCH, AND TWO STATES</text>
+
+  <path class="dg-s" d="M60 108 H140" />
+  <path class="dg-s" d="M76 108 L136 88" />
+  <circle cx="76" cy="108" r="4" class="dg-ink" />
+  <circle cx="140" cy="100" r="3" class="dg-ink" />
+  <path class="dg-s" d="M140 108 H200" />
+
+  <path class="dg-s" d="M240 60 V150 H430" />
+  <path class="dg-a" d="M240 130 h30 v-52 h20 v52 h14 v-52 h32 v52 h20 v-52 h24 v52 h30" />
+  <text class="dg-lbl dg-soft" x="240" y="170">ON, OR OFF. NOTHING IN BETWEEN.</text>
+  <text class="dg-lbl dg-key" x="240" y="52">CURRENT</text>
+
+  <text class="dg-lbl dg-num" x="30" y="198">MEANING LIVES IN THE PATTERN OF THOSE STATES,</text>
+  <text class="dg-lbl dg-num" x="30" y="212">SO BOTH ENDS MUST KNOW THE CODE.</text>
+
+  <!-- ══ the transmitter ════════════════════════════════════════════════ -->
+  <path class="dg-m" d="M30 240 H440" />
+  <text class="dg-lbl dg-num" x="30" y="262">THE TRANSMITTER · AN ANALOGUE OF THE AIR</text>
+
+  <!-- diaphragm and carbon granules -->
+  <path class="dg-s" d="M100 300 C118 314, 118 366, 100 380" />
+  <path class="dg-a" d="M112 302 C128 316, 128 364, 112 378" />
+  <path class="dg-s" d="M124 300 H176 V380 H124 Z" />
+  <g class="dg-ink">
+    <circle cx="136" cy="318" r="2.6" /><circle cx="150" cy="326" r="2.6" /><circle cx="164" cy="316" r="2.6" />
+    <circle cx="140" cy="342" r="2.6" /><circle cx="156" cy="348" r="2.6" /><circle cx="168" cy="338" r="2.6" />
+    <circle cx="134" cy="364" r="2.6" /><circle cx="152" cy="370" r="2.6" /><circle cx="166" cy="360" r="2.6" />
+  </g>
+  <path class="dg-s" d="M176 340 H200" />
+  <g class="dg-m">
+    <path d="M64 316 C78 322, 78 330, 64 336" />
+    <path d="M56 306 C76 316, 76 336, 56 346" />
+  </g>
+  <text class="dg-lbl dg-soft" x="30" y="296">SOUND</text>
+  <text class="dg-lbl dg-key" x="126" y="398">DIAPHRAGM AND CARBON GRANULES —</text>
+  <text class="dg-lbl dg-soft" x="126" y="412">PRESSURE VARIES THE RESISTANCE</text>
+
+  <path class="dg-s" d="M240 274 V366 H430" />
+  <path class="dg-a" d="M240 320 C252 292, 262 350, 274 306 C284 276, 296 344, 306 300 C318 284, 328 348, 340 312 C352 292, 364 340, 376 314 C388 300, 402 334, 416 318" />
+  <text class="dg-lbl dg-key" x="390" y="266">CURRENT</text>
+  <text class="dg-lbl dg-soft" x="240" y="386">RISING AND FALLING WITH THE AIR</text>
+
+  <!-- ══ what a long line does to each ══════════════════════════════════ -->
+  <path class="dg-m" d="M470 14 V430" />
+  <text class="dg-lbl" x="500" y="24">AND WHAT A LONG LINE DOES TO EACH</text>
+
+  <!-- coded: regenerable -->
+  <text class="dg-lbl dg-num" x="500" y="58">A PULSE ONLY HAS TO BE TOLD FROM NO PULSE</text>
+  <path class="dg-a" d="M500 128 h26 v-40 h18 v40 h12 v-40 h28 v40 h18 v-40 h22 v40 h26" />
+  <path class="dg-m" d="M660 108 H700" marker-end="url(#tp-ar)" />
+  <path class="dg-a" d="M712 128 h26 v-22 h18 v22 h12 v-22 h28 v22 h18 v-22 h22 v22 h26" />
+  <path class="dg-m" d="M876 108 H906" marker-end="url(#tp-ar)" />
+  <text class="dg-lbl dg-soft" x="500" y="150">DEGRADED, BUT STILL UNAMBIGUOUS</text>
+  <path class="dg-a" d="M500 210 h26 v-40 h18 v40 h12 v-40 h28 v40 h18 v-40 h22 v40 h26" />
+  <text class="dg-lbl dg-key" x="660" y="196">REMADE, EXACTLY</text>
+
+  <path class="dg-m" d="M500 240 H930" />
+
+  <!-- analogue: not -->
+  <text class="dg-lbl dg-num" x="500" y="272">A WAVEFORM HAS NO SUCH THRESHOLD</text>
+  <path class="dg-a" d="M500 330 C512 300, 522 356, 534 314 C544 286, 556 350, 566 308 C578 292, 588 354, 600 318 C612 300, 624 346, 636 322" />
+  <path class="dg-m" d="M660 320 H700" marker-end="url(#tp-ar)" />
+  <path class="dg-a" d="M712 328 C722 314, 730 344, 740 320 C748 306, 758 340, 766 318 C776 310, 784 342, 794 324 C804 314, 814 338, 824 326" />
+  <g class="dg-m">
+    <path d="M716 322 l4 6 M736 316 l4 -6 M756 330 l4 6 M776 314 l4 -6 M796 332 l4 5 M816 320 l4 -6" />
+  </g>
+  <text class="dg-lbl dg-soft" x="500" y="356">EVERY AMPLIFIER ADDS ITS OWN NOISE, AND NONE OF IT COMES OFF AGAIN</text>
+
+  <text class="dg-lbl dg-num" x="500" y="394">WHICH IS WHY LONG-DISTANCE TELEPHONY WAITS FOR THE VACUUM TUBE,</text>
+  <text class="dg-lbl dg-num" x="500" y="408">AND WHY THE TRANSATLANTIC TELEPHONE CABLE COMES NINETY YEARS</text>
+  <text class="dg-lbl dg-num" x="500" y="422">AFTER THE TRANSATLANTIC TELEGRAPH CABLE.</text>
+</svg>
