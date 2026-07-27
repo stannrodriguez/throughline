@@ -1,0 +1,87 @@
+---
+/**
+ * A tool guided by the workpiece against a tool guided by itself. A cantilever
+ * bar is pushed sideways by the cutting force, hardest where the metal is
+ * thickest, so it backs off the high spots it is meant to remove and copies the
+ * casting's error. A bar held at both ends turns about a fixed axis, so the cut
+ * is a cylinder because the motion is a cylinder — whatever the casting was
+ * doing beforehand.
+ */
+---
+
+<svg viewBox="0 0 960 440" role="img" aria-label="A cantilever boring bar deflecting and copying an oval casting, against a bar supported at both ends cutting a true cylinder, with the accuracy achieved">
+  <defs>
+    <marker id="wb-ar" viewBox="0 0 8 8" refX="7" refY="4" markerWidth="6" markerHeight="6" orient="auto">
+      <path d="M0 0 L8 4 L0 8 z" class="dg-ink" />
+    </marker>
+    <marker id="wb-ar-a" viewBox="0 0 8 8" refX="7" refY="4" markerWidth="6" markerHeight="6" orient="auto">
+      <path d="M0 0 L8 4 L0 8 z" class="dg-accent" />
+    </marker>
+  </defs>
+
+  <!-- ══ cantilever ═════════════════════════════════════════════════════ -->
+  <text class="dg-lbl dg-num" x="30" y="24">CANTILEVER BAR · GUIDED BY THE WORK</text>
+
+  <!-- the casting, oval -->
+  <path class="dg-panel" d="M110 90 H400 V250 H110 Z" />
+  <path class="dg-s" d="M110 90 H400 V250 H110 Z" />
+  <path class="dg-page" d="M130 116 C130 100, 380 100, 380 116 V224 C380 240, 130 240, 130 224 Z" />
+  <path class="dg-s" d="M130 116 C130 100, 380 100, 380 116 V224 C380 240, 130 240, 130 224 Z" />
+  <g class="dg-h">
+    <path d="M116 96 l10 -10 M116 244 l10 -10 M388 96 l10 -10 M388 244 l10 -10" />
+  </g>
+
+  <!-- headstock and the bar, held at one end only -->
+  <path class="dg-s" d="M40 130 H80 V210 H40 Z" />
+  <path class="dg-s" d="M80 170 C140 170, 200 176, 260 182 C300 186, 340 190, 372 192" />
+  <circle cx="372" cy="192" r="6" class="dg-ink" />
+
+  <!-- the deflection -->
+  <path class="dg-d" d="M80 170 H392" />
+  <path class="dg-a" d="M372 172 V186" marker-end="url(#wb-ar-a)" />
+  <text class="dg-lbl dg-key" x="386" y="168">DEFLECTION</text>
+
+  <text class="dg-lbl dg-soft" x="30" y="278">THE CUTTING FORCE PUSHES THE BAR SIDEWAYS,</text>
+  <text class="dg-lbl dg-soft" x="30" y="292">AND PUSHES HARDEST WHERE THE METAL IS THICKEST —</text>
+  <text class="dg-lbl dg-num" x="30" y="312">SO THE CUTTER BACKS OFF THE HIGH SPOTS IT IS</text>
+  <text class="dg-lbl dg-num" x="30" y="326">MEANT TO REMOVE, AND COPIES THE ERROR.</text>
+
+  <!-- ══ supported ══════════════════════════════════════════════════════ -->
+  <path class="dg-m" d="M470 14 V344" />
+  <text class="dg-lbl dg-num" x="500" y="24">SUPPORTED BAR · GUIDED BY ITSELF</text>
+
+  <path class="dg-panel" d="M580 90 H870 V250 H580 Z" />
+  <path class="dg-s" d="M580 90 H870 V250 H580 Z" />
+  <path class="dg-page" d="M600 128 H850 V212 H600 Z" />
+  <path class="dg-s" d="M600 128 H850 V212 H600 Z" />
+  <g class="dg-h">
+    <path d="M586 96 l10 -10 M586 244 l10 -10 M858 96 l10 -10 M858 244 l10 -10" />
+  </g>
+
+  <!-- bearings at both ends -->
+  <path class="dg-s" d="M510 130 H550 V210 H510 Z" />
+  <path class="dg-s" d="M900 130 H940 V210 H900 Z" />
+  <path class="dg-a" d="M550 170 H900" />
+  <circle cx="725" cy="170" r="7" class="dg-accent" />
+  <path class="dg-d" d="M550 170 H900" />
+
+  <text class="dg-lbl dg-soft" x="500" y="278">HELD AT BOTH ENDS, THE BAR TURNS ABOUT A FIXED AXIS,</text>
+  <text class="dg-lbl dg-soft" x="500" y="292">AND THAT AXIS IS A STRAIGHT LINE IN SPACE.</text>
+  <text class="dg-lbl dg-key" x="500" y="312">THE CUT IS A CYLINDER BECAUSE THE MOTION IS A CYLINDER —</text>
+  <text class="dg-lbl dg-key" x="500" y="326">WHATEVER THE CASTING WAS DOING BEFOREHAND.</text>
+
+  <!-- ══ what that buys ═════════════════════════════════════════════════ -->
+  <path class="dg-m" d="M30 358 H930" />
+  <text class="dg-lbl" x="30" y="378">1774 · A 50-INCH BORE, TRUE TO ABOUT 1.5 MM</text>
+
+  <path class="dg-s" d="M30 396 H488" />
+  <path class="dg-m" d="M30 390 V402 M488 390 V402" />
+  <text class="dg-lbl dg-num" x="30" y="418">50 INCHES OF BORE</text>
+
+  <path class="dg-a" d="M520 396 H534" />
+  <path class="dg-m" d="M520 390 V402 M534 390 V402" />
+  <text class="dg-lbl dg-key" x="546" y="400">1.5 MM — ABOUT THE THICKNESS OF A SHILLING</text>
+  <text class="dg-lbl dg-soft" x="546" y="422">ACCURACY NOW COMES FROM THE MACHINE'S GEOMETRY, NOT FROM</text>
+  <text class="dg-lbl dg-soft" x="546" y="436">THE OPERATOR'S SKILL — SO SOMEONE ELSE CAN REPEAT IT.</text>
+  <text class="dg-lbl dg-soft" x="30" y="436">WATT'S ENGINES ONLY MEET THEIR FUEL FIGURES ONCE BORED THIS WAY.</text>
+</svg>
