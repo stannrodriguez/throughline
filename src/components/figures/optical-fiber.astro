@@ -1,0 +1,84 @@
+---
+/**
+ * Kao's insight was that attenuation has separable causes. Absorption by metal
+ * ions can be removed entirely — vapour-phase manufacture starts from a gas that
+ * can be purified rather than a mineral that cannot. What is left is Rayleigh
+ * scattering off density fluctuations frozen into the glass, and that falls as
+ * the fourth power of wavelength, which is why long-haul settled on 1.55 µm.
+ */
+---
+
+<svg viewBox="0 0 960 476" role="img" aria-label="Loss against wavelength in silica fibre, with Rayleigh scattering falling as the fourth power, the OH absorption peaks, and the 1.31 and 1.55 micrometre windows">
+  <defs>
+    <marker id="of-ar" viewBox="0 0 8 8" refX="7" refY="4" markerWidth="6" markerHeight="6" orient="auto">
+      <path d="M0 0 L8 4 L0 8 z" class="dg-ink" />
+    </marker>
+  </defs>
+
+  <text class="dg-lbl" x="30" y="24">LOSS AGAINST WAVELENGTH</text>
+
+  <path class="dg-h" d="M110 96 H900 M110 160 H900 M110 224 H900" />
+  <path class="dg-h" d="M268 60 V288 M426 60 V288 M584 60 V288 M742 60 V288" />
+  <path class="dg-s" d="M110 60 V288 H900" />
+
+  <text class="dg-lbl" x="110" y="48">dB PER KILOMETRE</text>
+  <g class="dg-num">
+    <text x="102" y="64" text-anchor="end">4.0</text>
+    <text x="102" y="100" text-anchor="end">3.0</text>
+    <text x="102" y="164" text-anchor="end">2.0</text>
+    <text x="102" y="228" text-anchor="end">1.0</text>
+    <text x="102" y="292" text-anchor="end">0</text>
+  </g>
+  <path class="dg-m" d="M110 288 v5 M268 288 v5 M426 288 v5 M584 288 v5 M742 288 v5 M900 288 v5" />
+  <g class="dg-num">
+    <text x="110" y="308" text-anchor="middle">0.8</text>
+    <text x="268" y="308" text-anchor="middle">1.0</text>
+    <text x="426" y="308" text-anchor="middle">1.2</text>
+    <text x="584" y="308" text-anchor="middle">1.4</text>
+    <text x="742" y="308" text-anchor="middle">1.6</text>
+    <text x="900" y="308" text-anchor="middle">1.8</text>
+  </g>
+  <text class="dg-lbl" x="505" y="328" text-anchor="middle">WAVELENGTH, MICROMETRES</text>
+
+  <!-- Rayleigh scattering, falling as the fourth power -->
+  <path class="dg-m" d="M110 84 C160 138, 210 182, 268 212 C330 240, 400 258, 468 268 C560 278, 700 284, 900 286" />
+  <text class="dg-lbl dg-soft" x="140" y="106">RAYLEIGH SCATTERING · λ⁻⁴</text>
+
+  <!-- the OH peaks on top of it -->
+  <path class="dg-a" d="M110 84 C160 138, 210 182, 268 212 C300 226, 318 232, 340 220
+                        C356 208, 366 176, 386 186 C404 196, 414 240, 440 252
+                        C480 266, 520 254, 552 218 C574 190, 592 128, 618 138
+                        C642 148, 660 218, 686 246 C716 274, 780 282, 830 282
+                        C860 282, 884 284, 900 286" />
+  <circle cx="470" cy="268" r="4" class="dg-accent" />
+  <circle cx="756" cy="280" r="4" class="dg-accent" />
+
+  <path class="dg-d" d="M470 60 V288 M756 60 V288" />
+  <text class="dg-lbl dg-key" x="392" y="80">OH ABSORPTION PEAKS</text>
+  <path class="dg-m" d="M400 88 L386 178 M470 88 L610 132" />
+  <text class="dg-lbl dg-num" x="478" y="256">1.31 µm</text>
+  <text class="dg-lbl dg-key" x="930" y="254" text-anchor="end">1.55 µm</text>
+  <text class="dg-lbl dg-key" x="930" y="268" text-anchor="end">WHERE LONG-HAUL SETTLED</text>
+
+  <text class="dg-lbl dg-num" x="30" y="360">ABSORPTION BY METAL IONS CAN BE REMOVED ENTIRELY — VAPOUR-PHASE</text>
+  <text class="dg-lbl dg-num" x="30" y="374">MANUFACTURE STARTS FROM A GAS THAT CAN BE PURIFIED, NOT A MINERAL</text>
+  <text class="dg-lbl dg-num" x="30" y="388">THAT CANNOT.</text>
+  <text class="dg-lbl dg-soft" x="30" y="412">WHAT REMAINS IS SCATTERING OFF DENSITY FLUCTUATIONS FROZEN INTO</text>
+  <text class="dg-lbl dg-soft" x="30" y="426">THE GLASS AS IT SET, AND THAT FALLS STEEPLY WITH WAVELENGTH.</text>
+  <text class="dg-lbl dg-key" x="30" y="452">17 dB/KM IN 1970 · UNDER 0.2 TODAY</text>
+
+  <!-- ══ the index step ═════════════════════════════════════════════════ -->
+  <path class="dg-m" d="M600 340 V462" />
+  <text class="dg-lbl" x="632" y="360">CORE AND CLADDING</text>
+
+  <path class="dg-panel" d="M632 380 H822 V444 H632 Z" />
+  <path class="dg-s" d="M632 380 H822 V444 H632 Z" />
+  <path class="dg-page" d="M632 402 H822 V422 H632 Z" />
+  <path class="dg-m" d="M632 402 H822 M632 422 H822" />
+  <path class="dg-a" d="M640 414 L664 406 L688 420 L712 406 L736 420 L760 406 L784 420 L814 410" />
+  <text class="dg-lbl dg-soft" x="834" y="392">CLADDING —</text>
+  <text class="dg-lbl dg-soft" x="834" y="406">LOWER INDEX</text>
+  <text class="dg-lbl dg-key" x="834" y="428">CORE</text>
+  <text class="dg-lbl dg-soft" x="834" y="450">REFLECTED AT</text>
+  <text class="dg-lbl dg-soft" x="834" y="464">A SHALLOW ANGLE</text>
+</svg>
