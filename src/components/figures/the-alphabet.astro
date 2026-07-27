@@ -1,0 +1,99 @@
+---
+/**
+ * Sign counts to scale. The inventory tracks what a sign stands for — a word,
+ * a syllable, a consonant — not the size of the vocabulary, so matching signs
+ * to the sound inventory collapses the count by a factor of forty. Acrophony
+ * at right: the pictograph keeps only the first sound of its own name.
+ */
+---
+
+<svg viewBox="0 0 960 380" role="img" aria-label="Sign counts for proto-cuneiform, Egyptian, Linear B and Phoenician drawn to scale, with the acrophony chain for aleph and bet">
+  <defs>
+    <marker id="al-ar" viewBox="0 0 8 8" refX="7" refY="4" markerWidth="6" markerHeight="6" orient="auto">
+      <path d="M0 0 L8 4 L0 8 z" class="dg-ink" />
+    </marker>
+  </defs>
+
+  <text class="dg-lbl" x="30" y="24">SIGNS IN THE INVENTORY, DRAWN TO SCALE</text>
+
+  <!-- ── scale ────────────────────────────────────────────────────────── -->
+  <path class="dg-h" d="M319 46 V262 M433 46 V262 M546 46 V262" />
+  <path class="dg-s" d="M206 46 V262" />
+
+  <rect x="204" y="46" width="382" height="15" class="dg-page" />
+  <text class="dg-lbl dg-soft" x="206" y="58">ONE SIGN PER WORD — THE COUNT GROWS WITH THE DICTIONARY</text>
+
+  <!-- proto-cuneiform, ~900 -->
+  <text class="dg-lbl" x="196" y="80" text-anchor="end">PROTO-CUNEIFORM</text>
+  <rect x="206" y="66" width="340" height="18" class="dg-panel" />
+  <rect x="206" y="66" width="340" height="18" class="dg-m" />
+  <text class="dg-lbl dg-num" x="196" y="94" text-anchor="end">~900</text>
+
+  <!-- Egyptian, ~700 -->
+  <text class="dg-lbl" x="196" y="130" text-anchor="end">EGYPTIAN</text>
+  <rect x="206" y="116" width="264" height="18" class="dg-panel" />
+  <rect x="206" y="116" width="264" height="18" class="dg-m" />
+  <text class="dg-lbl dg-num" x="196" y="144" text-anchor="end">~700</text>
+
+  <!-- Linear B, 87 -->
+  <text class="dg-lbl" x="196" y="180" text-anchor="end">LINEAR B</text>
+  <rect x="206" y="166" width="33" height="18" class="dg-ink" />
+  <text class="dg-lbl dg-num" x="196" y="194" text-anchor="end">87</text>
+  <text class="dg-lbl dg-soft" x="253" y="180">ONE SIGN PER SYLLABLE — HUNDREDS</text>
+
+  <!-- Phoenician, 22 -->
+  <text class="dg-lbl" x="196" y="230" text-anchor="end">PHOENICIAN</text>
+  <rect x="206" y="216" width="8" height="18" class="dg-accent" />
+  <text class="dg-lbl dg-num" x="196" y="244" text-anchor="end">22</text>
+  <text class="dg-lbl dg-key" x="228" y="230">ONE SIGN PER CONSONANT — A FEW DOZEN, AND NEVER MORE</text>
+
+  <!-- axis -->
+  <path class="dg-s" d="M206 262 H560" />
+  <path class="dg-m" d="M206 262 v5 M319 262 v5 M433 262 v5 M546 262 v5" />
+  <g class="dg-num">
+    <text x="206" y="282" text-anchor="middle">0</text>
+    <text x="319" y="282" text-anchor="middle">300</text>
+    <text x="433" y="282" text-anchor="middle">600</text>
+    <text x="546" y="282" text-anchor="middle">900</text>
+  </g>
+
+  <text class="dg-lbl dg-soft" x="30" y="322">A LANGUAGE HAS TENS OF THOUSANDS OF WORDS AND A FEW DOZEN CONSONANTS.</text>
+  <text class="dg-lbl dg-soft" x="30" y="336">MATCH THE NOTATION TO THE SECOND NUMBER AND TRAINING FALLS FROM YEARS TO WEEKS.</text>
+
+  <!-- ══ acrophony ══════════════════════════════════════════════════════ -->
+  <path class="dg-m" d="M604 14 V352" />
+  <text class="dg-lbl" x="632" y="24">ACROPHONY · THE SIGN KEEPS THE FIRST SOUND OF ITS OWN NAME</text>
+
+  <!-- row 1 — 'ALP, the ox -->
+  <text class="dg-lbl dg-num" x="632" y="58">'ALP — OX</text>
+  <g class="dg-s">
+    <path d="M640 96 L652 118 L664 96 Z" />
+    <path d="M640 96 C628 90, 622 78, 628 68" />
+    <path d="M664 96 C676 90, 682 78, 676 68" />
+  </g>
+  <path class="dg-m" d="M690 100 H730" marker-end="url(#al-ar)" />
+  <g class="dg-s">
+    <path d="M760 82 L782 100 L760 118 M782 100 L800 110" />
+  </g>
+  <path class="dg-m" d="M824 100 H864" marker-end="url(#al-ar)" />
+  <text class="dg-glyph dg-key" x="900" y="114" text-anchor="middle">A</text>
+  <text class="dg-lbl dg-soft" x="632" y="150">PICTOGRAPH · PHOENICIAN, TURNED · LATIN</text>
+
+  <!-- row 2 — BET, the house -->
+  <text class="dg-lbl dg-num" x="632" y="206">BET — HOUSE</text>
+  <g class="dg-s">
+    <path d="M636 226 h32 v34 h-32 Z" />
+    <path d="M646 260 v-14 h12 v14" />
+  </g>
+  <path class="dg-m" d="M690 244 H730" marker-end="url(#al-ar)" />
+  <g class="dg-s">
+    <path d="M764 224 h22 v20 h-22 v24" />
+  </g>
+  <path class="dg-m" d="M824 244 H864" marker-end="url(#al-ar)" />
+  <text class="dg-glyph dg-key" x="900" y="258" text-anchor="middle">B</text>
+
+  <text class="dg-lbl dg-soft" x="632" y="304">PHOENICIAN WRITES CONSONANTS ONLY —</text>
+  <text class="dg-lbl dg-soft" x="632" y="318">THE READER SUPPLIES THE VOWELS.</text>
+  <text class="dg-lbl dg-soft" x="632" y="332">GREEK, WHERE VOWELS DISTINGUISH WORDS,</text>
+  <text class="dg-lbl dg-soft" x="632" y="346">HAS TO ADD THEM, AND DOES.</text>
+</svg>
