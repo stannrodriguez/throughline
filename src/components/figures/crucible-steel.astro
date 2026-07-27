@@ -1,0 +1,100 @@
+---
+/**
+ * Carbon across the section, before and after. Cementation carburises a bar from
+ * the outside in, so the composition is a gradient set by how deeply carbon
+ * happened to diffuse. A melt is homogeneous, so once the steel has been fully
+ * liquid the composition is flat and the maker sets it by weighing the charge.
+ * The furnace at right is what that costs: 1,600°, a sealed lid, and about
+ * twenty kilograms at a time.
+ */
+---
+
+<svg viewBox="0 0 960 440" role="img" aria-label="Carbon concentration across a blister-steel bar against the flat profile after melting, with the sealed crucible and coke furnace that achieve it">
+  <defs>
+    <marker id="cs-ar" viewBox="0 0 8 8" refX="7" refY="4" markerWidth="6" markerHeight="6" orient="auto">
+      <path d="M0 0 L8 4 L0 8 z" class="dg-ink" />
+    </marker>
+    <marker id="cs-ar-a" viewBox="0 0 8 8" refX="7" refY="4" markerWidth="6" markerHeight="6" orient="auto">
+      <path d="M0 0 L8 4 L0 8 z" class="dg-accent" />
+    </marker>
+  </defs>
+
+  <text class="dg-lbl" x="30" y="24">CARBON ACROSS THE BAR</text>
+
+  <!-- ── the bar in section ───────────────────────────────────────────── -->
+  <text class="dg-lbl dg-num" x="30" y="56">CEMENTATION · BLISTER STEEL</text>
+  <rect x="60" y="70" width="380" height="56" class="dg-panel" />
+  <rect x="60" y="70" width="380" height="14" class="dg-tint" />
+  <rect x="60" y="112" width="380" height="14" class="dg-tint" />
+  <rect x="60" y="70" width="380" height="56" class="dg-m" />
+  <g class="dg-m">
+    <path d="M96 70 c4 -6 12 -6 16 0 M168 70 c4 -6 12 -6 16 0 M256 70 c4 -6 12 -6 16 0
+             M340 70 c4 -6 12 -6 16 0 M120 126 c4 6 12 6 16 0 M212 126 c4 6 12 6 16 0
+             M300 126 c4 6 12 6 16 0 M384 126 c4 6 12 6 16 0" />
+  </g>
+  <text class="dg-lbl dg-soft" x="452" y="82">BLISTERS — THE NAME</text>
+  <text class="dg-lbl dg-soft" x="452" y="96">COMES FROM THEM</text>
+
+  <!-- the gradient chart -->
+  <path class="dg-h" d="M60 190 H440 M60 230 H440" />
+  <path class="dg-s" d="M60 150 V270 H440" />
+  <text class="dg-lbl" x="60" y="142">CARBON, PER CENT</text>
+  <text class="dg-lbl dg-num" x="52" y="154" text-anchor="end">1.5</text>
+  <text class="dg-lbl dg-num" x="52" y="194" text-anchor="end">1.0</text>
+  <text class="dg-lbl dg-num" x="52" y="234" text-anchor="end">0.5</text>
+  <text class="dg-lbl dg-num" x="52" y="274" text-anchor="end">0</text>
+  <text class="dg-lbl" x="250" y="292" text-anchor="middle">ACROSS THE SECTION →</text>
+
+  <path class="dg-a" d="M60 166 C90 178, 118 220, 160 244 C200 266, 300 266, 340 244 C382 220, 410 178, 440 166" />
+  <text class="dg-lbl dg-key" x="250" y="216" text-anchor="middle">HARD SKIN, SOFT CORE</text>
+  <text class="dg-lbl dg-soft" x="30" y="330">COMPOSITION IS WHATEVER THE CARBON HAPPENED TO REACH.</text>
+  <text class="dg-lbl dg-soft" x="30" y="344">A FORGED BAR IS ONLY AS UNIFORM AS THE SMITH'S FOLDING.</text>
+
+  <!-- ── after melting ────────────────────────────────────────────────── -->
+  <text class="dg-lbl dg-num" x="30" y="380">CRUCIBLE · CAST STEEL</text>
+  <path class="dg-h" d="M60 400 H440" />
+  <path class="dg-s" d="M60 380 V430 H440" />
+  <path class="dg-a" d="M60 396 H440" />
+  <circle cx="60" cy="396" r="3.4" class="dg-accent" />
+  <circle cx="440" cy="396" r="3.4" class="dg-accent" />
+  <text class="dg-lbl dg-key" x="250" y="422" text-anchor="middle">FLAT · A MELT IS HOMOGENEOUS</text>
+  <text class="dg-lbl dg-num" x="452" y="392">COMPOSITION IS NOW SET</text>
+  <text class="dg-lbl dg-num" x="452" y="406">BY WEIGHING THE CHARGE,</text>
+  <text class="dg-lbl dg-num" x="452" y="420">NOT INHERITED FROM HOW</text>
+  <text class="dg-lbl dg-num" x="452" y="434">DEEPLY THE CARBON RAN</text>
+
+  <!-- ══ the furnace ════════════════════════════════════════════════════ -->
+  <path class="dg-m" d="M620 14 V430" />
+  <text class="dg-lbl" x="648" y="24">THE CRUCIBLE AND THE COKE FURNACE</text>
+
+  <!-- furnace pit -->
+  <path class="dg-panel" d="M672 300 V96 H700 V300 Z" />
+  <path class="dg-panel" d="M888 300 V96 H860 V300 Z" />
+  <path class="dg-s" d="M672 300 V96 H888 V300" />
+  <path class="dg-s" d="M700 300 V96 M860 300 V96" />
+  <path class="dg-s" d="M672 300 H888" />
+
+  <!-- coke packed round the crucible -->
+  <g class="dg-m">
+    <path d="M708 268 h14 v10 h-14 Z M708 250 h12 v10 h-12 Z M712 232 h14 v10 h-14 Z
+             M708 214 h12 v10 h-12 Z M714 196 h13 v10 h-13 Z M708 178 h13 v10 h-13 Z
+             M836 268 h14 v10 h-14 Z M838 250 h12 v10 h-12 Z M832 232 h14 v10 h-14 Z
+             M838 214 h12 v10 h-12 Z M832 196 h13 v10 h-13 Z M836 178 h13 v10 h-13 Z" />
+  </g>
+  <text class="dg-lbl dg-soft" x="648" y="326">COKE, PACKED ALL ROUND</text>
+
+  <!-- the crucible -->
+  <path class="dg-panel" d="M742 180 H818 L806 288 H754 Z" />
+  <path class="dg-s" d="M742 180 H818 L806 288 H754 Z" />
+  <path class="dg-s" d="M734 164 H826 V180 H734 Z" />
+  <path class="dg-accent" d="M752 208 H808 L800 282 H760 Z" />
+  <text class="dg-lbl dg-key" x="780" y="152" text-anchor="middle">SEALED LID</text>
+
+  <!-- annotations -->
+  <text class="dg-lbl dg-num" x="648" y="352">1,600° · STEEL MELTS NEAR 1,500°, AND THE</text>
+  <text class="dg-lbl dg-num" x="648" y="366">CLAY HAS TO HOLD ABOVE IT WITHOUT SLUMPING.</text>
+  <text class="dg-lbl dg-soft" x="648" y="388">THE LID IS NOT DECORATION: AN OPEN MELT WOULD</text>
+  <text class="dg-lbl dg-soft" x="648" y="402">TAKE UP CARBON FROM THE FUEL AND LOSE IT TO THE</text>
+  <text class="dg-lbl dg-soft" x="648" y="416">AIR — THE VARIABILITY THE PROCESS EXISTS TO REMOVE.</text>
+  <text class="dg-lbl dg-soft" x="648" y="436">ABOUT 20 KG A CRUCIBLE · SPRINGS, FILES, RAZORS, DIES</text>
+</svg>
