@@ -73,7 +73,7 @@ export const ROAD_VIEWS: Record<ThreadId, RoadView> = {
     aside: ['Read in order: ~4 hr', 'or start anywhere;', 'every stop links on'],
     metricLabel: 'Energy / person',
     columnNote:
-      'Column: energy per person (GJ/yr), the same number that opens every period · one unit holds for all twelve · entries outside VI are placeholders',
+      'Column: energy per person (GJ/yr), the same number that opens every period · one unit holds for all twelve',
     rows: [
       { kind: 'band', periods: ['I'], display: 'full', years: '−400,000 — −1200', metric: { value: '8', barPct: 7, caption: 'GJ/yr' } },
       { kind: 'band', periods: ['II'], display: 'full', metric: { value: '11', barPct: 9, caption: 'GJ/yr' } },
@@ -105,7 +105,7 @@ export const ROAD_VIEWS: Record<ThreadId, RoadView> = {
       'Each class of material waits on a furnace temperature: 900° for pottery, 1,250° for iron, 3,500° for aluminum. From Period X the constraint is purity instead, and the column changes its unit.',
     metricLabel: 'Hottest controlled',
     columnNote:
-      'Column: hottest sustained, controlled temperature (°C) through Period IX · nines of achievable purity after the seam · entries outside VI are placeholders',
+      'Column: hottest sustained, controlled temperature (°C) through Period IX · nines of achievable purity after the seam',
     rows: [
       { kind: 'band', periods: ['I'], display: 'full', years: '−9000 — −1200', metric: { value: '900°', barPct: 24, caption: 'Kiln · °C' } },
       { kind: 'band', periods: ['II'], display: 'full', metric: { value: '1,250°', barPct: 34, caption: 'Bloomery · °C' } },
@@ -143,7 +143,7 @@ export const ROAD_VIEWS: Record<ThreadId, RoadView> = {
       'A message covers 200 kilometres a day from Rome until 1840, and then crosses a continent in minutes.',
     metricLabel: 'Message / day',
     columnNote:
-      'Column: message range per day through Period VII · sustained throughput after the seam · log-scale bars past the seam · entries outside VI are placeholders',
+      'Column: message range per day through Period VII · sustained throughput after the seam · log-scale bars past the seam',
     rows: [
       {
         kind: 'band',
