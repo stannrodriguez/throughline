@@ -1,0 +1,84 @@
+---
+/**
+ * The mola asinaria: an hourglass catillus turning on a conical meta, fed from
+ * the upper funnel, driven by a donkey walking a circle. Elevation at left,
+ * section at right. The grain falls to the centre and is sheared outward down
+ * the cone, so the gap between the dressed faces sets the fineness and the
+ * weight of the upper stone does the pressing.
+ */
+---
+
+<svg viewBox="0 0 960 400" role="img" aria-label="A donkey-driven rotary mill in elevation and section, with the grain path from centre to rim">
+  <defs>
+    <marker id="rq-ar" viewBox="0 0 8 8" refX="7" refY="4" markerWidth="6" markerHeight="6" orient="auto">
+      <path d="M0 0 L8 4 L0 8 z" class="dg-accent" />
+    </marker>
+  </defs>
+
+  <!-- ══ elevation ══════════════════════════════════════════════════════ -->
+  <text class="dg-lbl" x="30" y="24">MOLA ASINARIA · ELEVATION</text>
+
+  <!-- base and plinth -->
+  <path class="dg-s" d="M120 316 H400" />
+  <path class="dg-panel" d="M156 316 V286 H364 V316 Z" />
+  <path class="dg-s" d="M156 316 V286 H364 V316" />
+
+  <!-- the meta, standing on the plinth -->
+  <path class="dg-panel" d="M212 286 L246 176 H274 L308 286 Z" />
+  <path class="dg-s" d="M212 286 L246 176 H274 L308 286 Z" />
+
+  <!-- the catillus, an hourglass over it -->
+  <path class="dg-s" d="M180 274 C196 232, 232 200, 240 178 C232 156, 196 128, 180 96 H340 C324 128, 288 156, 280 178 C288 200, 324 232, 340 274 Z" />
+  <path class="dg-h" d="M180 274 H340" />
+
+  <!-- the drive bar -->
+  <path class="dg-s" d="M148 118 H372" />
+  <path class="dg-m" d="M232 118 V104 M288 118 V104" />
+  <text class="dg-lbl dg-num" x="30" y="196">DRIVE BAR — A DONKEY</text>
+  <text class="dg-lbl dg-soft" x="30" y="210">WALKS THE CIRCLE</text>
+
+  <!-- grain in at the top -->
+  <path class="dg-a" d="M260 62 V92" marker-end="url(#rq-ar)" />
+  <text class="dg-lbl dg-key" x="260" y="52" text-anchor="middle">GRAIN IN</text>
+  <text class="dg-lbl dg-soft" x="130" y="96" text-anchor="end">HOPPER —</text>
+  <text class="dg-lbl dg-soft" x="130" y="110" text-anchor="end">THE UPPER CONE</text>
+
+  <!-- flour out at the plinth -->
+  <path class="dg-a" d="M186 282 L152 306" marker-end="url(#rq-ar)" />
+  <path class="dg-a" d="M334 282 L368 306" marker-end="url(#rq-ar)" />
+  <text class="dg-lbl dg-key" x="260" y="340" text-anchor="middle">FLOUR OFF THE RIM, ALL ROUND</text>
+  <text class="dg-lbl dg-soft" x="260" y="358" text-anchor="middle">ABOUT 1 KG PER PERSON PER DAY IS THE STANDING DEMAND</text>
+
+  <!-- ══ section ════════════════════════════════════════════════════════ -->
+  <path class="dg-m" d="M440 14 V386" />
+  <text class="dg-lbl" x="470" y="24">SECTION · THE GRAIN PATH</text>
+
+  <!-- meta in section -->
+  <path class="dg-panel" d="M614 296 L666 150 H694 L746 296 Z" />
+  <path class="dg-s" d="M614 296 L666 150 H694 L746 296 Z" />
+  <text class="dg-lbl dg-num" x="680" y="316" text-anchor="middle">META · FIXED, CONICAL</text>
+
+  <!-- catillus in section, riding on the cone -->
+  <path class="dg-s" d="M580 288 C598 240, 640 190, 656 152 C640 116, 598 92, 580 62" />
+  <path class="dg-s" d="M780 288 C762 240, 720 190, 704 152 C720 116, 762 92, 780 62" />
+  <path class="dg-h" d="M580 62 H780 M580 288 H780" />
+  <text class="dg-lbl dg-num" x="792" y="80">CATILLUS · TURNS,</text>
+  <text class="dg-lbl dg-num" x="792" y="94">AND ITS WEIGHT PRESSES</text>
+
+  <!-- the grinding gap, and the grain path -->
+  <path class="dg-a" d="M680 70 V140" marker-end="url(#rq-ar)" />
+  <path class="dg-a" d="M668 152 C654 190, 622 240, 600 282" marker-end="url(#rq-ar)" />
+  <path class="dg-a" d="M692 152 C706 190, 738 240, 760 282" marker-end="url(#rq-ar)" />
+
+  <path class="dg-d" d="M660 156 L602 288 M700 156 L758 288" />
+  <text class="dg-lbl dg-key" x="470" y="180">THE GAP</text>
+  <text class="dg-lbl dg-key" x="470" y="194">SETS THE</text>
+  <text class="dg-lbl dg-key" x="470" y="208">FINENESS</text>
+  <text class="dg-lbl dg-soft" x="470" y="228">WIDER FOR MEAL,</text>
+  <text class="dg-lbl dg-soft" x="470" y="242">CLOSER FOR FLOUR</text>
+  <path class="dg-m" d="M528 214 L598 250" />
+
+  <text class="dg-lbl dg-soft" x="470" y="342">A BACK-AND-FORTH STROKE STOPS AND REVERSES TWICE A CYCLE</text>
+  <text class="dg-lbl dg-soft" x="470" y="356">AND THROWS AWAY THE EFFORT SPENT ACCELERATING THE STONE.</text>
+  <text class="dg-lbl dg-num" x="470" y="374">ROTATION NEVER STOPS, SO ANYTHING THAT GOES ROUND CAN DRIVE IT.</text>
+</svg>
