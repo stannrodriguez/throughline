@@ -1,0 +1,85 @@
+---
+/**
+ * The mould grows on a surface, and surface area scales as r² while volume
+ * scales as r³ — so a bigger flask buys very little. Submerged culture in a
+ * stirred, aerated tank puts the mould through the whole volume instead, and the
+ * problem becomes oxygen transfer: keeping millions of litres uniformly supplied
+ * with air and free of every competing organism.
+ */
+---
+
+<svg viewBox="0 0 960 460" role="img" aria-label="Surface culture scaling as the square of radius against submerged culture scaling as the cube, and the stirred aerated tank that made it work">
+  <defs>
+    <marker id="pn-ar" viewBox="0 0 8 8" refX="7" refY="4" markerWidth="6" markerHeight="6" orient="auto">
+      <path d="M0 0 L8 4 L0 8 z" class="dg-ink" />
+    </marker>
+    <marker id="pn-ar-a" viewBox="0 0 8 8" refX="7" refY="4" markerWidth="6" markerHeight="6" orient="auto">
+      <path d="M0 0 L8 4 L0 8 z" class="dg-accent" />
+    </marker>
+  </defs>
+
+  <!-- ══ the flask ══════════════════════════════════════════════════════ -->
+  <text class="dg-lbl dg-num" x="30" y="24">SURFACE CULTURE · THE MOULD GROWS ON A FILM</text>
+
+  <g>
+    <path class="dg-s" d="M84 80 V116 L64 202 H120 L100 116 V80 Z" />
+    <path class="dg-tint" d="M70 186 H114 V200 H70 Z" />
+    <path class="dg-a" d="M70 186 H114" />
+    <path class="dg-s" d="M164 74 V120 L120 250 H228 L184 120 V74 Z" />
+    <path class="dg-tint" d="M126 222 H222 V248 H126 Z" />
+    <path class="dg-a" d="M126 222 H222" />
+    <path class="dg-s" d="M290 66 V126 L206 308 H400 L316 126 V66 Z" />
+    <path class="dg-tint" d="M212 276 H394 V306 H212 Z" />
+    <path class="dg-a" d="M212 276 H394" />
+  </g>
+  <text class="dg-lbl dg-key" x="30" y="336">ONLY THE SURFACE WORKS, AND SURFACE GOES AS r²</text>
+  <text class="dg-lbl dg-soft" x="30" y="350">WHILE THE GLASS, THE MEDIUM AND THE FLOOR SPACE GO AS r³</text>
+
+  <!-- the scaling comparison -->
+  <path class="dg-m" d="M30 374 H430" />
+  <text class="dg-lbl" x="30" y="396">DOUBLE THE VESSEL</text>
+  <rect x="30" y="406" width="66" height="15" class="dg-a" />
+  <text class="dg-lbl dg-key" x="106" y="418">4× THE SURFACE</text>
+  <rect x="30" y="428" width="264" height="15" class="dg-ink" />
+  <text class="dg-lbl dg-num" x="30" y="458">8× EVERYTHING YOU PAID FOR</text>
+
+  <!-- ══ the deep tank ══════════════════════════════════════════════════ -->
+  <path class="dg-m" d="M470 14 V450" />
+  <text class="dg-lbl dg-num" x="500" y="24">SUBMERGED CULTURE · THE MOULD GROWS THROUGHOUT</text>
+
+  <!-- the vessel -->
+  <path class="dg-s" d="M600 66 H840 V300 C840 330, 820 348, 720 348 C620 348, 600 330, 600 300 Z" />
+  <path class="dg-tint" d="M604 96 H836 V300 C836 326, 816 344, 720 344 C624 344, 604 326, 604 300 Z" />
+
+  <!-- shaft and impellers -->
+  <path class="dg-s" d="M720 40 V310" />
+  <path class="dg-s" d="M684 150 H756 M684 158 H756" />
+  <path class="dg-s" d="M684 236 H756 M684 244 H756" />
+  <path class="dg-s" d="M700 30 H740 V52 H700 Z" />
+  <text class="dg-lbl dg-num" x="750" y="42">DRIVE</text>
+  <text class="dg-lbl dg-soft" x="766" y="158">IMPELLERS</text>
+
+  <!-- sparged air -->
+  <path class="dg-s" d="M540 330 H660 V312" />
+  <path class="dg-m" d="M690 312 H750" />
+  <g class="dg-a">
+    <circle cx="672" cy="292" r="4" /><circle cx="700" cy="276" r="4" /><circle cx="742" cy="286" r="4" />
+    <circle cx="686" cy="248" r="4" /><circle cx="756" cy="256" r="4" /><circle cx="714" cy="222" r="4" />
+    <circle cx="662" cy="212" r="4" /><circle cx="768" cy="206" r="4" /><circle cx="700" cy="180" r="4" />
+    <circle cx="646" cy="168" r="4" /><circle cx="782" cy="164" r="4" /><circle cx="726" cy="140" r="4" />
+    <circle cx="670" cy="126" r="4" /><circle cx="792" cy="120" r="4" />
+  </g>
+  <text class="dg-lbl dg-key" x="500" y="324">STERILE AIR,</text>
+  <text class="dg-lbl dg-key" x="500" y="338">SPARGED IN</text>
+
+  <!-- medium -->
+  <path class="dg-a" d="M880 120 H846" marker-end="url(#pn-ar-a)" />
+  <text class="dg-lbl dg-num" x="856" y="104">CORN-STEEP</text>
+  <text class="dg-lbl dg-num" x="856" y="118">LIQUOR</text>
+
+  <text class="dg-lbl dg-key" x="500" y="378">VOLUME NOW WORKS FOR YOU — IT GOES AS r³ TOO.</text>
+  <text class="dg-lbl dg-soft" x="500" y="398">WHAT IS LEFT IS AN OXYGEN-TRANSFER PROBLEM: KEEPING MILLIONS OF</text>
+  <text class="dg-lbl dg-soft" x="500" y="412">LITRES UNIFORMLY SUPPLIED WITH AIR, AND FREE OF EVERY</text>
+  <text class="dg-lbl dg-soft" x="500" y="426">COMPETING ORGANISM.</text>
+  <text class="dg-lbl dg-num" x="500" y="448">21 BILLION UNITS IN 1943 · 6.8 TRILLION IN 1945</text>
+</svg>
