@@ -1,0 +1,110 @@
+---
+/**
+ * Four strokes, with the valves shown open or shut in each. Two things are
+ * happening: the burning gas is itself the working gas, so there is no boiler,
+ * no water and no warm-up; and a whole stroke is spent doing nothing but
+ * compressing, because efficiency rises with the compression ratio. The price
+ * is that one stroke in four makes power.
+ */
+---
+
+<svg viewBox="0 0 960 500" role="img" aria-label="The four strokes of an internal combustion engine with valve timing, efficiency against compression ratio, and the mass of an equivalent steam plant">
+  <defs>
+    <marker id="ic-ar" viewBox="0 0 8 8" refX="7" refY="4" markerWidth="6" markerHeight="6" orient="auto">
+      <path d="M0 0 L8 4 L0 8 z" class="dg-ink" />
+    </marker>
+    <marker id="ic-ar-a" viewBox="0 0 8 8" refX="7" refY="4" markerWidth="6" markerHeight="6" orient="auto">
+      <path d="M0 0 L8 4 L0 8 z" class="dg-accent" />
+    </marker>
+  </defs>
+
+  <text class="dg-lbl" x="30" y="24">THE FOUR STROKES · VALVES OPEN OR SHUT</text>
+
+  <!-- 1 · intake -->
+  <text class="dg-lbl dg-num" x="30" y="52">1 · INTAKE</text>
+  <path class="dg-s" d="M52 66 V210 H140 V66" />
+  <path class="dg-tint" d="M54 140 H138 V208 H54 Z" />
+  <path class="dg-s" d="M54 136 H138 V150 H54 Z" />
+  <path class="dg-s" d="M96 136 V246" />
+  <path class="dg-s" d="M64 66 V88 M78 66 V88" />
+  <path class="dg-m" d="M114 66 V78 M128 66 V78" />
+  <path class="dg-a" d="M71 40 V96" marker-end="url(#ic-ar-a)" />
+  <text class="dg-lbl dg-key" x="30" y="238">INLET OPEN ·</text>
+  <text class="dg-lbl dg-key" x="30" y="252">CHARGE DRAWN IN</text>
+
+  <!-- 2 · compression -->
+  <text class="dg-lbl dg-num" x="260" y="52">2 · COMPRESSION</text>
+  <path class="dg-s" d="M282 66 V210 H370 V66" />
+  <path class="dg-tint" d="M284 90 H368 V104 H284 Z" />
+  <path class="dg-s" d="M284 104 H368 V118 H284 Z" />
+  <path class="dg-s" d="M326 104 V246" />
+  <path class="dg-m" d="M294 66 V78 M308 66 V78 M344 66 V78 M358 66 V78" />
+  <path class="dg-s" d="M326 250 V218" marker-end="url(#ic-ar)" />
+  <text class="dg-lbl dg-key" x="260" y="238">BOTH SHUT ·</text>
+  <text class="dg-lbl dg-key" x="260" y="252">THE CHARGE IS SQUEEZED</text>
+
+  <!-- 3 · power -->
+  <text class="dg-lbl dg-num" x="490" y="52">3 · POWER</text>
+  <path class="dg-s" d="M512 66 V210 H600 V66" />
+  <path class="dg-accent" d="M514 90 H598 V150 H514 Z" />
+  <path class="dg-s" d="M514 150 H598 V164 H514 Z" />
+  <path class="dg-s" d="M556 150 V246" />
+  <path class="dg-m" d="M524 66 V78 M538 66 V78 M574 66 V78 M588 66 V78" />
+  <path class="dg-s" d="M556 178 V214" marker-end="url(#ic-ar)" />
+  <text class="dg-lbl dg-key" x="490" y="238">IGNITED · THE BURNING</text>
+  <text class="dg-lbl dg-key" x="490" y="252">GAS IS THE WORKING GAS</text>
+
+  <!-- 4 · exhaust -->
+  <text class="dg-lbl dg-num" x="720" y="52">4 · EXHAUST</text>
+  <path class="dg-s" d="M742 66 V210 H830 V66" />
+  <path class="dg-panel" d="M744 90 H828 V104 H744 Z" />
+  <path class="dg-s" d="M744 104 H828 V118 H744 Z" />
+  <path class="dg-s" d="M786 104 V246" />
+  <path class="dg-m" d="M754 66 V78 M768 66 V78" />
+  <path class="dg-s" d="M804 66 V88 M818 66 V88" />
+  <path class="dg-a" d="M811 96 V40" marker-end="url(#ic-ar-a)" />
+  <text class="dg-lbl dg-key" x="720" y="238">OUTLET OPEN ·</text>
+  <text class="dg-lbl dg-key" x="720" y="252">SWEPT OUT</text>
+
+  <text class="dg-lbl dg-soft" x="30" y="278">NO BOILER, NO WATER, NO WARM-UP — AND ONE STROKE IN FOUR MAKES POWER, SO A FLYWHEEL CARRIES IT THROUGH THE OTHER THREE</text>
+
+  <!-- ══ efficiency against compression ═════════════════════════════════ -->
+  <path class="dg-m" d="M30 288 H930" />
+
+  <path class="dg-h" d="M110 344 H420 M110 392 H420" />
+  <path class="dg-s" d="M110 314 V440 H420" />
+  <text class="dg-lbl" x="110" y="306">THERMAL EFFICIENCY</text>
+  
+  <g class="dg-num">
+    <text x="102" y="348" text-anchor="end">40%</text>
+    <text x="102" y="396" text-anchor="end">20%</text>
+    <text x="102" y="444" text-anchor="end">0</text>
+  </g>
+  <path class="dg-m" d="M110 440 v5 M188 440 v5 M266 440 v5 M344 440 v5 M420 440 v5" />
+  <g class="dg-num">
+    <text x="110" y="458" text-anchor="middle">2</text>
+    <text x="188" y="458" text-anchor="middle">4</text>
+    <text x="266" y="458" text-anchor="middle">6</text>
+    <text x="344" y="458" text-anchor="middle">8</text>
+    <text x="420" y="458" text-anchor="middle">10</text>
+  </g>
+  <text class="dg-lbl" x="265" y="472" text-anchor="middle">COMPRESSION RATIO →</text>
+  <path class="dg-a" d="M110 424 C146 404, 176 386, 210 372 C250 356, 300 342, 350 334 C382 330, 404 328, 420 327" />
+  <path class="dg-d" d="M330 314 V440" />
+  <text class="dg-lbl dg-soft" x="110" y="480">EFFICIENCY RISES WITH THE COMPRESSION RATIO,</text>
+  <text class="dg-lbl dg-key" x="110" y="494">AND STOPS WHERE THE CHARGE DETONATES ON ITS OWN.</text>
+
+  <!-- ══ mass, against a steam plant ════════════════════════════════════ -->
+  <path class="dg-m" d="M470 288 V492" />
+  <text class="dg-lbl" x="500" y="310">MASS FOR THE SAME 0.75 HORSEPOWER</text>
+
+  <rect x="500" y="326" width="360" height="34" class="dg-panel" />
+  <rect x="500" y="326" width="360" height="34" class="dg-m" />
+  <text class="dg-lbl dg-num" x="516" y="347">A STEAM PLANT · BOILER, WATER, FIREBOX, CONDENSER</text>
+
+  <rect x="500" y="378" width="72" height="34" class="dg-accent" />
+  <text class="dg-lbl dg-key" x="584" y="399">THE ENGINE ALONE</text>
+
+  <text class="dg-lbl dg-soft" x="500" y="452">REMOVING THE INTERMEDIATE FLUID REMOVES EVERYTHING THAT CARRIED IT.</text>
+  <text class="dg-lbl dg-soft" x="500" y="466">PATENT 29 JANUARY 1886 · IT STILL CANNOT START ITSELF.</text>
+</svg>
