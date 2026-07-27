@@ -1,0 +1,98 @@
+---
+/**
+ * A distillation carried out inside a solid. A heater ring melts a narrow band
+ * and walks it along the bar; because most impurities in silicon have a
+ * segregation coefficient well below one, the freezing solid rejects them into
+ * the melt and the zone carries them to the end. Each pass leaves the bar behind
+ * it cleaner, and the effect compounds. Boron, whose coefficient is near one, is
+ * barely removed at all.
+ */
+---
+
+<svg viewBox="0 0 960 460" role="img" aria-label="A heater ring walking a molten zone along a silicon bar, the impurity profile after one, three and ten passes, and what a part per billion means">
+  <defs>
+    <marker id="zr-ar" viewBox="0 0 8 8" refX="7" refY="4" markerWidth="6" markerHeight="6" orient="auto">
+      <path d="M0 0 L8 4 L0 8 z" class="dg-ink" />
+    </marker>
+    <marker id="zr-ar-a" viewBox="0 0 8 8" refX="7" refY="4" markerWidth="6" markerHeight="6" orient="auto">
+      <path d="M0 0 L8 4 L0 8 z" class="dg-accent" />
+    </marker>
+  </defs>
+
+  <text class="dg-lbl" x="30" y="24">THE TRAVELLING ZONE</text>
+
+  <!-- the bar -->
+  <path class="dg-panel" d="M60 70 H900 V126 H60 Z" />
+  <path class="dg-s" d="M60 70 H900 V126 H60 Z" />
+  <path class="dg-accent" d="M400 70 H470 V126 H400 Z" />
+
+  <!-- the heater ring -->
+  <path class="dg-s" d="M392 56 H478 V64 H392 Z" />
+  <path class="dg-s" d="M392 132 H478 V140 H392 Z" />
+  <path class="dg-s" d="M392 56 V140 M478 56 V140" />
+  <text class="dg-lbl dg-key" x="435" y="46" text-anchor="middle">HEATER RING</text>
+  <path class="dg-a" d="M498 98 H570" marker-end="url(#zr-ar-a)" />
+  <text class="dg-lbl dg-key" x="580" y="94">WALKED ALONG THE BAR</text>
+
+  <text class="dg-lbl dg-num" x="60" y="152">SOLID, ALREADY CLEANED</text>
+  <text class="dg-lbl dg-key" x="435" y="164" text-anchor="middle">MOLTEN</text>
+  <text class="dg-lbl dg-soft" x="900" y="152" text-anchor="end">SOLID, NOT YET</text>
+
+  <!-- the rejection -->
+  <g class="dg-a">
+    <path d="M380 108 L400 108" marker-end="url(#zr-ar-a)" />
+    <path d="M380 88 L400 88" marker-end="url(#zr-ar-a)" />
+  </g>
+  <text class="dg-lbl dg-key" x="60" y="196">THE FREEZING SOLID REJECTS THE IMPURITY BACK INTO THE MELT</text>
+  <path class="dg-m" d="M456 190 L474 132" />
+
+  <!-- ══ the profile ════════════════════════════════════════════════════ -->
+  <path class="dg-m" d="M30 212 H500" />
+
+  <path class="dg-h" d="M110 276 H460 M110 322 H460" />
+  <path class="dg-s" d="M110 240 V368 H460" />
+  <text class="dg-lbl" x="110" y="232">IMPURITY LEFT</text>
+  <text class="dg-lbl" x="285" y="392" text-anchor="middle">ALONG THE BAR →</text>
+
+  <path class="dg-m" d="M110 318 C200 314, 300 304, 380 290 C420 280, 446 262, 458 244" />
+  <path class="dg-m" d="M110 344 C220 342, 320 336, 390 324 C426 314, 449 278, 458 248" />
+  <path class="dg-a" d="M110 362 C240 361, 350 358, 410 350 C438 344, 452 296, 458 252" />
+  <text class="dg-lbl dg-soft" x="120" y="310">AFTER 1 PASS</text>
+  <text class="dg-lbl dg-soft" x="120" y="336">AFTER 3</text>
+  <text class="dg-lbl dg-key" x="120" y="356">AFTER 10</text>
+  <path class="dg-d" d="M432 240 V368" />
+  <text class="dg-lbl dg-num" x="470" y="300">THE LAST</text>
+  <text class="dg-lbl dg-num" x="470" y="314">INCH, CUT</text>
+  <text class="dg-lbl dg-num" x="470" y="328">OFF</text>
+
+  <text class="dg-lbl dg-num" x="30" y="426">EACH PASS LEAVES THE BAR BEHIND IT CLEANER, AND THE EFFECT COMPOUNDS.</text>
+  <text class="dg-lbl dg-soft" x="30" y="452">THE SAME PHYSICS AS ICE FREEZING FRESH OUT OF SALT WATER.</text>
+
+  <!-- ══ the coefficient ════════════════════════════════════════════════ -->
+  <path class="dg-m" d="M540 212 V450" />
+  <text class="dg-lbl" x="570" y="234">THE ONE NUMBER PER IMPURITY</text>
+  <text class="dg-lbl dg-soft" x="570" y="256">SEGREGATION COEFFICIENT — HOW MUCH SITS IN THE</text>
+  <text class="dg-lbl dg-soft" x="570" y="270">FREEZING SOLID AGAINST HOW MUCH STAYS IN THE LIQUID</text>
+
+  <path class="dg-s" d="M600 306 H900" />
+  <path class="dg-m" d="M600 300 V312 M750 300 V312 M900 300 V312" />
+  <g class="dg-num">
+    <text x="600" y="330" text-anchor="middle">0</text>
+    <text x="750" y="330" text-anchor="middle">0.5</text>
+    <text x="900" y="330" text-anchor="middle">1.0</text>
+  </g>
+  <circle cx="648" cy="306" r="5" class="dg-accent" />
+  <circle cx="672" cy="306" r="5" class="dg-accent" />
+  <circle cx="702" cy="306" r="5" class="dg-accent" />
+  <circle cx="884" cy="306" r="5" class="dg-ink" />
+  <text class="dg-lbl dg-key" x="600" y="292">MOST CONTAMINANTS — SWEPT OUT</text>
+  <text class="dg-lbl dg-num" x="900" y="292" text-anchor="end">BORON</text>
+
+  <text class="dg-lbl dg-soft" x="570" y="356">BORON SITS NEAR ONE, SO IT IS BARELY REMOVED AT ALL,</text>
+  <text class="dg-lbl dg-soft" x="570" y="370">AND HAS TO BE DEALT WITH CHEMICALLY BEFOREHAND.</text>
+
+  <text class="dg-lbl dg-num" x="570" y="404">ONE PART PER BILLION IS ONE SECOND IN THIRTY-TWO YEARS,</text>
+  <text class="dg-lbl dg-num" x="570" y="418">OR ONE GRAIN OF SAND IN A CUBIC METRE OF THEM.</text>
+  <text class="dg-lbl dg-key" x="570" y="440">FOUR OR FIVE ORDERS OF MAGNITUDE PAST WHERE</text>
+  <text class="dg-lbl dg-key" x="570" y="454">METALLURGY HAD EVER NEEDED TO BE. 1952.</text>
+</svg>
