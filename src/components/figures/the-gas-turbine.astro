@@ -1,0 +1,100 @@
+---
+/**
+ * Compressor, combustor, turbine and nozzle on one shaft — and the awkward part
+ * is that the turbine drives the compressor that feeds the combustion that
+ * drives the turbine. About two-thirds of the turbine's work goes straight back
+ * into compression, so a small deficit in compressor efficiency turns a working
+ * engine into an expensive way to heat air. The binding constraint after that is
+ * not thermodynamics but what the blades are made of.
+ */
+---
+
+<svg viewBox="0 0 960 490" role="img" aria-label="A gas turbine with compressor, combustor, turbine and nozzle on one shaft, the two-thirds of turbine work returned to compression, and efficiency against turbine inlet temperature">
+  <defs>
+    <marker id="gt-ar" viewBox="0 0 8 8" refX="7" refY="4" markerWidth="6" markerHeight="6" orient="auto">
+      <path d="M0 0 L8 4 L0 8 z" class="dg-ink" />
+    </marker>
+    <marker id="gt-ar-a" viewBox="0 0 8 8" refX="7" refY="4" markerWidth="6" markerHeight="6" orient="auto">
+      <path d="M0 0 L8 4 L0 8 z" class="dg-accent" />
+    </marker>
+  </defs>
+
+  <text class="dg-lbl" x="30" y="24">ONE SHAFT · NOTHING RECIPROCATES</text>
+
+  <!-- the casing -->
+  <path class="dg-s" d="M90 108 H360 L420 96 H540 L600 128 L740 128 L800 92 V228 L740 192 L600 192 L540 224 H420 L360 212 H90 Z" />
+  <path class="dg-tint" d="M420 100 H540 L596 130 V190 L540 220 H420 Z" />
+
+  <!-- the shaft -->
+  <path class="dg-s" d="M60 156 H820" />
+  <path class="dg-s" d="M60 164 H820" />
+
+  <!-- compressor stages -->
+  <g class="dg-s">
+    <path d="M130 118 V152 M130 168 V202 M164 120 V152 M164 168 V200
+             M198 122 V152 M198 168 V198 M232 124 V152 M232 168 V196
+             M266 126 V152 M266 168 V194 M300 128 V152 M300 168 V192
+             M334 130 V152 M334 168 V190" />
+  </g>
+  <text class="dg-lbl dg-num" x="90" y="248">COMPRESSOR</text>
+
+  <!-- combustor -->
+  <path class="dg-accent" d="M440 128 H520 C540 142, 540 178, 520 192 H440 C424 178, 424 142, 440 128 Z" />
+  <text class="dg-lbl dg-key" x="420" y="248">COMBUSTOR</text>
+  <text class="dg-lbl dg-soft" x="420" y="262">CONTINUOUS BURNING</text>
+  <path class="dg-a" d="M480 76 V120" marker-end="url(#gt-ar-a)" />
+  <text class="dg-lbl dg-key" x="480" y="68" text-anchor="middle">FUEL</text>
+
+  <!-- turbine stages -->
+  <g class="dg-s">
+    <path d="M628 132 V152 M628 168 V188 M666 130 V152 M666 168 V190
+             M704 128 V152 M704 168 V192" />
+  </g>
+  <text class="dg-lbl dg-num" x="626" y="248">TURBINE</text>
+
+  <!-- nozzle -->
+  <path class="dg-a" d="M812 160 H900" marker-end="url(#gt-ar-a)" />
+  <text class="dg-lbl dg-key" x="812" y="248">NOZZLE</text>
+
+  <!-- air in -->
+  <path class="dg-a" d="M30 160 H84" marker-end="url(#gt-ar-a)" />
+  <text class="dg-lbl dg-key" x="30" y="150">AIR IN</text>
+
+  <!-- ══ the compressor debt ════════════════════════════════════════════ -->
+  <path class="dg-m" d="M30 282 H500" />
+  <text class="dg-lbl" x="30" y="304">WHERE THE TURBINE'S WORK GOES</text>
+
+  <rect x="30" y="318" width="440" height="30" class="dg-panel" />
+  <rect x="30" y="318" width="293" height="30" class="dg-ink" />
+  <rect x="30" y="318" width="440" height="30" class="dg-m" />
+  <text class="dg-lbl dg-num" x="176" y="368" text-anchor="middle">STRAIGHT BACK INTO COMPRESSION</text>
+  <text class="dg-lbl dg-num" x="176" y="382" text-anchor="middle">ABOUT TWO-THIRDS</text>
+  <text class="dg-lbl dg-key" x="396" y="368" text-anchor="middle">WHAT IS LEFT</text>
+
+  <path class="dg-a" d="M660 260 C620 260, 200 260, 176 300" marker-end="url(#gt-ar-a)" />
+
+  <text class="dg-lbl dg-soft" x="30" y="414">IF THE COMPRESSOR IS INEFFICIENT THE CYCLE PRODUCES NOTHING AT ALL,</text>
+  <text class="dg-lbl dg-soft" x="30" y="428">AND ONLY A SMALL DEFICIT TURNS A WORKING ENGINE INTO AN EXPENSIVE</text>
+  <text class="dg-lbl dg-soft" x="30" y="442">WAY TO HEAT AIR. WHITTLE'S EARLY DIFFICULTIES WERE MOSTLY HERE.</text>
+
+  <!-- ══ inlet temperature ══════════════════════════════════════════════ -->
+  <path class="dg-m" d="M540 282 V480" />
+
+  <text class="dg-lbl dg-num" x="570" y="306">THE BINDING CONSTRAINT IS NOT THERMODYNAMICS</text>
+  <text class="dg-lbl dg-num" x="570" y="320">BUT METALLURGY — THE BLADES SIT IN THAT GAS</text>
+  <text class="dg-lbl dg-num" x="570" y="334">CONTINUOUSLY, SPINNING FAST ENOUGH TO TEAR</text>
+  <text class="dg-lbl dg-num" x="570" y="348">THEMSELVES APART.</text>
+
+  <path class="dg-h" d="M640 402 H930" />
+  <path class="dg-s" d="M640 366 V440 H930" />
+  <text class="dg-lbl" x="640" y="380">EFFICIENCY</text>
+  <path class="dg-a" d="M640 434 C680 424, 720 410, 760 394 C800 378, 860 368, 930 364" />
+  <path class="dg-m" d="M640 440 v5 M736 440 v5 M832 440 v5 M930 440 v5" />
+  <g class="dg-num">
+    <text x="640" y="460" text-anchor="middle">850°</text>
+    <text x="832" y="460" text-anchor="middle">1,400°</text>
+  </g>
+  <text class="dg-lbl" x="790" y="478" text-anchor="middle">TURBINE INLET TEMPERATURE →</text>
+  <text class="dg-lbl dg-soft" x="570" y="376">NICKEL SUPERALLOYS, THEN SINGLE CRYSTALS</text>
+  <text class="dg-lbl dg-soft" x="570" y="390">WITH NO GRAIN BOUNDARIES TO CREEP ALONG</text>
+</svg>
