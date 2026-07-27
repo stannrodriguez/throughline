@@ -1,0 +1,89 @@
+---
+/**
+ * Where the pull is applied, drawn as geometry rather than as a horse. Both
+ * panels show the same neck and shoulder: the trachea running down the front of
+ * the neck, the scapula set into the shoulder. Throat-and-girth gear puts the
+ * load across the first; a collar puts it across the second. That is the whole
+ * difference, and it is worth three to four times the tractive effort.
+ */
+---
+
+<svg viewBox="0 0 960 400" role="img" aria-label="Throat-and-girth harness against a horse collar, showing the load crossing the trachea in one and the shoulder blade in the other, with the resulting draught compared">
+  <defs>
+    <marker id="hc-ar" viewBox="0 0 8 8" refX="7" refY="4" markerWidth="6" markerHeight="6" orient="auto">
+      <path d="M0 0 L8 4 L0 8 z" class="dg-ink" />
+    </marker>
+    <marker id="hc-ar-a" viewBox="0 0 8 8" refX="7" refY="4" markerWidth="6" markerHeight="6" orient="auto">
+      <path d="M0 0 L8 4 L0 8 z" class="dg-accent" />
+    </marker>
+  </defs>
+
+  <!-- ══ throat-and-girth ═══════════════════════════════════════════════ -->
+  <text class="dg-lbl dg-num" x="30" y="24">THROAT-AND-GIRTH</text>
+  <text class="dg-lbl dg-soft" x="30" y="38">THE LOAD CROSSES THE WINDPIPE</text>
+
+  <!-- neck -->
+  <path class="dg-s" d="M96 104 L168 226" />
+  <path class="dg-s" d="M164 90 L244 218" />
+  <path class="dg-s" d="M96 104 L164 90" />
+  <!-- trachea, down the front of the neck -->
+  <path class="dg-d" d="M108 100 L178 218" />
+  <path class="dg-d" d="M122 96 L192 214" />
+  <text class="dg-lbl dg-soft" x="30" y="272">TRACHEA</text>
+  <path class="dg-m" d="M74 268 L128 188" />
+
+  <!-- shoulder and chest -->
+  <path class="dg-s" d="M168 226 C150 250, 156 288, 180 300 H392 V252 C316 250, 226 240, 168 226 Z" />
+  <!-- scapula -->
+  <path class="dg-d" d="M206 244 L236 296 L272 280 L242 232 Z" />
+  <text class="dg-lbl dg-soft" x="400" y="290">SCAPULA</text>
+
+  <!-- the strap, closing on the neck -->
+  <path class="dg-a" d="M84 176 L162 130" />
+  <path class="dg-a" d="M94 194 L172 148" />
+  <path class="dg-a" d="M84 176 C74 184, 76 196, 94 194" />
+  <path class="dg-a" d="M162 130 C172 122, 178 134, 172 148" />
+  <circle cx="134" cy="152" r="10" class="dg-a" />
+
+  <path class="dg-a" d="M176 156 L390 190" marker-end="url(#hc-ar-a)" />
+  <text class="dg-lbl dg-key" x="212" y="150">PULL</text>
+  <text class="dg-lbl dg-key" x="30" y="308">THE STRAP TIGHTENS ON THE WINDPIPE</text>
+  <text class="dg-lbl dg-soft" x="30" y="322">AS THE ANIMAL LEANS INTO THE LOAD</text>
+
+  <!-- ══ the collar ═════════════════════════════════════════════════════ -->
+  <path class="dg-m" d="M470 14 V336" />
+  <text class="dg-lbl dg-num" x="500" y="24">THE COLLAR</text>
+  <text class="dg-lbl dg-soft" x="500" y="38">THE LOAD CROSSES THE SHOULDER SKELETON</text>
+
+  <path class="dg-s" d="M566 104 L638 226" />
+  <path class="dg-s" d="M634 90 L714 218" />
+  <path class="dg-s" d="M566 104 L634 90" />
+  <path class="dg-d" d="M578 100 L648 218" />
+  <path class="dg-d" d="M592 96 L662 214" />
+  <text class="dg-lbl dg-soft" x="500" y="272">TRACHEA — CLEAR</text>
+  <path class="dg-m" d="M544 268 L598 188" />
+
+  <path class="dg-s" d="M638 226 C620 250, 626 288, 650 300 H862 V252 C786 250, 696 240, 638 226 Z" />
+  <path class="dg-d" d="M676 244 L706 296 L742 280 L712 232 Z" />
+  <text class="dg-lbl dg-soft" x="870" y="290">SCAPULA</text>
+
+  <!-- the collar, seated at the base of the neck against the shoulder -->
+  <g transform="rotate(-30.5 664 222)">
+    <ellipse cx="664" cy="222" rx="30" ry="58" class="dg-a" />
+    <ellipse cx="664" cy="222" rx="19" ry="45" class="dg-a" />
+  </g>
+
+  <path class="dg-a" d="M708 244 L860 268" marker-end="url(#hc-ar-a)" />
+  <text class="dg-lbl dg-key" x="742" y="226">PULL · THREE TO FOUR TIMES</text>
+  <text class="dg-lbl dg-key" x="500" y="308">THE COLLAR BEARS ON THE CHEST AND SHOULDER,</text>
+  <text class="dg-lbl dg-soft" x="500" y="322">SO THE LIMIT BECOMES MUSCULAR INSTEAD</text>
+
+  <!-- ══ draught compared ═══════════════════════════════════════════════ -->
+  <path class="dg-m" d="M30 348 H930" />
+  <text class="dg-lbl" x="30" y="366">TRACTIVE EFFORT, SAME HORSE</text>
+  <rect x="270" y="356" width="90" height="12" class="dg-ink" />
+  <text class="dg-lbl dg-num" x="368" y="366">1×  STRAP</text>
+  <rect x="270" y="378" width="315" height="12" class="dg-accent" />
+  <text class="dg-lbl dg-key" x="593" y="388">3–4×  COLLAR</text>
+  <text class="dg-lbl dg-soft" x="700" y="388">FODDER IS THE CATCH — IT NEEDS OATS</text>
+</svg>
