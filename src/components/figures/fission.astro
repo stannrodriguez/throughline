@@ -1,0 +1,96 @@
+---
+/**
+ * Two facts, one drawing. The binding curve says where the energy comes from:
+ * iron is the most tightly bound nucleus per particle, and uranium splitting
+ * towards it gives up about 200 MeV. The chain below says why it can be held
+ * steady rather than run away — each fission emits two or three neutrons and the
+ * reaction continues only if, on average, exactly one of them causes another.
+ */
+---
+
+<svg viewBox="0 0 960 522" role="img" aria-label="Binding energy per particle against mass number with iron at the minimum, and a neutron chain in which one of the two or three neutrons from each fission causes the next">
+  <defs>
+    <marker id="fs-ar" viewBox="0 0 8 8" refX="7" refY="4" markerWidth="6" markerHeight="6" orient="auto">
+      <path d="M0 0 L8 4 L0 8 z" class="dg-ink" />
+    </marker>
+    <marker id="fs-ar-a" viewBox="0 0 8 8" refX="7" refY="4" markerWidth="6" markerHeight="6" orient="auto">
+      <path d="M0 0 L8 4 L0 8 z" class="dg-accent" />
+    </marker>
+  </defs>
+
+  <!-- ══ the binding curve ══════════════════════════════════════════════ -->
+  <text class="dg-lbl" x="90" y="42">ENERGY PER PARTICLE — LOWER IS MORE TIGHTLY BOUND</text>
+
+  <path class="dg-h" d="M90 120 H900 M90 190 H900" />
+  <path class="dg-s" d="M90 50 V260 H900" />
+  <path class="dg-m" d="M96 260 v5 M380 260 v5 M896 260 v5" />
+  <g class="dg-num">
+    <text x="96" y="280" text-anchor="middle">1</text>
+    <text x="380" y="280" text-anchor="middle">56</text>
+    <text x="896" y="280" text-anchor="middle">238</text>
+  </g>
+  <text class="dg-lbl" x="500" y="296" text-anchor="middle">MASS NUMBER →</text>
+
+  <path class="dg-a" d="M96 74 C160 170, 260 226, 330 246 C460 258, 600 244, 760 226 C830 218, 880 212, 896 210" />
+
+  <circle cx="380" cy="252" r="5" class="dg-ink" />
+  <text class="dg-lbl dg-num" x="350" y="236">IRON · A = 56</text>
+
+  <circle cx="860" cy="213" r="5" class="dg-ink" />
+  <text class="dg-lbl dg-num" x="860" y="198" text-anchor="end">URANIUM-235</text>
+
+  <circle cx="540" cy="250" r="4" class="dg-accent" />
+  <circle cx="580" cy="248" r="4" class="dg-accent" />
+  <text class="dg-lbl dg-soft" x="474" y="236">TWO MID-SIZED FRAGMENTS</text>
+
+  <path class="dg-d" d="M540 213 H856" />
+  <path class="dg-m" d="M540 213 V250 M534 213 h12 M534 250 h12" />
+  <path class="dg-m" d="M470 170 L534 224" />
+  <text class="dg-lbl dg-key" x="270" y="152">200 MeV PER FISSION</text>
+  <text class="dg-lbl dg-soft" x="270" y="166">AGAINST A FEW eV FOR BURNING A CARBON ATOM</text>
+
+  <!-- ══ the neutron budget ═════════════════════════════════════════════ -->
+  <path class="dg-m" d="M30 320 H930" />
+  <path class="dg-m" d="M610 330 V512" />
+
+  <text class="dg-lbl" x="30" y="346">THE NEUTRON BUDGET</text>
+  <text class="dg-lbl dg-soft" x="30" y="366">EACH FISSION EMITS TWO OR THREE NEUTRONS.</text>
+
+  <g>
+    <circle cx="120" cy="430" r="20" class="dg-panel" /><circle cx="120" cy="430" r="20" class="dg-s" />
+    <circle cx="300" cy="430" r="20" class="dg-panel" /><circle cx="300" cy="430" r="20" class="dg-s" />
+    <circle cx="480" cy="430" r="20" class="dg-panel" /><circle cx="480" cy="430" r="20" class="dg-s" />
+  </g>
+
+  <path class="dg-a" d="M46 430 H96" marker-end="url(#fs-ar-a)" />
+  <path class="dg-a" d="M142 430 H276" marker-end="url(#fs-ar-a)" />
+  <path class="dg-a" d="M322 430 H456" marker-end="url(#fs-ar-a)" />
+  <path class="dg-a" d="M502 430 H562" marker-end="url(#fs-ar-a)" />
+
+  <g class="dg-d">
+    <path d="M134 416 L196 386" marker-end="url(#fs-ar)" />
+    <path d="M134 444 L196 474" marker-end="url(#fs-ar)" />
+    <path d="M314 416 L376 386" marker-end="url(#fs-ar)" />
+    <path d="M314 444 L376 474" marker-end="url(#fs-ar)" />
+    <path d="M494 416 L556 386" marker-end="url(#fs-ar)" />
+    <path d="M494 444 L556 474" marker-end="url(#fs-ar)" />
+  </g>
+  <text class="dg-lbl dg-soft" x="206" y="382">LOST OR ABSORBED</text>
+  <text class="dg-lbl dg-soft" x="206" y="488">LOST OR ABSORBED</text>
+  <text class="dg-lbl dg-num" x="120" y="470" text-anchor="middle">U-235</text>
+
+  <text class="dg-lbl dg-key" x="30" y="510">IT CONTINUES IF ON AVERAGE EXACTLY ONE OF THEM CAUSES ANOTHER FISSION.</text>
+
+  <!-- ══ the one condition ══════════════════════════════════════════════ -->
+  <text class="dg-lbl" x="640" y="346">THE ONE CONDITION</text>
+  <text class="dg-lbl dg-soft" x="640" y="372">k &lt; 1 — IT DIES AWAY</text>
+  <text class="dg-lbl dg-key" x="640" y="390">k = 1 — IT HOLDS STEADY</text>
+  <text class="dg-lbl dg-num" x="640" y="408">k &gt; 1 — IT GROWS EXPONENTIALLY</text>
+
+  <text class="dg-lbl dg-soft" x="640" y="436">A SMALL FRACTION OF THE NEUTRONS ARE</text>
+  <text class="dg-lbl dg-soft" x="640" y="450">DELAYED, EMITTED SECONDS AFTER THE</text>
+  <text class="dg-lbl dg-soft" x="640" y="464">FISSION RATHER THAN INSTANTLY, SO A</text>
+  <text class="dg-lbl dg-soft" x="640" y="478">REACTOR HELD JUST BARELY CRITICAL</text>
+  <text class="dg-lbl dg-soft" x="640" y="492">RESPONDS ON A TIMESCALE A PERSON WITH</text>
+  <text class="dg-lbl dg-soft" x="640" y="506">A CONTROL ROD CAN KEEP UP WITH.</text>
+</svg>
