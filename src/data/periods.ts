@@ -23,6 +23,8 @@ export interface Period {
   index: number;
   /** Short name used in mastheads and prev/next links: "The Press", "Steam". */
   name: string;
+  /** Spelled-out ordinal for the masthead dateline: "Period Six · 1600 — 1760". */
+  ordinal: string;
   yearRange: string;
   /** The constraint removed, lowercase, as it appears after "constraint removed:". */
   constraint: string;
@@ -33,6 +35,14 @@ export interface Period {
   /** The front-page essay, in period voice. Paragraphs. Empty = not yet written. */
   essay: string[];
   capabilityStrip: CapabilityCell[];
+  /**
+   * Authored "the road passes through" prose, per thread, for a road with no
+   * stop this era. A sensible sentence is derived when this is absent — but a
+   * road with nothing to say says so explicitly either way, never silently.
+   */
+  passThrough?: Partial<Record<'energy' | 'materials' | 'information', string>>;
+  /** Overrides for the three exit cards, keyed by thread. */
+  exitNote?: Partial<Record<'energy' | 'materials' | 'information', string>>;
   /** True while the era's content is structural placeholder. */
   placeholder?: boolean;
 }
@@ -53,6 +63,7 @@ export const PERIODS: Period[] = [
   {
     id: 'I',
     index: 1,
+    ordinal: 'One',
     name: 'Fire',
     yearRange: '−9000 — −1200',
     constraint: 'muscle power',
@@ -70,6 +81,7 @@ export const PERIODS: Period[] = [
   {
     id: 'II',
     index: 2,
+    ordinal: 'Two',
     name: 'Metal',
     yearRange: '−1200 — 400',
     constraint: 'metal scarcity',
@@ -87,6 +99,7 @@ export const PERIODS: Period[] = [
   {
     id: 'III',
     index: 3,
+    ordinal: 'Three',
     name: 'The Mill',
     yearRange: '400 — 1000',
     constraint: 'perishability',
@@ -104,6 +117,7 @@ export const PERIODS: Period[] = [
   {
     id: 'IV',
     index: 4,
+    ordinal: 'Four',
     name: 'Wind & Water',
     yearRange: '1000 — 1450',
     constraint: 'wind & water alone',
@@ -121,6 +135,7 @@ export const PERIODS: Period[] = [
   {
     id: 'V',
     index: 5,
+    ordinal: 'Five',
     name: 'The Press',
     yearRange: '1450 — 1600',
     constraint: 'copying by hand',
@@ -138,6 +153,7 @@ export const PERIODS: Period[] = [
   {
     id: 'VI',
     index: 6,
+    ordinal: 'Six',
     name: 'The Instrument Era',
     yearRange: '1600 — 1760',
     constraint: 'unaided human senses',
@@ -153,10 +169,16 @@ export const PERIODS: Period[] = [
       ['Candle', '— as ever'],
       ['20 GJ/yr', 'first rise in 400 years', true]
     ),
+    passThrough: {
+      materials:
+        'No materials stop this period. Glass is ground finer and brass is bored truer — refinements in service of the instruments above, not removals of a constraint. The materials road passes through; its next stop is coke-smelted iron, three years into Period VII.',
+    },
+    exitNote: { energy: 'fire → fusion' },
   },
   {
     id: 'VII',
     index: 7,
+    ordinal: 'Seven',
     name: 'Steam',
     yearRange: '1760 — 1840',
     constraint: 'muscle, again',
@@ -174,6 +196,7 @@ export const PERIODS: Period[] = [
   {
     id: 'VIII',
     index: 8,
+    ordinal: 'Eight',
     name: 'Distance',
     yearRange: '1840 — 1900',
     constraint: 'distance',
@@ -191,6 +214,7 @@ export const PERIODS: Period[] = [
   {
     id: 'IX',
     index: 9,
+    ordinal: 'Nine',
     name: 'Light',
     yearRange: '1880 — 1930',
     constraint: 'darkness',
@@ -208,6 +232,7 @@ export const PERIODS: Period[] = [
   {
     id: 'X',
     index: 10,
+    ordinal: 'Ten',
     name: 'The Molecule',
     yearRange: '1930 — 1960',
     constraint: 'infection',
@@ -225,6 +250,7 @@ export const PERIODS: Period[] = [
   {
     id: 'XI',
     index: 11,
+    ordinal: 'Eleven',
     name: 'Computation',
     yearRange: '1960 — 1990',
     constraint: 'computation',
@@ -242,6 +268,7 @@ export const PERIODS: Period[] = [
   {
     id: 'XII',
     index: 12,
+    ordinal: 'Twelve',
     name: 'Judgement',
     yearRange: '1990 —',
     constraint: 'judgement',

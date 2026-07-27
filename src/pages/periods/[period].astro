@@ -1,0 +1,351 @@
+---
+import Base from '../../layouts/Base.astro';
+import SiteHeader from '../../components/SiteHeader.astro';
+import CapabilityStrip from '../../components/CapabilityStrip.astro';
+import RosterGroup from '../../components/RosterGroup.astro';
+import ExitCards from '../../components/ExitCards.astro';
+import { PERIODS, periodSlug, periodNeighbours } from '../../data/periods';
+import { THREADS, THREAD_ORDER } from '../../data/threads';
+import { rosterFor, stopsIn, nextStopFrom } from '../../data/entries';
+import { writtenSlugs, durationFor } from '../../lib/reading';
+
+export function getStaticPaths() {
+  return PERIODS.map((period) => ({
+    params: { period: periodSlug(period.id) },
+    props: { period },
+  }));
+}
+
+const { period } = Astro.props;
+const { prev, next } = periodNeighbours(period.id);
+const written = await writtenSlugs();
+
+const roster = rosterFor(period.id);
+const allStops = roster.flatMap((g) => g.stops);
+const duration = await durationFor(allStops);
+
+/** Derived pass-through prose for a road with no stop this era. */
+const passThroughFor = (threadId: (typeof THREAD_ORDER)[number]) => {
+  const authored = period.passThrough?.[threadId];
+  if (authored) return authored;
+  const t = THREADS[threadId];
+  const onward = nextStopFrom(threadId, period.index + 1);
+  return onward
+    ? `No ${t.name.toLowerCase()} stop this period. The ${t.name.toLowerCase()} road passes through; its next stop is ${onward.title}, in Period ${onward.periodId}.`
+    : `No ${t.name.toLowerCase()} stop this period, and none after it — the road has already ended.`;
+};
+
+const essay = period.essay;
+const dropCap = essay.length ? essay[0].charAt(0) : '';
+const firstPara = essay.length ? essay[0].slice(1) : '';
+---
+
+<Base title={`Period ${period.id} · ${period.name}`} description={period.title}>
+  <SiteHeader currentPeriod={period.id} />
+
+  <main class="landing">
+    <div class="landing__canvas">
+      <!-- masthead: prev/next period is the "along" motion applied to periods -->
+      <div class="masthead">
+        {
+          prev ? (
+            <a class="masthead__step" href={`/periods/${periodSlug(prev.id)}`}>
+              ← {prev.id} · {prev.name}
+            </a>
+          ) : (
+            <span class="masthead__step is-empty">the beginning</span>
+          )
+        }
+        <p class="masthead__dateline">
+          Period {period.ordinal} · {period.yearRange} · constraint removed: {period.constraint}
+        </p>
+        {
+          next ? (
+            <a class="masthead__step masthead__step--end" href={`/periods/${periodSlug(next.id)}`}>
+              {next.id} · {next.name} →
+            </a>
+          ) : (
+            <span class="masthead__step masthead__step--end is-empty">the present</span>
+          )
+        }
+      </div>
+
+      <h1 class="landing__title">{period.title}</h1>
+
+      <CapabilityStrip cells={period.capabilityStrip} />
+
+      <!-- the era essay: the only prose on the site that lives outside a road -->
+      {
+        essay.length > 0 ? (
+          <div class="essay">
+            <p class="essay__para">
+              <span class="essay__cap">{dropCap}</span>
+              {firstPara}
+            </p>
+            {essay.slice(1).map((para) => (
+              <p class="essay__para essay__para--after">{para}</p>
+            ))}
+          </div>
+        ) : (
+          <div class="essay">
+            <div class="figure-ph essay__placeholder">
+              <p class="figure-ph__caption">
+                PERIOD ESSAY — TO BE WRITTEN
+                <br />
+                <span class="figure-ph__spec">
+                  two paragraphs, front-page voice: what this era was, and why its entries belong
+                  together
+                </span>
+              </p>
+            </div>
+          </div>
+        )
+      }
+
+      <!-- roster: addresses, never duplicated prose -->
+      <div class="roster">
+        <div class="roster__head">
+          <h2 class="roster__title">
+            Everything from this era · {allStops.length}
+            {allStops.length === 1 ? 'entry' : 'entries'} · each lives on its road
+          </h2>
+          <p class="roster__time">
+            Reading time, all {allStops.length === 1 ? 'one' : allStops.length}: {duration}
+          </p>
+        </div>
+
+        {
+          roster
+            .slice()
+            .sort((a, b) => b.stops.length - a.stops.length)
+            .map((group) => (
+              <RosterGroup
+                thread={group.thread}
+                stops={group.stops}
+                written={written}
+                passThrough={group.stops.length ? undefined : passThroughFor(group.thread)}
+              />
+            ))
+        }
+
+        {
+          period.placeholder && (
+            <p class="roster__disclaimer">
+              Period VI is the only era with finished content. This roster, its deks and its
+              capability strip are structural placeholders.
+            </p>
+          )
+        }
+      </div>
+
+      <!-- exits: the landing ↔ road motion -->
+      <div class="exits-block">
+        <ExitCards periodId={period.id} />
+        <div class="footer-steps">
+          {
+            prev ? (
+              <a href={`/periods/${periodSlug(prev.id)}`}>
+                ← Period {prev.id} · {prev.name} · <em>{prev.constraint}</em>
+              </a>
+            ) : (
+              <span />
+            )
+          }
+          {
+            next && (
+              <a class="footer-steps__next" href={`/periods/${periodSlug(next.id)}`}>
+                Period {next.id} · {next.name} · <em>{next.constraint}</em> →
+              </a>
+            )
+          }
+        </div>
+      </div>
+    </div>
+  </main>
+</Base>
+
+<style>
+  .landing {
+    padding: 44px var(--gutter) 0;
+    display: flex;
+    justify-content: center;
+  }
+
+  .landing__canvas {
+    width: 100%;
+    max-width: var(--canvas);
+  }
+
+  .masthead {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 16px;
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--faint);
+  }
+
+  .masthead__step {
+    flex: 1;
+  }
+
+  .masthead__step--end {
+    text-align: right;
+  }
+
+  .masthead__step.is-empty {
+    color: var(--ahead);
+  }
+
+  .masthead__dateline {
+    color: var(--ink);
+    font-weight: 600;
+    text-align: center;
+  }
+
+  .landing__title {
+    margin: 26px 0 0;
+    font-size: 56px;
+    line-height: 1.04;
+    letter-spacing: -0.028em;
+    text-align: center;
+  }
+
+  .essay {
+    margin: 34px auto 0;
+    max-width: var(--measure);
+  }
+
+  .essay__para {
+    font-size: 20px;
+    line-height: 1.7;
+  }
+
+  .essay__para--after {
+    margin-top: 16px;
+  }
+
+  .essay__cap {
+    float: left;
+    font-family: var(--sans);
+    font-size: 58px;
+    line-height: 0.85;
+    font-weight: 700;
+    padding: 5px 12px 0 0;
+  }
+
+  .essay__placeholder {
+    min-height: 150px;
+  }
+
+  .roster {
+    margin: 40px 0 0;
+    border-top: 2px solid var(--ink);
+    padding-top: 8px;
+  }
+
+  .roster__head {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 20px;
+    padding: 8px 0 14px;
+  }
+
+  .roster__title {
+    font-family: var(--sans);
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--muted);
+  }
+
+  .roster__time {
+    font-family: var(--mono);
+    font-size: 10.5px;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--faint);
+    white-space: nowrap;
+  }
+
+  .roster__disclaimer {
+    margin-top: 22px;
+    font-family: var(--mono);
+    font-size: 10.5px;
+    line-height: 1.7;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--ahead);
+  }
+
+  .exits-block {
+    margin: 34px 0 0;
+    border-top: 1px solid var(--rule);
+    padding: 22px 0 44px;
+  }
+
+  .footer-steps {
+    margin-top: 18px;
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    font-family: var(--sans);
+    font-size: 13.5px;
+    color: var(--muted);
+  }
+
+  .footer-steps__next {
+    font-weight: 600;
+    color: var(--ink);
+    text-align: right;
+  }
+
+  @media (max-width: 900px) {
+    .landing {
+      padding-top: 28px;
+    }
+
+    .landing__title {
+      font-size: 34px;
+      text-align: left;
+    }
+
+    .masthead {
+      flex-wrap: wrap;
+      gap: 8px;
+      font-size: 10px;
+    }
+
+    .masthead__dateline {
+      order: -1;
+      width: 100%;
+      text-align: left;
+    }
+
+    .essay__para {
+      font-size: 18px;
+    }
+
+    .essay__cap {
+      font-size: 46px;
+    }
+
+    .roster__head {
+      flex-direction: column;
+      gap: 6px;
+    }
+
+    .footer-steps {
+      flex-direction: column;
+    }
+
+    .footer-steps__next {
+      text-align: left;
+    }
+  }
+</style>

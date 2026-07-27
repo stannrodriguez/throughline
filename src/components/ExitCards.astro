@@ -1,0 +1,122 @@
+---
+import { THREAD_ORDER, THREADS } from '../data/threads';
+import { stopsIn, nextStopFrom } from '../data/entries';
+import { periodById } from '../data/periods';
+
+/**
+ * The second of the site's two motions: landing → road. Every card names a
+ * concrete stop, so entering a road is never a leap into an index.
+ */
+interface Props {
+  periodId: string;
+}
+const { periodId } = Astro.props;
+const period = periodById(periodId);
+
+const WORDS = ['no', 'one', 'two', 'three', 'four', 'five', 'six', 'seven', 'eight', 'nine', 'ten'];
+
+const cards = THREAD_ORDER.map((threadId) => {
+  const t = THREADS[threadId];
+  const here = stopsIn(threadId, periodId);
+  const target = here[0] ?? nextStopFrom(threadId, period.index + 1);
+  const override = period.exitNote?.[threadId];
+
+  if (!target) {
+    return {
+      threadId,
+      label: `The ${t.name.toLowerCase()} road ends before here`,
+      title: `${t.roadName} · last stop`,
+      note: t.span,
+      href: `/roads/${threadId}`,
+    };
+  }
+
+  const inEra = here.length > 0;
+  const count = here.length;
+  const spanNote =
+    override ??
+    (inEra
+      ? count === 1
+        ? t.span
+        : `${WORDS[count] ?? count} stops this era`
+      : target.periodIndex === period.index + 1
+        ? 'next period'
+        : `period ${target.periodId}`);
+
+  return {
+    threadId,
+    label: inEra
+      ? `Enter the ${t.name.toLowerCase()} road here`
+      : `Join the ${t.name.toLowerCase()} road nearby`,
+    title: inEra ? target.title : `${target.title}, ${target.year}`,
+    note: `Stop ${target.stop} of ${target.total} · ${spanNote}`,
+    href: `/roads/${threadId}`,
+  };
+});
+---
+
+<div class="exits">
+  {
+    cards.map((card) => (
+      <a class:list={['exit', `t-${card.threadId}`]} href={card.href}>
+        <span class="exit__label">{card.label}</span>
+        <span class="exit__title">{card.title}</span>
+        <span class="exit__note">{card.note}</span>
+      </a>
+    ))
+  }
+</div>
+
+<style>
+  .exits {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 16px;
+  }
+
+  .exit {
+    display: block;
+    border: 1px solid var(--rule);
+    border-top: 3px solid var(--thread);
+    padding: 16px 18px;
+    font-family: var(--sans);
+  }
+
+  .exit:hover {
+    background: var(--panel);
+    color: inherit;
+  }
+
+  .exit__label {
+    display: block;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--thread);
+  }
+
+  .exit__title {
+    display: block;
+    margin-top: 6px;
+    font-size: 15px;
+    font-weight: 600;
+  }
+
+  .exit__note {
+    display: block;
+    margin-top: 3px;
+    font-size: 12.5px;
+    color: #8a9088;
+  }
+
+  @media (max-width: 900px) {
+    .exits {
+      grid-template-columns: 1fr;
+    }
+
+    .exit {
+      min-height: 44px;
+    }
+  }
+</style>

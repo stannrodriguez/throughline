@@ -1,0 +1,111 @@
+---
+import type { CapabilityCell } from '../data/periods';
+
+/**
+ * The same four numbers every era, so the reader watches them stay flat for
+ * millennia and then explode. A cell that moves this period is marked.
+ */
+interface Props {
+  cells: CapabilityCell[];
+}
+const { cells } = Astro.props;
+---
+
+<dl class="strip">
+  {
+    cells.map((cell) => (
+      <div class="strip__cell">
+        <dt class="strip__label">{cell.label}</dt>
+        <dd class="strip__body">
+          <span class:list={['strip__value', { 'is-moved': cell.moved }]}>
+            {cell.value}
+            {cell.moved && ' ▲'}
+          </span>
+          <span class:list={['strip__note', { 'is-moved': cell.moved }]}>{cell.note}</span>
+        </dd>
+      </div>
+    ))
+  }
+</dl>
+
+<style>
+  .strip {
+    margin: 28px 0 0;
+    border-top: 1px solid var(--ink);
+    border-bottom: 1px solid var(--rule);
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  .strip__cell {
+    padding: 14px 20px 12px;
+    border-right: 1px solid var(--rule-faint);
+  }
+
+  .strip__cell:first-child {
+    padding-left: 0;
+  }
+
+  .strip__cell:last-child {
+    padding-right: 0;
+    border-right: 0;
+  }
+
+  .strip__label {
+    font-family: var(--mono);
+    font-size: 10px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--faint);
+  }
+
+  .strip__body {
+    margin: 0;
+  }
+
+  .strip__value {
+    display: block;
+    margin-top: 5px;
+    font-family: var(--sans);
+    font-size: 22px;
+    font-weight: 600;
+  }
+
+  .strip__note {
+    display: block;
+    margin-top: 3px;
+    font-family: var(--mono);
+    font-size: 10.5px;
+    color: #b9b4a9;
+  }
+
+  /* a number that moves takes the energy accent — it is the era's news */
+  .strip__value.is-moved,
+  .strip__note.is-moved {
+    color: var(--energy);
+  }
+
+  @media (max-width: 900px) {
+    .strip {
+      grid-template-columns: 1fr 1fr;
+    }
+
+    .strip__cell {
+      padding: 12px 14px;
+      border-bottom: 1px solid var(--rule-faint);
+    }
+
+    .strip__cell:nth-child(odd) {
+      padding-left: 0;
+    }
+
+    .strip__cell:nth-child(even) {
+      padding-right: 0;
+      border-right: 0;
+    }
+
+    .strip__cell:nth-last-child(-n + 2) {
+      border-bottom: 0;
+    }
+  }
+</style>
