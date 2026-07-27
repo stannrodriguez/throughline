@@ -1,0 +1,80 @@
+---
+import { MATERIALS_METRIC_TRIAL as trial } from '../data/roads';
+
+/**
+ * The materials column was the architecture's weakest point, so the reasoning
+ * is shown rather than hidden: two rejected candidates, the chosen one, and
+ * the admission that it dies at Period X.
+ */
+---
+
+<aside class="trial">
+  <p class="trial__kicker">{trial.kicker}</p>
+  <div class="trial__grid">
+    {
+      trial.candidates.map((c) => (
+        <p class="trial__cell">
+          <span class:list={['trial__claim', `is-${c.verdict}`]}>{c.claim}</span> {c.body}
+        </p>
+      ))
+    }
+  </div>
+  <p class="trial__coda" set:html={trial.coda}></p>
+</aside>
+
+<style>
+  .trial {
+    border: 1px solid #c9c2b2;
+    background: #f0ede5;
+    padding: 24px 30px;
+    font-family: var(--sans);
+    font-size: 14px;
+    line-height: 1.6;
+    color: var(--prose-soft);
+  }
+
+  .trial__kicker {
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: #8a8377;
+  }
+
+  .trial__grid {
+    margin-top: 12px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 24px;
+  }
+
+  .trial__claim {
+    font-weight: 700;
+  }
+
+  .trial__claim.is-rejected {
+    color: #8a3d2e;
+  }
+
+  .trial__claim.is-chosen {
+    color: #2e5a35;
+  }
+
+  .trial__coda {
+    margin-top: 16px;
+    border-top: 1px solid #d9d2c2;
+    padding-top: 14px;
+    max-width: 980px;
+  }
+
+  @media (max-width: 900px) {
+    .trial {
+      padding: 18px 20px;
+    }
+
+    .trial__grid {
+      grid-template-columns: 1fr;
+      gap: 14px;
+    }
+  }
+</style>

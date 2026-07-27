@@ -1,0 +1,161 @@
+---
+import type { Metric } from '../data/roads';
+
+/**
+ * The right-hand column: the capability strip laid vertically. Compact bands
+ * drop the label and caption and keep only the number and its bar.
+ */
+interface Props {
+  metric: Metric;
+  label?: string;
+  compact?: boolean;
+  state: 'read' | 'reading' | 'ahead';
+}
+const { metric, label, compact = false, state } = Astro.props;
+const tone = metric.hold ? 'hold' : state;
+---
+
+<div class:list={['metric', `is-${state}`, { 'is-compact': compact }]}>
+  {label && !compact && <p class="metric__label">{label}</p>}
+  <div class="metric__row">
+    <span class="metric__value">
+      {metric.value}
+      {metric.valueUnit && <span class="metric__unit">{metric.valueUnit}</span>}
+    </span>
+    <span class="metric__track">
+      <span class:list={['metric__bar', `tone-${tone}`]} style={`width:${metric.barPct}%`}></span>
+    </span>
+  </div>
+  {metric.caption && !compact && <p class="metric__caption">{metric.caption}</p>}
+</div>
+
+<style>
+  .metric {
+    padding: 22px 0 22px 28px;
+    border-left: 1px solid var(--rule);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 5px;
+  }
+
+  .metric.is-compact {
+    padding-top: 18px;
+    padding-bottom: 18px;
+  }
+
+  .metric.is-reading {
+    border-left-color: var(--energy-border);
+  }
+
+  .metric__label {
+    font-family: var(--mono);
+    font-size: 10px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--faint);
+  }
+
+  .metric.is-reading .metric__label {
+    color: var(--energy-mid);
+  }
+
+  .metric__row {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .metric__value {
+    font-family: var(--sans);
+    font-size: 21px;
+    font-weight: 700;
+    white-space: nowrap;
+  }
+
+  .is-compact .metric__value {
+    font-size: 17px;
+  }
+
+  .is-ahead .metric__value {
+    color: var(--muted);
+  }
+
+  .is-reading .metric__value {
+    color: var(--energy);
+  }
+
+  .metric__unit {
+    font-size: 11px;
+    color: var(--faint);
+    font-weight: 400;
+  }
+
+  .is-reading .metric__unit {
+    color: var(--energy-faint);
+  }
+
+  .metric__track {
+    flex: 1;
+    height: 8px;
+    background: var(--bar-track);
+    min-width: 60px;
+  }
+
+  .is-reading .metric__track {
+    background: var(--energy-track);
+  }
+
+  .metric__bar {
+    display: block;
+    height: 8px;
+    background: var(--thread);
+  }
+
+  .metric__bar.tone-ahead {
+    background: var(--thread-muted);
+  }
+
+  .metric__bar.tone-hold {
+    background: var(--materials-hold);
+  }
+
+  .metric__bar.tone-reading {
+    background: var(--energy);
+  }
+
+  .metric__caption {
+    font-family: var(--mono);
+    font-size: 10px;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--ahead);
+  }
+
+  .is-reading .metric__caption {
+    color: var(--energy-faint);
+  }
+
+  @media (max-width: 900px) {
+    .metric {
+      padding: 0;
+      border-left: 0;
+      flex-direction: row;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .metric__label,
+    .metric__caption {
+      display: none;
+    }
+
+    .metric__row {
+      flex: 1;
+    }
+
+    .metric__value {
+      font-size: 16px;
+    }
+  }
+</style>

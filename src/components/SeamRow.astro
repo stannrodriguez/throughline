@@ -1,0 +1,78 @@
+---
+import type { RoadSeam } from '../data/roads';
+
+/**
+ * The seam is a feature, not a fallback: when a road's own yardstick stops
+ * measuring anything, the constraint it tracked is dead — and that is the story.
+ */
+interface Props {
+  seam: RoadSeam;
+}
+const { seam } = Astro.props;
+---
+
+<div class="seam">
+  <p class="seam__label">The seam</p>
+  <p class="seam__body" set:html={seam.explanation}></p>
+  <p class="seam__handover">{seam.handover}</p>
+</div>
+
+<style>
+  .seam {
+    display: grid;
+    grid-template-columns: 170px 1fr 250px;
+    border-top: 2px solid var(--ink);
+    border-bottom: 2px solid var(--ink);
+    background: var(--thread-seam);
+  }
+
+  .seam__label {
+    padding: 14px 0;
+    border-right: 1px solid var(--thread-border);
+    display: flex;
+    align-items: center;
+    font-family: var(--mono);
+    font-size: 10px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--thread);
+    font-weight: 600;
+  }
+
+  .seam__body {
+    padding: 14px 0 14px 44px;
+    font-family: var(--sans);
+    font-size: 13.5px;
+    line-height: 1.55;
+    color: var(--prose-soft);
+  }
+
+  .seam__handover {
+    padding: 14px 0 14px 28px;
+    border-left: 1px solid var(--thread-border);
+    display: flex;
+    align-items: center;
+    font-family: var(--mono);
+    font-size: 10px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--thread);
+  }
+
+  @media (max-width: 900px) {
+    .seam {
+      grid-template-columns: 1fr;
+      padding: 10px 0;
+    }
+
+    .seam__label,
+    .seam__handover {
+      padding: 6px 0;
+      border: 0;
+    }
+
+    .seam__body {
+      padding: 6px 0;
+    }
+  }
+</style>
