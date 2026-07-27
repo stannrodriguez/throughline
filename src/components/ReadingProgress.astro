@@ -1,0 +1,76 @@
+---
+import type { ThreadId } from '../data/threads';
+
+/**
+ * Moves the road view's reading position to wherever the reader actually got to.
+ *
+ * The server renders the design's default position (Period VI). If there is no
+ * stored progress — first visit, storage disabled — that default stands and
+ * every stop stays solid. Nothing here is required to read the page.
+ */
+interface Props {
+  road: ThreadId;
+}
+const { road } = Astro.props;
+---
+
+<script is:inline define:vars={{ road }}>
+  (() => {
+    let visited;
+    try {
+      const state = JSON.parse(localStorage.getItem('throughline:progress:v1') || '{}');
+      visited = new Set(state[road] || []);
+    } catch {
+      return; // no storage: keep the server-rendered position
+    }
+    if (!visited.size) return;
+
+    const stops = [...document.querySelectorAll('[data-stop]')];
+
+    // the reader's position is the furthest stop along this road they've opened
+    let currentOrder = 0;
+    let currentPeriod = 0;
+    for (const el of stops) {
+      const order = Number(el.dataset.stopOrder);
+      if (visited.has(el.dataset.stop) && order > currentOrder) {
+        currentOrder = order;
+        currentPeriod = Number(el.dataset.stopPeriod);
+      }
+    }
+    if (!currentOrder) return;
+
+    for (const el of stops) {
+      const order = Number(el.dataset.stopOrder);
+      el.classList.remove('is-read', 'is-ahead', 'is-current');
+      el.classList.add(order < currentOrder ? 'is-read' : order === currentOrder ? 'is-current' : 'is-ahead');
+    }
+
+    for (const band of document.querySelectorAll('[data-band-max]')) {
+      const min = Number(band.dataset.bandMin);
+      const max = Number(band.dataset.bandMax);
+      const state =
+        currentPeriod >= min && currentPeriod <= max
+          ? 'reading'
+          : max < currentPeriod
+            ? 'read'
+            : 'ahead';
+
+      for (const el of [band, band.querySelector('[data-metric]')]) {
+        if (!el) continue;
+        el.classList.remove('is-read', 'is-reading', 'is-ahead');
+        el.classList.add('is-' + state);
+      }
+    }
+
+    // "Continue reading" should point at the next stop that has prose
+    const next = stops.find(
+      (el) => Number(el.dataset.stopOrder) > currentOrder && el.tagName === 'A'
+    );
+    const cta = document.querySelector('[data-continue]');
+    if (next && cta) {
+      cta.setAttribute('href', next.getAttribute('href'));
+      const title = next.querySelector('.stop__title');
+      if (title) cta.textContent = `Continue reading — ${title.textContent.trim()} →`;
+    }
+  })();
+</script>

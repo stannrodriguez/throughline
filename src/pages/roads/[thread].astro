@@ -5,9 +5,12 @@ import RoadHeader from '../../components/RoadHeader.astro';
 import RoadBand from '../../components/RoadBand.astro';
 import SeamRow from '../../components/SeamRow.astro';
 import MetricTrial from '../../components/MetricTrial.astro';
+import ReadingProgress from '../../components/ReadingProgress.astro';
 import { ROAD_VIEWS } from '../../data/roads';
+import type { RoadBand as RoadBandData, RoadSeam } from '../../data/roads';
 import { THREADS, THREAD_ORDER } from '../../data/threads';
 import { ROAD_ENTRIES, stopsIn, tryEntry } from '../../data/entries';
+import type { Entry } from '../../data/entries';
 import { periodById } from '../../data/periods';
 import { DEFAULT_READING_PERIOD } from '../../lib/site';
 import { writtenSlugs, durationFor } from '../../lib/reading';
@@ -45,17 +48,24 @@ const crossThread = currentProse?.data.crossRefs.length
       .join(' · ')
   : undefined;
 
-const rows = view.rows.map((row) => {
-  if (row.kind === 'seam') return { row } as const;
+type Row =
+  | { kind: 'seam'; seam: RoadSeam }
+  | { kind: 'band'; band: RoadBandData; state: 'read' | 'reading' | 'ahead'; stops: Entry[] };
+
+const rows: Row[] = view.rows.map((row) => {
+  if (row.kind === 'seam') return { kind: 'seam', seam: row };
   const indices = row.periods.map((id) => periodById(id).index);
-  const holdsReader = indices.includes(readingIndex);
-  const state: 'read' | 'reading' | 'ahead' = holdsReader
+  const state = indices.includes(readingIndex)
     ? 'reading'
     : Math.max(...indices) < readingIndex
       ? 'read'
       : 'ahead';
-  const stops = row.periods.flatMap((id) => stopsIn(thread, id));
-  return { row, state, stops } as const;
+  return {
+    kind: 'band',
+    band: row,
+    state,
+    stops: row.periods.flatMap((id) => stopsIn(thread, id)),
+  };
 });
 
 const continueStop = currentStop ?? ROAD_ENTRIES[thread][0];
@@ -90,12 +100,11 @@ const continueStop = currentStop ?? ROAD_ENTRIES[thread][0];
     <div class="bands">
       {
         rows.map((r) =>
-          r.row.kind === 'seam' ? (
-            <SeamRow seam={r.row} />
+          r.kind === 'seam' ? (
+            <SeamRow seam={r.seam} />
           ) : (
             <RoadBand
-              band={r.row}
-              thread={thread}
+              band={r.band}
               stops={r.stops}
               state={r.state}
               metricLabel={view.metricLabel}
@@ -116,11 +125,13 @@ const continueStop = currentStop ?? ROAD_ENTRIES[thread][0];
         Solid stops = read · outlined = ahead · thin bands = the road passes through without
         stopping · whole road, in order: {duration}
       </p>
-      <a class="road__continue" href={continueStop.href}>
+      <a class="road__continue" href={continueStop.href} data-continue>
         Continue reading — {continueStop.title} <span aria-hidden="true">→</span>
       </a>
     </div>
   </main>
+
+  <ReadingProgress road={thread} />
 </Base>
 
 <style>
