@@ -2,6 +2,7 @@
 import { THREAD_ORDER, THREADS } from '../data/threads';
 import { stopsIn, nextStopFrom } from '../data/entries';
 import { periodById } from '../data/periods';
+import { path } from '../lib/site';
 
 /**
  * The second of the site's two motions: landing → road. Every card names a
@@ -27,7 +28,7 @@ const cards = THREAD_ORDER.map((threadId) => {
       label: `The ${t.name.toLowerCase()} road ends before here`,
       title: `${t.roadName} · last stop`,
       note: t.span,
-      href: `/roads/${threadId}`,
+      href: path(`/roads/${threadId}`),
     };
   }
 
@@ -50,7 +51,7 @@ const cards = THREAD_ORDER.map((threadId) => {
       : `Join the ${t.name.toLowerCase()} road nearby`,
     title: inEra ? target.title : `${target.title}, ${target.year}`,
     note: `Stop ${target.stop} of ${target.total} · ${spanNote}`,
-    href: `/roads/${threadId}`,
+    href: path(`/roads/${threadId}`),
   };
 });
 ---

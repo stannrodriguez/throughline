@@ -2,6 +2,7 @@
 import type { Entry } from '../../data/entries';
 import { roadNeighbours } from '../../data/entries';
 import { periodById, periodSlug } from '../../data/periods';
+import { path } from '../../lib/site';
 
 /**
  * Both motions, always visible: up to the period landing, and along the road.
@@ -16,7 +17,7 @@ const { prev, next } = roadNeighbours(entry);
 ---
 
 <div class="chrome">
-  <a class="chrome__up" href={`/periods/${periodSlug(period.id)}`}>
+  <a class="chrome__up" href={path(`/periods/${periodSlug(period.id)}`)}>
     <span aria-hidden="true">↑</span>
     <span class="chrome__up-text">Period {period.id} landing · {period.name.toLowerCase()}</span>
   </a>

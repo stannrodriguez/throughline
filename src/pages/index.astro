@@ -1,7 +1,7 @@
 ---
 import Base from '../layouts/Base.astro';
 import SiteHeader from '../components/SiteHeader.astro';
-import { SITE } from '../lib/site';
+import { SITE, path } from '../lib/site';
 import { PERIODS, periodSlug } from '../data/periods';
 import { threadList } from '../data/threads';
 import { ROAD_ENTRIES } from '../data/entries';
@@ -35,7 +35,7 @@ const roads = threadList.map((t) => ({
       {
         roads.map(({ thread, first }) => (
           <li class={`road t-${thread.id}`}>
-            <a href={`/roads/${thread.id}`} class="road__link">
+            <a href={path(`/roads/${thread.id}`)} class="road__link">
               <span class="road__label">The {thread.name.toLowerCase()} road</span>
               <span class="road__span">{thread.span}</span>
               <span class="road__meta">{thread.total} entries · begins with {first.title}</span>
@@ -51,7 +51,7 @@ const roads = threadList.map((t) => ({
         {
           PERIODS.map((p) => (
             <li class="periods__row">
-              <a href={`/periods/${periodSlug(p.id)}`} class="periods__link">
+              <a href={path(`/periods/${periodSlug(p.id)}`)} class="periods__link">
                 <span class="periods__num">{p.id}</span>
                 <span class="periods__name">{p.name}</span>
                 <span class="periods__years">{p.yearRange}</span>

@@ -2,6 +2,7 @@
 import type { RoadBand } from '../data/roads';
 import type { Entry } from '../data/entries';
 import { periodById, periodSlug } from '../data/periods';
+import { path } from '../lib/site';
 import MetricCell from './MetricCell.astro';
 import SecondaryChip from './SecondaryChip.astro';
 
@@ -67,7 +68,7 @@ const indices = band.periods.map((id) => periodById(id).index);
       band.passThrough ? (
         <p class="band__pass">
           {band.passThrough}{' '}
-          <a href={`/periods/${periodSlug(first.id)}`} class="band__pass-link">
+          <a href={path(`/periods/${periodSlug(first.id)}`)} class="band__pass-link">
             See the Period {first.id} landing for what this era was instead.
           </a>
         </p>

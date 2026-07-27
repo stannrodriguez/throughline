@@ -1,6 +1,7 @@
 import type { ThreadId } from './threads';
 import { THREADS } from './threads';
 import { PERIODS } from './periods';
+import { path } from '../lib/site';
 
 /**
  * The canonical entry registry.
@@ -227,7 +228,7 @@ const build = (list: EntryMeta[]): Entry[] => {
       ...meta,
       stop,
       total,
-      href: `/entries/${meta.slug}`,
+      href: path(`/entries/${meta.slug}`),
       address: `${THREADS[meta.primary].addressName} · stop ${stop} of ${total}`.toUpperCase(),
       periodIndex: PERIOD_INDEX.get(meta.periodId) ?? 0,
     };

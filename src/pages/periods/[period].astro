@@ -8,6 +8,7 @@ import { PERIODS, periodSlug, periodNeighbours } from '../../data/periods';
 import { THREADS, THREAD_ORDER } from '../../data/threads';
 import { rosterFor, nextStopFrom } from '../../data/entries';
 import { writtenSlugs, durationFor } from '../../lib/reading';
+import { path } from '../../lib/site';
 
 export function getStaticPaths() {
   return PERIODS.map((period) => ({
@@ -49,7 +50,7 @@ const firstPara = essay.length ? essay[0].slice(1) : '';
       <div class="masthead">
         {
           prev ? (
-            <a class="masthead__step" href={`/periods/${periodSlug(prev.id)}`}>
+            <a class="masthead__step" href={path(`/periods/${periodSlug(prev.id)}`)}>
               ← {prev.id} · {prev.name}
             </a>
           ) : (
@@ -61,7 +62,7 @@ const firstPara = essay.length ? essay[0].slice(1) : '';
         </p>
         {
           next ? (
-            <a class="masthead__step masthead__step--end" href={`/periods/${periodSlug(next.id)}`}>
+            <a class="masthead__step masthead__step--end" href={path(`/periods/${periodSlug(next.id)}`)}>
               {next.id} · {next.name} →
             </a>
           ) : (
@@ -144,7 +145,7 @@ const firstPara = essay.length ? essay[0].slice(1) : '';
         <div class="footer-steps">
           {
             prev ? (
-              <a href={`/periods/${periodSlug(prev.id)}`}>
+              <a href={path(`/periods/${periodSlug(prev.id)}`)}>
                 ← Period {prev.id} · {prev.name} · <em>{prev.constraint}</em>
               </a>
             ) : (
@@ -153,7 +154,7 @@ const firstPara = essay.length ? essay[0].slice(1) : '';
           }
           {
             next && (
-              <a class="footer-steps__next" href={`/periods/${periodSlug(next.id)}`}>
+              <a class="footer-steps__next" href={path(`/periods/${periodSlug(next.id)}`)}>
                 Period {next.id} · {next.name} · <em>{next.constraint}</em> →
               </a>
             )
