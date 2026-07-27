@@ -263,14 +263,16 @@ export const PERIODS: Period[] = [
     constraint: 'infection',
     constraintShort: 'Infection',
     title: 'Chemists specify nylon on paper before it exists, and penicillin is fermented by the tankful.',
-    essay: [],
+    essay: [
+      'The constraint this era removes is infection, and the entry that removes it is a manufacturing achievement rather than a discovery. Fleming noticed in 1928 that a mould killed staphylococci on a contaminated plate; twelve years later Florey and Chain had purified enough of the compound to treat a single policeman, who improved and then died when the supply ran out. What closes the gap is deep-tank fermentation, worked out in Peoria and the American pharmaceutical plants in 1943: grow the mould in stirred, aerated vats of corn-steep liquor instead of in flasks. Output goes from a few hundred doses to twenty-one billion units in 1943 and 6.8 trillion in 1945, and the price of a course falls from twenty dollars to about fifty cents. Nylon comes from the same decade and the same habit of mind. Wallace Carothers wrote down the molecule he wanted before anyone made it, and DuPont sold sixty-four million pairs of stockings in the first year.',
+      'On the energy road the two entries are both about density. A gas turbine burns continuously instead of in strokes, which is what lifts the power-to-weight ratio far enough to fly; the He 178 takes off on 27 August 1939, and top speed in the strip above goes from 160 kilometres an hour to 900 within twenty years of it. Fission is denser again by a factor nothing chemical approaches: each uranium nucleus that splits releases about 200 million electron-volts, some two hundred million times what burning a carbon atom gives, so a gram of uranium-235 stands in for roughly three tonnes of coal. Chicago Pile-1 goes critical on 2 December 1942 at about half a watt. The information entry is quieter and outlasts both — a germanium crystal with two wire contacts, demonstrated at Bell Labs on 23 December 1947, that amplifies a signal with no filament, no vacuum and no warm-up.',
+    ],
     capabilityStrip: strip(
       ['900 km/h', '— the jet', true],
       ['Instant', '— telephone, worldwide'],
       ['Fluorescent', '— cheaper light', true],
       ['78 GJ/yr', '— oil', true]
     ),
-    placeholder: true,
   },
   {
     id: 'XI',
