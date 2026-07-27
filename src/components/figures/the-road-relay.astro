@@ -1,0 +1,92 @@
+---
+/**
+ * The Royal Road as a staging diagram, and why staging changes the shape of the
+ * curve rather than its slope. One rider's daily distance decays as the horse
+ * tires; a relay hands the dispatch to a rested horse at every post, so the rate
+ * never falls. Durations are the ones the entry states — about ninety days on
+ * foot, seven to nine by relay, on Herodotus.
+ */
+---
+
+<svg viewBox="0 0 960 400" role="img" aria-label="The Royal Road with its staging posts, and cumulative distance against days for a relay, a single rider and a walker">
+  <defs>
+    <marker id="rr-ar" viewBox="0 0 8 8" refX="7" refY="4" markerWidth="6" markerHeight="6" orient="auto">
+      <path d="M0 0 L8 4 L0 8 z" class="dg-ink" />
+    </marker>
+  </defs>
+
+  <text class="dg-lbl" x="40" y="24">THE ROYAL ROAD · SARDIS TO SUSA</text>
+
+  <!-- ── the road, with its posts ─────────────────────────────────────── -->
+  <path class="dg-s" d="M70 78 H890" />
+  <g class="dg-h">
+    <path
+      d="M77 70 v16 M85 70 v16 M92 70 v16 M99 70 v16 M107 70 v16 M114 70 v16 M121 70 v16
+         M129 70 v16 M136 70 v16 M143 70 v16 M151 70 v16 M158 70 v16 M166 70 v16 M173 70 v16
+         M180 70 v16 M188 70 v16 M195 70 v16 M202 70 v16 M210 70 v16 M217 70 v16 M224 70 v16
+         M232 70 v16 M239 70 v16 M247 70 v16 M254 70 v16 M261 70 v16 M269 70 v16 M276 70 v16
+         M283 70 v16 M291 70 v16 M298 70 v16 M306 70 v16 M313 70 v16 M320 70 v16 M328 70 v16
+         M335 70 v16 M342 70 v16 M350 70 v16 M357 70 v16 M364 70 v16 M372 70 v16 M379 70 v16
+         M387 70 v16 M394 70 v16 M401 70 v16 M409 70 v16 M416 70 v16 M423 70 v16 M431 70 v16
+         M438 70 v16 M446 70 v16 M453 70 v16 M460 70 v16 M468 70 v16 M475 70 v16 M482 70 v16
+         M490 70 v16 M497 70 v16 M504 70 v16 M512 70 v16 M519 70 v16 M527 70 v16 M534 70 v16
+         M541 70 v16 M549 70 v16 M556 70 v16 M563 70 v16 M571 70 v16 M578 70 v16 M586 70 v16
+         M593 70 v16 M600 70 v16 M608 70 v16 M615 70 v16 M622 70 v16 M630 70 v16 M637 70 v16
+         M644 70 v16 M652 70 v16 M659 70 v16 M667 70 v16 M674 70 v16 M681 70 v16 M689 70 v16
+         M696 70 v16 M703 70 v16 M711 70 v16 M718 70 v16 M726 70 v16 M733 70 v16 M740 70 v16
+         M748 70 v16 M755 70 v16 M762 70 v16 M770 70 v16 M777 70 v16 M784 70 v16 M792 70 v16
+         M799 70 v16 M807 70 v16 M814 70 v16 M821 70 v16 M829 70 v16 M836 70 v16 M843 70 v16
+         M851 70 v16 M858 70 v16 M866 70 v16 M873 70 v16 M880 70 v16"
+    />
+  </g>
+  <circle cx="70" cy="78" r="4" class="dg-ink" />
+  <circle cx="890" cy="78" r="4" class="dg-ink" />
+  <text class="dg-lbl dg-num" x="70" y="106">SARDIS</text>
+  <text class="dg-lbl dg-num" x="890" y="106" text-anchor="end">SUSA</text>
+  <text class="dg-lbl dg-soft" x="480" y="106" text-anchor="middle">111 POSTS, A DAY'S RIDE APART · 2,700 KM</text>
+  <text class="dg-lbl dg-soft" x="480" y="52" text-anchor="middle">THE DISPATCH IS HANDED ON AT EVERY TICK · HORSE AND RIDER STAY BEHIND</text>
+
+  <!-- ══ cumulative distance ════════════════════════════════════════════ -->
+  <path class="dg-h" d="M90 190 H860 M90 236 H860 M90 282 H860" />
+  <path class="dg-h" d="M282 144 V328 M475 144 V328 M667 144 V328" />
+  <path class="dg-s" d="M90 144 V328 H860" />
+
+  <text class="dg-lbl" x="90" y="132">KILOMETRES COVERED</text>
+  <g class="dg-num">
+    <text x="82" y="148" text-anchor="end">2,700</text>
+    <text x="82" y="194" text-anchor="end">2,025</text>
+    <text x="82" y="240" text-anchor="end">1,350</text>
+    <text x="82" y="286" text-anchor="end">675</text>
+    <text x="82" y="332" text-anchor="end">0</text>
+  </g>
+  <path class="dg-m" d="M90 328 v5 M282 328 v5 M475 328 v5 M667 328 v5 M860 328 v5" />
+  <g class="dg-num">
+    <text x="90" y="348" text-anchor="middle">0</text>
+    <text x="282" y="348" text-anchor="middle">5</text>
+    <text x="475" y="348" text-anchor="middle">10</text>
+    <text x="667" y="348" text-anchor="middle">15</text>
+    <text x="860" y="348" text-anchor="middle">20</text>
+  </g>
+  <text class="dg-lbl" x="475" y="368" text-anchor="middle">DAYS FROM SARDIS</text>
+
+  <!-- the relay: rate never falls -->
+  <path class="dg-a" d="M90 328 L398 144" />
+  <circle cx="398" cy="144" r="3.6" class="dg-accent" />
+  <path class="dg-d" d="M398 144 V328" />
+  <text class="dg-lbl dg-key" x="408" y="158">RELAY ARRIVES · 7 TO 9 DAYS</text>
+  <text class="dg-lbl dg-soft" x="408" y="172">HERODOTUS</text>
+
+  <!-- one rider, one horse: the rate decays -->
+  <path
+    class="dg-s"
+    d="M90 328 C130 320, 170 312, 205 306 C260 296, 320 288, 380 281
+       C460 272, 560 264, 660 258 C740 253, 810 250, 860 248"
+  />
+  <text class="dg-lbl dg-num" x="656" y="242">ONE RIDER, ONE HORSE — THE RATE DECAYS</text>
+
+  <!-- walking -->
+  <path class="dg-m" d="M90 328 L860 277" />
+  <text class="dg-lbl dg-soft" x="700" y="298">ON FOOT · ~90 DAYS TO SARDIS</text>
+
+  <text class="dg-lbl dg-soft" x="90" y="390">STAGING DOES NOT MAKE A HORSE FASTER. IT REMOVES FATIGUE FROM THE MESSAGE, SO THE DAILY RATE STAYS FLAT.</text>
+</svg>
