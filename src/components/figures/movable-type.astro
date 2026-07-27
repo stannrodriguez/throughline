@@ -1,0 +1,117 @@
+---
+/**
+ * The mould is the machine. A steel punch strikes a copper matrix; the matrix
+ * seats in a two-part hinged mould; alloy is poured and a sort tips out. Every
+ * sort leaves the mould at the same height, which is what lets a page of
+ * assembled metal print evenly. The chart is the consequence: a scribe's cost
+ * per copy is flat, a printer's falls with the length of the run.
+ */
+---
+
+<svg viewBox="0 0 960 400" role="img" aria-label="The punch, matrix, hand mould and cast sort, with cost per copy for a scribe against a press">
+  <defs>
+    <marker id="mt-ar" viewBox="0 0 8 8" refX="7" refY="4" markerWidth="6" markerHeight="6" orient="auto">
+      <path d="M0 0 L8 4 L0 8 z" class="dg-ink" />
+    </marker>
+    <marker id="mt-ar-a" viewBox="0 0 8 8" refX="7" refY="4" markerWidth="6" markerHeight="6" orient="auto">
+      <path d="M0 0 L8 4 L0 8 z" class="dg-accent" />
+    </marker>
+  </defs>
+
+  <!-- ── 1 · the punch ────────────────────────────────────────────────── -->
+  <text class="dg-lbl dg-num" x="30" y="24">1 · STEEL PUNCH</text>
+  <rect x="30" y="34" width="200" height="112" class="dg-h" />
+  <path class="dg-s" d="M104 46 h52 v56 l-10 12 h-32 l-10 -12 Z" />
+  <text class="dg-eq dg-num" x="130" y="100" text-anchor="middle">a</text>
+  <path class="dg-m" d="M120 122 V134" marker-end="url(#mt-ar)" />
+  <text class="dg-lbl dg-soft" x="30" y="164">CUT ONCE, BY HAND</text>
+
+  <!-- ── 2 · the matrix ───────────────────────────────────────────────── -->
+  <text class="dg-lbl dg-num" x="250" y="24">2 · STRUCK MATRIX</text>
+  <rect x="250" y="34" width="200" height="112" class="dg-h" />
+  <path class="dg-panel" d="M290 62 h120 v66 h-120 Z" />
+  <path class="dg-s" d="M290 62 h120 v66 h-120 Z" />
+  <path class="dg-tint" d="M330 62 h40 v30 h-40 Z" />
+  <path class="dg-d" d="M330 62 h40 v30 h-40 Z" />
+  <text class="dg-lbl dg-soft" x="290" y="146">SUNK LETTER</text>
+  <text class="dg-lbl dg-soft" x="250" y="164">COPPER, STRUCK BY THE PUNCH</text>
+
+  <!-- ── 3 · the mould ────────────────────────────────────────────────── -->
+  <text class="dg-lbl dg-num" x="470" y="24">3 · THE MOULD, CLOSED</text>
+  <rect x="470" y="34" width="200" height="112" class="dg-h" />
+  <path class="dg-s" d="M498 56 h32 v76 h-32 Z" />
+  <path class="dg-s" d="M610 56 h32 v76 h-32 Z" />
+  <path class="dg-m" d="M530 56 h80 M530 132 h80" />
+  <path class="dg-tint" d="M530 112 h80 v20 h-80 Z" />
+  <path class="dg-d" d="M530 112 h80" />
+  <path class="dg-a" d="M570 36 V78" marker-end="url(#mt-ar-a)" />
+  <text class="dg-lbl dg-soft" x="470" y="164">ALLOY POURED INTO THE CLOSED MOULD</text>
+
+  <!-- ── 4 · the sort ─────────────────────────────────────────────────── -->
+  <text class="dg-lbl dg-num" x="690" y="24">4 · THE CAST SORT</text>
+  <rect x="690" y="34" width="200" height="112" class="dg-h" />
+  <path class="dg-panel" d="M716 56 h56 v66 h-56 Z" />
+  <path class="dg-s" d="M716 56 h56 v66 h-56 Z" />
+  <path class="dg-s" d="M716 56 h56 v16 h-56 Z" />
+  <text class="dg-eq dg-num" x="744" y="70" text-anchor="middle">a</text>
+  <path class="dg-d" d="M700 56 H800 M700 122 H800" />
+  <path class="dg-m" d="M792 60 V118" marker-end="url(#mt-ar)" />
+  <text class="dg-lbl dg-key" x="810" y="84">EVERY SORT</text>
+  <text class="dg-lbl dg-key" x="810" y="98">THE SAME HEIGHT</text>
+  <text class="dg-lbl dg-soft" x="690" y="164">SO AN ASSEMBLED PAGE PRINTS EVENLY</text>
+
+  <path class="dg-m" d="M236 90 H244" marker-end="url(#mt-ar)" />
+  <path class="dg-m" d="M456 90 H464" marker-end="url(#mt-ar)" />
+  <path class="dg-m" d="M676 90 H684" marker-end="url(#mt-ar)" />
+
+  <text class="dg-lbl dg-soft" x="30" y="188">ONE PUNCH-CUTTER'S WORK SUPPORTS AN UNLIMITED NUMBER OF CASTS.</text>
+  <text class="dg-lbl dg-soft" x="30" y="202">SETTING A PAGE BECOMES ASSEMBLY, AND THE METAL GOES BACK IN THE CASE AFTERWARDS.</text>
+
+  <!-- ══ cost per copy ══════════════════════════════════════════════════ -->
+  <path class="dg-m" d="M30 212 H930" />
+
+  <path class="dg-h" d="M120 268 H560 M120 316 H560" />
+  <path class="dg-h" d="M230 236 V364 M340 236 V364 M450 236 V364" />
+  <path class="dg-s" d="M120 236 V364 H560" />
+  <text class="dg-lbl" x="120" y="230">COST PER COPY</text>
+
+  <path class="dg-m" d="M120 364 v5 M230 364 v5 M340 364 v5 M450 364 v5 M560 364 v5" />
+  <g class="dg-num">
+    <text x="120" y="384" text-anchor="middle">0</text>
+    <text x="230" y="384" text-anchor="middle">100</text>
+    <text x="340" y="384" text-anchor="middle">200</text>
+    <text x="450" y="384" text-anchor="middle">300</text>
+    <text x="560" y="384" text-anchor="middle">400</text>
+  </g>
+  <text class="dg-lbl" x="340" y="398" text-anchor="middle">COPIES IN THE RUN</text>
+
+  <!-- the scribe: flat -->
+  <path class="dg-s" d="M120 292 H560" />
+  <text class="dg-lbl dg-num" x="470" y="286">SCRIBE — FLAT</text>
+
+  <!-- the press: composition amortised over the run -->
+  <path
+    class="dg-a"
+    d="M130 240 C150 288, 168 318, 196 332 C232 350, 280 356, 340 358
+       C400 360, 480 361, 560 361"
+  />
+  <text class="dg-lbl dg-key" x="360" y="348">PRESS — FALLING WITH THE RUN</text>
+
+  <!-- the crossover, and the Gutenberg run -->
+  <circle cx="176" cy="292" r="3.6" class="dg-ink" />
+  <path class="dg-d" d="M176 236 V364" />
+  <text class="dg-lbl dg-num" x="182" y="252">CROSSOVER</text>
+
+  <path class="dg-d" d="M318 236 V364" />
+  <circle cx="318" cy="357" r="3.6" class="dg-accent" />
+  <text class="dg-lbl dg-key" x="324" y="252">~180 COPIES</text>
+  <text class="dg-lbl dg-soft" x="324" y="266">THE 42-LINE BIBLE</text>
+
+  <text class="dg-lbl dg-num" x="600" y="252">COMPOSING A PAGE IS A FIXED COST,</text>
+  <text class="dg-lbl dg-num" x="600" y="266">PAID ONCE, IN HOURS.</text>
+  <text class="dg-lbl dg-soft" x="600" y="292">EACH FURTHER IMPRESSION TAKES SECONDS —</text>
+  <text class="dg-lbl dg-soft" x="600" y="306">250 SHEETS AN HOUR OFF ONE PRESS.</text>
+  <text class="dg-lbl dg-key" x="600" y="336">THE FIRST TIME MAKING MORE OF SOMETHING</text>
+  <text class="dg-lbl dg-key" x="600" y="350">COSTS LESS PER UNIT THAN MAKING LESS.</text>
+  <text class="dg-lbl dg-soft" x="600" y="374">20 MILLION BOOKS PRINTED IN EUROPE BY 1500.</text>
+</svg>
