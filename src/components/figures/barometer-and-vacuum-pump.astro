@@ -1,0 +1,107 @@
+---
+/**
+ * Nothing pulls the column up. The atmosphere presses down on the mercury in
+ * the dish with the weight of the air standing above it, and the column rises
+ * until its own weight balances that push — 760 mm for mercury, 10.3 m for
+ * water, which is the well-diggers' limit and a property of the air rather than
+ * of the pump. Magdeburg is the same pressure with one side taken away.
+ */
+---
+
+<svg viewBox="0 0 960 410" role="img" aria-label="Torricelli's inverted tube with a 760 mm mercury column and the void above it, and the Magdeburg hemispheres held together by air pressure">
+  <defs>
+    <marker id="bp-ar" viewBox="0 0 8 8" refX="7" refY="4" markerWidth="6" markerHeight="6" orient="auto">
+      <path d="M0 0 L8 4 L0 8 z" class="dg-ink" />
+    </marker>
+    <marker id="bp-ar-a" viewBox="0 0 8 8" refX="7" refY="4" markerWidth="6" markerHeight="6" orient="auto">
+      <path d="M0 0 L8 4 L0 8 z" class="dg-accent" />
+    </marker>
+  </defs>
+
+  <text class="dg-lbl" x="30" y="24">TORRICELLI'S TUBE</text>
+
+  <!-- the atmosphere, pressing down on the dish -->
+  <g class="dg-a">
+    <path d="M50 52 V88" marker-end="url(#bp-ar-a)" />
+    <path d="M92 52 V88" marker-end="url(#bp-ar-a)" />
+    <path d="M264 52 V88" marker-end="url(#bp-ar-a)" />
+    <path d="M306 52 V88" marker-end="url(#bp-ar-a)" />
+  </g>
+  <text class="dg-lbl dg-key" x="178" y="46" text-anchor="middle">THE AIR ABOVE, PRESSING DOWN</text>
+
+  <!-- the tube -->
+  <path class="dg-s" d="M158 68 H190 V300" />
+  <path class="dg-s" d="M158 68 V300" />
+
+  <!-- the void -->
+  <path class="dg-page" d="M158 70 H190 V126 H158 Z" />
+  <text class="dg-lbl dg-num" x="200" y="94">THE VOID —</text>
+  <text class="dg-lbl dg-soft" x="200" y="108">NOTHING ABOVE THE COLUMN,</text>
+  <text class="dg-lbl dg-soft" x="200" y="122">SO NOTHING TO PULL IT UP</text>
+
+  <!-- the mercury column -->
+  <path class="dg-accent" d="M160 126 H188 V296 H160 Z" />
+
+  <!-- the dish -->
+  <path class="dg-s" d="M100 296 H248 V318 H100 Z" />
+  <path class="dg-accent" d="M102 300 H246 V316 H102 Z" />
+  <text class="dg-lbl dg-soft" x="100" y="336">MERCURY IN AN OPEN DISH</text>
+
+  <!-- the dimension -->
+  <path class="dg-m" d="M124 126 V300" />
+  <path class="dg-m" d="M118 126 H130 M118 300 H130" />
+  <text class="dg-lbl dg-num" x="112" y="214" text-anchor="end">760 MM</text>
+
+  <!-- the balance -->
+  <path class="dg-d" d="M60 126 H158 M60 300 H100" />
+  <text class="dg-lbl dg-soft" x="30" y="358">THE COLUMN RISES UNTIL ITS OWN</text>
+  <text class="dg-lbl dg-soft" x="30" y="372">WEIGHT BALANCES THE PUSH.</text>
+  <text class="dg-lbl dg-num" x="30" y="392">WATER IS 14× LESS DENSE, SO IT</text>
+  <text class="dg-lbl dg-num" x="30" y="406">STANDS 10.3 M — THE WELL-DIGGERS' LIMIT</text>
+
+  <!-- ══ how much pressure that is ══════════════════════════════════════ -->
+  <path class="dg-m" d="M382 14 V386" />
+  <text class="dg-lbl" x="410" y="24">WHAT THAT PRESSURE COMES TO</text>
+
+  <rect x="410" y="44" width="26" height="26" class="dg-h" />
+  <text class="dg-lbl dg-num" x="448" y="54">≈ 10 NEWTONS ON EVERY</text>
+  <text class="dg-lbl dg-num" x="448" y="68">SQUARE CENTIMETRE</text>
+  <text class="dg-lbl dg-soft" x="410" y="94">ACROSS AN ORDINARY DOOR, SEVERAL TONNES —</text>
+  <text class="dg-lbl dg-soft" x="410" y="108">UNNOTICED, BECAUSE IT PRESSES BOTH SIDES EQUALLY.</text>
+
+  <!-- ══ Magdeburg ══════════════════════════════════════════════════════ -->
+  <path class="dg-m" d="M410 126 H930" />
+  <text class="dg-lbl" x="410" y="146">MAGDEBURG · THE SAME PRESSURE, ONE SIDE REMOVED</text>
+
+  <!-- the two hemispheres, drawn as shells with an evacuated space between -->
+  <path class="dg-panel" d="M600 178 A 74 74 0 0 0 600 326 L600 314 A 62 62 0 0 1 600 190 Z" />
+  <path class="dg-s" d="M600 178 A 74 74 0 0 0 600 326 L600 314 A 62 62 0 0 1 600 190 Z" />
+  <path class="dg-panel" d="M614 178 A 74 74 0 0 1 614 326 L614 314 A 62 62 0 0 0 614 190 Z" />
+  <path class="dg-s" d="M614 178 A 74 74 0 0 1 614 326 L614 314 A 62 62 0 0 0 614 190 Z" />
+  <path class="dg-d" d="M607 190 V314" />
+  <text class="dg-lbl dg-num" x="607" y="256" text-anchor="middle">PUMPED OUT</text>
+
+  <!-- air pressing in all round -->
+  <g class="dg-a">
+    <path d="M607 156 V174" marker-end="url(#bp-ar-a)" />
+    <path d="M607 348 V330" marker-end="url(#bp-ar-a)" />
+    <path d="M528 196 L546 214" marker-end="url(#bp-ar-a)" />
+    <path d="M686 196 L668 214" marker-end="url(#bp-ar-a)" />
+    <path d="M528 308 L546 290" marker-end="url(#bp-ar-a)" />
+    <path d="M686 308 L668 290" marker-end="url(#bp-ar-a)" />
+  </g>
+
+  <!-- the horse teams, pulling the other way -->
+  <path class="dg-s" d="M534 252 H452" marker-end="url(#bp-ar)" />
+  <path class="dg-s" d="M680 252 H762" marker-end="url(#bp-ar)" />
+  <g class="dg-m">
+    <path d="M452 236 h22 v14 h-22 Z M424 236 h22 v14 h-22 Z M452 254 h22 v14 h-22 Z M424 254 h22 v14 h-22 Z" />
+    <path d="M762 236 h22 v14 h-22 Z M790 236 h22 v14 h-22 Z M762 254 h22 v14 h-22 Z M790 254 h22 v14 h-22 Z" />
+  </g>
+  <text class="dg-lbl dg-num" x="418" y="226">8 HORSES</text>
+  <text class="dg-lbl dg-num" x="812" y="226">8 HORSES</text>
+
+  <text class="dg-lbl dg-key" x="410" y="370">SIXTEEN HORSES CANNOT PULL THEM APART.</text>
+  <text class="dg-lbl dg-soft" x="410" y="384">NOTHING IS HOLDING THEM TOGETHER EXCEPT THE AIR OUTSIDE —</text>
+  <text class="dg-lbl dg-soft" x="410" y="398">THE SAME AIR THAT HOLDS THE COLUMN AT 760 MM.</text>
+</svg>
