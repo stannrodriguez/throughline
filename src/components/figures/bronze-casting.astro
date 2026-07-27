@@ -1,0 +1,129 @@
+---
+/**
+ * Copper–tin, 0 to 20% tin. Liquidus and solidus on the left axis, as-cast
+ * hardness on the right, the ~10% foundry alloy marked across both. Lost-wax
+ * sequence at right. Liquidus values are the standard Cu–Sn diagram: 1,085° at
+ * zero tin, ~1,020° at 10%, ~950° by 17.5%, peritectic shelf at 798°.
+ */
+---
+
+<svg viewBox="0 0 960 380" role="img" aria-label="Copper-tin phase diagram with an as-cast hardness curve, and the four steps of lost-wax casting">
+  <defs>
+    <marker id="bc-ar" viewBox="0 0 8 8" refX="7" refY="4" markerWidth="6" markerHeight="6" orient="auto">
+      <path d="M0 0 L8 4 L0 8 z" class="dg-ink" />
+    </marker>
+  </defs>
+
+  <!-- ── chart frame ──────────────────────────────────────────────────── -->
+  <path class="dg-h" d="M90 40 H560 M90 114.3 H560 M90 188.6 H560 M90 262.9 H560" />
+  <path class="dg-h" d="M207.5 40 V300 M325 40 V300 M442.5 40 V300" />
+  <path class="dg-s" d="M90 40 V300 H560" />
+  <path class="dg-m" d="M560 40 V300" />
+
+  <text class="dg-lbl" x="90" y="26">TEMPERATURE</text>
+  <g class="dg-num">
+    <text x="82" y="44" text-anchor="end">1100°</text>
+    <text x="82" y="118.3" text-anchor="end">1000°</text>
+    <text x="82" y="192.6" text-anchor="end">900°</text>
+    <text x="82" y="266.9" text-anchor="end">800°</text>
+  </g>
+
+  <path class="dg-m" d="M90 300 v5 M207.5 300 v5 M325 300 v5 M442.5 300 v5 M560 300 v5" />
+  <g class="dg-num">
+    <text x="90" y="320" text-anchor="middle">0</text>
+    <text x="207.5" y="320" text-anchor="middle">5</text>
+    <text x="325" y="320" text-anchor="middle">10</text>
+    <text x="442.5" y="320" text-anchor="middle">15</text>
+    <text x="560" y="320" text-anchor="middle">20</text>
+  </g>
+  <text class="dg-lbl" x="325" y="340" text-anchor="middle">TIN, PER CENT BY WEIGHT</text>
+
+  <text class="dg-lbl dg-key" x="570" y="26">HV</text>
+  <g class="dg-key">
+    <text x="570" y="44">250</text>
+    <text x="570" y="96">200</text>
+    <text x="570" y="148">150</text>
+    <text x="570" y="200">100</text>
+    <text x="570" y="252">50</text>
+  </g>
+
+  <!-- ── phase boundaries ─────────────────────────────────────────────── -->
+  <path
+    class="dg-s"
+    d="M90 51.3 C140 68, 175 72, 207.5 77.1 C250 84, 296 94, 325 99.4
+       C352 105, 388 110, 407 114.3 C440 124, 476 141, 501 151.4
+       C522 160, 545 172, 560 177.4"
+  />
+  <path
+    class="dg-m"
+    d="M90 51.3 C120 68, 145 82, 160.5 92 C190 111, 215 128, 231 140.3
+       C255 158, 285 176, 301.5 184.9 C320 196, 338 211, 348.5 218.3
+       C368 234, 396 254, 407 264.3"
+  />
+  <path class="dg-m" d="M407 264.3 H560" />
+
+  <text x="452" y="86">L</text>
+  <text class="dg-lbl" x="466" y="86">LIQUID</text>
+  <text x="136" y="182">α</text>
+  <text class="dg-lbl" x="246" y="128">α + L</text>
+  <text class="dg-lbl" x="424" y="282">798° PERITECTIC</text>
+
+  <!-- ── as-cast hardness, right axis ─────────────────────────────────── -->
+  <path
+    class="dg-a-d"
+    d="M90 248 C140 238, 175 229, 207.5 222 C250 212, 296 194, 325 185.6
+       C360 176, 412 158, 442.5 149.2 C480 137, 535 118, 560 112.8"
+  />
+  <circle cx="90" cy="248" r="3" class="dg-accent" />
+  <circle cx="325" cy="185.6" r="3" class="dg-accent" />
+  <text class="dg-lbl dg-key" x="100" y="290">HARDNESS, AS CAST</text>
+
+  <!-- ── the foundry alloy ────────────────────────────────────────────── -->
+  <path class="dg-d" d="M325 40 V300" />
+  <circle cx="325" cy="99.4" r="3.4" class="dg-ink" />
+  <text class="dg-lbl dg-num" x="317" y="60" text-anchor="end">~10% TIN</text>
+  <text class="dg-lbl" x="317" y="74" text-anchor="end">THE FOUNDRY ALLOY</text>
+
+  <circle cx="90" cy="51.3" r="3.4" class="dg-ink" />
+  <text class="dg-lbl dg-num" x="99" y="48">1,085° PURE COPPER</text>
+
+  <!-- ══ lost wax ════════════════════════════════════════════════════════ -->
+  <path class="dg-m" d="M600 18 V345" />
+  <text class="dg-lbl" x="620" y="30">LOST WAX, FOUR STEPS</text>
+
+  <!-- 1 · the wax model -->
+  <text class="dg-lbl dg-num" x="620" y="56">1 · WAX MODEL</text>
+  <rect x="620" y="64" width="155" height="100" class="dg-h" />
+  <path class="dg-a" d="M672 92 H723 L716 142 H679 Z" />
+  <path class="dg-a" d="M723 100 q16 7 14 21 q-2 13 -14 15" />
+  <text class="dg-lbl dg-key" x="697.5" y="180" text-anchor="middle">MODELLED, NOT HAMMERED</text>
+
+  <!-- 2 · packed in clay -->
+  <text class="dg-lbl dg-num" x="795" y="56">2 · PACKED IN CLAY</text>
+  <rect x="795" y="64" width="155" height="100" class="dg-panel" />
+  <rect x="795" y="64" width="155" height="100" class="dg-h" />
+  <path class="dg-m" d="M820 76 H925 V152 H820 Z" />
+  <path class="dg-a" d="M847 96 H898 L891 142 H854 Z" />
+  <path class="dg-m" d="M866 76 V96 M879 76 V96" />
+  <text class="dg-lbl" x="872.5" y="180" text-anchor="middle">SPRUE AND VENT OPEN</text>
+
+  <!-- 3 · burn out, pour -->
+  <text class="dg-lbl dg-num" x="620" y="206">3 · BURN OUT, POUR</text>
+  <rect x="620" y="214" width="155" height="100" class="dg-panel" />
+  <rect x="620" y="214" width="155" height="100" class="dg-h" />
+  <path class="dg-s" d="M697 222 V234" marker-end="url(#bc-ar)" />
+  <path class="dg-m" d="M645 240 H750 V302 H645 Z" />
+  <path class="dg-m" d="M691 240 V256 M703 240 V256" />
+  <path class="dg-ink" d="M674 258 H721 L714 296 H681 Z" />
+  <text class="dg-lbl" x="697.5" y="330" text-anchor="middle">METAL TAKES ITS PLACE</text>
+
+  <!-- 4 · break the mould -->
+  <text class="dg-lbl dg-num" x="795" y="206">4 · BREAK THE MOULD</text>
+  <rect x="795" y="214" width="155" height="100" class="dg-h" />
+  <path class="dg-d" d="M820 226 H856 M889 226 H925 M820 226 V262 M925 226 V268" />
+  <path class="dg-ink" d="M849 240 H896 L889 292 H856 Z" />
+  <path class="dg-ink" d="M896 248 q16 7 14 21 q-2 13 -14 15 l-4 -7 q9 -2 10 -10 q1 -9 -10 -13 Z" />
+  <text class="dg-lbl" x="872.5" y="330" text-anchor="middle">ONE POUR, REPEATABLE</text>
+
+  <text class="dg-lbl dg-soft" x="785" y="362" text-anchor="middle">MOULD DESTROYED EACH TIME · MODEL IS NOT</text>
+</svg>
