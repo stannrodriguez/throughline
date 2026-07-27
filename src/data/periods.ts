@@ -1,10 +1,10 @@
 /**
  * The twelve periods.
  *
- * Period VI is the only era with finished content — its headline, essay and
- * capability strip come straight from the design. Everything else here is
- * structural placeholder (flagged with `placeholder: true`) so the skeleton is
- * walkable end to end; the author replaces it with real content.
+ * Period VI's headline, essay and capability strip come straight from the
+ * design; the other eras are being written to match. An era still carrying
+ * `placeholder: true` has no essay yet and says so on its landing, so the
+ * skeleton stays walkable end to end while the content lands.
  */
 
 export interface CapabilityCell {
@@ -69,14 +69,16 @@ export const PERIODS: Period[] = [
     constraint: 'muscle power',
     constraintShort: 'Muscle power',
     title: 'Fire, the plow and the sail move work off the human body and onto fuel, oxen and wind.',
-    essay: [],
+    essay: [
+      'Every figure in the strip above is a baseline rather than an achievement. A person walks at five kilometres an hour, a trained runner covers about forty kilometres in a day, the brightest light after sunset is a fire, and each person accounts for roughly eight gigajoules a year, nearly all of it food and firewood. The three energy entries below are the first cases of that last number being paid by something other than a human body. Fire is much older than the period — hearths used habitually are attested a few hundred thousand years ago — and it works as external digestion: heat gelatinises starch and unfolds protein, so the same food yields more energy and takes far less chewing. The plow, in use in Mesopotamia by about 4500 BCE, hands the heaviest job in farming to an ox that sustains roughly seven times a person’s working output. The sail, carved on Egyptian pottery by about 3500 BCE, moves a loaded hull with nobody aboard supplying the power.',
+      'The other four entries store something. Clay fired above 900° loses the water bound into its crystal structure and becomes a solid that cannot be softened again, which is what makes a grain jar worth building. A loom crosses two sets of threads under tension so that loose fibre holds together as a sheet. Writing starts as accountancy rather than literature: the earliest tablets from Uruk, around 3200 BCE, record measures of barley, beer and livestock against names. The alphabet then cuts the number of signs a scribe must learn from several hundred to twenty-two. Nothing here travels faster or burns brighter than it did before, but a jar, a cloth and a tablet each hold their contents after the person who made them has gone.',
+    ],
     capabilityStrip: strip(
       ['5 km/h', '— on foot'],
       ['40 km', '— a runner'],
       ['Firelight', '— the first'],
       ['8 GJ/yr', '— baseline']
     ),
-    placeholder: true,
   },
   {
     id: 'II',
