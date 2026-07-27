@@ -1,0 +1,108 @@
+---
+/**
+ * The same product, both ways. On the left, 47 × 26 as a worked column: fixed
+ * steps on digits, every one of them left on the page, so an error can be found
+ * rather than merely suspected. On the right, the same product in Roman
+ * numerals, where there is no column to carry into and no step that repeats.
+ * Underneath, why the zero is not optional.
+ */
+---
+
+<svg viewBox="0 0 960 400" role="img" aria-label="Long multiplication in place-value columns beside the same product attempted in Roman numerals, and a place-value grid showing why a symbol for the empty column is needed">
+  <text class="dg-lbl" x="30" y="24">47 × 26, IN COLUMNS</text>
+
+  <!-- ── the place-value grid ─────────────────────────────────────────── -->
+  <g class="dg-h">
+    <path d="M180 46 V232 M224 46 V232 M268 46 V232 M312 46 V232 M356 46 V232" />
+  </g>
+  <g class="dg-lbl dg-soft">
+    <text x="202" y="60" text-anchor="middle">1000</text>
+    <text x="246" y="60" text-anchor="middle">100</text>
+    <text x="290" y="60" text-anchor="middle">10</text>
+    <text x="334" y="60" text-anchor="middle">1</text>
+  </g>
+
+  <!-- the sum -->
+  <g class="dg-eq dg-num">
+    <text x="290" y="96" text-anchor="middle">4</text>
+    <text x="334" y="96" text-anchor="middle">7</text>
+    <text x="290" y="126" text-anchor="middle">2</text>
+    <text x="334" y="126" text-anchor="middle">6</text>
+  </g>
+  <text class="dg-eq dg-num" x="248" y="126" text-anchor="middle">×</text>
+  <path class="dg-s" d="M180 138 H356" />
+
+  <g class="dg-eq dg-num">
+    <text x="246" y="168" text-anchor="middle">2</text>
+    <text x="290" y="168" text-anchor="middle">8</text>
+    <text x="334" y="168" text-anchor="middle">2</text>
+    <text x="246" y="198" text-anchor="middle">9</text>
+    <text x="290" y="198" text-anchor="middle">4</text>
+    <text x="334" y="198" text-anchor="middle">0</text>
+  </g>
+  <path class="dg-s" d="M180 210 H356" />
+  <g class="dg-eq dg-key">
+    <text x="202" y="240" text-anchor="middle">1</text>
+    <text x="246" y="240" text-anchor="middle">2</text>
+    <text x="290" y="240" text-anchor="middle">2</text>
+    <text x="334" y="240" text-anchor="middle">2</text>
+  </g>
+
+  <!-- carries -->
+  <text class="dg-lbl dg-soft" x="370" y="168">47 × 6</text>
+  <text class="dg-lbl dg-soft" x="370" y="198">47 × 20</text>
+  <text class="dg-lbl dg-key" x="370" y="240">THE PRODUCT</text>
+
+  <text class="dg-lbl dg-num" x="30" y="96">TEN DIGITS,</text>
+  <text class="dg-lbl dg-num" x="30" y="110">AND POSITION</text>
+  <text class="dg-lbl dg-num" x="30" y="124">CARRIES THE REST</text>
+  <text class="dg-lbl dg-soft" x="30" y="168">EVERY STEP IS</text>
+  <text class="dg-lbl dg-soft" x="30" y="182">FIXED, AND STAYS</text>
+  <text class="dg-lbl dg-soft" x="30" y="196">ON THE PAGE</text>
+
+  <!-- ══ the same product in Roman ══════════════════════════════════════ -->
+  <path class="dg-m" d="M470 14 V386" />
+  <text class="dg-lbl" x="500" y="24">THE SAME PRODUCT, IN ROMAN NUMERALS</text>
+
+  <text class="dg-eq dg-num" x="500" y="84">XLVII × XXVI</text>
+
+  <path class="dg-m" d="M500 100 H930" />
+  <text class="dg-lbl dg-soft" x="500" y="124">THERE IS NO COLUMN TO CARRY INTO, SO THE WORK IS</text>
+  <text class="dg-lbl dg-soft" x="500" y="138">BROKEN UP BY HAND AND EACH PIECE LOOKED UP:</text>
+
+  <text class="dg-eq" x="516" y="176">XLVII × XX = CMXL</text>
+  <text class="dg-eq" x="516" y="212">XLVII × VI = CCLXXXII</text>
+  <path class="dg-s" d="M516 226 H820" />
+  <text class="dg-eq dg-num" x="516" y="258">CMXL + CCLXXXII = MCCXXII</text>
+
+  <text class="dg-lbl dg-soft" x="500" y="292">NO STEP REPEATS, NOTHING LINES UP, AND THE</text>
+  <text class="dg-lbl dg-soft" x="500" y="306">INTERMEDIATE WORK CANNOT BE CHECKED BY COLUMN.</text>
+  <text class="dg-lbl dg-num" x="500" y="330">AN ABACUS GIVES YOU AN ANSWER.</text>
+  <text class="dg-lbl dg-key" x="500" y="344">A WORKED COLUMN GIVES YOU AN ARGUMENT.</text>
+
+  <!-- ══ why the zero is not optional ═══════════════════════════════════ -->
+  <path class="dg-m" d="M30 276 H440" />
+  <text class="dg-lbl" x="30" y="298">AND WHY THE EMPTY COLUMN NEEDS A SYMBOL</text>
+
+  <g class="dg-h">
+    <path d="M30 310 V352 M74 310 V352 M118 310 V352 M162 310 V352" />
+  </g>
+  <g class="dg-eq dg-num">
+    <text x="52" y="342" text-anchor="middle">2</text>
+    <text x="96" y="342" text-anchor="middle">0</text>
+    <text x="140" y="342" text-anchor="middle">5</text>
+  </g>
+  <text class="dg-lbl dg-soft" x="96" y="370" text-anchor="middle">TWO HUNDRED AND FIVE</text>
+
+  <g class="dg-h">
+    <path d="M250 310 V352 M294 310 V352 M338 310 V352" />
+  </g>
+  <g class="dg-eq dg-num">
+    <text x="272" y="342" text-anchor="middle">2</text>
+    <text x="316" y="342" text-anchor="middle">5</text>
+  </g>
+  <text class="dg-lbl dg-soft" x="294" y="370" text-anchor="middle">TWENTY-FIVE</text>
+
+  <text class="dg-lbl dg-key" x="196" y="332" text-anchor="middle">≠</text>
+  <text class="dg-lbl dg-soft" x="30" y="390">WITHOUT THE ZERO THEY ARE THE SAME TWO MARKS AND A GAP A SCRIBE MAY NOT KEEP</text>
+</svg>
