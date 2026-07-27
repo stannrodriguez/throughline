@@ -1,0 +1,96 @@
+---
+/**
+ * A banked hearth in section: fuel, ember bed, ash cover. The ash starves the
+ * coals of air, so the fire holds overnight instead of burning out. Temperature
+ * falls steeply with distance from the bed — 550°, the threshold where clay
+ * begins to give up its bound water, sits barely inside the coals themselves.
+ */
+---
+
+<svg viewBox="0 0 960 380" role="img" aria-label="Section through a banked hearth, with temperature falling with distance from the ember bed">
+  <defs>
+    <marker id="fk-ar" viewBox="0 0 8 8" refX="7" refY="4" markerWidth="6" markerHeight="6" orient="auto">
+      <path d="M0 0 L8 4 L0 8 z" class="dg-ink" />
+    </marker>
+  </defs>
+
+  <text class="dg-lbl" x="40" y="26">SECTION — THE HEARTH BANKED FOR THE NIGHT</text>
+
+  <!-- ── ground and pit ───────────────────────────────────────────────── -->
+  <path class="dg-s" d="M40 232 H186" />
+  <path class="dg-s" d="M454 232 H580" />
+  <path class="dg-s" d="M186 232 C196 280, 214 292, 250 292 H390 C426 292, 444 280, 454 232" />
+
+  <!-- earth below, hatched -->
+  <g class="dg-h">
+    <path d="M52 244 l14 -14 M84 244 l14 -14 M116 244 l14 -14 M148 244 l14 -14 M180 246 l14 -14
+             M474 244 l14 -14 M506 244 l14 -14 M538 244 l14 -14 M566 244 l10 -10" />
+  </g>
+
+  <!-- ember bed -->
+  <path class="dg-accent" d="M204 268 C214 286, 228 288, 252 288 H388 C412 288, 426 286, 436 268 Z" />
+  <!-- ash cover -->
+  <path class="dg-panel" d="M196 250 C204 266, 216 268, 252 268 H388 C424 268, 436 266, 444 250 Z" />
+  <path class="dg-m" d="M196 250 C204 266, 216 268, 252 268 H388 C424 268, 436 266, 444 250" />
+  <g class="dg-h">
+    <path d="M224 256 h5 M252 260 h5 M284 258 h5 M316 262 h5 M348 258 h5 M380 261 h5 M408 256 h5" />
+  </g>
+
+  <!-- unburnt fuel, stacked clear of the bank -->
+  <g class="dg-m">
+    <rect x="470" y="204" width="86" height="13" />
+    <rect x="478" y="189" width="70" height="13" />
+    <rect x="486" y="174" width="54" height="13" />
+  </g>
+
+  <!-- ── callouts ─────────────────────────────────────────────────────── -->
+  <path class="dg-m" d="M320 284 V330" />
+  <text class="dg-lbl dg-num" x="320" y="344" text-anchor="middle">EMBER BED · 600°</text>
+
+  <path class="dg-m" d="M236 258 L182 176" />
+  <text class="dg-lbl" x="182" y="154" text-anchor="middle">ASH COVER</text>
+  <text class="dg-lbl dg-soft" x="182" y="168" text-anchor="middle">STARVES THE COALS OF AIR</text>
+
+  <path class="dg-m" d="M486 180 L470 150" />
+  <text class="dg-lbl" x="470" y="142" text-anchor="middle">FUEL FOR THE MORNING</text>
+
+  <text class="dg-lbl dg-soft" x="40" y="366">BANKED AT DUSK, THE BED IS STILL ALIGHT AT DAWN —</text>
+  <text class="dg-lbl dg-soft" x="40" y="380">NO RE-KINDLING, AND NOTHING CARRIED FROM A NEIGHBOUR</text>
+
+  <!-- ══ temperature against distance ═══════════════════════════════════ -->
+  <path class="dg-m" d="M610 18 V352" />
+
+  <path class="dg-h" d="M660 77.1 H940 M660 151.4 H940 M660 225.7 H940" />
+  <path class="dg-s" d="M660 40 V300 H940" />
+
+  <text class="dg-lbl" x="660" y="26">TEMPERATURE</text>
+  <g class="dg-num">
+    <text x="652" y="44" text-anchor="end">700°</text>
+    <text x="652" y="81" text-anchor="end">600°</text>
+    <text x="652" y="155" text-anchor="end">400°</text>
+    <text x="652" y="229" text-anchor="end">200°</text>
+    <text x="652" y="304" text-anchor="end">0°</text>
+  </g>
+
+  <path class="dg-m" d="M660 300 v5 M708 300 v5 M756 300 v5 M804 300 v5 M852 300 v5 M900 300 v5 M940 300 v5" />
+  <g class="dg-num">
+    <text x="660" y="320" text-anchor="middle">0</text>
+    <text x="756" y="320" text-anchor="middle">20</text>
+    <text x="852" y="320" text-anchor="middle">40</text>
+    <text x="940" y="320" text-anchor="middle">60</text>
+  </g>
+  <text class="dg-lbl" x="800" y="340" text-anchor="middle">CM FROM THE EMBER BED</text>
+
+  <!-- the falling gradient -->
+  <path
+    class="dg-a"
+    d="M660 77.1 C672 96, 680 110, 688 158.9 C700 178, 718 200, 736 214.6
+       C760 232, 774 242, 804 248 C838 256, 880 272, 940 285"
+  />
+  <circle cx="660" cy="77.1" r="3.4" class="dg-accent" />
+
+  <!-- 550°, the clay threshold -->
+  <path class="dg-d" d="M660 95.7 H940" />
+  <text class="dg-lbl dg-num" x="936" y="90" text-anchor="end">550° — CLAY GIVES UP ITS BOUND WATER</text>
+  <text class="dg-lbl dg-soft" x="936" y="112" text-anchor="end">CROSSED ONLY IN THE COALS THEMSELVES</text>
+</svg>
