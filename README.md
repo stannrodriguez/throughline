@@ -119,20 +119,23 @@ storage unavailable the default stands and every stop stays solid — reading ne
 depends on it.
 
 Reading-time labels are computed at build time from word count
-(`src/lib/reading.ts`). Entries with no prose yet count as `ASSUMED_WORDS`, so
-the labels stay plausible while the site is a skeleton; drop that constant to 0
-once everything is written.
+(`src/lib/reading.ts`). Any entry with no prose counts as `ASSUMED_WORDS`, which
+is currently 0 because every registered entry is written; raise it again if the
+roster grows past what has been drafted.
 
 ## Content status
 
-Period VI (the instrument era) is the only era with finished content: its
-headline, essay and capability strip, plus the Newcomen engine and the marine
-chronometer at full depth. Everything else — the other eleven eras' essays,
-rosters, capability numbers, and road metrics — is structural placeholder,
-flagged in the data and surfaced honestly in the UI rather than hidden.
+All twelve eras have their essay, and all 61 registered entries have prose. The
+road totals (31 energy, 27 materials, 34 information) are the author's target
+roster and remain larger than the registry, so entries added later will render
+as *not yet written* stops until their MDX file exists.
 
 Figures are placeholder frames whose captions are the commissioning spec for the
 real technical illustration (Macaulay-spirit cutaways, patent-style linework).
+
+Prose follows the rules in `CLAUDE.md`: plain declarative sentences that lead
+with a mechanism, number, date or place, no aphorisms, and no claim that is not
+checkable.
 
 ### Ground rules to keep
 

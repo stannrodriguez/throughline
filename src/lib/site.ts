@@ -25,7 +25,8 @@ export const WPM = 220;
 
 /**
  * Assumed length of an entry that has not been written yet, so roster and road
- * reading-time labels stay plausible while the site is still a skeleton.
- * Drop this to 0 once every entry is written.
+ * reading-time labels stay plausible. Every entry in the registry now has prose,
+ * so reading times are measured rather than estimated; this only applies again
+ * if the roster grows past what is written.
  */
-export const ASSUMED_WORDS = 1500;
+export const ASSUMED_WORDS = 0;
