@@ -1,0 +1,106 @@
+---
+/**
+ * A post mill: the whole body swings on one upright post, and the tailpole is
+ * how the miller does it. The sail is a wing, not a scoop — twisted so the
+ * angle of attack stays useful along the whole length, steep at the slow hub
+ * and flat at the fast tip. Power goes as the cube of wind speed, so doubling
+ * the wind multiplies the power by eight.
+ */
+---
+
+<svg viewBox="0 0 960 440" role="img" aria-label="A post mill in section, the sail twist at hub and tip with lift vectors, and power rising as the cube of wind speed">
+  <defs>
+    <marker id="wm-ar" viewBox="0 0 8 8" refX="7" refY="4" markerWidth="6" markerHeight="6" orient="auto">
+      <path d="M0 0 L8 4 L0 8 z" class="dg-ink" />
+    </marker>
+    <marker id="wm-ar-a" viewBox="0 0 8 8" refX="7" refY="4" markerWidth="6" markerHeight="6" orient="auto">
+      <path d="M0 0 L8 4 L0 8 z" class="dg-accent" />
+    </marker>
+  </defs>
+
+  <text class="dg-lbl" x="30" y="24">POST MILL · SECTION</text>
+
+  <!-- ── sails on the windshaft ───────────────────────────────────────── -->
+  <path class="dg-a" d="M110 132 L54 76 M110 132 L166 76 M110 132 L166 188 M110 132 L54 188" />
+  <g class="dg-a">
+    <path d="M60 70 l10 10 M172 70 l-10 10 M172 194 l-10 -10 M60 194 l10 -10" />
+  </g>
+  <text class="dg-lbl dg-key" x="30" y="60">SAILS</text>
+
+  <!-- ── the body ─────────────────────────────────────────────────────── -->
+  <path class="dg-panel" d="M168 110 H320 V250 H168 Z" />
+  <path class="dg-s" d="M168 110 H320 V250 H168 Z" />
+  <path class="dg-s" d="M168 110 L244 74 L320 110" />
+
+  <!-- windshaft -->
+  <path class="dg-s" d="M110 132 L272 172" />
+  <circle cx="110" cy="132" r="8" class="dg-ink" />
+
+  <!-- brake wheel -->
+  <circle cx="222" cy="159" r="40" class="dg-s" />
+  <circle cx="222" cy="159" r="5" class="dg-ink" />
+  <g class="dg-h">
+    <path d="M222 119 V199 M182 159 H262 M194 131 L250 187 M250 131 L194 187" />
+  </g>
+  <text class="dg-lbl dg-soft" x="330" y="152">BRAKE WHEEL</text>
+  <path class="dg-m" d="M326 148 L262 152" />
+
+  <!-- stone nut and stones -->
+  <circle cx="234" cy="206" r="15" class="dg-s" />
+  <path class="dg-m" d="M234 191 V172" />
+  <path class="dg-s" d="M186 224 H292 V238 H186 Z" />
+  <path class="dg-s" d="M186 238 H292 V252 H186 Z" />
+  <text class="dg-lbl dg-num" x="30" y="232">THE STONES</text>
+  <text class="dg-lbl dg-soft" x="30" y="246">OFF THE STONE NUT</text>
+  <path class="dg-m" d="M150 240 L184 238" />
+
+  <!-- post and trestle -->
+  <path class="dg-s" d="M214 250 V318 M230 250 V318" />
+  <path class="dg-s" d="M160 352 L222 314 L284 352" />
+  <path class="dg-s" d="M136 352 H308" />
+
+  <!-- tailpole -->
+  <path class="dg-s" d="M320 216 L412 320" />
+  <path class="dg-m" d="M412 320 l-8 12 M412 320 l10 6" />
+
+  <text class="dg-lbl dg-num" x="30" y="374">ONE UPRIGHT POST — THE WHOLE BODY TURNS ON IT</text>
+  <text class="dg-lbl dg-soft" x="30" y="390">TAILPOLE · THE MILLER PUSHES THE BODY ROUND</text>
+  <text class="dg-lbl dg-soft" x="30" y="408">WIND IS NOT THERE WHEN IT IS NOT THERE, SO THE MILL</text>
+  <text class="dg-lbl dg-soft" x="30" y="422">GRINDS AT THREE IN THE MORNING IF THAT IS WHEN IT COMES</text>
+
+  <!-- ══ the sail is a wing ═════════════════════════════════════════════ -->
+  <path class="dg-m" d="M480 14 V428" />
+  <text class="dg-lbl" x="510" y="24">THE SAIL IS A WING, TWISTED ALONG ITS LENGTH</text>
+
+  <!-- at the hub -->
+  <text class="dg-lbl dg-num" x="510" y="56">AT THE HUB · SLOW · STEEP PITCH</text>
+  <path class="dg-s" d="M520 136 L598 98" />
+  <path class="dg-s" d="M520 136 C548 122, 574 110, 598 98 C578 114, 548 126, 520 136 Z" />
+  <path class="dg-d" d="M504 136 H620" />
+  <path class="dg-a" d="M504 156 H596" marker-end="url(#wm-ar-a)" />
+  <text class="dg-lbl dg-key" x="606" y="160">WIND</text>
+  <path class="dg-s" d="M558 114 L568 84" marker-end="url(#wm-ar)" />
+  <text class="dg-lbl dg-num" x="578" y="82">LIFT</text>
+
+  <!-- at the tip -->
+  <text class="dg-lbl dg-num" x="510" y="190">AT THE TIP · FAST · FLAT PITCH</text>
+  <path class="dg-s" d="M520 256 L604 244" />
+  <path class="dg-s" d="M520 256 C548 251, 578 247, 604 244 C578 251, 548 255, 520 256 Z" />
+  <path class="dg-d" d="M504 256 H620" />
+  <path class="dg-a" d="M504 276 H596" marker-end="url(#wm-ar-a)" />
+  <text class="dg-lbl dg-key" x="606" y="280">WIND</text>
+  <path class="dg-s" d="M560 250 L566 220" marker-end="url(#wm-ar)" />
+  <text class="dg-lbl dg-num" x="576" y="218">LIFT</text>
+
+  <text class="dg-lbl dg-soft" x="510" y="310">THE BLADE MEETS THE AIR AT THE SAME USEFUL ANGLE</text>
+  <text class="dg-lbl dg-soft" x="510" y="324">ALL ALONG, THOUGH THE TIP MOVES MUCH FASTER</text>
+
+  <!-- ── cube law ─────────────────────────────────────────────────────── -->
+  <path class="dg-m" d="M510 344 H930" />
+  <text class="dg-lbl" x="510" y="364">POWER RISES WITH THE CUBE OF WIND SPEED</text>
+  <rect x="510" y="374" width="30" height="12" class="dg-ink" />
+  <text class="dg-lbl dg-num" x="548" y="384">2 HP · A LIGHT BREEZE</text>
+  <rect x="510" y="396" width="240" height="12" class="dg-accent" />
+  <text class="dg-lbl dg-key" x="758" y="406">16 HP · TWICE THE WIND</text>
+  <text class="dg-lbl dg-soft" x="510" y="428">SO THE MILLER'S REAL SKILL IS FURLING CANVAS FAST ENOUGH</text>
+</svg>
