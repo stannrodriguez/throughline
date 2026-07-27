@@ -1,0 +1,117 @@
+---
+/**
+ * The anchor escapement, and the formula it protects. T = 2π√(L/g) contains
+ * neither the mass of the bob nor the width of the swing, which is what makes a
+ * pendulum a standard rather than a regulator. The curve puts 0.994 m at a
+ * one-second tick. The band at bottom right is where the formula stops being
+ * exact: a circular arc runs slightly slow at wide amplitude, which is why a
+ * good escapement keeps the swing small.
+ */
+---
+
+<svg viewBox="0 0 960 600" role="img" aria-label="An anchor escapement engaging the escape wheel, the pendulum period against length with 0.994 metres marked, and the circular deviation at wide amplitude">
+  <text class="dg-lbl" x="30" y="24">ANCHOR ESCAPEMENT</text>
+
+  <!-- escape wheel -->
+  <circle cx="186" cy="150" r="62" class="dg-h" />
+  <circle cx="186" cy="150" r="5" class="dg-ink" />
+  <g class="dg-ink">
+    <path d="M186 88 l13 9 l-15 4 Z" />
+    <path d="M230 106 l6 14 l-15 -3 Z" />
+    <path d="M248 150 l-3 15 l-13 -10 Z" />
+    <path d="M230 194 l-13 9 l-2 -15 Z" />
+    <path d="M186 212 l-15 -4 l11 -12 Z" />
+    <path d="M142 194 l-13 -9 l13 -9 Z" />
+    <path d="M124 150 l3 -15 l13 10 Z" />
+    <path d="M142 106 l13 -9 l2 15 Z" />
+  </g>
+  <g class="dg-h">
+    <path d="M186 88 V212 M124 150 H248 M142 106 L230 194 M230 106 L142 194" />
+  </g>
+  <text class="dg-lbl dg-soft" x="266" y="150">ESCAPE WHEEL</text>
+
+  <!-- the anchor -->
+  <circle cx="186" cy="60" r="5" class="dg-ink" />
+  <path class="dg-a" d="M186 60 L134 108 L146 120 L186 78 L226 120 L238 108 Z" />
+  <text class="dg-lbl dg-key" x="266" y="84">ANCHOR · TWO PALLETS</text>
+  <text class="dg-lbl dg-soft" x="266" y="98">ONE RELEASES AS</text>
+  <text class="dg-lbl dg-soft" x="266" y="112">THE OTHER CATCHES</text>
+
+  <!-- the pendulum on the same arbor -->
+  <path class="dg-s" d="M186 60 V300" />
+  <circle cx="186" cy="312" r="14" class="dg-panel" />
+  <circle cx="186" cy="312" r="14" class="dg-s" />
+  <path class="dg-d" d="M186 60 L150 306 M186 60 L222 306" />
+  <path class="dg-d" d="M150 306 A 250 250 0 0 0 222 306" />
+  <text class="dg-lbl dg-soft" x="266" y="300">THE ESCAPEMENT GIVES BACK</text>
+  <text class="dg-lbl dg-soft" x="266" y="314">EXACTLY WHAT FRICTION TAKES</text>
+
+  <text class="dg-eq dg-num" x="30" y="368">T = 2π√(L/g)</text>
+  <text class="dg-lbl dg-num" x="30" y="392">NEITHER THE MASS OF THE BOB NOR THE WIDTH</text>
+  <text class="dg-lbl dg-num" x="30" y="406">OF THE SWING APPEARS IN IT — WHICH IS WHAT</text>
+  <text class="dg-lbl dg-num" x="30" y="420">MAKES A PENDULUM A STANDARD, NOT A REGULATOR</text>
+
+  <!-- ══ period against length ══════════════════════════════════════════ -->
+  <path class="dg-m" d="M440 14 V416" />
+
+  <path class="dg-h" d="M540 92 H900 M540 158 H900 M540 224 H900" />
+  <path class="dg-h" d="M630 46 V290 M720 46 V290 M810 46 V290" />
+  <path class="dg-s" d="M540 46 V290 H900" />
+
+  <text class="dg-lbl" x="540" y="32">PERIOD, SECONDS</text>
+  <g class="dg-num">
+    <text x="532" y="50" text-anchor="end">3.0</text>
+    <text x="532" y="96" text-anchor="end">2.5</text>
+    <text x="532" y="162" text-anchor="end">2.0</text>
+    <text x="532" y="228" text-anchor="end">1.5</text>
+    <text x="532" y="294" text-anchor="end">1.0</text>
+  </g>
+  <path class="dg-m" d="M540 290 v5 M630 290 v5 M720 290 v5 M810 290 v5 M900 290 v5" />
+  <g class="dg-num">
+    <text x="540" y="310" text-anchor="middle">0</text>
+    <text x="630" y="310" text-anchor="middle">0.5</text>
+    <text x="720" y="310" text-anchor="middle">1.0</text>
+    <text x="810" y="310" text-anchor="middle">1.5</text>
+    <text x="900" y="310" text-anchor="middle">2.0</text>
+  </g>
+  <text class="dg-lbl" x="720" y="330" text-anchor="middle">LENGTH, METRES</text>
+
+  <path class="dg-a" d="M540 424 C562 336, 592 306, 630 288 C668 271, 692 259, 720 247 C760 230, 786 216, 810 206 C844 192, 874 180, 900 170" />
+  <circle cx="719" cy="247" r="3.6" class="dg-accent" />
+  <path class="dg-d" d="M719 247 H540 M719 247 V290" />
+  <text class="dg-lbl dg-key" x="560" y="130">0.994 M · A ONE-SECOND TICK</text>
+  <text class="dg-lbl dg-soft" x="560" y="144">WHICH IS WHY A LONGCASE CLOCK</text>
+  <text class="dg-lbl dg-soft" x="560" y="158">IS THE HEIGHT IT IS</text>
+  <path class="dg-m" d="M600 166 L710 240" />
+
+  <text class="dg-lbl dg-soft" x="540" y="356">FOUR TIMES THE LENGTH FOR TWICE THE PERIOD —</text>
+  <text class="dg-lbl dg-soft" x="540" y="370">THE SQUARE ROOT IS WHY CLOCKS STOPPED GETTING TALLER</text>
+  <text class="dg-lbl dg-num" x="540" y="392">CLOCK ERROR FALLS FROM FIFTEEN MINUTES A DAY</text>
+  <text class="dg-lbl dg-num" x="540" y="406">TO FIFTEEN SECONDS</text>
+
+  <!-- ══ where the formula stops being exact ════════════════════════════ -->
+  <path class="dg-m" d="M30 430 H930" />
+  <text class="dg-lbl" x="30" y="452">WHERE THE FORMULA STOPS BEING EXACT</text>
+
+  <path class="dg-h" d="M90 500 H300" />
+  <path class="dg-s" d="M90 470 V536 H300" />
+  <text class="dg-lbl dg-soft" x="84" y="474" text-anchor="end">SLOW</text>
+  <text class="dg-lbl dg-soft" x="84" y="504" text-anchor="end">TRUE</text>
+  <path class="dg-a" d="M90 500 C136 499, 176 496, 210 488 C244 478, 276 466, 300 456" />
+  <path class="dg-m" d="M90 536 v5 M195 536 v5 M300 536 v5" />
+  <g class="dg-num">
+    <text x="90" y="556" text-anchor="middle">0°</text>
+    <text x="195" y="556" text-anchor="middle">5°</text>
+    <text x="300" y="556" text-anchor="middle">10°</text>
+  </g>
+  <text class="dg-lbl dg-soft" x="195" y="574" text-anchor="middle">HALF-AMPLITUDE OF THE SWING</text>
+
+  <text class="dg-lbl dg-num" x="360" y="480">A BOB SWINGING IN A CIRCULAR ARC TAKES VERY SLIGHTLY LONGER</text>
+  <text class="dg-lbl dg-num" x="360" y="494">AT WIDER AMPLITUDES, SO THE PERIOD IS NOT QUITE INDEPENDENT.</text>
+  <text class="dg-lbl dg-soft" x="360" y="518">HUYGENS SHOWED THAT A BOB CONSTRAINED TO A CYCLOIDAL PATH</text>
+  <text class="dg-lbl dg-soft" x="360" y="532">WOULD BE EXACTLY ISOCHRONOUS, AND FITTED CURVED CHEEKS</text>
+  <text class="dg-lbl dg-soft" x="360" y="546">AT THE SUSPENSION TO BEND THE ARC.</text>
+  <text class="dg-lbl dg-key" x="360" y="570">IN PRACTICE THE FIX THAT MATTERS IS KEEPING THE AMPLITUDE</text>
+  <text class="dg-lbl dg-key" x="360" y="584">SMALL AND CONSTANT — WHICH IS WHAT A GOOD ESCAPEMENT DOES.</text>
+
+</svg>
