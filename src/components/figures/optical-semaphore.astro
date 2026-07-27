@@ -1,0 +1,109 @@
+---
+/**
+ * The design problem is error, not distance: each station copies what it sees,
+ * so a misread propagates faithfully down the whole line. Chappe's answer was a
+ * small set of unmistakable arm positions, with the expressive power bought back
+ * by a codebook — which keeps transmissions short and encrypts them as a side
+ * effect. An observer who can see the arms perfectly still needs the book.
+ */
+---
+
+<svg viewBox="0 0 960 440" role="img" aria-label="The Chappe indicator with its regulator beam and two indicator arms, and the Paris to Lille station chain with its sight lines">
+  <defs>
+    <marker id="os-ar" viewBox="0 0 8 8" refX="7" refY="4" markerWidth="6" markerHeight="6" orient="auto">
+      <path d="M0 0 L8 4 L0 8 z" class="dg-ink" />
+    </marker>
+  </defs>
+
+  <text class="dg-lbl" x="30" y="24">THE INDICATOR · ONE REGULATOR, TWO ARMS</text>
+
+  <!-- the mast and the apparatus -->
+  <path class="dg-s" d="M186 300 V96" />
+  <path class="dg-s" d="M170 300 H202" />
+  <path class="dg-s" d="M110 96 H262" />
+  <circle cx="186" cy="96" r="6" class="dg-ink" />
+  <circle cx="116" cy="96" r="5" class="dg-ink" />
+  <circle cx="256" cy="96" r="5" class="dg-ink" />
+  <path class="dg-a" d="M116 96 L74 54" />
+  <path class="dg-a" d="M256 96 L256 150" />
+
+  <text class="dg-lbl dg-num" x="284" y="92">REGULATOR BEAM</text>
+  <text class="dg-lbl dg-key" x="284" y="112">TWO INDICATOR ARMS,</text>
+  <text class="dg-lbl dg-key" x="284" y="126">EACH AT A SET ANGLE</text>
+
+  <!-- the angular positions, as a dial -->
+  <g class="dg-h">
+    <circle cx="340" cy="200" r="56" />
+    <path d="M340 144 V256 M284 200 H396 M300 160 L380 240 M380 160 L300 240" />
+  </g>
+  <g class="dg-num">
+    <text x="340" y="138" text-anchor="middle">0</text>
+    <text x="406" y="204">45</text>
+    <text x="340" y="272" text-anchor="middle">90</text>
+    <text x="274" y="204" text-anchor="end">135</text>
+  </g>
+  <text class="dg-lbl dg-soft" x="30" y="316">A FEW DOZEN POSITIONS, EACH UNMISTAKABLE AT</text>
+  <text class="dg-lbl dg-soft" x="30" y="330">FIFTEEN KILOMETRES THROUGH A TELESCOPE</text>
+
+  <!-- the codebook -->
+  <path class="dg-m" d="M30 354 H430" />
+  <text class="dg-lbl" x="30" y="376">AND THE CODEBOOK BUYS THE MEANING BACK</text>
+  <rect x="30" y="388" width="70" height="40" class="dg-panel" />
+  <rect x="30" y="388" width="70" height="40" class="dg-s" />
+  <text class="dg-lbl dg-num" x="65" y="412" text-anchor="middle">2 SIGNS</text>
+  <path class="dg-m" d="M110 408 H136" marker-end="url(#os-ar)" />
+  <rect x="146" y="388" width="120" height="40" class="dg-tint" />
+  <rect x="146" y="388" width="120" height="40" class="dg-a" />
+  <text class="dg-lbl dg-key" x="206" y="406" text-anchor="middle">PAGE AND LINE</text>
+  <text class="dg-lbl dg-key" x="206" y="420" text-anchor="middle">IN A DICTIONARY</text>
+  <path class="dg-m" d="M276 408 H302" marker-end="url(#os-ar)" />
+  <text class="dg-lbl dg-soft" x="312" y="404">A WHOLE PHRASE — AND,</text>
+  <text class="dg-lbl dg-soft" x="312" y="418">INCIDENTALLY, A CIPHER</text>
+
+  <!-- ══ the line ═══════════════════════════════════════════════════════ -->
+  <path class="dg-m" d="M470 14 V430" />
+  <text class="dg-lbl" x="500" y="24">PARIS TO LILLE · 230 KM, 22 STATIONS</text>
+
+  <!-- the chain of towers -->
+  <path class="dg-h" d="M510 190 H930" />
+  <g>
+    <path class="dg-s" d="M520 190 V152 M516 152 h8" />
+    <path class="dg-s" d="M556 190 V158 M552 158 h8" />
+    <path class="dg-s" d="M594 190 V150 M590 150 h8" />
+    <path class="dg-s" d="M632 190 V160 M628 160 h8" />
+    <path class="dg-s" d="M670 190 V148 M666 148 h8" />
+    <path class="dg-s" d="M708 190 V156 M704 156 h8" />
+    <path class="dg-s" d="M746 190 V150 M742 150 h8" />
+    <path class="dg-s" d="M784 190 V162 M780 162 h8" />
+    <path class="dg-s" d="M822 190 V152 M818 152 h8" />
+    <path class="dg-s" d="M860 190 V158 M856 158 h8" />
+    <path class="dg-s" d="M898 190 V150 M894 150 h8" />
+  </g>
+  <g class="dg-d">
+    <path d="M520 152 L556 158 M556 158 L594 150 M594 150 L632 160 M632 160 L670 148
+             M670 148 L708 156 M708 156 L746 150 M746 150 L784 162 M784 162 L822 152
+             M822 152 L860 158 M860 158 L898 150" />
+  </g>
+  <text class="dg-lbl dg-num" x="510" y="212">PARIS</text>
+  <text class="dg-lbl dg-num" x="930" y="212" text-anchor="end">LILLE</text>
+  <text class="dg-lbl dg-soft" x="720" y="134" text-anchor="middle">EACH STATION COPIES WHAT IT SEES</text>
+
+  <text class="dg-lbl dg-key" x="500" y="248">SO A MISREAD IS PASSED ON FAITHFULLY, THE WHOLE WAY —</text>
+  <text class="dg-lbl dg-key" x="500" y="262">WHICH IS WHY THE SYMBOL SET IS SMALL AND DISTINCT.</text>
+
+  <!-- what stops it -->
+  <path class="dg-m" d="M500 292 H930" />
+  <text class="dg-lbl" x="500" y="314">WHAT STOPS IT</text>
+  <g>
+    <rect x="500" y="328" width="94" height="16" class="dg-ink" />
+    <text class="dg-lbl dg-num" x="604" y="341">NIGHT</text>
+    <rect x="500" y="352" width="70" height="16" class="dg-ink" />
+    <text class="dg-lbl dg-num" x="604" y="365">FOG</text>
+    <rect x="500" y="376" width="52" height="16" class="dg-ink" />
+    <text class="dg-lbl dg-num" x="604" y="389">RAIN AND SNOW</text>
+  </g>
+  <text class="dg-lbl dg-soft" x="700" y="341">IN NORTHERN FRANCE THAT IS</text>
+  <text class="dg-lbl dg-soft" x="700" y="355">A SUBSTANTIAL PART OF THE YEAR</text>
+  <text class="dg-lbl dg-soft" x="500" y="414">TWO OR THREE SYMBOLS A MINUTE, AND AN OPERATOR AWAKE IN EVERY</text>
+  <text class="dg-lbl dg-soft" x="500" y="428">TOWER — WHICH IS WHY IT CARRIES GOVERNMENT TRAFFIC AND LITTLE ELSE.</text>
+</svg>
