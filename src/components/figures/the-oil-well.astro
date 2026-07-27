@@ -1,0 +1,111 @@
+---
+/**
+ * Fractional distillation: crude heated, and the vapours drawn off in bands by
+ * boiling point. In 1859 the valuable band is kerosene, which burns in a lamp
+ * with a bright steady flame; petrol is a dangerously volatile nuisance early
+ * refiners dumped in the creek. The property that eventually matters more is at
+ * right — 42 MJ/kg against coal's 27, in something that can be pumped.
+ */
+---
+
+<svg viewBox="0 0 960 460" role="img" aria-label="A fractionating column with the cuts drawn off by boiling point, and the energy density of petroleum against coal">
+  <defs>
+    <marker id="ow-ar" viewBox="0 0 8 8" refX="7" refY="4" markerWidth="6" markerHeight="6" orient="auto">
+      <path d="M0 0 L8 4 L0 8 z" class="dg-ink" />
+    </marker>
+    <marker id="ow-ar-a" viewBox="0 0 8 8" refX="7" refY="4" markerWidth="6" markerHeight="6" orient="auto">
+      <path d="M0 0 L8 4 L0 8 z" class="dg-accent" />
+    </marker>
+  </defs>
+
+  <text class="dg-lbl" x="30" y="24">THE FRACTIONATING COLUMN · HOT AT THE FOOT, COOL AT THE TOP</text>
+
+  <!-- the column -->
+  <path class="dg-panel" d="M150 60 H300 V430 H150 Z" />
+  <path class="dg-s" d="M150 60 H300 V430 H150 Z" />
+  <g class="dg-h">
+    <path d="M150 122 H300 M150 190 H300 M150 258 H300 M150 326 H300" />
+  </g>
+  <!-- trays -->
+  <g class="dg-m">
+    <path d="M162 92 H288 M162 156 H288 M162 224 H288 M162 292 H288 M162 360 H288" />
+  </g>
+
+  <!-- the cuts, drawn off -->
+  <g class="dg-s">
+    <path d="M300 86 H392" marker-end="url(#ow-ar)" />
+    <path d="M300 152 H392" marker-end="url(#ow-ar)" />
+    <path d="M300 222 H392" marker-end="url(#ow-ar)" />
+    <path d="M300 290 H392" marker-end="url(#ow-ar)" />
+    <path d="M300 358 H392" marker-end="url(#ow-ar)" />
+  </g>
+  <g class="dg-lbl dg-num">
+    <text x="400" y="82">GASES</text>
+    <text x="400" y="148">PETROL</text>
+    <text x="400" y="218">KEROSENE</text>
+    <text x="400" y="286">GAS OIL</text>
+    <text x="400" y="354">RESIDUE, TAR</text>
+  </g>
+  <g class="dg-lbl dg-soft">
+    <text x="400" y="96">BELOW 20°</text>
+    <text x="400" y="162">20 TO 200°</text>
+    <text x="400" y="232">150 TO 300°</text>
+    <text x="400" y="300">250 TO 350°</text>
+    <text x="400" y="368">WHAT WILL NOT BOIL</text>
+  </g>
+
+  <!-- crude in, heated -->
+  <path class="dg-a" d="M60 400 H144" marker-end="url(#ow-ar-a)" />
+  <text class="dg-lbl dg-key" x="30" y="392">CRUDE, HEATED</text>
+  <path class="dg-accent" d="M156 392 H294 V424 H156 Z" />
+
+  <!-- 1859 value marks -->
+  <rect x="392" y="204" width="128" height="18" class="dg-tint" />
+  <text class="dg-lbl dg-key" x="400" y="218">KEROSENE</text>
+  <path class="dg-m" d="M528 213 H560" />
+  <text class="dg-lbl dg-key" x="30" y="150">THE VALUABLE BAND</text>
+  <text class="dg-lbl dg-soft" x="30" y="164">IN 1859 — BRIGHT,</text>
+  <text class="dg-lbl dg-soft" x="30" y="178">STEADY, AND WITH</text>
+  <text class="dg-lbl dg-soft" x="30" y="192">LITTLE SMOKE</text>
+  <path class="dg-m" d="M120 200 L156 216" />
+
+  <text class="dg-lbl dg-num" x="30" y="248">PETROL IS A</text>
+  <text class="dg-lbl dg-num" x="30" y="262">NUISANCE, AND</text>
+  <text class="dg-lbl dg-num" x="30" y="276">EARLY REFINERS</text>
+  <text class="dg-lbl dg-num" x="30" y="290">DUMP IT IN THE</text>
+  <text class="dg-lbl dg-num" x="30" y="304">NEAREST CREEK</text>
+  <path class="dg-m" d="M120 250 L150 158" />
+
+  <text class="dg-lbl dg-soft" x="150" y="452">DRAKE'S WELL, 1859 · 69.5 FEET · ABOUT 25 BARRELS A DAY</text>
+
+  <!-- ══ energy density ═════════════════════════════════════════════════ -->
+  <path class="dg-m" d="M580 14 V450" />
+  <text class="dg-lbl" x="608" y="24">WHAT MATTERS IN THE END · MEGAJOULES PER KILOGRAM</text>
+
+  <path class="dg-s" d="M660 46 V196 H930" />
+  <path class="dg-h" d="M718 46 V196 M776 46 V196 M834 46 V196 M892 46 V196" />
+
+  <text class="dg-lbl dg-key" x="664" y="70">PETROLEUM · 42 MJ/KG</text>
+  <rect x="660" y="78" width="244" height="26" class="dg-accent" />
+  <text class="dg-lbl dg-num" x="664" y="132">COAL · 27 MJ/KG</text>
+  <rect x="660" y="140" width="157" height="26" class="dg-ink" />
+
+  <path class="dg-m" d="M660 196 v5 M718 196 v5 M776 196 v5 M834 196 v5 M892 196 v5" />
+  <g class="dg-num">
+    <text x="660" y="216" text-anchor="middle">0</text>
+    <text x="776" y="216" text-anchor="middle">20</text>
+    <text x="892" y="216" text-anchor="middle">40</text>
+  </g>
+
+  <path class="dg-m" d="M608 248 H930" />
+  <text class="dg-lbl" x="608" y="270">AND IT IS A LIQUID</text>
+  <text class="dg-lbl dg-num" x="628" y="284">IT CAN BE PUMPED ALONG A PIPE,</text>
+  <text class="dg-lbl dg-num" x="628" y="304">POURED INTO A TANK OF ANY SHAPE,</text>
+  <text class="dg-lbl dg-num" x="628" y="324">AND METERED.</text>
+  <path class="dg-m" d="M612 280 H620 M612 300 H620 M612 320 H620" />
+  <text class="dg-lbl dg-soft" x="608" y="352">NONE OF WHICH IS TRUE OF A SOLID THAT MUST BE SHOVELLED.</text>
+
+  <text class="dg-lbl dg-soft" x="608" y="392">FOR AN ENGINE BESIDE A COALFIELD, IRRELEVANT.</text>
+  <text class="dg-lbl dg-key" x="608" y="412">FOR ANYTHING CARRYING ITS OWN FUEL, DECISIVE — WHICH IS</text>
+  <text class="dg-lbl dg-key" x="608" y="426">WHY EVERY VEHICLE THAT LEAVES THE RAILS RUNS ON OIL.</text>
+</svg>
