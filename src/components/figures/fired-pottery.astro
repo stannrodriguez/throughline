@@ -1,0 +1,96 @@
+---
+/**
+ * The firing curve. Free water leaves below 100°, dehydroxylation at about 550°
+ * takes the bound hydroxyl out of the crystal — the step that cannot be undone —
+ * and sintering from 900° fuses the particles at their contact points. The
+ * shaded band left of 550° is the only region a pot can still be returned to
+ * clay. Updraught kiln in section at right.
+ */
+---
+
+<svg viewBox="0 0 960 360" role="img" aria-label="Kiln firing curve against time with the water, dehydroxylation and sintering thresholds, and an updraught kiln in section">
+  <!-- ── the reversible region ────────────────────────────────────────── -->
+  <rect x="90" y="157" width="510" height="143" class="dg-panel" />
+
+  <path class="dg-h" d="M90 274 H600 M90 209 H600 M90 66 H600" />
+  <path class="dg-h" d="M192 40 V300 M294 40 V300 M396 40 V300 M498 40 V300" />
+  <path class="dg-s" d="M90 40 V300 H600" />
+
+  <text class="dg-lbl" x="90" y="26">TEMPERATURE</text>
+  <g class="dg-num">
+    <text x="82" y="44" text-anchor="end">1000°</text>
+    <text x="82" y="70" text-anchor="end">900°</text>
+    <text x="82" y="161" text-anchor="end">550°</text>
+    <text x="82" y="278" text-anchor="end">100°</text>
+    <text x="82" y="304" text-anchor="end">0°</text>
+  </g>
+
+  <path class="dg-m" d="M90 300 v5 M192 300 v5 M294 300 v5 M396 300 v5 M498 300 v5 M600 300 v5" />
+  <g class="dg-num">
+    <text x="90" y="320" text-anchor="middle">0</text>
+    <text x="192" y="320" text-anchor="middle">2</text>
+    <text x="294" y="320" text-anchor="middle">4</text>
+    <text x="396" y="320" text-anchor="middle">6</text>
+    <text x="498" y="320" text-anchor="middle">8</text>
+    <text x="600" y="320" text-anchor="middle">10</text>
+  </g>
+  <text class="dg-lbl" x="345" y="340" text-anchor="middle">HOURS FROM LIGHTING</text>
+
+  <!-- ── thresholds ───────────────────────────────────────────────────── -->
+  <path class="dg-d" d="M90 274 H600 M90 157 H600 M90 66 H600" />
+
+  <!-- ── the firing curve ─────────────────────────────────────────────── -->
+  <path
+    class="dg-a"
+    d="M90 300 C120 292, 148 282, 166.5 274 C196 262, 222 236, 243 214.2
+       C268 190, 300 170, 319.5 157 C348 138, 376 120, 396 107.6
+       C424 90, 452 74, 472.5 66 H549 C570 66, 586 84, 600 102.4"
+  />
+
+  <!-- crossings -->
+  <circle cx="166.5" cy="274" r="3.2" class="dg-accent" />
+  <circle cx="319.5" cy="157" r="3.2" class="dg-accent" />
+  <circle cx="472.5" cy="66" r="3.2" class="dg-accent" />
+
+  <text class="dg-lbl dg-num" x="176" y="266">FREE WATER GONE — BELOW 100°</text>
+  <text class="dg-lbl dg-num" x="329" y="149">DEHYDROXYLATION — 550°</text>
+  <text class="dg-lbl dg-soft" x="329" y="135">BOUND WATER LEAVES THE CRYSTAL</text>
+  <text class="dg-lbl dg-num" x="482" y="58">SINTERING — 900°</text>
+
+  <text class="dg-lbl dg-soft" x="104" y="288">BELOW 550° · STILL CLAY, CAN BE WETTED AND RESHAPED</text>
+  <text class="dg-lbl dg-num" x="104" y="100">ABOVE 550° · CERAMIC, THE CHANGE DOES NOT REVERSE</text>
+
+  <!-- ══ updraught kiln in section ══════════════════════════════════════ -->
+  <path class="dg-m" d="M636 18 V352" />
+  <text class="dg-lbl" x="664" y="26">UPDRAUGHT KILN, SECTION</text>
+
+  <!-- chamber walls -->
+  <path class="dg-s" d="M700 246 V120 C700 96, 716 82, 748 78 H856 C888 82, 904 96, 904 120 V246" />
+  <path class="dg-m" d="M726 246 V126 C726 110, 740 100, 762 98 H842 C864 100, 878 110, 878 126 V246" />
+
+  <!-- flue at the crown -->
+  <path class="dg-s" d="M782 78 V56 H822 V78" />
+  <path class="dg-h" d="M792 56 V38 M812 56 V38" />
+  <text class="dg-lbl" x="830" y="48">FLUE</text>
+
+  <!-- ware stacked on the perforated floor -->
+  <path class="dg-m" d="M726 208 H878" />
+  <g class="dg-h">
+    <path d="M744 208 v-6 M766 208 v-6 M788 208 v-6 M810 208 v-6 M832 208 v-6 M856 208 v-6" />
+  </g>
+  <g class="dg-m">
+    <path d="M748 200 h30 l-4 -34 h-22 Z" />
+    <path d="M790 200 h32 l-5 -40 h-22 Z" />
+    <path d="M834 200 h28 l-4 -30 h-20 Z" />
+  </g>
+  <text class="dg-lbl" x="802" y="130" text-anchor="middle">WARE, STACKED</text>
+  <text class="dg-lbl" x="802" y="144" text-anchor="middle">ON A PIERCED FLOOR</text>
+
+  <!-- firebox -->
+  <path class="dg-accent" d="M736 240 C748 224, 766 220, 802 220 C838 220, 856 224, 868 240 Z" />
+  <path class="dg-s" d="M700 246 H904" />
+  <text class="dg-lbl dg-key" x="802" y="264" text-anchor="middle">FIREBOX · 900° AT THE WARE</text>
+
+  <text class="dg-lbl dg-soft" x="802" y="292" text-anchor="middle">DRAUGHT RISES THROUGH THE STACK,</text>
+  <text class="dg-lbl dg-soft" x="802" y="306" text-anchor="middle">SO EVERY POT SEES THE SAME HEAT</text>
+</svg>
