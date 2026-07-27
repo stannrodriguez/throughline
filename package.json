@@ -1,0 +1,22 @@
+{
+  "name": "throughline",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Throughline — a reading-first history of the inventions that removed humanity's limits.",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/stannrodriguez/throughline.git"
+  },
+  "license": "UNLICENSED",
+  "scripts": {
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "check": "astro check"
+  },
+  "dependencies": {
+    "@astrojs/mdx": "^4.3.14",
+    "astro": "^5.18.2"
+  }
+}

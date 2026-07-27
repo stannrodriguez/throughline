@@ -1,0 +1,92 @@
+---
+import { SITE } from '../lib/site';
+import { threadList } from '../data/threads';
+import PeriodSpine from './PeriodSpine.astro';
+
+interface Props {
+  /** Roman id of the period being read, highlighted in the spine. */
+  currentPeriod?: string;
+}
+const { currentPeriod } = Astro.props;
+---
+
+<header class="bar">
+  <a class="bar__mark" href="/">{SITE.name}</a>
+  <PeriodSpine current={currentPeriod} />
+  <ul class="legend">
+    {
+      threadList.map((t) => (
+        <li class="legend__item">
+          <a href={`/roads/${t.id}`} class={`legend__link t-${t.id}`}>
+            <span class="legend__dot" />
+            {t.name}
+          </a>
+        </li>
+      ))
+    }
+  </ul>
+</header>
+
+<style>
+  .bar {
+    border-bottom: 1px solid var(--rule);
+    padding: 0 var(--gutter);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+    font-family: var(--sans);
+  }
+
+  .bar__mark {
+    padding: 16px 0;
+    font-size: 15px;
+    font-weight: 700;
+    letter-spacing: -0.01em;
+    white-space: nowrap;
+  }
+
+  .legend {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    font-size: 13px;
+    color: var(--muted);
+  }
+
+  .legend__link {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    white-space: nowrap;
+  }
+
+  .legend__dot {
+    width: 9px;
+    height: 9px;
+    border-radius: 50%;
+    background: var(--thread);
+  }
+
+  @media (max-width: 900px) {
+    .bar {
+      flex-wrap: wrap;
+      gap: 0 16px;
+      padding-top: 4px;
+      padding-bottom: 8px;
+    }
+
+    .bar__mark {
+      padding: 10px 0;
+    }
+
+    .legend {
+      order: 3;
+      width: 100%;
+      padding-bottom: 6px;
+    }
+  }
+</style>

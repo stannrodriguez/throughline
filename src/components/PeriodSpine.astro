@@ -1,0 +1,77 @@
+---
+import { PERIODS, periodSlug } from '../data/periods';
+
+interface Props {
+  current?: string;
+}
+const { current } = Astro.props;
+---
+
+<nav class="spine" aria-label="The twelve periods">
+  {
+    PERIODS.map((p) => (
+      <a
+        href={`/periods/${periodSlug(p.id)}`}
+        class:list={['spine__tick', { 'is-current': p.id === current }]}
+        aria-current={p.id === current ? 'page' : undefined}
+        title={`Period ${p.id} · ${p.name}`}
+      >
+        {p.id}
+      </a>
+    ))
+  }
+</nav>
+
+<style>
+  /* The spine is the entire map: no global menu, no search, no breadcrumbs. */
+  .spine {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    font-family: var(--mono);
+    font-size: 11px;
+    color: var(--ahead);
+    overflow-x: auto;
+    scrollbar-width: none;
+  }
+
+  .spine::-webkit-scrollbar {
+    display: none;
+  }
+
+  .spine__tick {
+    padding: 4px 6px;
+    white-space: nowrap;
+  }
+
+  .spine__tick:hover {
+    color: var(--ink);
+  }
+
+  .spine__tick.is-current {
+    padding: 4px 8px;
+    background: var(--ink);
+    color: var(--page);
+    font-weight: 600;
+  }
+
+  .spine__tick.is-current:hover {
+    color: var(--page);
+  }
+
+  @media (max-width: 900px) {
+    .spine {
+      /* horizontally scrollable on a phone; the current tick stays reachable */
+      margin: 0 calc(var(--gutter) * -1);
+      padding: 0 var(--gutter);
+    }
+
+    .spine__tick {
+      min-width: 32px;
+      min-height: 44px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+  }
+</style>

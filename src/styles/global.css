@@ -1,0 +1,286 @@
+/* ---------------------------------------------------------------------------
+   Throughline — design tokens
+   Values are taken verbatim from the design handoff (§Design Tokens).
+   No border radius anywhere; no shadows on in-page elements; rules do
+   hierarchy (2px ink = section, 1px hairline = row).
+--------------------------------------------------------------------------- */
+
+:root {
+  /* surface + ink */
+  --page: #fbfaf7;
+  --ink: #20242a;
+  --ink-soft: #40454d;
+  --prose-soft: #4a453d;
+  --text-2: #6d7178;
+  --muted: #7a7f88;
+  --faint: #9aa0a8;
+  --ahead: #c0bcb2;
+
+  /* rules + panels */
+  --rule: #e2e0da;
+  --rule-faint: #eeece6;
+  --panel: #f5f3ee;
+  --passthrough: #f7f5f0;
+  --bar-track: #f0eee8;
+
+  /* threads */
+  --energy: #b4551f;
+  --energy-tint: #fdf6ef;
+  --energy-border: #ecd9c4;
+  --energy-muted: #d9b394;
+  --energy-faint: #c4a482;
+  --energy-deep: #8a6d52;
+  --energy-mid: #b08d6a;
+  --energy-track: #f4e6d5;
+
+  --materials: #5a7d5e;
+  --materials-tint: #f1f4f1;
+  --materials-border: #d5e0d5;
+  --materials-muted: #a9bfaa;
+  --materials-seam: #eef1ee;
+  --materials-hold: #8fac91;
+  --materials-pale: #c2d0c3;
+
+  --information: #38648c;
+  --information-tint: #f0f3f6;
+  --information-border: #d3dde6;
+  --information-muted: #9db4c6;
+  --information-seam: #eef1f3;
+
+  /* type */
+  --sans: 'Libre Franklin', system-ui, -apple-system, sans-serif;
+  --serif: 'Source Serif 4', Georgia, 'Times New Roman', serif;
+  --mono: 'IBM Plex Mono', ui-monospace, SFMono-Regular, Menlo, monospace;
+
+  /* metrics */
+  --gutter: 48px;
+  --measure: 720px;
+  --canvas: 1000px;
+
+  /* per-scope thread channel; defaults to ink so unscoped UI stays neutral */
+  --thread: var(--ink);
+  --thread-tint: var(--panel);
+  --thread-border: var(--rule);
+  --thread-muted: var(--ahead);
+}
+
+/* thread scoping: set once on a wrapper, read by every child component */
+.t-energy {
+  --thread: var(--energy);
+  --thread-tint: var(--energy-tint);
+  --thread-border: var(--energy-border);
+  --thread-muted: var(--energy-muted);
+  --thread-seam: var(--energy-tint);
+}
+.t-materials {
+  --thread: var(--materials);
+  --thread-tint: var(--materials-tint);
+  --thread-border: var(--materials-border);
+  --thread-muted: var(--materials-muted);
+  --thread-seam: var(--materials-seam);
+}
+.t-information {
+  --thread: var(--information);
+  --thread-tint: var(--information-tint);
+  --thread-border: var(--information-border);
+  --thread-muted: var(--information-muted);
+  --thread-seam: var(--information-seam);
+}
+
+/* --------------------------------------------------------------------------
+   base
+-------------------------------------------------------------------------- */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+  background: var(--page);
+  color: var(--ink);
+  font-family: var(--serif);
+  font-size: 19.5px;
+  line-height: 1.7;
+  font-synthesis-weight: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Links never go browser-blue. They inherit ink and pick up the thread colour
+   on hover — site-wide rule from the handoff. */
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+a:hover {
+  color: var(--thread);
+}
+
+a:focus-visible {
+  outline: 2px solid var(--thread);
+  outline-offset: 3px;
+}
+
+::selection {
+  background: #f0d6ad;
+}
+
+h1,
+h2,
+h3 {
+  font-family: var(--sans);
+  font-weight: 700;
+  letter-spacing: -0.025em;
+  text-wrap: balance;
+  margin: 0;
+}
+
+p {
+  margin: 0;
+  text-wrap: pretty;
+}
+
+hr {
+  border: 0;
+  border-top: 1px solid var(--rule);
+  margin: 0;
+}
+
+img,
+svg {
+  max-width: 100%;
+}
+
+/* --------------------------------------------------------------------------
+   shared primitives
+-------------------------------------------------------------------------- */
+
+/* mono label: datelines, addresses, metric labels, captions */
+.mono {
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--faint);
+}
+
+/* sans label: section labels above prose */
+.label {
+  font-family: var(--sans);
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--thread);
+}
+
+.rule-section {
+  border-top: 2px solid var(--ink);
+}
+
+.rule-row {
+  border-bottom: 1px solid var(--rule-faint);
+}
+
+/* secondary-thread chip: on road + roster views it is a typographic mark only */
+.chip-2 {
+  font-family: var(--mono);
+  font-size: 9.5px;
+  font-weight: 400;
+  letter-spacing: 0.06em;
+  white-space: nowrap;
+  display: inline-block;
+  padding: 2px 6px;
+  vertical-align: 2px;
+  border: 1px solid currentColor;
+}
+
+.chip-2--bare {
+  border: 0;
+  padding: 0;
+  font-size: 9px;
+}
+
+/* figure placeholder — real technical illustration is commissioned later */
+.figure-ph {
+  background: var(--panel);
+  border: 1px solid var(--rule);
+  background-image: repeating-linear-gradient(
+    135deg,
+    transparent,
+    transparent 7px,
+    rgba(32, 36, 42, 0.04) 7px,
+    rgba(32, 36, 42, 0.04) 8px
+  );
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 210px;
+  padding: 20px;
+}
+
+.figure-ph__caption {
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: 0.05em;
+  color: var(--muted);
+  text-align: center;
+  line-height: 1.7;
+  background: var(--page);
+  padding: 12px 18px;
+  border: 1px solid var(--rule);
+}
+
+.figure-ph__spec {
+  color: #a8adb4;
+}
+
+/* honest placeholder note — used wherever content is structural only */
+.ph-note {
+  font-family: var(--mono);
+  font-size: 10.5px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--ahead);
+}
+
+.shell {
+  max-width: 1180px;
+  margin: 0 auto;
+}
+
+.pad {
+  padding-left: var(--gutter);
+  padding-right: var(--gutter);
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+}
+
+/* --------------------------------------------------------------------------
+   mobile — phone-first reading is a hard requirement
+-------------------------------------------------------------------------- */
+
+@media (max-width: 900px) {
+  :root {
+    --gutter: 20px;
+  }
+
+  body {
+    font-size: 18px;
+  }
+}

@@ -1,0 +1,129 @@
+---
+import { SITE } from '../lib/site';
+import { threadList, type ThreadId } from '../data/threads';
+
+interface Props {
+  active: ThreadId;
+  /** The right-hand slot: "ALL PERIODS ▴" on a road view. */
+  right?: string;
+  /** When set, the right-hand slot links somewhere. */
+  rightHref?: string;
+}
+const { active, right = 'All periods ▴', rightHref } = Astro.props;
+const RightTag = rightHref ? 'a' : 'div';
+---
+
+<header class="bar">
+  <a class="bar__mark" href="/">{SITE.name}</a>
+  <nav class="tabs" aria-label="Roads">
+    {
+      threadList.map((t) => (
+        <a
+          href={`/roads/${t.id}`}
+          class:list={['tab', `t-${t.id}`, { 'is-active': t.id === active }]}
+          aria-current={t.id === active ? 'page' : undefined}
+        >
+          <span class="tab__dot" />
+          {t.name}
+        </a>
+      ))
+    }
+  </nav>
+  <RightTag class="bar__right" href={rightHref}>{right}</RightTag>
+</header>
+
+<style>
+  .bar {
+    border-bottom: 1px solid var(--rule);
+    padding: 0 var(--gutter);
+    display: flex;
+    align-items: stretch;
+    justify-content: space-between;
+    gap: 24px;
+    font-family: var(--sans);
+  }
+
+  .bar__mark {
+    display: flex;
+    align-items: center;
+    padding: 18px 0;
+    font-size: 15px;
+    font-weight: 700;
+    letter-spacing: -0.01em;
+    white-space: nowrap;
+  }
+
+  .tabs {
+    display: flex;
+  }
+
+  .tab {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+    padding: 0 26px;
+    border-bottom: 3px solid transparent;
+    font-size: 14.5px;
+    color: var(--muted);
+    white-space: nowrap;
+  }
+
+  .tab__dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: var(--thread);
+  }
+
+  .tab.is-active {
+    border-bottom-color: var(--thread);
+    color: var(--thread);
+    font-weight: 600;
+  }
+
+  .bar__right {
+    display: flex;
+    align-items: center;
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--ink);
+    font-weight: 600;
+    white-space: nowrap;
+  }
+
+  @media (max-width: 900px) {
+    .bar {
+      flex-wrap: wrap;
+      gap: 0 16px;
+      padding-bottom: 0;
+    }
+
+    .bar__mark {
+      padding: 12px 0;
+    }
+
+    .tabs {
+      order: 3;
+      width: 100%;
+      overflow-x: auto;
+      scrollbar-width: none;
+      margin: 0 calc(var(--gutter) * -1);
+      padding: 0 var(--gutter);
+    }
+
+    .tabs::-webkit-scrollbar {
+      display: none;
+    }
+
+    .tab {
+      padding: 0 16px;
+      min-height: 44px;
+    }
+
+    .tab:first-child {
+      padding-left: 0;
+    }
+  }
+</style>

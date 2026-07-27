@@ -1,0 +1,22 @@
+---
+import type { ThreadId } from '../data/threads';
+
+interface Props {
+  thread: ThreadId;
+  /** Bare = no border, used inside condensed road rows. */
+  bare?: boolean;
+}
+const { thread, bare = false } = Astro.props;
+---
+
+<span class:list={['chip-2', `t-${thread}`, { 'chip-2--bare': bare }]}>
+  2° {thread === 'information' ? 'Information' : thread === 'materials' ? 'Materials' : 'Energy'}
+</span>
+
+<style>
+  .chip-2 {
+    color: var(--thread);
+    border-color: var(--thread-border);
+    text-transform: uppercase;
+  }
+</style>

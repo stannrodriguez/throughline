@@ -1,0 +1,230 @@
+---
+import Base from '../layouts/Base.astro';
+import SiteHeader from '../components/SiteHeader.astro';
+import { SITE } from '../lib/site';
+import { PERIODS, periodSlug } from '../data/periods';
+import { threadList } from '../data/threads';
+import { ROAD_ENTRIES } from '../data/entries';
+
+/**
+ * The front door. Deliberately thin: the site has exactly two motions, and this
+ * page exists only to hand the reader to one of them — a road (the deep read)
+ * or a period landing (the chronological path).
+ */
+const roads = threadList.map((t) => ({
+  thread: t,
+  first: ROAD_ENTRIES[t.id][0],
+}));
+---
+
+<Base title={SITE.name}>
+  <SiteHeader />
+
+  <main class="front">
+    <p class="front__kicker">Three roads · twelve periods · ninety inventions</p>
+    <h1 class="front__title">
+      Every limit humanity lives inside was removed by someone, on a day, for a reason.
+    </h1>
+    <p class="front__lede">
+      Energy, materials and information run the length of history. Read one road end to end, or
+      walk the periods in order — every entry sits on exactly one road, and every road passes
+      through every era.
+    </p>
+
+    <ul class="roads">
+      {
+        roads.map(({ thread, first }) => (
+          <li class={`road t-${thread.id}`}>
+            <a href={`/roads/${thread.id}`} class="road__link">
+              <span class="road__label">The {thread.name.toLowerCase()} road</span>
+              <span class="road__span">{thread.span}</span>
+              <span class="road__meta">{thread.total} entries · begins with {first.title}</span>
+            </a>
+          </li>
+        ))
+      }
+    </ul>
+
+    <section class="periods">
+      <h2 class="periods__head">Or start at a period</h2>
+      <ol class="periods__list">
+        {
+          PERIODS.map((p) => (
+            <li class="periods__row">
+              <a href={`/periods/${periodSlug(p.id)}`} class="periods__link">
+                <span class="periods__num">{p.id}</span>
+                <span class="periods__name">{p.name}</span>
+                <span class="periods__years">{p.yearRange}</span>
+                <span class="periods__constraint">constraint removed: {p.constraint}</span>
+              </a>
+            </li>
+          ))
+        }
+      </ol>
+    </section>
+  </main>
+</Base>
+
+<style>
+  .front {
+    max-width: var(--canvas);
+    margin: 0 auto;
+    padding: 56px var(--gutter) 80px;
+  }
+
+  .front__kicker {
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--faint);
+  }
+
+  .front__title {
+    margin-top: 18px;
+    font-size: 52px;
+    line-height: 1.06;
+    letter-spacing: -0.028em;
+    max-width: 900px;
+  }
+
+  .front__lede {
+    margin-top: 20px;
+    max-width: var(--measure);
+    font-size: 20px;
+    line-height: 1.7;
+    color: var(--text-2);
+  }
+
+  .roads {
+    margin: 44px 0 0;
+    padding: 0;
+    list-style: none;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+  }
+
+  .road {
+    border: 1px solid var(--rule);
+    border-top: 3px solid var(--thread);
+  }
+
+  .road__link {
+    display: block;
+    padding: 18px 20px 20px;
+    font-family: var(--sans);
+    height: 100%;
+  }
+
+  .road__link:hover {
+    background: var(--panel);
+    color: inherit;
+  }
+
+  .road__label {
+    display: block;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--thread);
+  }
+
+  .road__span {
+    display: block;
+    margin-top: 8px;
+    font-size: 17px;
+    font-weight: 600;
+  }
+
+  .road__meta {
+    display: block;
+    margin-top: 4px;
+    font-size: 12.5px;
+    color: var(--muted);
+  }
+
+  .periods {
+    margin-top: 56px;
+    border-top: 2px solid var(--ink);
+  }
+
+  .periods__head {
+    margin: 14px 0 4px;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--muted);
+  }
+
+  .periods__list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  .periods__row {
+    border-bottom: 1px solid var(--rule-faint);
+  }
+
+  .periods__link {
+    display: grid;
+    grid-template-columns: 44px 200px 150px 1fr;
+    gap: 16px;
+    align-items: baseline;
+    padding: 13px 0;
+    font-family: var(--sans);
+  }
+
+  .periods__link:hover {
+    background: var(--panel);
+    color: inherit;
+  }
+
+  .periods__num {
+    font-size: 15px;
+    font-weight: 700;
+  }
+
+  .periods__name {
+    font-size: 16px;
+    font-weight: 600;
+  }
+
+  .periods__years,
+  .periods__constraint {
+    font-family: var(--mono);
+    font-size: 10.5px;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--faint);
+  }
+
+  @media (max-width: 900px) {
+    .front__title {
+      font-size: 34px;
+    }
+
+    .roads {
+      grid-template-columns: 1fr;
+    }
+
+    .periods__link {
+      grid-template-columns: 36px 1fr;
+      row-gap: 2px;
+      padding: 12px 0;
+      min-height: 44px;
+    }
+
+    .periods__num {
+      grid-row: span 3;
+    }
+
+    .periods__years,
+    .periods__constraint {
+      grid-column: 2;
+    }
+  }
+</style>
