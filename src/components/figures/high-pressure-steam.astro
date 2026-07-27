@@ -1,0 +1,98 @@
+---
+/**
+ * Force on a piston is pressure times area, so ten times the pressure buys the
+ * same push from a tenth the area — and the cylinder, frame and foundation all
+ * shrink with it. Dropping the condenser removes the heaviest part left and the
+ * water it needs. The engine gets worse per pound of coal and far better per
+ * pound of engine, and the blast pipe is the effect nobody designed.
+ */
+---
+
+<svg viewBox="0 0 960 440" role="img" aria-label="A 5 psi Watt cylinder beside a 50 psi cylinder of a tenth the area, and the blast pipe drawing the fire through a locomotive firebox">
+  <defs>
+    <marker id="hp-ar" viewBox="0 0 8 8" refX="7" refY="4" markerWidth="6" markerHeight="6" orient="auto">
+      <path d="M0 0 L8 4 L0 8 z" class="dg-ink" />
+    </marker>
+    <marker id="hp-ar-a" viewBox="0 0 8 8" refX="7" refY="4" markerWidth="6" markerHeight="6" orient="auto">
+      <path d="M0 0 L8 4 L0 8 z" class="dg-accent" />
+    </marker>
+  </defs>
+
+  <text class="dg-lbl" x="30" y="24">SAME WORK, TWO PRESSURES · PISTON FACES TO SCALE</text>
+
+  <!-- ── Watt, 5 psi ──────────────────────────────────────────────────── -->
+  <text class="dg-lbl dg-num" x="30" y="56">WATT · 5 PSI</text>
+  <circle cx="150" cy="180" r="104" class="dg-panel" />
+  <circle cx="150" cy="180" r="104" class="dg-s" />
+  <circle cx="150" cy="180" r="92" class="dg-h" />
+  <g class="dg-a">
+    <path d="M110 128 V164" marker-end="url(#hp-ar-a)" />
+    <path d="M150 118 V154" marker-end="url(#hp-ar-a)" />
+    <path d="M190 128 V164" marker-end="url(#hp-ar-a)" />
+    <path d="M110 196 V232" marker-end="url(#hp-ar-a)" />
+    <path d="M150 206 V242" marker-end="url(#hp-ar-a)" />
+    <path d="M190 196 V232" marker-end="url(#hp-ar-a)" />
+  </g>
+  <text class="dg-lbl dg-soft" x="150" y="308" text-anchor="middle">LOW PRESSURE OVER A LARGE AREA</text>
+  <text class="dg-lbl dg-soft" x="150" y="322" text-anchor="middle">AND A CONDENSER, AND ITS WATER</text>
+
+  <!-- ── Trevithick, 50 psi: one tenth the area -->
+  <text class="dg-lbl dg-num" x="330" y="56">TREVITHICK · 50 PSI</text>
+  <circle cx="400" cy="180" r="33" class="dg-tint" />
+  <circle cx="400" cy="180" r="33" class="dg-s" />
+  <g class="dg-a">
+    <path d="M400 132 V168" marker-end="url(#hp-ar-a)" />
+    <path d="M400 192 V228" marker-end="url(#hp-ar-a)" />
+  </g>
+  <path class="dg-d" d="M400 147 H150 M400 213 H150" />
+  <text class="dg-lbl dg-key" x="330" y="308">ONE TENTH THE AREA,</text>
+  <text class="dg-lbl dg-key" x="330" y="322">THE SAME PUSH</text>
+  <text class="dg-lbl dg-soft" x="330" y="342">CYLINDER, FRAME AND</text>
+  <text class="dg-lbl dg-soft" x="330" y="356">FOUNDATION ALL SHRINK WITH IT</text>
+
+  <text class="dg-lbl dg-num" x="30" y="392">WORSE PER POUND OF COAL — EXHAUSTING TO ATMOSPHERE THROWS AWAY</text>
+  <text class="dg-lbl dg-num" x="30" y="406">STEAM A CONDENSER WOULD HAVE RECOVERED.</text>
+  <text class="dg-lbl dg-key" x="30" y="426">FAR BETTER PER POUND OF ENGINE — AND FOR ANYTHING THAT HAS TO MOVE</text>
+  <text class="dg-lbl dg-key" x="30" y="440">ITSELF, THAT IS THE ONLY RATIO THAT MATTERS.</text>
+
+  <!-- ══ the blast pipe ═════════════════════════════════════════════════ -->
+  <path class="dg-m" d="M520 14 V430" />
+  <text class="dg-lbl" x="550" y="24">THE BLAST PIPE · AN EFFECT NOBODY DESIGNED</text>
+
+  <!-- boiler barrel -->
+  <path class="dg-s" d="M580 168 H860 V268 H580 Z" />
+  <path class="dg-h" d="M580 190 H860 M580 212 H860 M580 234 H860 M580 256 H860" />
+
+  <!-- firebox at the right -->
+  <path class="dg-s" d="M860 156 H930 V286 H860 Z" />
+  <path class="dg-accent" d="M872 240 C884 220, 902 214, 918 240 Z" />
+  <text class="dg-lbl dg-key" x="895" y="318" text-anchor="middle">FIREBOX</text>
+
+  <!-- grate and ashpan -->
+  <path class="dg-m" d="M866 252 H924" />
+  <g class="dg-h">
+    <path d="M874 252 v8 M886 252 v8 M898 252 v8 M910 252 v8" />
+  </g>
+  <path class="dg-a" d="M895 336 V292" marker-end="url(#hp-ar-a)" />
+  <text class="dg-lbl dg-soft" x="895" y="352" text-anchor="middle">AIR IN</text>
+
+  <!-- the chimney and the blast -->
+  <path class="dg-s" d="M596 168 V96 H628 V168" />
+  <path class="dg-s" d="M604 130 H620 V168" />
+  <path class="dg-a" d="M612 152 V64" marker-end="url(#hp-ar-a)" />
+  <text class="dg-lbl dg-key" x="640" y="72">SPENT STEAM UP THE CHIMNEY</text>
+  <text class="dg-lbl dg-soft" x="640" y="86">DRAGS THE FLUE GAS WITH IT</text>
+
+  <!-- draught path through the tubes -->
+  <g class="dg-m">
+    <path d="M846 200 H628" marker-end="url(#hp-ar)" />
+    <path d="M846 224 H628" marker-end="url(#hp-ar)" />
+    <path d="M846 246 H628" marker-end="url(#hp-ar)" />
+  </g>
+  <text class="dg-lbl dg-soft" x="550" y="200">DRAUGHT</text>
+
+  <text class="dg-lbl dg-num" x="550" y="392">THE HARDER THE ENGINE WORKS, THE HARDER THE FIRE BURNS —</text>
+  <text class="dg-lbl dg-num" x="550" y="406">WHICH IS WHAT MAKES A LOCOMOTIVE BOILER USEFUL.</text>
+  <text class="dg-lbl dg-soft" x="550" y="426">BOILERS ARE RIVETED WROUGHT IRON OF UNCERTAIN QUALITY.</text>
+  <text class="dg-lbl dg-soft" x="550" y="440">TREVITHICK'S GREENWICH ENGINE EXPLODES IN 1803, KILLING FOUR.</text>
+</svg>
