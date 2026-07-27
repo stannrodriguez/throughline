@@ -1,0 +1,108 @@
+---
+/**
+ * Two properties of lithium do the work and they multiply: it is the lightest
+ * metal, so the charge carriers weigh very little, and it sits at the far end of
+ * the electrochemical series, so the voltage is high. The scatter puts the four
+ * chemistries on both axes at once; the bars below it are the voltage. The last
+ * panel is the price — the same energy comes back out fast if the separator goes.
+ */
+---
+
+<svg viewBox="0 0 960 502" role="img" aria-label="Lead-acid, nickel-cadmium, nickel-metal hydride and lithium-ion plotted on watt-hours per kilogram against watt-hours per litre, their cell voltages, and filaments growing from a lithium metal anode">
+  <defs>
+    <marker id="lb-ar-a" viewBox="0 0 8 8" refX="7" refY="4" markerWidth="6" markerHeight="6" orient="auto">
+      <path d="M0 0 L8 4 L0 8 z" class="dg-accent" />
+    </marker>
+  </defs>
+
+  <!-- ══ the scatter ════════════════════════════════════════════════════ -->
+  <text class="dg-lbl" x="110" y="42">WATT-HOURS PER LITRE</text>
+
+  <path class="dg-h" d="M110 155 H470 M110 60 H470" />
+  <path class="dg-s" d="M110 52 V250 H470" />
+  <g class="dg-num">
+    <text x="102" y="64" text-anchor="end">500</text>
+    <text x="102" y="159" text-anchor="end">250</text>
+    <text x="102" y="254" text-anchor="end">0</text>
+  </g>
+  <path class="dg-m" d="M110 250 v5 M200 250 v5 M290 250 v5 M380 250 v5 M470 250 v5" />
+  <g class="dg-num">
+    <text x="110" y="272" text-anchor="middle">0</text>
+    <text x="200" y="272" text-anchor="middle">50</text>
+    <text x="290" y="272" text-anchor="middle">100</text>
+    <text x="380" y="272" text-anchor="middle">150</text>
+    <text x="470" y="272" text-anchor="middle">200</text>
+  </g>
+  <text class="dg-lbl" x="290" y="290" text-anchor="middle">WATT-HOURS PER KILOGRAM →</text>
+
+  <path class="dg-d" d="M173 220 L200 204 L254 155 L380 98" />
+  <circle cx="173" cy="220" r="5" class="dg-ink" />
+  <circle cx="200" cy="204" r="5" class="dg-ink" />
+  <circle cx="254" cy="155" r="5" class="dg-ink" />
+  <circle cx="380" cy="98" r="6" class="dg-accent" />
+  <text class="dg-lbl dg-soft" x="182" y="234">LEAD-ACID</text>
+  <text class="dg-lbl dg-soft" x="209" y="196">NICKEL-CADMIUM</text>
+  <text class="dg-lbl dg-soft" x="263" y="147">NICKEL-METAL HYDRIDE</text>
+  <text class="dg-lbl dg-key" x="372" y="88" text-anchor="end">LITHIUM-ION</text>
+  <text class="dg-lbl dg-soft" x="110" y="308">APPROXIMATE, FOR TYPICAL CELLS</text>
+
+  <!-- ══ the voltage ════════════════════════════════════════════════════ -->
+  <path class="dg-m" d="M508 40 V300" />
+  <text class="dg-lbl" x="540" y="64">VOLTS PER CELL</text>
+
+  <text class="dg-lbl dg-num" x="540" y="102">LEAD-ACID</text>
+  <rect x="720" y="90" width="90" height="16" class="dg-ink" />
+  <text class="dg-lbl dg-soft" x="818" y="102">2.0 V</text>
+
+  <text class="dg-lbl dg-num" x="540" y="136">NICKEL-CADMIUM</text>
+  <rect x="720" y="124" width="54" height="16" class="dg-ink" />
+  <text class="dg-lbl dg-soft" x="782" y="136">1.2 V</text>
+
+  <text class="dg-lbl dg-num" x="540" y="170">NICKEL-METAL HYDRIDE</text>
+  <rect x="720" y="158" width="54" height="16" class="dg-ink" />
+  <text class="dg-lbl dg-soft" x="782" y="170">1.2 V</text>
+
+  <text class="dg-lbl dg-num" x="540" y="204">LITHIUM-ION</text>
+  <rect x="720" y="192" width="162" height="16" class="dg-accent" />
+  <text class="dg-lbl dg-key" x="890" y="204">3.6 V</text>
+
+  <text class="dg-lbl dg-num" x="540" y="240">LITHIUM IS THE LIGHTEST METAL, AND SITS AT THE FAR END</text>
+  <text class="dg-lbl dg-num" x="540" y="254">OF THE ELECTROCHEMICAL SERIES.</text>
+  <text class="dg-lbl dg-key" x="540" y="280">ENERGY IS VOLTAGE TIMES CHARGE, SO THE GAIN COMPOUNDS.</text>
+  <text class="dg-lbl dg-soft" x="540" y="308">ABOUT 150 Wh/kg AGAINST 35 · PROTOTYPE 1985</text>
+
+  <!-- ══ what the energy costs ══════════════════════════════════════════ -->
+  <path class="dg-m" d="M30 326 H930" />
+  <path class="dg-m" d="M488 336 V494" />
+
+  <text class="dg-lbl" x="30" y="352">WHY THE ANODE IS NOT LITHIUM METAL</text>
+
+  <path class="dg-panel" d="M60 376 H200 V450 H60 Z" />
+  <path class="dg-s" d="M60 376 H200 V450 H60 Z" />
+  <text class="dg-lbl dg-soft" x="60" y="368">CATHODE</text>
+
+  <path class="dg-d" d="M214 376 V450 M222 376 V450 M230 376 V450" />
+  <text class="dg-lbl dg-soft" x="222" y="368" text-anchor="middle">SEPARATOR</text>
+
+  <path class="dg-panel" d="M244 376 H384 V450 H244 Z" />
+  <path class="dg-s" d="M244 376 H384 V450 H244 Z" />
+  <text class="dg-lbl dg-soft" x="384" y="368" text-anchor="end">LITHIUM METAL</text>
+
+  <g class="dg-a">
+    <path d="M244 396 L226 392 L214 398 L196 394" />
+    <path d="M244 414 L228 418 L216 412 L202 416 L188 412" />
+    <path d="M244 432 L230 428 L220 434 L208 430" />
+  </g>
+  <text class="dg-lbl dg-key" x="30" y="472">IT PLATES BACK UNEVENLY, GROWING FILAMENTS THAT CAN</text>
+  <text class="dg-lbl dg-key" x="30" y="486">REACH THROUGH THE SEPARATOR.</text>
+
+  <text class="dg-lbl" x="520" y="352">THE COST OF THAT MUCH IN THAT LITTLE</text>
+  <text class="dg-lbl dg-num" x="520" y="378">A CELL THAT STORES THIS MUCH IN THIS LITTLE VOLUME</text>
+  <text class="dg-lbl dg-num" x="520" y="392">ALSO RELEASES IT QUICKLY IF THE SEPARATOR FAILS,</text>
+  <text class="dg-lbl dg-num" x="520" y="406">AND THE ELECTROLYTE IS FLAMMABLE.</text>
+  <text class="dg-lbl dg-soft" x="520" y="430">SO EVERY PACK CARRIES PROTECTION CIRCUITRY THAT</text>
+  <text class="dg-lbl dg-soft" x="520" y="444">LIMITS CHARGE VOLTAGE, CURRENT AND TEMPERATURE.</text>
+  <text class="dg-lbl dg-soft" x="520" y="472">THE FAILURES THAT MAKE THE NEWS ARE ALMOST ALWAYS</text>
+  <text class="dg-lbl dg-soft" x="520" y="486">MECHANICAL OR MANUFACTURING FAULTS THAT LET THE</text>
+  <text class="dg-lbl dg-soft" x="520" y="500">TWO ELECTRODES MEET.</text>
+</svg>
