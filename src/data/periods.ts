@@ -129,14 +129,20 @@ export const PERIODS: Period[] = [
     constraint: 'wind & water alone',
     constraintShort: 'Wind & water alone',
     title: 'Windmills put power where no river runs, and the blast furnace reaches the 1,500° that melts iron.',
-    essay: [],
+    essay: [
+      'One figure moves in this period: energy per person, from thirteen gigajoules a year to fifteen, and the addition is wind. The first documented European windmill stands at Weedley in Yorkshire in 1185. A post mill carries its whole body — sails, gearing, millstones and all — on a single upright post, so the miller can swing the entire machine round to face whatever direction the wind is in. It delivers a few horsepower, which is no better than a good watermill, and it delivers them in flat country where no stream falls far enough to be worth damming. That is most of East Anglia, the Low Countries and the Baltic plain, and from the fifteenth century the same machine is turned to draining land rather than grinding grain.',
+      'The other entry raises a temperature by a hundred and fifty degrees and changes what iron is. Bellows driven by a waterwheel hold a tall shaft furnace above 1,500°, but the decisive effect is chemical rather than thermal: iron sitting in contact with burning charcoal takes up carbon, and iron carrying three or four percent carbon melts at around 1,150° instead of 1,538°. The metal runs liquid out of the bottom of the furnace for the first time in two and a half thousand years of iron-making, and it can be poured into a mould like bronze. What comes out is cast iron, hard and brittle, good for cannon and cooking pots and useless for anything that has to bend; converting it to wrought iron takes a second hearth that burns the carbon back out. No information stop falls in this period. Copying is still done by hand, at the speed of a hand.',
+    ],
+    passThrough: {
+      information:
+        'No information stop falls in this period. Paper has been available in Europe for two centuries and every copy of every book is still written out by hand. The information road passes through; its next stop is movable type, in 1450.',
+    },
     capabilityStrip: strip(
       ['15 km/h', '— unchanged since II'],
       ['200 km', '— relay, as in Rome'],
       ['Candle', '— as ever'],
       ['15 GJ/yr', '— wind added', true]
     ),
-    placeholder: true,
   },
   {
     id: 'V',
