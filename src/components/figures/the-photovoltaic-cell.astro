@@ -1,0 +1,99 @@
+---
+/**
+ * A photon knocks an electron loose and leaves a vacancy behind; in an
+ * undifferentiated crystal the two would simply recombine, and the junction's
+ * built-in field is what sweeps them apart first. The bars on the right are the
+ * cost of the gap being a single number — everything below it passes straight
+ * through, and everything above it gives up the excess as heat.
+ */
+---
+
+<svg viewBox="0 0 960 434" role="img" aria-label="A photon creating an electron and a vacancy at a p-n junction with the built-in field separating them, and three photons showing sub-gap loss and thermalisation loss">
+  <defs>
+    <marker id="pv-ar" viewBox="0 0 8 8" refX="7" refY="4" markerWidth="6" markerHeight="6" orient="auto">
+      <path d="M0 0 L8 4 L0 8 z" class="dg-ink" />
+    </marker>
+    <marker id="pv-ar-a" viewBox="0 0 8 8" refX="7" refY="4" markerWidth="6" markerHeight="6" orient="auto">
+      <path d="M0 0 L8 4 L0 8 z" class="dg-accent" />
+    </marker>
+  </defs>
+
+  <!-- ══ the junction ═══════════════════════════════════════════════════ -->
+  <text class="dg-lbl" x="30" y="30">THE JUNCTION UNDER LIGHT</text>
+
+  <path class="dg-tint" d="M90 100 H400 V134 H90 Z" />
+  <path class="dg-panel" d="M90 134 H400 V240 H90 Z" />
+  <path class="dg-s" d="M90 100 H400 V240 H90 Z M90 134 H400" />
+  <path class="dg-d" d="M90 122 H400 M90 150 H400" />
+  <path class="dg-ink" d="M110 94 h8 v6 h-8 Z M160 94 h8 v6 h-8 Z M210 94 h8 v6 h-8 Z
+                          M260 94 h8 v6 h-8 Z M310 94 h8 v6 h-8 Z M360 94 h8 v6 h-8 Z" />
+  <path class="dg-ink" d="M90 240 H400 V248 H90 Z" />
+
+  <path class="dg-a" d="M40 70 q9 -10 18 0 q9 10 18 0 q9 -10 18 0 q9 10 18 0" />
+  <path class="dg-a" d="M118 74 L176 158" marker-end="url(#pv-ar-a)" />
+  <text class="dg-lbl dg-key" x="40" y="58">A PHOTON</text>
+
+  <circle cx="180" cy="164" r="5" class="dg-accent" />
+  <path class="dg-a" d="M180 156 V120" marker-end="url(#pv-ar-a)" />
+  <circle cx="180" cy="182" r="5" class="dg-page" /><circle cx="180" cy="182" r="5" class="dg-m" />
+  <path class="dg-m" d="M180 190 V218" marker-end="url(#pv-ar)" />
+  <text class="dg-lbl dg-key" x="196" y="114">ELECTRON</text>
+  <text class="dg-lbl dg-soft" x="192" y="212">VACANCY</text>
+
+  <g class="dg-m">
+    <path d="M260 122 V146" marker-end="url(#pv-ar)" />
+    <path d="M310 122 V146" marker-end="url(#pv-ar)" />
+    <path d="M360 122 V146" marker-end="url(#pv-ar)" />
+  </g>
+
+  <text class="dg-lbl dg-num" x="412" y="112">n-TYPE</text>
+  <text class="dg-lbl dg-soft" x="412" y="132">BUILT-IN</text>
+  <text class="dg-lbl dg-soft" x="412" y="146">FIELD</text>
+  <text class="dg-lbl dg-num" x="412" y="200">p-TYPE</text>
+
+  <path class="dg-m" d="M400 244 H452" marker-end="url(#pv-ar)" />
+  <text class="dg-lbl dg-num" x="412" y="236">CURRENT</text>
+
+  <text class="dg-lbl dg-soft" x="30" y="276">IN AN UNDIFFERENTIATED CRYSTAL THE TWO WOULD SIMPLY RECOMBINE.</text>
+  <text class="dg-lbl dg-soft" x="30" y="290">NO HEAT CYCLE, NO WORKING FLUID AND NOTHING THAT MOVES.</text>
+
+  <!-- ══ where the sunlight goes ════════════════════════════════════════ -->
+  <path class="dg-m" d="M496 20 V300" />
+  <text class="dg-lbl" x="520" y="30">THE GAP IS A SINGLE NUMBER</text>
+
+  <path class="dg-d" d="M700 62 V192" />
+  <text class="dg-lbl dg-num" x="700" y="52" text-anchor="middle">THE BAND GAP</text>
+
+  <text class="dg-lbl dg-soft" x="520" y="76">A PHOTON WITH LESS ENERGY</text>
+  <path class="dg-d" d="M580 82 H650 V98 H580 Z" />
+  <text class="dg-lbl dg-soft" x="712" y="95">PASSES THROUGH, DOES NOTHING</text>
+
+  <text class="dg-lbl dg-soft" x="520" y="124">A PHOTON AT THE GAP</text>
+  <rect x="580" y="130" width="120" height="16" class="dg-accent" />
+  <text class="dg-lbl dg-key" x="712" y="143">ALL OF IT COLLECTED</text>
+
+  <text class="dg-lbl dg-soft" x="520" y="172">A PHOTON WITH MUCH MORE</text>
+  <rect x="580" y="178" width="120" height="16" class="dg-accent" />
+  <rect x="700" y="178" width="180" height="16" class="dg-ink" />
+  <text class="dg-lbl dg-soft" x="580" y="218">THE EXCESS ABOVE THE GAP IS LOST AS HEAT</text>
+  <text class="dg-lbl dg-soft" x="580" y="232">WITHIN PICOSECONDS.</text>
+
+  <text class="dg-lbl" x="520" y="264">PHOTON ENERGY →</text>
+  <path class="dg-s" d="M520 278 H920" marker-end="url(#pv-ar)" />
+
+  <!-- ══ the ceiling, and the price ═════════════════════════════════════ -->
+  <path class="dg-m" d="M30 316 H930" />
+  <path class="dg-m" d="M496 326 V424" />
+
+  <text class="dg-lbl" x="30" y="342">THE CEILING THAT FOLLOWS</text>
+  <text class="dg-lbl dg-num" x="30" y="368">THAT TRADE-OFF PUTS THE THEORETICAL CEILING</text>
+  <text class="dg-lbl dg-num" x="30" y="382">FOR A SINGLE-JUNCTION SILICON CELL AROUND</text>
+  <text class="dg-lbl dg-num" x="30" y="396">33 PERCENT.</text>
+  <text class="dg-lbl dg-key" x="30" y="420">COMMERCIAL MODULES NOW REACH THE MID-TWENTIES.</text>
+
+  <text class="dg-lbl" x="520" y="342">WHAT ACTUALLY CHANGED SINCE 1954</text>
+  <text class="dg-lbl dg-num" x="520" y="368">NOT THE PHYSICS BUT THE PRICE, WHICH HAS FALLEN BY</text>
+  <text class="dg-lbl dg-num" x="520" y="382">ROUGHLY THREE ORDERS OF MAGNITUDE, LARGELY THROUGH</text>
+  <text class="dg-lbl dg-num" x="520" y="396">THE SAME LEARNING CURVE THAT DROVE DOWN CHIPS.</text>
+  <text class="dg-lbl dg-soft" x="520" y="420">6% IN 1954 · $286 A WATT IN 1956 · NO MOVING PART</text>
+</svg>
