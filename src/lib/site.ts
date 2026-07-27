@@ -1,7 +1,7 @@
 export const SITE = {
   name: 'Throughline',
   description:
-    'A reading-first history of the inventions that removed humanity’s limits — ninety essays along three roads: energy, materials, information.',
+    'A history of technology told through its constraints: ninety essays along three roads — energy, materials, information — across twelve periods.',
 };
 
 /**

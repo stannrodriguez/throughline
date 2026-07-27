@@ -68,7 +68,7 @@ export const PERIODS: Period[] = [
     yearRange: '−9000 — −1200',
     constraint: 'muscle power',
     constraintShort: 'Muscle power',
-    title: 'Fire, the plow and the sail put work outside the human body for the first time.',
+    title: 'Fire, the plow and the sail move work off the human body and onto fuel, oxen and wind.',
     essay: [],
     capabilityStrip: strip(
       ['5 km/h', '— on foot'],
@@ -86,7 +86,7 @@ export const PERIODS: Period[] = [
     yearRange: '−1200 — 400',
     constraint: 'metal scarcity',
     constraintShort: 'Metal scarcity',
-    title: 'Iron is common where bronze was rare, and the tool stops being a luxury.',
+    title: 'Iron ore outcrops in most regions; the tin that bronze needs comes from a handful of them.',
     essay: [],
     capabilityStrip: strip(
       ['15 km/h', '— the horse', true],
@@ -104,7 +104,7 @@ export const PERIODS: Period[] = [
     yearRange: '400 — 1000',
     constraint: 'perishability',
     constraintShort: 'Perishability',
-    title: 'Rivers take over the grinding, and paper makes a record cheap enough to waste.',
+    title: 'Rivers take over the grinding, and paper makes a written record cheap enough to spend on drafts.',
     essay: [],
     capabilityStrip: strip(
       ['15 km/h', '— unchanged since II'],
@@ -122,7 +122,7 @@ export const PERIODS: Period[] = [
     yearRange: '1000 — 1450',
     constraint: 'wind & water alone',
     constraintShort: 'Wind & water alone',
-    title: 'The mill leaves the riverbank, and the furnace finally melts iron.',
+    title: 'Windmills put power where no river runs, and the blast furnace reaches the 1,500° that melts iron.',
     essay: [],
     capabilityStrip: strip(
       ['15 km/h', '— unchanged since II'],
@@ -140,7 +140,7 @@ export const PERIODS: Period[] = [
     yearRange: '1450 — 1600',
     constraint: 'copying by hand',
     constraintShort: 'Copying by hand',
-    title: 'A page stops being copied and starts being printed; knowledge outruns the copyist.',
+    title: 'One press with movable type prints more pages in a day than a copyist writes in a year.',
     essay: [],
     capabilityStrip: strip(
       ['15 km/h', '— unchanged since II'],
@@ -158,10 +158,11 @@ export const PERIODS: Period[] = [
     yearRange: '1600 — 1760',
     constraint: 'unaided human senses',
     constraintShort: 'Unaided senses',
-    title: 'Glass and escapements gave the world a set of senses it could trust.',
+    title:
+      'Four instruments built between 1608 and 1665 — the telescope, the barometer, the pendulum clock and the microscope — measured what the unaided senses could not.',
     essay: [
-      "This is a record of the years in which humanity stopped trusting its senses and built better ones. Nothing in this period moves faster, carries further, or burns brighter — the strip above is four flat lines — and yet everything afterward depends on what happens here. The reason is a single craft: lens-grinding. The same Dutch and Italian workshops that grind spectacle glass grind the telescope that ends Earth's centrality and the microscope that gives disease a visible cause two centuries early. Beside them, clockmakers turn a swinging mass into the first honest measure of time, and instrument-makers weigh the air itself. Four devices, one culture: artisans, not philosophers, converting the invisible into something a person can read off a scale.",
-      'Two of the six entries below are not instruments at all — they are what instruments make possible. The vacuum, once weighed, becomes an engine part; the clock, once seaworthy, becomes a position. One bends the energy line upward for the first time in four centuries. The other keeps every ship that will carry the next period’s trade from the rocks.',
+      "Three of the four measures in the strip above do not move in this period: top speed and message range are what they were under Rome, and the brightest available light is still a candle. What changes is measurement, and most of it comes out of a single craft. The Dutch and Italian workshops that ground spectacle glass also ground the lenses for the telescope and the microscope. Pointed up, those lenses showed Galileo four moons orbiting Jupiter in 1610; pointed down, they showed Hooke and Leeuwenhoek a living world nobody had known was there. Alongside the lens grinders, Christiaan Huygens hung a pendulum in a clock case in 1656 and cut error from fifteen minutes a day to fifteen seconds, and Evangelista Torricelli filled a glass tube with mercury in 1643 and weighed the atmosphere against it. All four devices came out of artisan trades — lens grinding, clockmaking, glassblowing — rather than out of natural philosophy, and each reported its result as a number on a scale.",
+      "Two of the six entries below are not instruments. Thomas Newcomen's engine of 1712 runs in the vacuum the barometer had proved could exist: steam condensed inside a cylinder, air pressure driving the piston down, water pumped out of a mine at the rate of about fifty horses. It is the only energy entry in this period, and energy per person rises for the first time in four hundred years. John Harrison's H4, tested in 1761, turns a clock into a position. The Earth turns fifteen degrees an hour, so a watch still keeping home-port time tells a navigator how far east or west of that port the ship has come. On the passage to Jamaica, H4 lost five seconds in eighty-one days.",
     ],
     capabilityStrip: strip(
       ['15 km/h', '— unchanged since II'],
@@ -171,7 +172,7 @@ export const PERIODS: Period[] = [
     ),
     passThrough: {
       materials:
-        'No materials stop this period. Glass is ground finer and brass is bored truer — refinements in service of the instruments above, not removals of a constraint. The materials road passes through; its next stop is coke-smelted iron, three years into Period VII.',
+        'No materials stop falls in this period. Glass is ground finer and brass is bored truer, but both are refinements in service of the instruments above rather than a constraint removed. The materials road passes through; its next stop is coke-smelted iron in 1763, three years into Period VII.',
     },
     exitNote: { energy: 'fire → fusion' },
   },
@@ -183,7 +184,7 @@ export const PERIODS: Period[] = [
     yearRange: '1760 — 1840',
     constraint: 'muscle, again',
     constraintShort: 'Muscle, again',
-    title: 'Fuel becomes motion, and the mill walks away from the river.',
+    title: 'Coal burned under a boiler becomes rotary motion, and a mill no longer has to stand on a river.',
     essay: [],
     capabilityStrip: strip(
       ['15 km/h', '— unchanged since II'],
@@ -201,7 +202,7 @@ export const PERIODS: Period[] = [
     yearRange: '1840 — 1900',
     constraint: 'distance',
     constraintShort: 'Distance',
-    title: 'The wire and the rail delete distance within a single lifetime.',
+    title: 'The rail carries freight at 100 km/h and the telegraph carries a message in minutes.',
     essay: [],
     capabilityStrip: strip(
       ['100 km/h', '— the rail', true],
@@ -219,7 +220,7 @@ export const PERIODS: Period[] = [
     yearRange: '1880 — 1930',
     constraint: 'darkness',
     constraintShort: 'Darkness',
-    title: 'Electricity arrives as a utility, and the day stops ending at sunset.',
+    title: 'From 1882 a central station sells electricity by the meter, and electric light spreads from the street into the house.',
     essay: [],
     capabilityStrip: strip(
       ['160 km/h', '— express rail', true],
@@ -237,7 +238,7 @@ export const PERIODS: Period[] = [
     yearRange: '1930 — 1960',
     constraint: 'infection',
     constraintShort: 'Infection',
-    title: 'Matter is designed rather than found, and infection stops being fate.',
+    title: 'Chemists specify nylon on paper before it exists, and penicillin is fermented by the tankful.',
     essay: [],
     capabilityStrip: strip(
       ['900 km/h', '— the jet', true],
@@ -255,7 +256,7 @@ export const PERIODS: Period[] = [
     yearRange: '1960 — 1990',
     constraint: 'computation',
     constraintShort: 'Computation',
-    title: 'Purified silicon makes arithmetic almost free.',
+    title: 'Silicon purified to one foreign atom in a billion carries switches by the million on a single chip.',
     essay: [],
     capabilityStrip: strip(
       ['900 km/h', '— unchanged since X'],
@@ -273,7 +274,7 @@ export const PERIODS: Period[] = [
     yearRange: '1990 —',
     constraint: 'judgement',
     constraintShort: 'Judgement',
-    title: 'Machines begin to do the part of the work nobody could write down.',
+    title: 'Systems trained on examples take over tasks nobody could reduce to written rules.',
     essay: [],
     capabilityStrip: strip(
       ['900 km/h', '— unchanged since X'],
