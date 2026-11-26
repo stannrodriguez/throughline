@@ -69,13 +69,13 @@ export const ROAD_VIEWS: Record<ThreadId, RoadView> = {
     thread: 'energy',
     kicker: 'The energy road · 31 entries · −400,000 → today',
     headline: 'Energy per person rises from 8 gigajoules a year to 20 across the first six periods, then to 120 across the next six.',
-    lede: "Every stop below is a full entry. The number on the right is the same energy-per-person figure that opens each period landing.",
+    lede: "Every stop below is a full entry. The number on the right is the same energy-per-person figure shown at the top of each period page.",
     aside: ['Read in order: ~4 hr', 'or start anywhere;', 'every stop links on'],
     metricLabel: 'Energy / person',
     columnNote:
       'Column: energy per person (GJ/yr), the same number that opens every period · one unit holds for all twelve',
     rows: [
-      { kind: 'band', periods: ['I'], display: 'full', years: '−400,000 — −1200', metric: { value: '8', barPct: 7, caption: 'GJ/yr' } },
+      { kind: 'band', periods: ['I'], display: 'full', years: '−400,000 to −1200', metric: { value: '8', barPct: 7, caption: 'GJ/yr' } },
       { kind: 'band', periods: ['II'], display: 'full', metric: { value: '11', barPct: 9, caption: 'GJ/yr' } },
       { kind: 'band', periods: ['III'], display: 'full', metric: { value: '13', barPct: 11, caption: 'GJ/yr' } },
       { kind: 'band', periods: ['IV'], display: 'full', metric: { value: '15', barPct: 13, caption: 'GJ/yr' } },
@@ -107,11 +107,11 @@ export const ROAD_VIEWS: Record<ThreadId, RoadView> = {
     columnNote:
       'Column: hottest sustained, controlled temperature (°C) through Period IX · nines of achievable purity after the seam',
     rows: [
-      { kind: 'band', periods: ['I'], display: 'full', years: '−9000 — −1200', metric: { value: '900°', barPct: 24, caption: 'Kiln · °C' } },
+      { kind: 'band', periods: ['I'], display: 'full', years: '−9000 to −1200', metric: { value: '900°', barPct: 24, caption: 'Kiln · °C' } },
       { kind: 'band', periods: ['II'], display: 'full', metric: { value: '1,250°', barPct: 34, caption: 'Bloomery · °C' } },
       { kind: 'band', periods: ['III'], display: 'full', metric: { value: '1,300°', barPct: 36, caption: 'Stoneware kiln · °C' } },
       { kind: 'band', periods: ['IV'], display: 'full', metric: { value: '1,500°', barPct: 42, caption: 'Blast furnace · °C' } },
-      { kind: 'band', periods: ['V'], display: 'full', metric: { value: '1,500°', barPct: 42, caption: '— holds', hold: true } },
+      { kind: 'band', periods: ['V'], display: 'full', metric: { value: '1,500°', barPct: 42, caption: 'Holds', hold: true } },
       {
         kind: 'band',
         periods: ['VI'],
@@ -126,7 +126,7 @@ export const ROAD_VIEWS: Record<ThreadId, RoadView> = {
       {
         kind: 'seam',
         explanation:
-          'Past 3,500° there is little left to melt that matters. The constraint moves from <em>how hot</em> to <em>how pure, and how precisely arranged</em>, so the column changes its unit here: temperature measures Periods I–IX, purity measures X–XII.',
+          'Past 3,500° there is little left to melt that matters. The constraint moves from <em>how hot</em> to <em>how pure, and how precisely arranged</em>, so the column changes its unit here: temperature measures Periods I to IX, and purity measures X to XII.',
         handover: '°C → nines of purity',
       },
       { kind: 'band', periods: ['X'], display: 'condensed', metric: { value: '99.9%', barPct: 33 } },
@@ -149,7 +149,7 @@ export const ROAD_VIEWS: Record<ThreadId, RoadView> = {
         kind: 'band',
         periods: ['I', 'II'],
         display: 'condensed',
-        years: '−9000 — 400',
+        years: '−9000 to 400',
         metric: { value: '200', valueUnit: 'km/day', barPct: 9 },
       },
       {
@@ -157,7 +157,7 @@ export const ROAD_VIEWS: Record<ThreadId, RoadView> = {
         periods: ['III', 'IV', 'V'],
         display: 'condensed',
         note: 'more copies of each message, carried no faster',
-        years: '400 — 1600',
+        years: '400 to 1600',
         metric: { value: '200', valueUnit: 'km/day', barPct: 9 },
       },
       {
@@ -176,21 +176,21 @@ export const ROAD_VIEWS: Record<ThreadId, RoadView> = {
       {
         kind: 'seam',
         explanation:
-          'The telegraph does not raise the number, it retires it: a message arrives in minutes at any distance the wire reaches, so “how far in a day” measures nothing. The constraint moves from distance to volume, and the column’s unit becomes throughput.',
+          'The telegraph does not raise the number; it retires it. A message arrives in minutes at any distance the wire reaches, so “how far in a day” measures nothing. The constraint moves from distance to volume, and the column’s unit becomes throughput.',
         handover: 'km/day → bits/second',
       },
       {
         kind: 'band',
         periods: ['VIII', 'IX'],
         display: 'condensed',
-        years: '1840 — 1930',
+        years: '1840 to 1930',
         metric: { value: '~40', valueUnit: 'bit/s', barPct: 12 },
       },
       {
         kind: 'band',
         periods: ['X', 'XI', 'XII'],
         display: 'condensed',
-        years: '1930 —',
+        years: '1930 to present',
         metric: { value: '10¹⁴', valueUnit: 'bit/s', barPct: 100 },
       },
     ],
@@ -207,7 +207,7 @@ export const MATERIALS_METRIC_TRIAL = {
     {
       verdict: 'rejected' as const,
       claim: 'Rejected: price of iron/steel per kg.',
-      body: "It is an economic proxy rather than a capability: it moves with wars, tariffs and wages as much as with furnaces. It does not exist before Period II, when there is no iron, and it goes irrelevant after IX, when the materials story becomes polymers and silicon. It would measure three-quarters of the road with an economic ruler instead of a physical one.",
+      body: "It is an economic proxy rather than a capability: it moves with wars, tariffs and wages as much as with furnaces. It does not exist before Period II, when there is no iron, and it becomes irrelevant after IX, when the materials story becomes polymers and silicon. It would measure three-quarters of the road with an economic ruler instead of a physical one.",
     },
     {
       verdict: 'rejected' as const,
@@ -221,5 +221,5 @@ export const MATERIALS_METRIC_TRIAL = {
     },
   ],
   coda:
-    'The temperature column dies at Period X: polymers and semiconductors are made by molecular control and purity, not by heat. Rather than force one number across twelve periods, <strong>the column hands over at a visible seam</strong>, with temperature measuring I–IX and purity — the nines of silicon — measuring X–XII. Temperature separates the first nine periods and then flattens; purity separates the last three. One unit for all twelve would hide both facts.',
+    'The temperature column dies at Period X: polymers and semiconductors are made by molecular control and purity, not by heat. Rather than force one number across twelve periods, <strong>the column hands over at a visible seam</strong>, with temperature measuring Periods I to IX and purity (the nines of silicon) measuring X to XII. Temperature separates the first nine periods and then flattens; purity separates the last three. One unit for all twelve would hide both facts.',
 };
