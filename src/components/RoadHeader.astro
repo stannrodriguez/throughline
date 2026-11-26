@@ -9,7 +9,7 @@ interface Props {
   /** When set, the right-hand slot links somewhere. */
   rightHref?: string;
 }
-const { active, right = 'All periods ▴', rightHref } = Astro.props;
+const { active, right = 'All 12 periods', rightHref } = Astro.props;
 const RightTag = rightHref ? 'a' : 'div';
 ---
 

@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "type": "module",
-  "description": "Throughline — a reading-first history of the inventions that removed humanity's limits.",
+  "description": "Throughline: a reading-first history of the inventions that removed humanity's limits.",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/stannrodriguez/throughline.git"

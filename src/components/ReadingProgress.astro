@@ -70,7 +70,7 @@ const { road } = Astro.props;
     if (next && cta) {
       cta.setAttribute('href', next.getAttribute('href'));
       const title = next.querySelector('.stop__title');
-      if (title) cta.textContent = `Continue reading — ${title.textContent.trim()} →`;
+      if (title) cta.textContent = `Continue reading: ${title.textContent.trim()} →`;
     }
   })();
 </script>

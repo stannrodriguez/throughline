@@ -25,7 +25,7 @@ const cards = THREAD_ORDER.map((threadId) => {
   if (!target) {
     return {
       threadId,
-      label: `The ${t.name.toLowerCase()} road ends before here`,
+      label: `The ${t.name.toLowerCase()} road ended earlier`,
       title: `${t.roadName} · last stop`,
       note: t.span,
       href: path(`/roads/${threadId}`),
@@ -48,7 +48,7 @@ const cards = THREAD_ORDER.map((threadId) => {
     threadId,
     label: inEra
       ? `Enter the ${t.name.toLowerCase()} road here`
-      : `Join the ${t.name.toLowerCase()} road nearby`,
+      : `Next on the ${t.name.toLowerCase()} road`,
     title: inEra ? target.title : `${target.title}, ${target.year}`,
     note: `Stop ${target.stop} of ${target.total} · ${spanNote}`,
     href: path(`/roads/${threadId}`),

@@ -15,6 +15,7 @@ const { current } = Astro.props;
         href={path(`/periods/${periodSlug(p.id)}`)}
         class:list={['spine__tick', { 'is-current': p.id === current }]}
         aria-current={p.id === current ? 'page' : undefined}
+        aria-label={`Period ${p.id}: ${p.name}`}
         title={`Period ${p.id} · ${p.name}`}
       >
         {p.id}

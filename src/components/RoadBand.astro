@@ -69,7 +69,7 @@ const indices = band.periods.map((id) => periodById(id).index);
         <p class="band__pass">
           {band.passThrough}{' '}
           <a href={path(`/periods/${periodSlug(first.id)}`)} class="band__pass-link">
-            See the Period {first.id} landing for what this era was instead.
+            Read Period {first.id} for what changed in this era.
           </a>
         </p>
       ) : band.display === 'condensed' ? (
@@ -92,7 +92,7 @@ const indices = band.periods.map((id) => periodById(id).index);
               ))}
             </>
           ))}
-          {band.note && <span class="band__note"> — {band.note}</span>}
+          {band.note && <span class="band__note"> ({band.note})</span>}
         </p>
       ) : (
         <ol class="band__stops">

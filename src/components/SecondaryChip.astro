@@ -9,7 +9,10 @@ interface Props {
 const { thread, bare = false } = Astro.props;
 ---
 
-<span class:list={['chip-2', `t-${thread}`, { 'chip-2--bare': bare }]}>
+<span
+  class:list={['chip-2', `t-${thread}`, { 'chip-2--bare': bare }]}
+  title={`Secondary thread: ${thread}`}
+>
   2° {thread === 'information' ? 'Information' : thread === 'materials' ? 'Materials' : 'Energy'}
 </span>
 
