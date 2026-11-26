@@ -1,7 +1,7 @@
 export const SITE = {
   name: 'Throughline',
   description:
-    'A history of technology told through its constraints: ninety essays along three roads — energy, materials, information — across twelve periods.',
+    'A history of technology told through the constraints each invention removed, along three roads (energy, materials, and information) across twelve periods.',
 };
 
 /**
