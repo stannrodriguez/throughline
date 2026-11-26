@@ -19,17 +19,17 @@ const { prev, next } = roadNeighbours(entry);
 <div class="chrome">
   <a class="chrome__up" href={path(`/periods/${periodSlug(period.id)}`)}>
     <span aria-hidden="true">↑</span>
-    <span class="chrome__up-text">Period {period.id} landing · {period.name.toLowerCase()}</span>
+    <span class="chrome__up-text">Period {period.id}: {period.name}</span>
   </a>
 
-  <nav class="chrome__road" aria-label="Along the road">
+  <nav class="chrome__road" aria-label="Road navigation">
     {
       prev ? (
         <a class="chrome__step" href={prev.href}>
           ← Stop {prev.stop} · {prev.title}, P.{prev.periodId}
         </a>
       ) : (
-        <span class="chrome__step is-empty">← the road begins</span>
+        <span class="chrome__step is-empty">Start of road</span>
       )
     }
     <span class="chrome__here">{entry.address}</span>
@@ -39,7 +39,7 @@ const { prev, next } = roadNeighbours(entry);
           Stop {next.stop} · {next.title}, P.{next.periodId} →
         </a>
       ) : (
-        <span class="chrome__step is-empty">the road ends →</span>
+        <span class="chrome__step is-empty">End of road</span>
       )
     }
   </nav>

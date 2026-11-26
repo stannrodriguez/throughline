@@ -18,7 +18,7 @@ interface Props {
 const { label, thread, to, addressNote, body, tinted = false } = Astro.props;
 const target = tryEntry(to);
 if (!target) {
-  throw new Error(`Cross-reference to "${to}" — no such entry in the registry.`);
+  throw new Error(`Cross-reference to "${to}": no such entry in the registry.`);
 }
 const address = `${THREADS[thread].addressName} · stop ${target.stop}${
   addressNote ? ` · ${addressNote}` : ''

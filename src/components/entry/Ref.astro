@@ -11,7 +11,7 @@ interface Props {
 const { to } = Astro.props;
 const target = tryEntry(to);
 if (!target) {
-  throw new Error(`<Ref to="${to}"> — no such entry in the registry.`);
+  throw new Error(`<Ref to="${to}">: no such entry in the registry.`);
 }
 ---
 

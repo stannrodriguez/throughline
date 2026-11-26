@@ -1,21 +1,21 @@
 # Throughline
 
 A reading-first history of the inventions that removed humanity's limits: ~90
-essays across 12 periods, organised as three roads — **energy**, **materials**,
+essays across 12 periods, organised as three roads: **energy**, **materials**,
 **information**.
 
 Built from the Claude Design handoff *"Three Roads, hybridized"* (design frames
-4a–4d).
+4a to 4d).
 
 ## The architecture contract
 
 Two page types, two motions.
 
 1. **Road pages** (3, plus a page per entry). A thread read end to end across all
-   of history. The road **owns every essay** — there is exactly one copy of each
+   of history. The road **owns every essay**: there is exactly one copy of each
    entry on the site, addressed as `road / stop N of M`.
-2. **Period landings** (12). A short era essay — the only prose that lives
-   outside a road — the full roster of that era's entries across all three
+2. **Period landings** (12). A short era essay (the only prose that lives
+   outside a road), the full roster of that era's entries across all three
    threads *as addresses, never duplicated prose*, the capability strip, and
    exits into the roads.
 
@@ -27,7 +27,7 @@ failed.
 
 ### Thread taxonomy
 
-Every entry has exactly one **primary** thread — that is its road placement, and
+Every entry has exactly one **primary** thread: that is its road placement, and
 placement is singular. **Secondary tags** are capped at two and each must carry a
 one-sentence justification; a tag that can't explain itself gets cut. On road and
 roster views a secondary tag is a small typographic mark; inside the entry it
@@ -35,7 +35,7 @@ expands into a card.
 
 ### Seams
 
-Each road's all-periods view carries a metric column — the capability strip laid
+Each road's all-periods view carries a metric column: the capability strip laid
 vertically. Energy (GJ per person) never seams. Information hands `km/day` over
 to `bits/second` after Period VII; materials hands `°C` over to nines of purity
 after Period IX. The seam is a designed row, not a fallback: when a road's own
@@ -44,7 +44,7 @@ story. Never force one unit across twelve periods.
 
 ### Era-voiced forward references
 
-Every entry closes with *"What this makes possible — written from [year]"*:
+Every entry closes with *"What this makes possible, written from [year]"*:
 italic period-voice prose with modern links breaking to roman inside parentheses.
 This is the **only** place the site uses period voice. Science sections stay in
 plain modern voice.
@@ -55,13 +55,13 @@ plain modern voice.
 npm install
 npm run dev      # http://localhost:4321
 npm run build
-npm run check    # astro check — types and template errors
+npm run check    # astro check: types and template errors
 ```
 
 ## Layout
 
 ```
-src/data/         the content model — threads, periods, the entry registry, road views
+src/data/         the content model: threads, periods, the entry registry, road views
 src/content/      entry prose (MDX); structural metadata never appears here
 src/components/   chrome and the repeated devices (capability strip, road band, figure)
 src/pages/        /, /periods/[id], /roads/[thread], /entries/[slug]
@@ -69,7 +69,7 @@ src/styles/       design tokens + base type
 ```
 
 `src/data/entries.ts` is the single source of truth for placement. **Stop numbers
-are derived from it**, never authored, so an address can't go stale — and the
+are derived from it**, never authored, so an address can't go stale, and the
 `of N` totals come from the thread, which is the author's target roster size
 rather than the current placeholder count.
 
@@ -98,7 +98,7 @@ crossRefs:
 <Breakthrough>…</Breakthrough>
 <Science numbers="1,600 : 1 · 22 kN · <1%">
   …two columns of prose…
-  <Figure caption="WIDE DIAGRAM — …" spec="what the illustration should show" />
+  <Figure name="newcomen-engine" caption="WIDE DIAGRAM: …" />
 </Science>
 <Forward year={1712}>
   Period voice, with moderns breaking out:
@@ -107,7 +107,7 @@ crossRefs:
 ```
 
 An entry in the registry with no MDX file renders as an honest *not yet written*
-stop with its address already fixed — navigation never dead-ends.
+stop with its address already fixed, so navigation never dead-ends.
 
 ## Reading position
 
@@ -115,7 +115,7 @@ The only client state: visited entry slugs per road, in `localStorage` under
 `throughline:progress:v1`. The road view renders the design's default position
 (Period VI) server-side; the progress script moves it to wherever the reader
 actually got to, marking earlier stops solid and later ones outlined. With
-storage unavailable the default stands and every stop stays solid — reading never
+storage unavailable, the default stands and every stop stays solid; reading never
 depends on it.
 
 Reading-time labels are computed at build time from word count
@@ -130,8 +130,9 @@ road totals (31 energy, 27 materials, 34 information) are the author's target
 roster and remain larger than the registry, so entries added later will render
 as *not yet written* stops until their MDX file exists.
 
-Figures are placeholder frames whose captions are the commissioning spec for the
-real technical illustration (Macaulay-spirit cutaways, patent-style linework).
+All 61 registered entries include inline SVG technical plates in
+`src/components/figures/`. Entries added later without a plate `name` render a
+placeholder frame carrying their commissioning spec.
 
 Prose follows the rules in `CLAUDE.md`: plain declarative sentences that lead
 with a mechanism, number, date or place, no aphorisms, and no claim that is not

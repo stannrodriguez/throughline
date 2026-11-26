@@ -22,7 +22,7 @@ const { entry, dateline } = Astro.props;
   {
     entry.secondary?.map((s) => (
       <span class:list={['tag', 'tag--secondary', `t-${s.thread}`]}>
-        2° {THREADS[s.thread].name} — {s.justification}
+        2° {THREADS[s.thread].name}: {s.justification}
       </span>
     ))
   }
