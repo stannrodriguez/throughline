@@ -65,7 +65,7 @@ export const PERIODS: Period[] = [
     index: 1,
     ordinal: 'One',
     name: 'Fire',
-    yearRange: '−9000 — −1200',
+    yearRange: '−9000 to −1200',
     constraint: 'muscle power',
     constraintShort: 'Muscle power',
     title: 'Fire, the plow and the sail move work off the human body and onto fuel, oxen and wind.',
@@ -74,10 +74,10 @@ export const PERIODS: Period[] = [
       'The other four entries store something. Clay fired above 900° loses the water bound into its crystal structure and becomes a solid that cannot be softened again, which is what makes a grain jar worth building. A loom crosses two sets of threads under tension so that loose fibre holds together as a sheet. Writing starts as accountancy rather than literature: the earliest tablets from Uruk, around 3200 BCE, record measures of barley, beer and livestock against names. The alphabet then cuts the number of signs a scribe must learn from several hundred to twenty-two. Nothing here travels faster or burns brighter than it did before, but a jar, a cloth and a tablet each hold their contents after the person who made them has gone.',
     ],
     capabilityStrip: strip(
-      ['5 km/h', '— on foot'],
-      ['40 km', '— a runner'],
-      ['Firelight', '— the first'],
-      ['8 GJ/yr', '— baseline']
+      ['5 km/h', 'on foot'],
+      ['40 km', 'a runner'],
+      ['Firelight', 'the first'],
+      ['8 GJ/yr', 'baseline']
     ),
   },
   {
@@ -85,7 +85,7 @@ export const PERIODS: Period[] = [
     index: 2,
     ordinal: 'Two',
     name: 'Metal',
-    yearRange: '−1200 — 400',
+    yearRange: '−1200 to 400',
     constraint: 'metal scarcity',
     constraintShort: 'Metal scarcity',
     title: 'Iron ore outcrops in most regions; the tin that bronze needs comes from a handful of them.',
@@ -94,10 +94,10 @@ export const PERIODS: Period[] = [
       'The metal is the reason the period has its name. Bronze is the better material and always was: a tenth part of tin in copper roughly triples the hardness and drops the melting point below 1,000°, which a pottery kiln can already reach. What bronze does not have is supply. Tin occurs in commercial quantity in very few places — Cornwall, the Erzgebirge, Afghanistan — so every bronze sword in the eastern Mediterranean depends on a trade route running thousands of kilometres. When those routes break down around 1200 BCE, smiths turn to the ore under their own fields. Iron demands a furnace at 1,250° and a great deal more labour at the anvil, and early wrought iron is softer than good bronze. It wins on the only ground that matters here, which is that the ore is nearly everywhere.',
     ],
     capabilityStrip: strip(
-      ['15 km/h', '— the horse', true],
-      ['200 km', '— relay, new', true],
-      ['Oil lamp', '— steadier', true],
-      ['11 GJ/yr', '— animal muscle', true]
+      ['15 km/h', 'the horse', true],
+      ['200 km', 'relay, new', true],
+      ['Oil lamp', 'steadier', true],
+      ['11 GJ/yr', 'animal muscle', true]
     ),
   },
   {
@@ -105,7 +105,7 @@ export const PERIODS: Period[] = [
     index: 3,
     ordinal: 'Three',
     name: 'The Mill',
-    yearRange: '400 — 1000',
+    yearRange: '400 to 1000',
     constraint: 'perishability',
     constraintShort: 'Perishability',
     title: 'Rivers take over the grinding, and paper makes a written record cheap enough to spend on drafts.',
@@ -114,10 +114,10 @@ export const PERIODS: Period[] = [
       'The constraint this era removes is perishability, and the other two entries are both about a record that lasts. Paper, made at the Han court by 105 CE and reaching Baghdad by the end of the eighth century, is pulped rag and bark drained on a screen and pressed flat. It is not better than parchment — it tears, and it rots in damp — but a parchment Bible costs the skins of a couple of hundred sheep, and paper costs rags. Arabic numerals arrive on the same trade routes. Al-Khwarizmi’s treatise of about 825 sets out the Indian decimal system with its zero, and its advantage over counters on a board is that the working survives: a calculation in positional notation leaves every step on the page, where somebody else can check it.',
     ],
     capabilityStrip: strip(
-      ['15 km/h', '— unchanged since II'],
-      ['200 km', '— relay, as in Rome'],
-      ['Candle', '— new'],
-      ['13 GJ/yr', '— the waterwheel', true]
+      ['15 km/h', 'unchanged since II'],
+      ['200 km', 'relay, as in Rome'],
+      ['Candle', 'new'],
+      ['13 GJ/yr', 'the waterwheel', true]
     ),
   },
   {
@@ -125,7 +125,7 @@ export const PERIODS: Period[] = [
     index: 4,
     ordinal: 'Four',
     name: 'Wind & Water',
-    yearRange: '1000 — 1450',
+    yearRange: '1000 to 1450',
     constraint: 'wind & water alone',
     constraintShort: 'Wind & water alone',
     title: 'Windmills put power where no river runs, and the blast furnace reaches the 1,500° that melts iron.',
@@ -138,10 +138,10 @@ export const PERIODS: Period[] = [
         'No information stop falls in this period. Paper has been available in Europe for two centuries and every copy of every book is still written out by hand. The information road passes through; its next stop is movable type, in 1450.',
     },
     capabilityStrip: strip(
-      ['15 km/h', '— unchanged since II'],
-      ['200 km', '— relay, as in Rome'],
-      ['Candle', '— as ever'],
-      ['15 GJ/yr', '— wind added', true]
+      ['15 km/h', 'unchanged since II'],
+      ['200 km', 'relay, as in Rome'],
+      ['Candle', 'as ever'],
+      ['15 GJ/yr', 'wind added', true]
     ),
   },
   {
@@ -149,7 +149,7 @@ export const PERIODS: Period[] = [
     index: 5,
     ordinal: 'Five',
     name: 'The Press',
-    yearRange: '1450 — 1600',
+    yearRange: '1450 to 1600',
     constraint: 'copying by hand',
     constraintShort: 'Copying by hand',
     title: 'One press with movable type prints more pages in a day than a copyist writes in a year.',
@@ -162,10 +162,10 @@ export const PERIODS: Period[] = [
         'No energy stop falls in this period. The press is worked by hand and the paper mills run on water that has been driving wheels since Period III; nothing new is burned. The energy road passes through; its next stop is the Newcomen engine, in 1712.',
     },
     capabilityStrip: strip(
-      ['15 km/h', '— unchanged since II'],
-      ['200 km', '— relay, as in Rome'],
-      ['Candle', '— as ever'],
-      ['17 GJ/yr', '— creeping']
+      ['15 km/h', 'unchanged since II'],
+      ['200 km', 'relay, as in Rome'],
+      ['Candle', 'as ever'],
+      ['17 GJ/yr', 'creeping']
     ),
   },
   {
@@ -173,19 +173,19 @@ export const PERIODS: Period[] = [
     index: 6,
     ordinal: 'Six',
     name: 'The Instrument Era',
-    yearRange: '1600 — 1760',
+    yearRange: '1600 to 1760',
     constraint: 'unaided human senses',
     constraintShort: 'Unaided senses',
     title:
-      'Four instruments built between 1608 and 1665 — the telescope, the barometer, the pendulum clock and the microscope — measured what the unaided senses could not.',
+      'Four instruments built between 1608 and 1665 (the telescope, the barometer, the pendulum clock and the microscope) measured what the unaided senses could not.',
     essay: [
       "Three of the four measures in the strip above do not move in this period: top speed and message range are what they were under Rome, and the brightest available light is still a candle. What changes is measurement, and most of it comes out of a single craft. The Dutch and Italian workshops that ground spectacle glass also ground the lenses for the telescope and the microscope. Pointed up, those lenses showed Galileo four moons orbiting Jupiter in 1610; pointed down, they showed Hooke and Leeuwenhoek a living world nobody had known was there. Alongside the lens grinders, Christiaan Huygens hung a pendulum in a clock case in 1656 and cut error from fifteen minutes a day to fifteen seconds, and Evangelista Torricelli filled a glass tube with mercury in 1643 and weighed the atmosphere against it. All four devices came out of artisan trades — lens grinding, clockmaking, glassblowing — rather than out of natural philosophy, and each reported its result as a number on a scale.",
       "Two of the six entries below are not instruments. Thomas Newcomen's engine of 1712 runs in the vacuum the barometer had proved could exist: steam condensed inside a cylinder, air pressure driving the piston down, water pumped out of a mine at the rate of about fifty horses. It is the only energy entry in this period, and energy per person rises for the first time in four hundred years. John Harrison's H4, tested in 1761, turns a clock into a position. The Earth turns fifteen degrees an hour, so a watch still keeping home-port time tells a navigator how far east or west of that port the ship has come. On the passage to Jamaica, H4 lost five seconds in eighty-one days.",
     ],
     capabilityStrip: strip(
-      ['15 km/h', '— unchanged since II'],
-      ['200 km', '— relay, as in Rome'],
-      ['Candle', '— as ever'],
+      ['15 km/h', 'unchanged since II'],
+      ['200 km', 'relay, as in Rome'],
+      ['Candle', 'as ever'],
       ['20 GJ/yr', 'first rise in 400 years', true]
     ),
     passThrough: {
@@ -199,7 +199,7 @@ export const PERIODS: Period[] = [
     index: 7,
     ordinal: 'Seven',
     name: 'Steam',
-    yearRange: '1760 — 1840',
+    yearRange: '1760 to 1840',
     constraint: 'muscle, again',
     constraintShort: 'Muscle, again',
     title: 'Coal burned under a boiler becomes rotary motion, and a mill no longer has to stand on a river.',
@@ -208,10 +208,10 @@ export const PERIODS: Period[] = [
       'Three more entries are about metal, and they belong together. Coke-smelted iron takes the furnace off the forest and puts it on the coalfield. Crucible steel, melted in a sealed clay pot at 1,600°, comes out with the same carbon content throughout the ingot instead of the graded skin the old cementation process gave. And John Wilkinson’s boring machine cuts a cylinder fifty inches across round to within the thickness of an old shilling — the tolerance without which Watt’s engine leaks past its piston and does not work. The information entry stands apart from all of it. Claude Chappe’s semaphore, a chain of towers with pivoted arms read through a telescope, carries a signal the 230 kilometres from Paris to Lille in minutes, and stops working in fog.',
     ],
     capabilityStrip: strip(
-      ['15 km/h', '— unchanged since II'],
-      ['200 km', '— relay, as in Rome'],
-      ['Argand lamp', '— ten candles', true],
-      ['26 GJ/yr', '— coal, at last', true]
+      ['15 km/h', 'unchanged since II'],
+      ['200 km', 'relay, as in Rome'],
+      ['Argand lamp', 'ten candles', true],
+      ['26 GJ/yr', 'coal, at last', true]
     ),
   },
   {
@@ -219,7 +219,7 @@ export const PERIODS: Period[] = [
     index: 8,
     ordinal: 'Eight',
     name: 'Distance',
-    yearRange: '1840 — 1900',
+    yearRange: '1840 to 1900',
     constraint: 'distance',
     constraintShort: 'Distance',
     title: 'The rail carries freight at 100 km/h and the telegraph carries a message in minutes.',
@@ -228,10 +228,10 @@ export const PERIODS: Period[] = [
       'The materials entries are what the distance is built out of. Henry Bessemer’s converter blows cold air up through molten pig iron, and the carbon burning out of the metal supplies the heat, so twenty tonnes are refined in twenty minutes with no fuel under the vessel at all; the price of steel falls from roughly fifty pounds a ton to seven, and rails, bridges and ship plate become steel rather than iron. Portland cement, burned at 1,450° and ground to a powder, sets by reacting with water and will do it under water. Vulcanised rubber holds its elasticity across a hundred-degree range instead of melting in summer and cracking in winter. The two energy entries point past this period rather than defining it: the well Edwin Drake drills at Titusville in 1859 finds a fuel that can be pumped and piped, and the self-exciting dynamo of 1867 turns motion into current at a scale permanent magnets could never reach.',
     ],
     capabilityStrip: strip(
-      ['100 km/h', '— the rail', true],
-      ['Instant', '— the telegraph', true],
-      ['Gaslight', '— the lit street', true],
-      ['38 GJ/yr', '— steam everywhere', true]
+      ['100 km/h', 'the rail', true],
+      ['Instant', 'the telegraph', true],
+      ['Gaslight', 'the lit street', true],
+      ['38 GJ/yr', 'steam everywhere', true]
     ),
   },
   {
@@ -239,7 +239,7 @@ export const PERIODS: Period[] = [
     index: 9,
     ordinal: 'Nine',
     name: 'Light',
-    yearRange: '1880 — 1930',
+    yearRange: '1880 to 1930',
     constraint: 'darkness',
     constraintShort: 'Darkness',
     title: 'From 1882 a central station sells electricity by the meter, and electric light spreads from the street into the house.',
@@ -248,10 +248,10 @@ export const PERIODS: Period[] = [
       'The other three entries look past this period. Karl Benz patents a vehicle in January 1886 whose engine burns its fuel inside the cylinder, which removes the boiler, the firebox and the condenser and leaves three-quarters of a horsepower in something one person can lift; that ratio is what takes engines off rails and eventually into the air. Tungsten carbide, cemented in cobalt at Krupp in 1927, is harder than the hardened steel every cutting tool had been made of, and cuts it several times faster. And on 12 December 1901 Marconi receives three dots at Signal Hill in Newfoundland, sent 3,500 kilometres from Cornwall — the first message to cross an ocean with nothing physical between the ends.',
     ],
     capabilityStrip: strip(
-      ['160 km/h', '— express rail', true],
-      ['Instant', '— telegraph, then radio'],
-      ['Filament lamp', '— on a grid', true],
-      ['54 GJ/yr', '— the grid', true]
+      ['160 km/h', 'express rail', true],
+      ['Instant', 'telegraph, then radio'],
+      ['Filament lamp', 'on a grid', true],
+      ['54 GJ/yr', 'the grid', true]
     ),
   },
   {
@@ -259,7 +259,7 @@ export const PERIODS: Period[] = [
     index: 10,
     ordinal: 'Ten',
     name: 'The Molecule',
-    yearRange: '1930 — 1960',
+    yearRange: '1930 to 1960',
     constraint: 'infection',
     constraintShort: 'Infection',
     title: 'Chemists specify nylon on paper before it exists, and penicillin is fermented by the tankful.',
@@ -268,10 +268,10 @@ export const PERIODS: Period[] = [
       'On the energy road the two entries are both about density. A gas turbine burns continuously instead of in strokes, which is what lifts the power-to-weight ratio far enough to fly; the He 178 takes off on 27 August 1939, and top speed in the strip above goes from 160 kilometres an hour to 900 within twenty years of it. Fission is denser again by a factor nothing chemical approaches: each uranium nucleus that splits releases about 200 million electron-volts, some two hundred million times what burning a carbon atom gives, so a gram of uranium-235 stands in for roughly three tonnes of coal. Chicago Pile-1 goes critical on 2 December 1942 at about half a watt. The information entry is quieter and outlasts both — a germanium crystal with two wire contacts, demonstrated at Bell Labs on 23 December 1947, that amplifies a signal with no filament, no vacuum and no warm-up.',
     ],
     capabilityStrip: strip(
-      ['900 km/h', '— the jet', true],
-      ['Instant', '— telephone, worldwide'],
-      ['Fluorescent', '— cheaper light', true],
-      ['78 GJ/yr', '— oil', true]
+      ['900 km/h', 'the jet', true],
+      ['Instant', 'telephone, worldwide'],
+      ['Fluorescent', 'cheaper light', true],
+      ['78 GJ/yr', 'oil', true]
     ),
   },
   {
@@ -279,7 +279,7 @@ export const PERIODS: Period[] = [
     index: 11,
     ordinal: 'Eleven',
     name: 'Computation',
-    yearRange: '1960 — 1990',
+    yearRange: '1960 to 1990',
     constraint: 'computation',
     constraintShort: 'Computation',
     title: 'Silicon purified to one foreign atom in a billion carries switches by the million on a single chip.',
@@ -288,10 +288,10 @@ export const PERIODS: Period[] = [
       'The same demand produces the era’s other material. Glass carries light badly not because of the glass but because of the iron and copper in it, and Charles Kao argued in 1966 that removing them would leave a fibre good enough to signal through; Corning reached seventeen decibels a kilometre in 1970, and the best fibre today loses less than a fifth of a decibel over the same distance. The network built on top of it works on a principle the telephone system never used. ARPANET’s first message, on 29 October 1969, was meant to be LOGIN and got two letters out before the far end crashed; what was new was not the link but the packet — a message cut into addressed fragments that each find their own route. The two energy entries look minor at the time and are not. A silicon photovoltaic cell converts six percent of the sunlight falling on it with no moving part, and the lithium cell prototyped in 1985 holds several times the energy per kilogram of anything rechargeable before it.',
     ],
     capabilityStrip: strip(
-      ['900 km/h', '— unchanged since X'],
-      ['Instant', '— packet-switched'],
-      ['Halogen', '— incremental', true],
-      ['104 GJ/yr', '— nuclear added', true]
+      ['900 km/h', 'unchanged since X'],
+      ['Instant', 'packet-switched'],
+      ['Halogen', 'incremental', true],
+      ['104 GJ/yr', 'nuclear added', true]
     ),
   },
   {
@@ -299,7 +299,7 @@ export const PERIODS: Period[] = [
     index: 12,
     ordinal: 'Twelve',
     name: 'Judgement',
-    yearRange: '1990 —',
+    yearRange: '1990 to present',
     constraint: 'judgement',
     constraintShort: 'Judgement',
     title: 'Systems trained on examples take over tasks nobody could reduce to written rules.',
@@ -308,10 +308,10 @@ export const PERIODS: Period[] = [
       'On the other two roads the era is about storage and placement. Lithium-ion chemistry works because nothing dissolves: the ions slot in between the layers of a host crystal and come back out again, so an electrode survives hundreds of cycles instead of eroding. Batteries built on it at grid scale — Hornsdale in South Australia is 100 megawatts and 129 megawatt-hours — let a network store energy at noon and deliver it at dusk, which is the first relief since 1882 from having to generate exactly what is being consumed at that instant. Atomic-layer deposition grows films a tenth of a nanometre at a time by using reactions that stop when the surface is full. And on 5 December 2022 the National Ignition Facility put 2.05 megajoules of laser light into a target and got 3.15 megajoules out of it, for a few nanoseconds — the first time a fusion reaction has returned more than was delivered to it, with about 300 megajoules drawn from the grid to do it. Energy per person reaches 120 gigajoules a year and is levelling off.',
     ],
     capabilityStrip: strip(
-      ['900 km/h', '— unchanged since X'],
-      ['Instant', '— everyone, at once'],
-      ['LED', '— the cheapest yet', true],
-      ['120 GJ/yr', '— plateauing', true]
+      ['900 km/h', 'unchanged since X'],
+      ['Instant', 'everyone, at once'],
+      ['LED', 'the cheapest yet', true],
+      ['120 GJ/yr', 'plateauing', true]
     ),
   },
 ];
