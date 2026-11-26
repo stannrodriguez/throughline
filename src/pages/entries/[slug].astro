@@ -89,8 +89,8 @@ const headline = prose?.data.headline ?? entry.title;
               </p>
             </div>
             <p class="entry__stub-note">
-              Its address is already fixed: {entry.address}. The prose for this stop has not been
-              written yet.
+              Reserved at {entry.address}. This essay has not been written yet; use the links above
+              or below to keep reading.
             </p>
           </div>
         )
@@ -98,10 +98,10 @@ const headline = prose?.data.headline ?? entry.title;
 
       <footer class="entry__foot">
         <a href={path(`/roads/${entry.primary}`)} class="entry__foot-link">
-          The whole {entry.primary} road, all periods
+          All stops on the {entry.primary} road
         </a>
         <a href={path(`/periods/${periodSlug(period.id)}`)} class="entry__foot-link">
-          ↑ Period {period.id} landing · {period.name.toLowerCase()}
+          ↑ Period {period.id}: {period.name}
         </a>
       </footer>
     </div>

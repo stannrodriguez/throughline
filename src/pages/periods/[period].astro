@@ -32,8 +32,8 @@ const passThroughFor = (threadId: (typeof THREAD_ORDER)[number]) => {
   const t = THREADS[threadId];
   const onward = nextStopFrom(threadId, period.index + 1);
   return onward
-    ? `No ${t.name.toLowerCase()} stop this period. The ${t.name.toLowerCase()} road passes through; its next stop is ${onward.title}, in Period ${onward.periodId}.`
-    : `No ${t.name.toLowerCase()} stop this period, and none after it — the road has already ended.`;
+    ? `No ${t.name.toLowerCase()} stop in this period. The ${t.name.toLowerCase()} road passes through; its next stop is ${onward.title}, in Period ${onward.periodId}.`
+    : `No ${t.name.toLowerCase()} stop in this period, and none after it: the road has already ended.`;
 };
 
 const essay = period.essay;
@@ -54,7 +54,7 @@ const firstPara = essay.length ? essay[0].slice(1) : '';
               ← {prev.id} · {prev.name}
             </a>
           ) : (
-            <span class="masthead__step is-empty">the beginning</span>
+            <span class="masthead__step is-empty">First period</span>
           )
         }
         <p class="masthead__dateline">
@@ -66,7 +66,7 @@ const firstPara = essay.length ? essay[0].slice(1) : '';
               {next.id} · {next.name} →
             </a>
           ) : (
-            <span class="masthead__step masthead__step--end is-empty">the present</span>
+            <span class="masthead__step masthead__step--end is-empty">Present</span>
           )
         }
       </div>
@@ -91,11 +91,10 @@ const firstPara = essay.length ? essay[0].slice(1) : '';
           <div class="essay">
             <div class="figure-ph essay__placeholder">
               <p class="figure-ph__caption">
-                PERIOD ESSAY — TO BE WRITTEN
+                PERIOD ESSAY NOT YET WRITTEN
                 <br />
                 <span class="figure-ph__spec">
-                  two paragraphs, front-page voice: what this era was, and why its entries belong
-                  together
+                  An overview of this period and how its entries fit together will be added here.
                 </span>
               </p>
             </div>
@@ -107,11 +106,11 @@ const firstPara = essay.length ? essay[0].slice(1) : '';
       <div class="roster">
         <div class="roster__head">
           <h2 class="roster__title">
-            Everything from this era · {allStops.length}
-            {allStops.length === 1 ? 'entry' : 'entries'} · each lives on its road
+            Entries in this period · {allStops.length}
+            {allStops.length === 1 ? 'entry' : 'entries'}
           </h2>
           <p class="roster__time">
-            Reading time, all {allStops.length === 1 ? 'one' : allStops.length}: {duration}
+            {allStops.length === 1 ? 'Reading time' : `Reading time (all ${allStops.length})`}: {duration}
           </p>
         </div>
 
@@ -132,8 +131,8 @@ const firstPara = essay.length ? essay[0].slice(1) : '';
         {
           period.placeholder && (
             <p class="roster__disclaimer">
-              This era's entries are not yet written. The roster, its deks and its capability
-              strip are structural placeholders.
+              Entries for this period have not been written yet. The titles, summaries, and
+              measurements shown here are placeholders.
             </p>
           )
         }

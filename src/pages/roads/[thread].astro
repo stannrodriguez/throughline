@@ -122,11 +122,10 @@ const continueStop = currentStop ?? ROAD_ENTRIES[thread][0];
 
     <div class="road__foot">
       <p class="road__legend">
-        Solid stops = read · outlined = ahead · thin bands = the road passes through without
-        stopping · whole road, in order: {duration}
+        Solid dot = read · outlined = unread · thin band = no stops in this period · full road: {duration}
       </p>
       <a class="road__continue" href={continueStop.href} data-continue>
-        Continue reading — {continueStop.title} <span aria-hidden="true">→</span>
+        Continue reading: {continueStop.title} <span aria-hidden="true">→</span>
       </a>
     </div>
   </main>
